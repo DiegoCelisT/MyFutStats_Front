@@ -10,10 +10,10 @@ export class ClubesComponent implements OnInit {
 
   resultados = [{
     id: Number,
-    nome: String,
-    urlEscudo: String,
-    país: String,
-    posição: Number,
+    name: String,
+    urlShield: String,
+    country: String,
+    position: Number,
     pts: Number,
     J: Number,
     V: Number,
@@ -22,8 +22,8 @@ export class ClubesComponent implements OnInit {
     GP: Number,
     GC: Number,
     SG: Number,
-    amarelos: Number,
-    vermelhos: Number
+    YC: Number,
+    RC: Number
   }]
 
   constructor(private FutebolServ: FutebolService) { }

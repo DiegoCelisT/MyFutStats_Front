@@ -1,1 +1,21 @@
+<h1>ROTA DOS CLUBES</h1>
 <a href="">Voltar a Home</a>
+
+<h1>Mostrando todo o JSON de nossa BD:</h1>
+<p>{{ resultados | json }}</p>
+
+<h1>Mostrando um registro só (formatado):</h1>
+<p>Nome: {{ resultados[0].name }}</p>
+<img src="{{ resultados[0].urlShield }}" width="120px"> <!--Está mostrando no template mas sae um erro no console, depois ver por qué-->
+<p>País: {{ resultados[0].country }}</p>
+<p>Posição: {{ resultados[0].position }}</p>
+<p>Pontos: {{ resultados[0].pts }}</p>
+<p>Jogados: {{ resultados[0].J }}</p>
+<p>Vitórias: {{ resultados[0].V }}</p>
+<p>Empates: {{ resultados[0].E }}</p>
+<p>Derrotas: {{ resultados[0].D }}</p>
+<p>GP: {{ resultados[0].GP }}</p>
+<p>GC: {{ resultados[0].GC }}</p>
+<p>SG: {{ resultados[0].SG }}</p>
+<p>Cartões amarelos: {{ resultados[0].YC }}</p>
+<p>Cartões vermelhos: {{ resultados[0].RC }}</p>
