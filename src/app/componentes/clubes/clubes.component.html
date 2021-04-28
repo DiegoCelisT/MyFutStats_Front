@@ -1,12 +1,32 @@
 <h1>ROTA DOS CLUBES</h1>
 <a href="">Voltar a Home</a>
 
-<h1>Mostrando todo o JSON de nossa BD:</h1>
-<p>{{ resultados | json }}</p>
+<!-- <h1>Mostrando todo o JSON de nossa BD:</h1>
+<p>{{ resultados | json }}</p> -->
 
-<h1>Mostrando um registro só (formatado):</h1>
+<h1>Mostrando os registros (formatados):</h1>
+<ul>
+    <li *ngFor="let resultado of resultados">
+        <p>Nome: {{ resultado.name }}</p>
+        <img src="{{ resultado.urlShield }}" width="120px"> <!--Está mostrando no template mas sae um erro no console, depois ver por qué-->
+        <p>País: {{ resultado.country }}</p>
+        <p>Posição: {{ resultado.position }}</p>
+        <p>Pontos: {{ resultado.pts }}</p>
+        <p>Jogados: {{ resultado.J }}</p>
+        <p>Vitórias: {{ resultado.V }}</p>
+        <p>Empates: {{ resultado.E }}</p>
+        <p>Derrotas: {{ resultado.D }}</p>
+        <p>GP: {{ resultado.GP }}</p>
+        <p>GC: {{ resultado.GC }}</p>
+        <p>SG: {{ resultado.SG }}</p>
+        <p>Cartões amarelos: {{ resultado.YC }}</p>
+        <p>Cartões vermelhos: {{ resultado.RC }}</p>
+    </li>
+</ul>
+
+<!-- <h1>Mostrando um registro só (formatado):</h1>
 <p>Nome: {{ resultados[0].name }}</p>
-<img src="{{ resultados[0].urlShield }}" width="120px"> <!--Está mostrando no template mas sae um erro no console, depois ver por qué-->
+<img src="{{ resultados[0].urlShield }}" width="120px">
 <p>País: {{ resultados[0].country }}</p>
 <p>Posição: {{ resultados[0].position }}</p>
 <p>Pontos: {{ resultados[0].pts }}</p>
@@ -18,4 +38,4 @@
 <p>GC: {{ resultados[0].GC }}</p>
 <p>SG: {{ resultados[0].SG }}</p>
 <p>Cartões amarelos: {{ resultados[0].YC }}</p>
-<p>Cartões vermelhos: {{ resultados[0].RC }}</p>
+<p>Cartões vermelhos: {{ resultados[0].RC }}</p> -->
