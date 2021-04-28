@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FutebolService } from '../../services/futebol.service';
 
 @Component({
   selector: 'app-clubes',
@@ -7,9 +8,32 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ClubesComponent implements OnInit {
 
-  constructor() { }
+  resultados = [{
+    id: Number,
+    nome: String,
+    urlEscudo: String,
+    país: String,
+    posição: Number,
+    pts: Number,
+    J: Number,
+    V: Number,
+    E: Number,
+    D: Number,
+    GP: Number,
+    GC: Number,
+    SG: Number,
+    amarelos: Number,
+    vermelhos: Number
+  }]
+
+  constructor(private FutebolServ: FutebolService) { }
 
   ngOnInit(): void {
+    this.FutebolServ.getClubes ()
+    .subscribe (resultados => {
+      this.resultados = resultados ['clubes'] //'É importante declarar o nome do JSON que foi dado no back-end, para dessa maneira evitar o erro de cannot read property '0' of undefined
+      console.log (resultados)
+    })
   }
 
 }
