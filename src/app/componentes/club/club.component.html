@@ -16,6 +16,25 @@
 <p>Cartões amarelos: {{ resultados[0].YC }}</p>
 <p>Cartões vermelhos: {{ resultados[0].RC }}</p>
 
+<ul>
+    <li *ngFor="let resultado of resultados">
+        <a href="http://localhost:4200/clube/{{ resultado.id }}"><p>{{ resultado.name }}</p></a>
+        <img src="{{ resultado.urlShield }}" width="120px"> <!--Está mostrando no template mas sae um erro no console, depois ver por qué-->
+        <p>País: {{ resultado.country }}</p>
+        <p>Posição: {{ resultado.position }}</p>
+        <p>Pontos: {{ resultado.pts }}</p>
+        <p>Jogados: {{ resultado.J }}</p>
+        <p>Vitórias: {{ resultado.V }}</p>
+        <p>Empates: {{ resultado.E }}</p>
+        <p>Derrotas: {{ resultado.D }}</p>
+        <p>GP: {{ resultado.GP }}</p>
+        <p>GC: {{ resultado.GC }}</p>
+        <p>SG: {{ resultado.SG }}</p>
+        <p>Cartões amarelos: {{ resultado.YC }}</p>
+        <p>Cartões vermelhos: {{ resultado.RC }}</p>
+    </li>
+</ul>
+
 <!-- <a href="http://localhost:4200/editclube/">EDITAR CLUBE</a> -->
 <br><br>
 <a href="">Voltar a Home</a> <br>

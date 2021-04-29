@@ -36,4 +36,6 @@ export class ClubesComponent implements OnInit {
     })
 
   }
+
+  
 }
