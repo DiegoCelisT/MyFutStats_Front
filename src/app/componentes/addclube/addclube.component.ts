@@ -1,14 +1,23 @@
 import { Component, OnInit } from '@angular/core';
 import { FutebolService } from '../../services/futebol.service';
 
+
 @Component({
   selector: 'app-addclube',
   templateUrl: './addclube.component.html',
   styleUrls: ['./addclube.component.css']
 })
+
 export class AddclubeComponent implements OnInit {
 
-  constructor(private FutebolServ: FutebolService) { }
+  name: string;
+  country: string;
+  urlShield: string;
+
+  constructor(private FutebolServ: FutebolService) {
+
+    
+   }
 
   ngOnInit(): void {
   }
@@ -19,6 +28,13 @@ export class AddclubeComponent implements OnInit {
     this.FutebolServ.createClube ("Santa Fé", "https://upload.wikimedia.org/wikipedia/commons/5/58/Escudo_de_Independiente_Santa_Fe.png", "Colômbia", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
     .subscribe();
     alert('CLUBE ADICIONADO') //ES SOLO PARA DAR AVISO
+  }
+  
+  buscar(form: any) {
+    // location.href = `/resultados/${form.value.pesquisa}`;
+    console.log(form.value.name);
+    console.log(form.value.country);
+    console.log(form.value.urlShield)
   }
 
 }

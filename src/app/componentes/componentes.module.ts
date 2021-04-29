@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+
 import { HomeComponent } from './home/home.component';
 import { ClubesComponent } from './clubes/clubes.component';
 import { EditclubeComponent } from './editclube/editclube.component'
@@ -15,7 +17,8 @@ import { AddclubeComponent } from './addclube/addclube.component';
     AddclubeComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule
   ],
   exports: [
     HomeComponent,
