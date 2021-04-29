@@ -8,8 +8,6 @@ import { FutebolService } from '../../services/futebol.service';
 })
 export class ClubesComponent implements OnInit {
 
-  clube: any = { name: '' };
-
   resultados = [{
     id: Number,
     name: String,
