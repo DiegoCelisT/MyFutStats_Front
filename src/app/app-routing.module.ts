@@ -7,7 +7,7 @@ import { EditclubeComponent } from './componentes/editclube/editclube.component'
 const routes: Routes = [
   { path: '', component:HomeComponent },
   { path: 'clubes', component:ClubesComponent },
-  { path: 'editclube', component:EditclubeComponent }
+  { path: 'editclube/:id', component:EditclubeComponent }
 ];
 
 @NgModule({
