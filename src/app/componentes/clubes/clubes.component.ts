@@ -43,7 +43,6 @@ export class ClubesComponent implements OnInit {
   novoClub(){
     this.FutebolServ.createClube ("Santa Fé", "https://upload.wikimedia.org/wikipedia/commons/5/58/Escudo_de_Independiente_Santa_Fe.png", "Colômbia", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
     .subscribe();
-    console.log('novoclub')
   }
 
   

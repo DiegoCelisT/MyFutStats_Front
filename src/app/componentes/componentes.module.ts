@@ -4,13 +4,15 @@ import { HomeComponent } from './home/home.component';
 import { ClubesComponent } from './clubes/clubes.component';
 import { EditclubeComponent } from './editclube/editclube.component'
 import { ClubComponent } from './club/club.component';
+import { AddclubeComponent } from './addclube/addclube.component';
 
 @NgModule({
   declarations: [
     HomeComponent,
     ClubesComponent,
     EditclubeComponent,
-    ClubComponent
+    ClubComponent,
+    AddclubeComponent
   ],
   imports: [
     CommonModule

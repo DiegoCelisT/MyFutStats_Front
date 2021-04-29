@@ -16,9 +16,18 @@ export class FutebolService {
     return this.httpFutebol.get ('http://localhost:'+this.port+'/clubes')
   }
 
+  //SÓ UM CLUBE
+  getClube (id: number){
+    console.log(id)
+    return this.httpFutebol.post ('http://localhost:'+this.port+'/clube', {
+      id: id
+    })
+  }
+
   //Método POST, para criar novos registros: (para este verbo é necessario passar os parametros no corpo)
   createClube (name: string, urlShield: string, country: string, position: number, pts: number, J: number, V: number, E: number, D: number, GP: number, GC: number, SG: number, YC: number, RC: number){
-    console.log(name, urlShield, country, position, pts, J, V, E, D, GP, GC, SG, YC, RC)
+    // console.log(name, urlShield, country, position, pts, J, V, E, D, GP, GC, SG, YC, RC)
+    console.log('createclube servicio')
     return this.httpFutebol.post ('http://localhost:'+this.port+'/novoclub', {
       name: name,
       urlShield: urlShield,
