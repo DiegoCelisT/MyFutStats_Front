@@ -20,7 +20,9 @@ import { AddclubeComponent } from './addclube/addclube.component';
   exports: [
     HomeComponent,
     ClubesComponent,
-    EditclubeComponent
+    EditclubeComponent,
+    ClubComponent,
+    AddclubeComponent
   ]
 })
 export class ComponentesModule { }
