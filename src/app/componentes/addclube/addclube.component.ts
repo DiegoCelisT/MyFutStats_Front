@@ -10,9 +10,12 @@ import { FutebolService } from '../../services/futebol.service';
 
 export class AddclubeComponent implements OnInit {
 
+  //DADOS DO FORMULARIO ADDCLUBE
   name: string;
   country: string;
   urlShield: string;
+
+  dadosClube = [];
 
   constructor(private FutebolServ: FutebolService) {
 
@@ -22,19 +25,33 @@ export class AddclubeComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  //METODO POST PARA CRIAR NOVOS REGISTROS DESDE O FRONT (PRECISAMOS PEGAR DADOS DO FORMULARIO)
+  //METODO POST PARA CRIAR NOVOS REGISTROS DESDE O FRONT (PRECISAMOS PEGAR DADOS DO FORMULARIO)   "Santa Fé", "https://upload.wikimedia.org/wikipedia/commons/5/58/Escudo_de_Independiente_Santa_Fe.png", "Colômbia", 
   novoClub(){
     console.log('novoClub')
-    this.FutebolServ.createClube ("Santa Fé", "https://upload.wikimedia.org/wikipedia/commons/5/58/Escudo_de_Independiente_Santa_Fe.png", "Colômbia", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+    this.FutebolServ.createClube(this.name, this.urlShield, this.country, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
     .subscribe();
     alert('CLUBE ADICIONADO') //ES SOLO PARA DAR AVISO
   }
   
-  buscar(form: any) {
+  //BUSCA DADOS DO FORMULARIO E CRIA UM ARRAY PARA USAR NO FUTURO
+  buscar(dadosClube) {
     // location.href = `/resultados/${form.value.pesquisa}`;
-    console.log(form.value.name);
-    console.log(form.value.country);
-    console.log(form.value.urlShield)
+    dadosClube.push(this.name);
+    dadosClube.push(this.country);
+    dadosClube.push(this.urlShield);
+    dadosClube.push(0);
+    dadosClube.push(0);
+    dadosClube.push(0);
+    dadosClube.push(0);
+    dadosClube.push(0);
+    dadosClube.push(0);
+    dadosClube.push(0);
+    dadosClube.push(0);
+    dadosClube.push(0);
+    dadosClube.push(0);
+    dadosClube.push(0); 
+    console.log(dadosClube)
+    this.novoClub();
   }
 
 }

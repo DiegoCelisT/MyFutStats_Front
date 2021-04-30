@@ -1,6 +1,6 @@
 <h1>ADICIONAR CLUB</h1>
 <br>
-<form class="form-group" #formulario='ngForm' (ngSubmit)='buscar(formulario.form)'>
+<form class="form-group" #formulario='ngForm' (ngSubmit)='buscar(dadosClube)'>
     <div class="form-group">
         <label for="name">Nome do clube:</label>
         <input type="text" class="form-control" name="name" required id="name" [(ngModel)]="name">
