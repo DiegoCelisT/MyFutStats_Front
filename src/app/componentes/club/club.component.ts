@@ -31,13 +31,21 @@ export class ClubComponent implements OnInit {
 
   ID: any;
   idNum: Number;
+  idEdit: any;
+  // idNumEdit: Number;
 
   constructor(private FutebolServ: FutebolService, private roteClub: ActivatedRoute) { 
    
-    //USA EL ID DE LA URL
+    //USA EL ID DE LA URL PARA MOSTRAR UN CLUB
     this.roteClub.params.subscribe(params => {
       this.idNum = (parseInt(params['id'])-1);
       this.ID = this.idNum.toString()
+    });
+
+    //USA EL ID DE LA URL PARA 
+    this.roteClub.params.subscribe(params => {
+      this.idEdit = params['id'];
+      // this.idNum = this.idNum.toString()
     });
   }
 

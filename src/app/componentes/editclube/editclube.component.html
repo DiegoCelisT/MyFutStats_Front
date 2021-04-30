@@ -1,4 +1,20 @@
-<p>editclube works!</p>
+<h1>Clube {{ resultados[ID].name }}</h1>
+
+<h1>Mostrando um registro só (formatado):</h1>
+<p>{{ resultados[ID].name }}</p>
+<img src="{{ resultados[ID].urlShield }}" width="120px">
+<p>País: {{ resultados[ID].country }}</p>
+<p>Posição: {{ resultados[ID].position }}</p>
+<p>Pontos: {{ resultados[ID].pts }}</p>
+<p>Jogados: {{ resultados[ID].J }}</p>
+<p>Vitórias: {{ resultados[ID].V }}</p>
+<p>Empates: {{ resultados[ID].E }}</p>
+<p>Derrotas: {{ resultados[ID].D }}</p>
+<p>GP: {{ resultados[ID].GP }}</p>
+<p>GC: {{ resultados[ID].GC }}</p>
+<p>SG: {{ resultados[ID].SG }}</p>
+<p>Cartões amarelos: {{ resultados[ID].YC }}</p>
+<p>Cartões vermelhos: {{ resultados[ID].RC }}</p>
 
 <button (click)='putClub()'>ATUALIZAR DADOS</button>
 <br><br>
