@@ -29,12 +29,16 @@ export class ClubComponent implements OnInit {
   constructor(private FutebolServ: FutebolService) { }
 
   ngOnInit(): void {
-    this.FutebolServ.getClube(0)
+    this.FutebolServ.getClubes()
     .subscribe (resultados => {
-    this.resultados = resultados ['clube'] //'É importante declarar o nome do JSON que foi dado no back-end, para dessa maneira evitar o erro de cannot read property '0' of undefined
+    this.resultados = resultados ['clubes'] //'É importante declarar o nome do JSON que foi dado no back-end, para dessa maneira evitar o erro de cannot read property '0' of undefined
       console.log (resultados)
     })
+
+    // this.FutebolServ.getID()
+  
   }
 
+  
 
 }

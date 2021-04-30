@@ -67,6 +67,11 @@ export class FutebolService {
     })
   }
 
+  // OBTENER ID
+  getID() {
+    return this.httpFutebol.get ('http://localhost:'+this.port+'/clubes')
+  }
+
 
 }
 

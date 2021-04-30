@@ -5,8 +5,8 @@
 <p>{{ resultados | json }}</p> -->
 
 <h1>Mostrando os registros (formatados):</h1>
-<ul>
-    <li *ngFor="let resultado of resultados">
+<ul class="list-group">
+    <li class="list-group-item" *ngFor="let resultado of resultados">
         <a href="http://localhost:4200/clube/{{ resultado.id }}"><p>{{ resultado.name }}</p></a>
         <img src="{{ resultado.urlShield }}" width="120px"> <!--Está mostrando no template mas sae um erro no console, depois ver por qué-->
         <p>País: {{ resultado.country }}</p>
@@ -29,5 +29,5 @@
 <!-- ADICIONAR CLUB -->
 
 
-<button><a href="http://localhost:4200/addclube">ADICIONAR CLUBE</a></button>
-<button><a href="http://localhost:4200/editclube">EDITAR CLUBES</a></button>
+<button class="btn-default"><a href="http://localhost:4200/addclube">ADICIONAR CLUBE</a></button>
+<button class="btn-default"><a href="http://localhost:4200/editclube">EDITAR CLUBES</a></button>
