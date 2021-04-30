@@ -1,11 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { FutebolService } from '../../services/futebol.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-club',
   templateUrl: './club.component.html',
   styleUrls: ['./club.component.css']
 })
+
 export class ClubComponent implements OnInit {
 
   resultados = [{
@@ -26,7 +28,9 @@ export class ClubComponent implements OnInit {
     RC: Number
   }]
 
-  constructor(private FutebolServ: FutebolService) { }
+  idClube: Number;
+
+  constructor(private FutebolServ: FutebolService, private roteClub: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.FutebolServ.getClubes()
@@ -35,8 +39,13 @@ export class ClubComponent implements OnInit {
       console.log (resultados)
     })
 
-    // this.FutebolServ.getID()
-  
+    this.roteClub.params.subscribe(params => {
+      this.idClube = params['id']
+      console.log(this.idClube)
+      // this.roteClub.getResultados(this.pesquisa).subscribe(gifs => {
+      //   this.gifs = gifs;
+        // });
+      });
   }
 
   
