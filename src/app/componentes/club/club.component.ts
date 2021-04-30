@@ -32,7 +32,7 @@ export class ClubComponent implements OnInit {
   ID: any;
   idNum: Number;
   idEdit: any;
-  // idNumEdit: Number;
+  
 
   constructor(private FutebolServ: FutebolService, private roteClub: ActivatedRoute) { 
    
