@@ -1,25 +1,27 @@
-<h1>Clube {{ resultados[ID].name }}</h1>
-
-{{ resultados[ID].id }}
-
-<img src="{{ resultados[ID].urlShield }}" width="120px">
-<p>País: {{ resultados[ID].country }}</p>
-<p>Posição: {{ resultados[ID].position }}</p>
-<p>Pontos: {{ resultados[ID].pts }}</p>
-<p>Jogados: {{ resultados[ID].J }}</p>
-<p>Vitórias: {{ resultados[ID].V }}</p>
-<p>Empates: {{ resultados[ID].E }}</p>
-<p>Derrotas: {{ resultados[ID].D }}</p>
-<p>GP: {{ resultados[ID].GP }}</p>
-<p>GC: {{ resultados[ID].GC }}</p>
-<p>SG: {{ resultados[ID].SG }}</p>
-<p>Cartões amarelos: {{ resultados[ID].YC }}</p>
-<p>Cartões vermelhos: {{ resultados[ID].RC }}</p>
+<h1>Clube {{ this.resultado.name }}</h1>
 
 
-<button class="btn-default"><a href="http://localhost:4200/editclube/{{idEdit}}">EDITAR CLUBE</a></button>
+
+ 
+
+<img src="{{ this.resultado.urlShield }}" width="120px">
+<p>País: {{ this.resultado.country }}</p>
+<p>Posição: {{ this.resultado.position }}</p>
+<p>Pontos: {{ this.resultado.pts }}</p>
+<p>Jogados: {{ this.resultado.J }}</p>
+<p>Vitórias: {{ this.resultado.V }}</p>
+<p>Empates: {{ this.resultado.E }}</p>
+<p>Derrotas: {{ this.resultado.D }}</p>
+<p>GP: {{ this.resultado.GP }}</p>
+<p>GC: {{ this.resultado.GC }}</p>
+<p>SG: {{ this.resultado.SG }}</p>
+<p>Cartões amarelos: {{ this.resultado.YC }}</p>
+<p>Cartões vermelhos: {{ this.resultado.RC }}</p>
+
+
+<button class="btn-default"><a href="http://localhost:4200/editclube/{{this.resultado.id}}">EDITAR CLUBE</a></button>
 
 
 <br><br>
-<a href="">Voltar a Home</a> <br>
-<a href="http://localhost:4200/ligas">Voltar a Ligas</a>
+<a href="http://localhost:4200/ligas">Voltar a Ligas</a><br>
+<a href="">Voltar a Home</a> 

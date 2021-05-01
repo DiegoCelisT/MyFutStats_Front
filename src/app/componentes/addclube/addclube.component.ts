@@ -28,7 +28,6 @@ export class AddclubeComponent implements OnInit {
 
   //METODO POST PARA CRIAR NOVOS REGISTROS DESDE O FRONT (PRECISAMOS PEGAR DADOS DO FORMULARIO) DEJO LOS DATOS DE TU CLUB KKKK "Santa Fé", "https://upload.wikimedia.org/wikipedia/commons/5/58/Escudo_de_Independiente_Santa_Fe.png", "Colômbia", 
   novoClub(){
-    console.log('novoClub')
     this.FutebolServ.createClube(this.name, this.urlShield, this.country, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
     .subscribe();
     alert('CLUBE ADICIONADO') //ES SOLO PARA DAR AVISO

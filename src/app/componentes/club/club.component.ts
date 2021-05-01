@@ -11,52 +11,29 @@ import { ActivatedRoute } from '@angular/router';
 
 export class ClubComponent implements OnInit {
 
-  resultados = [{
-    id: Number,
-    name: String,
-    urlShield: String,
-    country: String,
-    position: Number,
-    pts: Number,
-    J: Number,
-    V: Number,
-    E: Number,
-    D: Number,
-    GP: Number,
-    GC: Number,
-    SG: Number,
-    YC: Number,
-    RC: Number
-  }]
-
+  resultado: any = [];//
   ID: any;
   idNum: Number;
-  idEdit: any;
+ 
   
 
-  constructor(private FutebolServ: FutebolService, private roteClub: ActivatedRoute) { 
-   
-    //USA EL ID DE LA URL PARA MOSTRAR UN CLUB
-    this.roteClub.params.subscribe(params => {
-      this.idNum = (parseInt(params['id'])-1);
-      this.ID = this.idNum.toString()
-    });
+  constructor(private FutebolServ: FutebolService, private roteClub: ActivatedRoute) { }
 
-    //USA EL ID DE LA URL PARA 
-    this.roteClub.params.subscribe(params => {
-      this.idEdit = params['id'];
-      // this.idNum = this.idNum.toString()
-    });
-  }
-
-    
+  
 
   ngOnInit(): void {
-    this.FutebolServ.getClubes()
-    .subscribe (resultados => {
-    this.resultados = resultados ['clubes'] //'É importante declarar o nome do JSON que foi dado no back-end, para dessa maneira evitar o erro de cannot read property '0' of undefined
-      console.log (resultados + 'club component')
-    })  
+
+     //USA EL ID DE LA URL PARA MOSTRAR UN CLUB
+     this.roteClub.params.subscribe(params => {
+      this.idNum = parseInt(params['id']);
+      this.ID = this.idNum    
+      this.FutebolServ.getClube(this.ID)
+        .subscribe (resultados => {
+          this.resultado = resultados ['clube'] 
+        })  
+    });
+
+    
       
   }
 

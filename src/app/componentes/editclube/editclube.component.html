@@ -1,67 +1,68 @@
-<h1>Editar clube {{ resultados[ID].name }}</h1>
+<h1>Editar clube {{ this.resultado.name }}</h1>
 
 <form class="form-group" #formedit='ngForm' (ngSubmit)='buscar(dadosEditClube)'>
     <div class="form-group">
         <label for="name">Nome do clube:</label>
-        <input type="text" class="form-control" name="name" value="{{ resultados[ID].name }}" id="name" [(ngModel)]="name">
+        <input type="text" class="form-control" name="name" value="{{ this.resultado.name }}" id="name" [(ngModel)]="name">
     </div>
     
     <div class="form-group">
         <label for="country">Pais:</label>
-        <input type="text" class="form-control" name="country" value="{{ resultados[ID].country }}" id="country" [(ngModel)]="country">
+        <input type="text" class="form-control" name="country" value="{{ this.resultado.country }}" id="country" [(ngModel)]="country">
     </div>
     <div class="form-group">
         <label for="urlShield">URL Escudo:</label>
-        <input type="text" class="form-control" name="urlShield" value="{{ resultados[ID].urlShield }}" id="urlShield" [(ngModel)]="urlShield">
+        <input type="text" class="form-control" name="urlShield" value="{{ this.resultado.urlShield }}" id="urlShield" [(ngModel)]="urlShield">
     </div>
     <div class="form-group">
         <label for="position">Posição:</label>
-        <input type="text" class="form-control" name="position" value="{{ resultados[ID].position }}" id="position" [(ngModel)]="position">
+        <input type="text" class="form-control" name="position" value="{{ this.resultado.position }}" id="position" [(ngModel)]="position">
     </div>
     <div class="form-group">
         <label for="pts">Pontos:</label>
-        <input type="text" class="form-control" name="pts" value="{{ resultados[ID].pts }}" id="pts" [(ngModel)]="pts">
+        <input type="text" class="form-control" name="pts" value="{{ this.resultado.pts }}" id="pts" [(ngModel)]="pts">
     </div>
     <div class="form-group">
         <label for="J">Jogados:</label>
-        <input type="text" class="form-control" name="J" value="{{ resultados[ID].J }}" id="J" [(ngModel)]="J">
+        <input type="text" class="form-control" name="J" value="{{ this.resultado.J }}" id="J" [(ngModel)]="J">
     </div>
     <div class="form-group">
         <label for="V">Vencidos:</label>
-        <input type="text" class="form-control" name="V" value="{{ resultados[ID].V }}" id="V" [(ngModel)]="V">
+        <input type="text" class="form-control" name="V" value="{{ this.resultado.V }}" id="V" [(ngModel)]="V">
     </div>
     <div class="form-group">
         <label for="E">Empates:</label>
-        <input type="text" class="form-control" name="E" value="{{ resultados[ID].E }}" id="E" [(ngModel)]="E">
+        <input type="text" class="form-control" name="E" value="{{ this.resultado.E }}" id="E" [(ngModel)]="E">
     </div>
     <div class="form-group">
         <label for="D">Derrotas:</label>
-        <input type="text" class="form-control" name="D" value="{{ resultados[ID].D }}" id="D" [(ngModel)]="D">
+        <input type="text" class="form-control" name="D" value="{{ this.resultado.D }}" id="D" [(ngModel)]="D">
     </div>
     <div class="form-group">
         <label for="GP">Goles a favor:</label>
-        <input type="text" class="form-control" name="GP" value="{{ resultados[ID].GP }}" id="GP" [(ngModel)]="GP">
+        <input type="text" class="form-control" name="GP" value="{{ this.resultado.GP }}" id="GP" [(ngModel)]="GP">
     </div>
     <div class="form-group">
         <label for="GC">Goles contra:</label>
-        <input type="text" class="form-control" name="GC" value="{{ resultados[ID].GC }}" id="GC" [(ngModel)]="GC">
+        <input type="text" class="form-control" name="GC" value="{{ this.resultado.GC }}" id="GC" [(ngModel)]="GC">
     </div>
     <div class="form-group">
         <label for="SG">SG:</label>
-        <input type="text" class="form-control" name="SG" value="{{ resultados[ID].SG }}" id="SG" [(ngModel)]="SG">
+        <input type="text" class="form-control" name="SG" value="{{ this.resultado.SG }}" id="SG" [(ngModel)]="SG">
     </div>
     <div class="form-group">
         <label for="YC">YC:</label>
-        <input type="text" class="form-control" name="YC" value="{{ resultados[ID].YC }}" id="YC" [(ngModel)]="YC">
+        <input type="text" class="form-control" name="YC" value="{{ this.resultado.YC }}" id="YC" [(ngModel)]="YC">
     </div>
     <div class="form-group">
         <label for="RC">RC:</label>
-        <input type="text" class="form-control" name="RC" value="{{ resultados[ID].RC }}" id="RC" [(ngModel)]="RC">
+        <input type="text" class="form-control" name="RC" value="{{ this.resultado.RC }}" id="RC" [(ngModel)]="RC">
     </div>
     <button type="submit">ATUALIZAR DADOS</button>
   </form>
 
 <!-- <button (click)='editClub()'>ATUALIZAR DADOS</button> -->
 <br><br>
-<a href="">Voltar a Home</a> <br>
-<a href="http://localhost:4200/ligas">Voltar a Ligas</a>
+<a href="http://localhost:4200/clube/{{ this.resultado.id}}">NO editar ao clube {{ this.resultado.name }}</a><br>
+<a href="http://localhost:4200/ligas">Voltar a Ligas</a> <br>
+<a href="">Voltar a Home</a>

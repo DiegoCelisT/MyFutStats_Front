@@ -9,23 +9,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class EditclubeComponent implements OnInit {
 
-  resultados = [{
-    id: Number,
-    name: String,
-    urlShield: String,
-    country: String,
-    position: Number,
-    pts: Number,
-    J: Number,
-    V: Number,
-    E: Number,
-    D: Number,
-    GP: Number,
-    GC: Number,
-    SG: Number,
-    YC: Number,
-    RC: Number
-  }]
+  resultado: any = [];
 
   ID: any;
   idNum: Number;
@@ -50,28 +34,25 @@ export class EditclubeComponent implements OnInit {
   //ARRAY PARA ALMACENAR OS DADOS
   dadosEditClube = [];
 
-  constructor(private FutebolServ: FutebolService, private roteClub: ActivatedRoute) {
-    
-    //USA EL ID DE LA URL
-    this.roteClub.params.subscribe(params => {
-      this.idNum = (parseInt(params['id'])-1);
-      this.ID = this.idNum.toString()
-    });
-   }
+  constructor(private FutebolServ: FutebolService, private roteClub: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.FutebolServ.getClubes()
-    .subscribe (resultados => {
-    this.resultados = resultados ['clubes'] //'É importante declarar o nome do JSON que foi dado no back-end, para dessa maneira evitar o erro de cannot read property '0' of undefined
-      console.log (resultados + 'club component')
-    })  
+        //USA EL ID DE LA URL PARA MOSTRAR UN CLUB
+        this.roteClub.params.subscribe(params => {
+          this.idNum = parseInt(params['id']);
+          this.ID = this.idNum    
+          this.FutebolServ.getClube(this.ID)
+            .subscribe (resultados => {
+              this.resultado = resultados ['clube'] 
+            })  
+        });
   }
 
   //METODO PUT
   editClub(){
     this.FutebolServ.editClube (this.name, this.urlShield, this.country, this.position, this.pts, this.J, this.V, this.E, this.D, this.GP, this.GC, this.SG, this.YC, this.RC)
     .subscribe();
-    console.log('novoclub')
+    console.log('clubatualizado')
   }
 
    //BUSCA DADOS DO FORMULARIO E CRIA UM ARRAY PARA USAR NO FUTURO

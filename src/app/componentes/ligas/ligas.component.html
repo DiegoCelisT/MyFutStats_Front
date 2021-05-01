@@ -7,7 +7,6 @@
 <!-- <h1>Mostrando os registros (formatados):</h1> -->
 <ul class="list-group">
     <li class="list-group-item" *ngFor="let resultado of resultados">
-        {{ resultado.id }}
         <a href="http://localhost:4200/clube/{{ resultado.id }}"><h2>{{ resultado.name }}</h2></a>
         <img src="{{ resultado.urlShield }}" width="120"> <!--Está mostrando no template mas sae um erro no console, depois ver por qué-->
         <p>País: {{ resultado.country }}</p>

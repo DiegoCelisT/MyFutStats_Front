@@ -6,15 +6,20 @@ import { HttpClient } from '@angular/common/http'
 })
 export class FutebolService {
 
+  
   constructor(private httpFutebol: HttpClient) { }
 
   //Porto usado no Back:
   port:Number = 3030
+  ID: number;
 
-  
   //Conexões com o Back:
   getClubes (){
     return this.httpFutebol.get ('http://localhost:'+this.port+'/clubes')
+  }
+
+  getClube (ID: number){
+    return this.httpFutebol.get ('http://localhost:'+this.port+'/clube/'+ID)
   }
 
    //Método POST, para criar novos registros: (para este verbo é necessario passar os parametros no corpo)
