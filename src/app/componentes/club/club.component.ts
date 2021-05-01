@@ -32,11 +32,15 @@ export class ClubComponent implements OnInit {
           this.resultado = resultados ['clube'] 
         })  
     });
-
-    
-      
   }
 
-  
+  eliminarCLube(){
+    this.FutebolServ.eliminarCLube(this.ID)
+    .subscribe();
+    
+    console.log('clubeEliminado')
+    alert('CLUBE ELIMINADO') //ES SOLO PARA DAR AVISO
+    location.href ="http://localhost:"+this.FutebolServ.portFront+"/ligas"
+  }
 
 }
