@@ -1,14 +1,14 @@
 <h1>ROTA DOS CLUBES</h1>
-<a href="">Voltar a Home</a>
+
 
 <!-- <h1>Mostrando todo o JSON de nossa BD:</h1>
 <p>{{ resultados | json }}</p> -->
 
-<h1>Mostrando os registros (formatados):</h1>
+<!-- <h1>Mostrando os registros (formatados):</h1> -->
 <ul class="list-group">
     <li class="list-group-item" *ngFor="let resultado of resultados">
-        <a href="http://localhost:4200/clube/{{ resultado.id }}"><p>{{ resultado.name }}</p></a>
-        <img src="{{ resultado.urlShield }}" width="120px"> <!--Está mostrando no template mas sae um erro no console, depois ver por qué-->
+        <a href="http://localhost:4200/clube/{{ resultado.id }}"><h2>{{ resultado.name }}</h2></a>
+        <img src="{{ resultado.urlShield }}" width="120"> <!--Está mostrando no template mas sae um erro no console, depois ver por qué-->
         <p>País: {{ resultado.country }}</p>
         <p>Posição: {{ resultado.position }}</p>
         <p>Pontos: {{ resultado.pts }}</p>
@@ -26,8 +26,7 @@
 
 
 
-<!-- ADICIONAR CLUB -->
-
-
+<!-- ADICIONAR CLUB (COLOCAR EN SU LUGAR) -->
 <button class="btn-default"><a href="http://localhost:4200/addclube">ADICIONAR CLUBE</a></button>
-<button class="btn-default"><a href="http://localhost:4200/editclube">EDITAR CLUBES</a></button>
+<br>
+<br>
