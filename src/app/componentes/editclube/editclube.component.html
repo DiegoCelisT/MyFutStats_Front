@@ -24,7 +24,7 @@
     </div>
     <div class="form-group">
         <label for="J">Jogados:</label>
-        <input type="text" class="form-control" name="J" value="{{ this.resultado.J }}" id="J" [(ngModel)]="J">
+        <input type="number" class="form-control" name="J" value="{{ this.resultado.J }}" id="J" [(ngModel)]="J">
     </div>
     <div class="form-group">
         <label for="V">Vencidos:</label>
@@ -61,7 +61,7 @@
     <button type="submit">ATUALIZAR DADOS</button>
   </form>
 
-<!-- <button (click)='editClub()'>ATUALIZAR DADOS</button> -->
+<button (click)='dadosRandom()'>DADOS RANDOM</button>
 <br><br>
 <a href="http://localhost:4200/clube/{{ this.resultado.id}}">NO editar ao clube {{ this.resultado.name }}</a><br>
 <a href="http://localhost:4200/ligas">Voltar a Ligas</a> <br>

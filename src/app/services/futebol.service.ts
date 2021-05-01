@@ -13,6 +13,10 @@ export class FutebolService {
   port:Number = 3030
   ID: number;
 
+  //PARA RANDOM DE LOS PARTIDOS JUGADOS
+  J = 0;
+
+  
   //Conexões com o Back:
   getClubes (){
     return this.httpFutebol.get ('http://localhost:'+this.port+'/clubes')
@@ -43,9 +47,9 @@ export class FutebolService {
   }
 
   //METODO PUT (NECESITO PEGAR EL ID)
-  editClube (name: string, urlShield: string, country: string, position: number, pts: number, J: number, V: number, E: number, D: number, GP: number, GC: number, SG: number, YC: number, RC: number){
-    console.log(name, urlShield, country, position, pts, J, V, E, D, GP, GC, SG, YC, RC)
-    return this.httpFutebol.put ('http://localhost:'+this.port+'/clube/:id', {
+  editClube (ID: number, name: string, urlShield: string, country: string, position: number, pts: number, J: number, V: number, E: number, D: number, GP: number, GC: number, SG: number, YC: number, RC: number){
+    console.log('serivicio'+name, urlShield, country, position, pts, J, V, E, D, GP, GC, SG, YC, RC)
+    return this.httpFutebol.put ('http://localhost:'+this.port+'/editclube/'+ID, {
       name: name,
       urlShield: urlShield,
       country: country,
@@ -61,6 +65,11 @@ export class FutebolService {
       YC: YC,
       RC: RC
     })
+  }
+
+  sumarJ(){
+    this.J = this.J + 1;
+    return this.J;
   }
 
   

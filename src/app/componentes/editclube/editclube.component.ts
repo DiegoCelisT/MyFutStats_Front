@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FutebolService } from '../../services/futebol.service';
 import { ActivatedRoute } from '@angular/router';
+import { summaryForJitFileName } from '@angular/compiler/src/aot/util';
 
 @Component({
   selector: 'app-editclube',
@@ -34,7 +35,9 @@ export class EditclubeComponent implements OnInit {
   //ARRAY PARA ALMACENAR OS DADOS
   dadosEditClube = [];
 
-  constructor(private FutebolServ: FutebolService, private roteClub: ActivatedRoute) { }
+  constructor(private FutebolServ: FutebolService, private roteClub: ActivatedRoute) {
+   
+   }
 
   ngOnInit(): void {
         //USA EL ID DE LA URL PARA MOSTRAR UN CLUB
@@ -50,9 +53,10 @@ export class EditclubeComponent implements OnInit {
 
   //METODO PUT
   editClub(){
-    this.FutebolServ.editClube (this.name, this.urlShield, this.country, this.position, this.pts, this.J, this.V, this.E, this.D, this.GP, this.GC, this.SG, this.YC, this.RC)
+    this.FutebolServ.editClube (this.ID, this.name, this.urlShield, this.country, this.position, this.pts, this.J, this.V, this.E, this.D, this.GP, this.GC, this.SG, this.YC, this.RC)
     .subscribe();
     console.log('clubatualizado')
+    alert('CLUBE ATUALIZADO') //ES SOLO PARA DAR AVISO
   }
 
    //BUSCA DADOS DO FORMULARIO E CRIA UM ARRAY PARA USAR NO FUTURO
@@ -73,6 +77,22 @@ export class EditclubeComponent implements OnInit {
       YC: this.YC,
       RC: this.RC}
     dadosEditClube.push(dadosJson);
+    console.log('buscar()' + this.J,this.E)
     this.editClub();
   }
+
+  dadosRandom() {
+    this.FutebolServ.sumarJ(); //SUMA UN PARTIDO CADA VEZ QUE EL BOTON ES APRETADO
+    this.J = this.FutebolServ.J;
+    
+    
+    this.V = 10;
+    this.E = 10;
+    this.D = 10;
+    this.GP = 10;
+    this.GC = 10;
+  }
+ 
 }
+
+
