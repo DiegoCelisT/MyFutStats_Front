@@ -6,28 +6,24 @@ import { HttpClient } from '@angular/common/http'
 })
 export class FutebolService {
 
+  
   constructor(private httpFutebol: HttpClient) { }
 
   //Porto usado no Back:
-  port:number = 3030
+  port:Number = 3030
+  ID: number;
 
   //Conexões com o Back:
   getClubes (){
     return this.httpFutebol.get ('http://localhost:'+this.port+'/clubes')
   }
 
-  //SÓ UM CLUBE
-  getClube (id: number){
-    console.log(id)
-    return this.httpFutebol.post ('http://localhost:'+this.port+'/clube', {
-      id: id
-    })
+  getClube (ID: number){
+    return this.httpFutebol.get ('http://localhost:'+this.port+'/clube/'+ID)
   }
 
-  //Método POST, para criar novos registros: (para este verbo é necessario passar os parametros no corpo)
+   //Método POST, para criar novos registros: (para este verbo é necessario passar os parametros no corpo)
   createClube (name: string, urlShield: string, country: string, position: number, pts: number, J: number, V: number, E: number, D: number, GP: number, GC: number, SG: number, YC: number, RC: number){
-    // console.log(name, urlShield, country, position, pts, J, V, E, D, GP, GC, SG, YC, RC)
-    console.log('createclube servicio')
     return this.httpFutebol.post ('http://localhost:'+this.port+'/novoclub', {
       name: name,
       urlShield: urlShield,
@@ -67,12 +63,7 @@ export class FutebolService {
     })
   }
 
-  // OBTENER ID
-  getID() {
-    return this.httpFutebol.get ('http://localhost:'+this.port+'/clubes')
-  }
-
-
+  
 }
 
 
