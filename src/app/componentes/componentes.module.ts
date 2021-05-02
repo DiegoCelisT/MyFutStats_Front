@@ -9,6 +9,10 @@ import { ClubeComponent } from './clube/clube.component';
 import { AddclubeComponent } from './addclube/addclube.component';
 import { EditligaComponent } from './editliga/editliga.component';
 
+//Módulos para pesquisar e para ordenar:
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { OrderModule } from 'ngx-order-pipe';
+
 @NgModule({
   declarations: [
     HomeComponent,
@@ -20,7 +24,9 @@ import { EditligaComponent } from './editliga/editliga.component';
   ],
   imports: [
     CommonModule,
-    FormsModule
+    FormsModule,
+    Ng2SearchPipeModule,
+    OrderModule
   ],
   exports: [
     HomeComponent,

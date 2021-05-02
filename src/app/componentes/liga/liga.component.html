@@ -1,12 +1,50 @@
-<h1>ROTA DAS LIGAS</h1>
-
+<h1>LIGA 1</h1>
+<a href="">Voltar a Home</a> 
+<nav class="navbar">
+    <input class="form-control" type="text" name="name" [(ngModel)]="nomeTime"  placeholder="Insira sua pesquisa aqui...">
+</nav>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Posição</th>
+            <th>Nome</th>
+            <th>Escudo</th>
+            <th>País</th>
+            <th>J</th>
+            <th>V</th>
+            <th>E</th>
+            <th>D</th>
+            <th>GP</th>
+            <th>GC</th>
+            <th>SG</th>
+            <th>Pontos</th>
+            
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let resultado of resultados | filter:nomeTime | orderBy:'SG':false | orderBy:'pts':true; index as i">
+            <td>{{ i+1 }}</td>
+            <td><a href="http://localhost:4200/clube/{{ resultado.id }}">{{ resultado.name }}</a></td>
+            <td><img [src]="resultado?.urlShield" width="40"></td>
+            <td>{{ resultado.country }}</td>
+            <td>{{ resultado.V + resultado.E + resultado.D}} </td>
+            <td>{{ resultado.V }} </td>
+            <td>{{ resultado.E }} </td>
+            <td>{{ resultado.D }} </td>
+            <td>{{ resultado.GP }} </td>
+            <td>{{ resultado.GC }} </td>
+            <td>{{ resultado.SG }} </td>
+            <td>{{ resultado.pts }}</td>
+        </tr>
+    </tbody>
+</table>
 
 
 <!-- <h1>Mostrando todo o JSON de nossa BD:</h1>
 <p>{{ resultados | json }}</p> -->
 
 <!-- <h1>Mostrando os registros (formatados):</h1> -->
-<ul class="list-group">
+<!-- <ul class="list-group">
     <li class="list-group-item" *ngFor="let resultado of resultados">
         <a href="http://localhost:4200/clube/{{ resultado.id }}"><h2>{{ resultado.name }}</h2></a>
         <img src="{{ resultado.urlShield }}" width="120px">
@@ -23,7 +61,7 @@
         <p>Cartões amarelos: {{ resultado.YC }}</p>
         <p>Cartões vermelhos: {{ resultado.RC }}</p>
     </li>
-</ul>
+</ul> -->
 
 
 
@@ -32,4 +70,3 @@
 <br>
 <button class="btn-default"><a href="http://localhost:4200/editliga">ATUALIZAR LIGA</a></button>
 <br>
-<a href="">Voltar a Home</a> 

@@ -10,6 +10,8 @@ export class LigaComponent implements OnInit {
 
   resultados = [];
 
+  nomeTime:string; //Para o formulario de pesquisa
+  
   constructor(private FutebolServ: FutebolService) { }
 
   ngOnInit(): void {
