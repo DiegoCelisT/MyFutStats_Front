@@ -3,18 +3,20 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
 import { HomeComponent } from './home/home.component';
-import { LigasComponent } from './ligas/ligas.component';
+import { LigaComponent } from './liga/liga.component';
 import { EditclubeComponent } from './editclube/editclube.component'
 import { ClubeComponent } from './clube/clube.component';
 import { AddclubeComponent } from './addclube/addclube.component';
+import { EditligaComponent } from './editliga/editliga.component';
 
 @NgModule({
   declarations: [
     HomeComponent,
-    LigasComponent,
+    LigaComponent,
     EditclubeComponent,
     ClubeComponent,
-    AddclubeComponent
+    AddclubeComponent,
+    EditligaComponent
   ],
   imports: [
     CommonModule,
@@ -22,10 +24,11 @@ import { AddclubeComponent } from './addclube/addclube.component';
   ],
   exports: [
     HomeComponent,
-    LigasComponent,
+    LigaComponent,
     EditclubeComponent,
     ClubeComponent,
-    AddclubeComponent
+    AddclubeComponent,
+    EditligaComponent
   ]
 })
 export class ComponentesModule { }
