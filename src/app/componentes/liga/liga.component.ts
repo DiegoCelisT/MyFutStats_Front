@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { FutebolService } from '../../services/futebol.service';
 
 @Component({
-  selector: 'app-ligas',
-  templateUrl: './ligas.component.html',
-  styleUrls: ['./ligas.component.css']
+  selector: 'app-liga',
+  templateUrl: './liga.component.html',
+  styleUrls: ['./liga.component.css']
 })
-export class LigasComponent implements OnInit {
+export class LigaComponent implements OnInit {
 
   resultados = [{
     id: Number,

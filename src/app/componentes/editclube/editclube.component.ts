@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FutebolService } from '../../services/futebol.service';
 import { ActivatedRoute } from '@angular/router';
-import { summaryForJitFileName } from '@angular/compiler/src/aot/util';
 
 @Component({
   selector: 'app-editclube',
