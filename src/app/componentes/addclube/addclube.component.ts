@@ -31,6 +31,7 @@ export class AddclubeComponent implements OnInit {
     this.FutebolServ.createClube(this.name, this.urlShield, this.country, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
     .subscribe();
     alert('CLUBE ADICIONADO') //ES SOLO PARA DAR AVISO
+    location.href ="http://localhost:"+this.FutebolServ.portFront+"/ligas" //ESTARIA BUENO QUE CARGARA EL CLUB NUEVO, PARA ESO TENEMOS QUE HACER UNA NUEVA REQUISICION CON EL ULTIMO ID
   }
   
   //BUSCA DADOS DO FORMULARIO E CRIA UM ARRAY PARA USAR NO FUTURO
