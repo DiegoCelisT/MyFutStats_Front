@@ -8,23 +8,7 @@ import { FutebolService } from '../../services/futebol.service';
 })
 export class LigaComponent implements OnInit {
 
-  resultados = [{
-    id: Number,
-    name: String,
-    urlShield: String,
-    country: String,
-    position: Number,
-    pts: Number,
-    J: Number,
-    V: Number,
-    E: Number,
-    D: Number,
-    GP: Number,
-    GC: Number,
-    SG: Number,
-    YC: Number,
-    RC: Number
-  }]
+  resultados = [];
 
   constructor(private FutebolServ: FutebolService) { }
 

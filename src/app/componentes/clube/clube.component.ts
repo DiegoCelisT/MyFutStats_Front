@@ -14,8 +14,8 @@ export class ClubeComponent implements OnInit {
   resultado: any = [];//
   ID: any;
   idNum: Number;
- 
   
+
 
   constructor(private FutebolServ: FutebolService, private roteClub: ActivatedRoute) { }
 
@@ -38,9 +38,8 @@ export class ClubeComponent implements OnInit {
     this.FutebolServ.eliminarCLube(this.ID)
     .subscribe();
     
-    console.log('clubeEliminado')
-    alert('CLUBE ELIMINADO') //ES SOLO PARA DAR AVISO
-    location.href ="http://localhost:"+this.FutebolServ.portFront+"/ligas"
+    alert(`CLUBE ${ this.resultado.name } ELIMINADO`) //ES SOLO PARA DAR AVISO
+    location.href ="http://localhost:"+this.FutebolServ.portFront+"/liga"
   }
 
 }
