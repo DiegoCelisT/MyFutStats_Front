@@ -9,7 +9,7 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./clube.component.css']
 })
 
-export class ClubComponent implements OnInit {
+export class ClubeComponent implements OnInit {
 
   resultado: any = [];//
   ID: any;

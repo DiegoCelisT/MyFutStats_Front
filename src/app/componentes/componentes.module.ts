@@ -5,7 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
 import { LigasComponent } from './ligas/ligas.component';
 import { EditclubeComponent } from './editclube/editclube.component'
-import { ClubComponent } from './club/club.component';
+import { ClubeComponent } from './clube/clube.component';
 import { AddclubeComponent } from './addclube/addclube.component';
 
 @NgModule({
@@ -13,7 +13,7 @@ import { AddclubeComponent } from './addclube/addclube.component';
     HomeComponent,
     LigasComponent,
     EditclubeComponent,
-    ClubComponent,
+    ClubeComponent,
     AddclubeComponent
   ],
   imports: [
@@ -24,7 +24,7 @@ import { AddclubeComponent } from './addclube/addclube.component';
     HomeComponent,
     LigasComponent,
     EditclubeComponent,
-    ClubComponent,
+    ClubeComponent,
     AddclubeComponent
   ]
 })
