@@ -1,5 +1,9 @@
 <h1>Editar clube {{ this.resultado.name }}</h1>
 
+<img src="{{ this.resultado.urlShield }}" width="120px">
+
+
+
 <form class="form-group" #formedit='ngForm' (ngSubmit)='buscar(dadosEditClube)'>
     <div class="form-group">
         <label for="name">Nome do clube:</label>
@@ -64,5 +68,5 @@
 <button (click)='dadosRandom()'>DADOS RANDOM</button>
 <br><br>
 <a href="http://localhost:4200/clube/{{ this.resultado.id}}">NO editar ao clube {{ this.resultado.name }}</a><br>
-<a href="http://localhost:4200/ligas">Voltar a Ligas</a> <br>
+<a href="http://localhost:4200/liga">Voltar a Liga</a> <br>
 <a href="">Voltar a Home</a>
