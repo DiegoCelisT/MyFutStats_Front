@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FutebolService } from '../../services/futebol.service';
-
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap'
 
 @Component({
   selector: 'app-addclube',
@@ -18,42 +18,21 @@ export class AddclubeComponent implements OnInit {
   //ARRAY PARA ALMACENAR OS DADOS
   dadosClube = [];
 
-  constructor(private FutebolServ: FutebolService) {
-
-    
-   }
+  constructor(private FutebolServ: FutebolService, private modalAdd: NgbModal) { }
 
   ngOnInit(): void {
   }
 
   //METODO POST PARA CRIAR NOVOS REGISTROS DESDE O FRONT (PRECISAMOS PEGAR DADOS DO FORMULARIO) DEJO LOS DATOS DE TU CLUB KKKK "Santa Fé", "https://upload.wikimedia.org/wikipedia/commons/5/58/Escudo_de_Independiente_Santa_Fe.png", "Colômbia", 
-  novoClub(){
+  novoClub(content){
     this.FutebolServ.createClube(this.name, this.urlShield, this.country, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
     .subscribe();
-    alert('CLUBE ADICIONADO') //ES SOLO PARA DAR AVISO
-    location.href ="http://localhost:"+this.FutebolServ.portFront+"/liga" //ESTARIA BUENO QUE CARGARA EL CLUB NUEVO, PARA ESO TENEMOS QUE HACER UNA NUEVA REQUISICION CON EL ULTIMO ID
+    this.modalAdd.open(content, {backdropClass: 'light-blue-backdrop'});
   }
   
-  //BUSCA DADOS DO FORMULARIO E CRIA UM ARRAY PARA USAR NO FUTURO
-  buscar(dadosClube: any) {
-    // location.href = `/resultados/${form.value.pesquisa}`;
-    var dadosJson = {
-      name: this.name,
-      urlShield: this.urlShield,
-      country: this.country,
-      position: 0,
-      pts: 0,
-      J: 0,
-      V: 0,
-      E: 0,
-      D: 0,
-      GP: 0,
-      GC: 0,
-      SG: 0,
-      YC: 0,
-      RC: 0}
-    dadosClube.push(dadosJson);
-    this.novoClub();
+  //CERRAR MODAL E IR PARA LIGA
+  fechaModalAdd() {
+    location.href ="http://localhost:"+this.FutebolServ.portFront+"/liga"
   }
 
 }
