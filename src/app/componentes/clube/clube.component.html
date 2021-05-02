@@ -1,10 +1,21 @@
+<!-- MODAL ELIMINAR CLUBE -->
+<ng-template #contenido let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title">Clube eliminado</h4>
+    </div>
+    <div class="modal-body">
+      <p>O clube do {{ this.resultado.name }} foi eliminado</p>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-light" (click)="fechaModalEliminar()">Fechar</button>
+    </div>
+</ng-template>
+  
+
 <h1>Clube {{ this.resultado.name }}</h1>
-
-
-
  
 
-<img src="{{ this.resultado.urlShield }}" width="120px">
+<img id="ga" src="{{ this.resultado.urlShield }}" width="120px">
 <p>País: {{ this.resultado.country }}</p>
 <p>Posição: {{ this.resultado.position }}</p>
 <p>Pontos: {{ this.resultado.pts }}</p>
@@ -19,8 +30,9 @@
 <p>Cartões vermelhos: {{ this.resultado.RC }}</p>
 
 
-<button class="btn-default"><a href="http://localhost:4200/editclube/{{this.resultado.id}}">EDITAR CLUBE</a></button>
-<button class="btn-default" (click)='eliminarCLube()'>ELIMINAR CLUBE</button>
+<button class="btn btn-outline-primary mb-2 mr-2" (click)="irEditClube()">EDITAR CLUBE</button>
+
+<button class="btn btn-outline-primary mb-2 mr-2" (click)="eliminarCLube(contenido)">ELIMINAR CLUBE</button>
 
 <br><br>
 <a href="http://localhost:4200/liga">Voltar a Ligas</a><br>
