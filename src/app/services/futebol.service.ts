@@ -65,6 +65,3 @@ export class FutebolService {
 
   
 }
-
-
-
