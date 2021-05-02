@@ -4,9 +4,9 @@ import { ActivatedRoute } from '@angular/router';
 
 
 @Component({
-  selector: 'app-club',
-  templateUrl: './club.component.html',
-  styleUrls: ['./club.component.css']
+  selector: 'app-clube',
+  templateUrl: './clube.component.html',
+  styleUrls: ['./clube.component.css']
 })
 
 export class ClubComponent implements OnInit {
