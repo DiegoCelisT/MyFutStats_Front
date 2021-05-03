@@ -26,6 +26,7 @@ export class FutebolService {
     return this.httpFutebol.get ('http://localhost:'+this.portBack+'/clubes')
   }
 
+  // UM SÓ CLUBE
   getClube (ID: number){
     return this.httpFutebol.get ('http://localhost:'+this.portBack+'/clube/'+ID)
   }
@@ -52,7 +53,7 @@ export class FutebolService {
 
   //METODO PUT
   editClube (ID: number, name: string, urlShield: string, country: string, position: number, pts: number, J: number, V: number, E: number, D: number, GP: number, GC: number, SG: number, YC: number, RC: number){
-    console.log('serivicio'+name, urlShield, country, position, pts, J, V, E, D, GP, GC, SG, YC, RC)
+    console.log('servicio'+ID,name, urlShield, country, position, pts, J, V, E, D, GP, GC, SG, YC, RC)
     return this.httpFutebol.put ('http://localhost:'+this.portBack+'/editclube/'+ID, {
       name: name,
       urlShield: urlShield,
@@ -76,12 +77,12 @@ export class FutebolService {
     return this.httpFutebol.delete ('http://localhost:'+this.portBack+'/clube/'+ID)
   }
 
+  // RANDOM JOGADOS
   sumarJ(){
     this.J = this.J + 1;
     return this.J;
   }
-
-  
+ 
 }
 
 
