@@ -34,8 +34,8 @@ export class ClubeComponent implements OnInit {
   }
 
   //ELIMINAR CLUBE + MODAL
-  eliminarCLube(contenido){
-    this.FutebolServ.eliminarCLube(this.ID).subscribe();
+  eliminarClube(contenido){
+    this.FutebolServ.eliminarClube(this.ID).subscribe();
     this.modalEliminar.open(contenido, {backdropClass: 'light-blue-backdrop'});
   }
 

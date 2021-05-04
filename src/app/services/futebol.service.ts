@@ -73,7 +73,7 @@ export class FutebolService {
   }
 
   //METODO DELETE
-  eliminarCLube(ID: number) {
+  eliminarClube(ID: number) {
     return this.httpFutebol.delete ('http://localhost:'+this.portBack+'/clube/'+ID)
   }
 

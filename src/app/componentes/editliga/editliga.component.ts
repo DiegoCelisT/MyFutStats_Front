@@ -13,18 +13,21 @@ export class EditligaComponent implements OnInit {
   constructor(private FutebolServ: FutebolService, private roteClub: ActivatedRoute, private modalEliminar: NgbModal) { }
 
   resultados = [];
-
+  ID: any;
   nomeTime:string; //Para o formulario de pesquisa
 
   ngOnInit(): void {
+
     this.FutebolServ.getClubes ()
     .subscribe (resultados => {
-      this.resultados = resultados ['clubes'] //'É importante declarar o nome do JSON que foi dado no back-end, para dessa maneira evitar o erro de cannot read property '0' of undefined
+      this.resultados = resultados ['clubes']
       console.log (resultados)
     })
+        
+  }
 
-
-    
+  eliminarClube(ID){
+    this.FutebolServ.eliminarClube(ID).subscribe();
   }
 
 }

@@ -11,7 +11,6 @@
     <thead>
         <tr>
             <th>Nome</th>
-            <th>Escudo</th>
             <th>Editar</th>
             <th>Apagar</th>
             
@@ -19,10 +18,9 @@
     </thead>
     <tbody>
         <tr *ngFor="let resultado of resultados | filter:nomeTime | orderBy:'name':false">
-            <td><a href="http://localhost:4200/clube/{{ resultado.id }}">{{ resultado.name }}</a></td>
-            <td><img [src]="resultado?.urlShield" width="40"></td>
-            <td><a href="http://localhost:4200/editclube/{{ resultado.id }}">Editar</a></td>
-            <td> Apagar </td>
+            <td><a href="http://localhost:4200/clube/{{ resultado.id }}"><button class="btn btn-outline-primary mb-2 mr-2"><img [src]="resultado?.urlShield" width="40"> {{ resultado.name }}</button></a></td>
+            <td><a href="http://localhost:4200/editclube/{{ resultado.id }}"><button class="btn btn-outline-primary mb-2 mr-2">Editar</button></a></td>
+            <td><button class="btn btn-outline-primary mb-2 mr-2" (click)="eliminarClube(resultado.id)">Apagar</button></td>
         </tr>
     </tbody>
 </table>
