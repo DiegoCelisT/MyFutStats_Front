@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FutebolService } from '../../services/futebol.service';
 import { ActivatedRoute } from '@angular/router';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap'
 
 @Component({
   selector: 'app-editliga',
@@ -9,7 +10,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class EditligaComponent implements OnInit {
 
-  constructor(private FutebolServ: FutebolService, private roteClub: ActivatedRoute) { }
+  constructor(private FutebolServ: FutebolService, private roteClub: ActivatedRoute, private modalEliminar: NgbModal) { }
 
   resultados = [];
 
@@ -22,6 +23,8 @@ export class EditligaComponent implements OnInit {
       console.log (resultados)
     })
 
+
+    
   }
 
 }
