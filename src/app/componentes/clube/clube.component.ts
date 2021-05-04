@@ -15,7 +15,7 @@ export class ClubeComponent implements OnInit {
   ID: any;
   idNum: Number;
   
-  
+  nomeLigas = [];
   
 
   constructor(private FutebolServ: FutebolService, private roteClub: ActivatedRoute, private modalEliminar: NgbModal) { }
@@ -31,6 +31,12 @@ export class ClubeComponent implements OnInit {
       this.FutebolServ.getClube(this.ID)
       .subscribe (resultados => {this.resultado = resultados ['clube']})  
     });
+
+    this.FutebolServ.getLigas()
+    .subscribe (nomeLigas =>{
+      this.nomeLigas = nomeLigas ['MyLeagues']
+    })
+
   }
 
   //ELIMINAR CLUBE + MODAL

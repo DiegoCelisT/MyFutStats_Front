@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FutebolService } from '../../services/futebol.service';
-import { ActivatedRoute } from '@angular/router';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap'
 
 @Component({
   selector: 'app-editliga',
@@ -10,20 +8,20 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap'
 })
 export class EditligaComponent implements OnInit {
 
-  constructor(private FutebolServ: FutebolService, private roteClub: ActivatedRoute, private modalEliminar: NgbModal) { }
+  constructor(private FutebolServ: FutebolService) { }
 
   resultados = [];
   ID: number;
   name:string;
   ID_clube: any;
   nomeTime:string; //Para o formulario de pesquisa
-  nomeLiga = [];
+  nomeLigas = [];
 
   ngOnInit(): void {
 
     this.FutebolServ.getLigas()
-    .subscribe (nomeLiga =>{
-      this.nomeLiga = nomeLiga ['MyLeagues']
+    .subscribe (nomeLigas =>{
+      this.nomeLigas = nomeLigas ['MyLeagues']
     })
 
     this.FutebolServ.getClubes ()
@@ -39,8 +37,6 @@ export class EditligaComponent implements OnInit {
     // this.ngOnInit()
     window.location.href="http://localhost:4200/editliga"
   }
-
-
 
   //METODO PUT (Para cambiarle el nombre a la liga)
   editLiga(){

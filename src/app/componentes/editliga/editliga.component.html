@@ -1,10 +1,11 @@
 <a href="">Voltar a Home</a>
 <h1>Menú de edição</h1>
-<h2> {{ nomeLiga[0].name }} </h2>
+<h2> {{ nomeLigas[0].name }} </h2>
 <button type="submit" class="btn btn-outline-primary mb-2 mr-2" (click)='editLiga()'>Trocar o nome da Liga</button>
 <br>
 <button class="btn-default"><a href="http://localhost:4200/addclube">ADICIONAR CLUBE</a></button>
 <br>
+
 <nav class="navbar">
     <input class="form-control" type="text" name="name" [(ngModel)]="nomeTime"  placeholder="Insira sua pesquisa aqui...">
 </nav>
@@ -27,4 +28,4 @@
 </table>
 
 <br>
-<a href="http://localhost:4200/liga">Voltar a Liga</a> <br>
+<a href="http://localhost:4200/liga">Voltar a {{ nomeLigas[0].name }}</a> <br>
