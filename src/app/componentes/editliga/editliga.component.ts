@@ -40,9 +40,10 @@ export class EditligaComponent implements OnInit {
 
   //METODO PUT (Para cambiarle el nombre a la liga)
   editLiga(){
-    this.FutebolServ.editLiga(this.ID, this.name)
+    this.FutebolServ.editLiga(1, this.name)
     .subscribe() 
-    alert('Nombre de Liga modificado')
+    // alert('Nombre de Liga modificado')
+    window.location.href="http://localhost:4200/editliga"
   }
 
 
