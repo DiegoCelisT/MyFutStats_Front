@@ -1,8 +1,8 @@
 <h1>LIGA 1</h1>
 <a href="">Voltar a Home</a> 
-<nav class="navbar">
+<!-- <nav class="navbar">
     <input class="form-control" type="text" name="name" [(ngModel)]="nomeTime"  placeholder="Insira sua pesquisa aqui...">
-</nav>
+</nav> -->
 <table class="table table-bordered">
     <thead>
         <tr>
@@ -22,7 +22,7 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let resultado of resultados | filter:nomeTime | orderBy:'SG':false | orderBy:'pts':true; index as i">
+        <tr *ngFor="let resultado of resultados | orderBy:'SG':false | orderBy:'pts':true; index as i">
             <td>{{ i+1 }}</td>
             <td><a href="http://localhost:4200/clube/{{ resultado.id }}">{{ resultado.name }}</a></td>
             <td><img [src]="resultado?.urlShield" width="40"></td>
@@ -63,10 +63,5 @@
     </li>
 </ul> -->
 
-
-
-<!-- ADICIONAR CLUB (COLOCAR EN SU LUGAR) -->
-<button class="btn-default"><a href="http://localhost:4200/addclube">ADICIONAR CLUBE</a></button>
-<br>
 <button class="btn-default"><a href="http://localhost:4200/editliga">ATUALIZAR LIGA</a></button>
 <br>
