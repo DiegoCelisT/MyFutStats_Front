@@ -1,7 +1,8 @@
 <a href="">Voltar a Home</a>
 <h1>Menú de edição</h1>
-<h2>Liga 1</h2>
-
+<h2> {{ nomeLiga[0].name }} </h2>
+<button type="submit" class="btn btn-outline-primary mb-2 mr-2" (click)='editLiga()'>Trocar o nome da Liga</button>
+<br>
 <button class="btn-default"><a href="http://localhost:4200/addclube">ADICIONAR CLUBE</a></button>
 <br>
 <nav class="navbar">
@@ -25,7 +26,5 @@
     </tbody>
 </table>
 
-
-<br><br>
-<!-- <a href="http://localhost:4200/liga/{{ this.resultado.id}}">NO editar à liga {{ this.resultado.name }}</a><br> -->
+<br>
 <a href="http://localhost:4200/liga">Voltar a Liga</a> <br>

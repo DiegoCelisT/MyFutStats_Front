@@ -83,6 +83,18 @@ export class FutebolService {
     return this.J;
   }
  
+  //Trazendo todos os nomes das ligas
+  getLigas (){
+    return this.httpFutebol.get ('http://localhost:'+this.portBack+'/ligas')
+  }
+
+  //METODO PUT (LIGAS)
+  editLiga (ID: number, name: string){
+    return this.httpFutebol.put ('http://localhost:'+this.portBack+'/liga/'+ID, { name: name })
+  }
+
+
+
 }
 
 

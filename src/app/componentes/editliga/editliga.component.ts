@@ -13,10 +13,18 @@ export class EditligaComponent implements OnInit {
   constructor(private FutebolServ: FutebolService, private roteClub: ActivatedRoute, private modalEliminar: NgbModal) { }
 
   resultados = [];
-  ID: any;
+  ID: number;
+  name:string;
+  ID_clube: any;
   nomeTime:string; //Para o formulario de pesquisa
+  nomeLiga = [];
 
   ngOnInit(): void {
+
+    this.FutebolServ.getLigas()
+    .subscribe (nomeLiga =>{
+      this.nomeLiga = nomeLiga ['MyLeagues']
+    })
 
     this.FutebolServ.getClubes ()
     .subscribe (resultados => {
@@ -26,8 +34,20 @@ export class EditligaComponent implements OnInit {
         
   }
 
-  eliminarClube(ID){
-    this.FutebolServ.eliminarClube(ID).subscribe();
+  eliminarClube(ID_clube){
+    this.FutebolServ.eliminarClube(ID_clube).subscribe();
+    // this.ngOnInit()
+    window.location.href="http://localhost:4200/editliga"
   }
+
+
+
+  //METODO PUT (Para cambiarle el nombre a la liga)
+  editLiga(){
+    this.FutebolServ.editLiga(this.ID, this.name)
+    .subscribe() 
+    alert('Nombre de Liga modificado')
+  }
+
 
 }
