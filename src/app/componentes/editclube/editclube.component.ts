@@ -31,7 +31,7 @@ export class EditclubeComponent implements OnInit {
   YC: number;
   RC: number;
 
-  
+  nomeLigas = [];  
 
   constructor(private FutebolServ: FutebolService, private roteClub: ActivatedRoute) { }
 
@@ -47,6 +47,12 @@ export class EditclubeComponent implements OnInit {
         });
         console.log(this.ID)
     // this.validate();
+
+    this.FutebolServ.getLigas()
+    .subscribe (nomeLigas =>{
+      this.nomeLigas = nomeLigas ['MyLeagues']
+    })
+
   }
 
   //METODO PUT
@@ -56,8 +62,6 @@ export class EditclubeComponent implements OnInit {
     console.log('editclub component'+ this.ID, this.name, this.urlShield, this.country, this.position, this.pts, this.J, this.V, this.E, this.D, this.GP, this.GC, this.SG, this.YC, this.RC )
     alert('CLUBE ATUALIZADO') //ES SOLO PARA DAR AVISO
   }
-
-
 
   dadosRandom() {
     this.FutebolServ.sumarJ(); //SUMA UN PARTIDO CADA VEZ QUE EL BOTON ES APRETADO

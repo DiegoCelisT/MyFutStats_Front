@@ -5,7 +5,7 @@
 
 
 <form class="form-group needs-validation" #formedit='ngForm' novalidate> <!--(ngSubmit)='buscar(dadosEditClube)'-->
-        <div class="form-group">
+    <div class="form-group">
         <label for="name">Nome do clube:</label>
         <input type="text" class="form-control" name="name" value="{{ this.resultado.name }}" id="name" [(ngModel)]="name" required>
         <div class="valid-feedback">
@@ -74,6 +74,7 @@
 
 <br><br>
 
-<a href="http://localhost:4200/clube/{{ this.resultado.id}}">NO editar ao clube {{ this.resultado.name }}</a><br>
-<a href="http://localhost:4200/liga">Voltar a Liga</a> <br>
+<a href="http://localhost:4200/clube/{{ this.resultado.id}}">NÃO editar ao clube {{ this.resultado.name }}</a><br>
+<a href="http://localhost:4200/editliga">Voltar ao menú de edição de Liga</a> <br>
+<a href="http://localhost:4200/liga">Voltar a {{ nomeLigas[0].name }}</a> <br>
 <a href="">Voltar a Home</a>

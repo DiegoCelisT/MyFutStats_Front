@@ -1,5 +1,36 @@
-<p>editliga works!</p>
-<br><br>
-<!-- <a href="http://localhost:4200/liga/{{ this.resultado.id}}">NO editar à liga {{ this.resultado.name }}</a><br> -->
-<a href="http://localhost:4200/liga">Voltar a Liga</a> <br>
 <a href="">Voltar a Home</a>
+<h1>Menú de edição de {{ nomeLigas[0].name }}</h1>
+
+<form class="form-group needs-validation" #formedit='ngForm' novalidate>
+    <div class="form-group">
+        <label for="name">Editar o nome da Liga:</label>
+        <input type="text" class="form-control" name="name" value="{{ this.nomeLigas[0].name }}" id="name" [(ngModel)]="name" placeholder= "{{ nomeLigas[0].name }}" required>
+    </div> 
+</form>
+<button type="submit" class="btn btn-outline-primary mb-2 mr-2" (click)='editLiga()'>Trocar o nome da Liga</button>
+
+<nav class="navbar">
+    <input class="form-control" type="text" name="name" [(ngModel)]="nomeTime"  placeholder="Insira sua pesquisa aqui...">
+</nav>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Nome</th>
+            <th>Editar</th>
+            <th>Apagar</th>
+            
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let resultado of resultados | filter:nomeTime | orderBy:'name':false">
+            <td><a href="http://localhost:4200/clube/{{ resultado.id }}"><button class="btn btn-outline-primary mb-2 mr-2"><img [src]="resultado?.urlShield" width="40"> {{ resultado.name }}</button></a></td>
+            <td><a href="http://localhost:4200/editclube/{{ resultado.id }}"><button class="btn btn-outline-primary mb-2 mr-2">Editar</button></a></td>
+            <td><button class="btn btn-outline-primary mb-2 mr-2" (click)="eliminarClube(resultado.id)">Apagar</button></td>
+        </tr>
+    </tbody>
+</table>
+<br>
+<button class="btn-default"><a href="http://localhost:4200/addclube">ADICIONAR CLUBE</a></button>
+<br>
+<br>
+<a href="http://localhost:4200/liga">Voltar a {{ nomeLigas[0].name }}</a> <br>

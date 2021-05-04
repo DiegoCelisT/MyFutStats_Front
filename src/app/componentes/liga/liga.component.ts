@@ -9,12 +9,18 @@ import { FutebolService } from '../../services/futebol.service';
 export class LigaComponent implements OnInit {
 
   resultados = [];
-
-  nomeTime:string; //Para o formulario de pesquisa
+  nomeLigas = [];
+  // nomeTime:string; //Para o formulario de pesquisa
   
   constructor(private FutebolServ: FutebolService) { }
 
   ngOnInit(): void {
+
+    this.FutebolServ.getLigas()
+    .subscribe (nomeLigas =>{
+      this.nomeLigas = nomeLigas ['MyLeagues']
+    })
+
     this.FutebolServ.getClubes ()
     .subscribe (resultados => {
       this.resultados = resultados ['clubes'] //'É importante declarar o nome do JSON que foi dado no back-end, para dessa maneira evitar o erro de cannot read property '0' of undefined
