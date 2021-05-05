@@ -14,7 +14,7 @@ export class EditligaComponent implements OnInit {
   ID: number;
   name:string;
   ID_clube: any;
-  nomeTime:string; //Para o formulario de pesquisa
+  pesquisa:string; //Para o formulario de pesquisa
   nomeLigas = [];
 
   ngOnInit(): void {

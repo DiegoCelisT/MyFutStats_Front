@@ -1,8 +1,8 @@
 <h1>{{ nomeLigas[0].name }}</h1>
 <a href="">Voltar a Home</a> 
-<!-- <nav class="navbar">
-    <input class="form-control" type="text" name="name" [(ngModel)]="nomeTime"  placeholder="Insira sua pesquisa aqui...">
-</nav> -->
+<nav class="navbar">
+    <input class="form-control" type="text" name="name" [(ngModel)]="pesquisa"  placeholder="Insira sua pesquisa aqui...">
+</nav>
 <table class="table table-bordered">
     <thead>
         <tr>
@@ -18,23 +18,23 @@
             <th>GC</th>
             <th>SG</th>
             <th>Pontos</th>
-            
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let resultado of resultados | orderBy:'SG':false | orderBy:'pts':true; index as i">
+        <tr *ngFor="let resultado of resultados | filter:pesquisa | orderBy:'saldoGols':false | orderBy:'pontos':true; let i = index">
+            <!-- <td>{{ resultado.posicao }}</td> -->
             <td>{{ i+1 }}</td>
             <td><a href="http://localhost:4200/clube/{{ resultado.id }}">{{ resultado.name }}</a></td>
             <td><img [src]="resultado?.urlShield" width="40"></td>
             <td>{{ resultado.country }}</td>
-            <td>{{ resultado.V + resultado.E + resultado.D}} </td>
-            <td>{{ resultado.V }} </td>
-            <td>{{ resultado.E }} </td>
-            <td>{{ resultado.D }} </td>
-            <td>{{ resultado.GP }} </td>
-            <td>{{ resultado.GC }} </td>
-            <td>{{ resultado.SG }} </td>
-            <td>{{ resultado.pts }}</td>
+            <td>{{ resultado.jogados}} </td>
+            <td>{{ resultado.vitorias }} </td>
+            <td>{{ resultado.empates }} </td>
+            <td>{{ resultado.derrotas }} </td>
+            <td>{{ resultado.golsPro }} </td>
+            <td>{{ resultado.golsContra }} </td>
+            <td>{{ resultado.saldoGols }} </td>
+            <td>{{ resultado.pontos }}</td>
         </tr>
     </tbody>
 </table>
