@@ -4,7 +4,7 @@
 
 
 
-<form class="form-group needs-validation" #formedit='ngForm' novalidate> <!--(ngSubmit)='buscar(dadosEditClube)'-->
+<form class="form-group needs-validation" #formedit='ngForm' novalidate> 
     <div class="form-group">
         <label for="name">Nome do clube:</label>
         <input type="text" class="form-control" name="name" value="{{ this.resultado.name }}" id="name" [(ngModel)]="name" required>
@@ -14,7 +14,7 @@
     </div>    
     <div class="form-group">
         <label for="country">País:</label>
-        <input type="text" class="form-control" name="country" value="{{ this.resultado.country }}" id="country" [(ngModel)]="country" required>
+        <input type="text" class="form-control" name="country" value="{{ this.resultado.country }}" id="country" [(ngModel)]="country">
     </div>
     <div class="form-group">
         <label for="urlShield">URL Escudo:</label>
@@ -42,15 +42,18 @@
     </div>
 </form>
 
+<br>
+
+<button type="submit" class="btn btn-success mb-2 mr-2" (click)='editClub()'>ATUALIZAR DADOS</button> <!--(click)='buscar(dadosEditClube)'-->
+
+   
   <br>
 
-<button type="submit" class="btn btn-outline-primary mb-2 mr-2" (click)='editClub()'>ATUALIZAR DADOS</button> <!--(click)='buscar(dadosEditClube)'-->
-
-<!-- <button class="btn btn-outline-primary mb-2 mr-2" (click)='dadosRandom()'>DADOS RANDOM</button> -->
-
-<br><br>
-
-<a href="http://localhost:4200/clube/{{ this.resultado.id}}">NÃO editar ao clube {{ this.resultado.name }}</a><br>
-<a href="http://localhost:4200/editliga">Voltar ao menú de edição de Liga</a> <br>
-<a href="http://localhost:4200/liga">Voltar a {{ nomeLigas[0].name }}</a> <br>
-<a href="">Voltar a Home</a>
+  <!-- <button class="btn btn-outline-primary mb-2 mr-2" (click)='dadosRandom()'>DADOS RANDOM</button> -->
+  
+  <br><br>
+  
+  <a href="http://localhost:4200/clube/{{ this.resultado.id }}">NÃO editar ao clube {{ this.resultado.name }}</a><br>
+  <a href="http://localhost:4200/editliga">Voltar ao menú de edição de Liga</a> <br>
+  <!-- <a href="http://localhost:4200/liga">Voltar a {{ nomeLigas[0].name }}</a> <br> -->
+  <a href="">Voltar a Home</a>

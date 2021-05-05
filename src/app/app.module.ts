@@ -6,8 +6,8 @@ import { AppComponent } from './app.component';
 
 import { ComponentesModule } from './componentes/componentes.module';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
+
 
 
 
@@ -21,9 +21,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     BrowserModule,
     AppRoutingModule,
     ComponentesModule,
-    HttpClientModule,
-    FormsModule,
-    NgbModule
+    HttpClientModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

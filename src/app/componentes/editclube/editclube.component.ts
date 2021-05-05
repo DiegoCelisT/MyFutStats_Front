@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FutebolService } from '../../services/futebol.service';
 import { ActivatedRoute } from '@angular/router';
-
+// import { FormGroup,  FormBuilder,  Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-editclube',
@@ -29,9 +29,18 @@ export class EditclubeComponent implements OnInit {
   // jogados:number;
   // saldoGols:number
 
-  nomeLigas = [];  
+  nomeLigas = [];
+  
+  //PARA VALIDAÇÃO DO FORMULARIO
+  // editFormValidacion: FormGroup;
 
-  constructor(private FutebolServ: FutebolService, private roteClub: ActivatedRoute) { }
+  constructor(private FutebolServ: FutebolService, private roteClub: ActivatedRoute
+    // , private formValidacion: FormBuilder
+    ) {
+    
+  }
+
+  
 
   ngOnInit(): void {
         //USA EL ID DE LA URL PARA MOSTRAR UN CLUB
@@ -40,16 +49,17 @@ export class EditclubeComponent implements OnInit {
           this.ID = this.idNum    
           this.FutebolServ.getClube(this.ID)
             .subscribe (resultados => {
-              this.resultado = resultados ['clube'] 
-            })  
+              this.resultado = resultados ['clube']
+              
+            })
         });
-        console.log(this.ID)
-    // this.validate();
-
+        
     this.FutebolServ.getLigas()
     .subscribe (nomeLigas =>{
       this.nomeLigas = nomeLigas ['MyLeagues']
     })
+
+    this.validEdit();
 
   }
 
@@ -57,8 +67,7 @@ export class EditclubeComponent implements OnInit {
   editClub(){
     this.FutebolServ.editClube(this.ID, this.name, this.urlShield, this.country, this.vitorias, this.empates, this.derrotas, this.golsPro, this.golsContra)
     .subscribe() 
-    // console.log('editclub component'+ this.ID, this.name, this.urlShield, this.country, this.vitorias, this.empates, this.derrotas, this.golsPro, this.golsContra)
-    alert('CLUBE ATUALIZADO') //ES SOLO PARA DAR AVISO
+    location.href='http://localhost:'+this.FutebolServ.portFront+'/clube/'+this.ID+'?sucessoedit=ok'
   }
 
   // dadosRandom() {
@@ -73,13 +82,26 @@ export class EditclubeComponent implements OnInit {
   //   this.GC = 10;
   // }
 
-  // validate(){
-  //   var form = document.getElementsByClassName('needs-validation')[0] as HTMLFormElement
-  //   form.classList.add('was-validated');
+  validEdit(){
+    var form = document.getElementsByClassName('needs-validation')[0] as HTMLFormElement
+    form.classList.add('was-validated');
+  }
+
+  
+  // validacionForm() {
+  //   this.editFormValidacion = this.formValidacion.group({
+  //      name: [this.name, Validators.required ],
+  //      urlShield: [''],
+  //      country: [],
+  //      vitorias: [],
+  //      empates: [],
+  //      derrotas: [],
+  //      golsPro: [], 
+  //      golsContra: []
+  //   });
   // }
 
   
-
  
 }
 

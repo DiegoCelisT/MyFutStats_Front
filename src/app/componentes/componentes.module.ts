@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'; 
+import { BrowserModule } from '@angular/platform-browser'; 
 
 import { HomeComponent } from './home/home.component';
 import { LigaComponent } from './liga/liga.component';
@@ -25,6 +26,8 @@ import { OrderModule } from 'ngx-order-pipe';
   imports: [
     CommonModule,
     FormsModule,
+    BrowserModule,
+    ReactiveFormsModule,
     Ng2SearchPipeModule,
     OrderModule
   ],

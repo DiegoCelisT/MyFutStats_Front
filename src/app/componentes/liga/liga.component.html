@@ -1,3 +1,14 @@
+<!-- ALERT CLUBE ELIMINADO -->
+<div *ngIf='alertEliminado' class="alert alert-success fade show" role="alert">
+    {{ mensajeAlertEliminado }}
+</div>
+
+ <!-- ALERT CLUBE ADICIONADO -->
+ <div *ngIf='alertAdd' class="alert alert-success fade show" role="alert">
+    {{ mensajeAlertAdd }}
+  </div>
+
+
 <h1>{{ nomeLigas[0].name }}</h1>
 <a href="">Voltar a Home</a> 
 <nav class="navbar">
@@ -63,5 +74,4 @@
     </li>
 </ul> -->
 
-<button class="btn-default"><a href="http://localhost:4200/editliga">Atualizar os dados</a></button>
-<br>
+<button class="btn btn-primary mb-2 mr-2" (click)='editLiga()'>Atualizar dados da liga</button>

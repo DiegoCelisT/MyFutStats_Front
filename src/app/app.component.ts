@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FutebolService } from '../app/services/futebol.service';
 
+
+
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -12,11 +15,16 @@ export class AppComponent implements OnInit{
   
   nomeLigas = [];
 
+ 
+
   ngOnInit(): void {
 
     this.FutebolServ.getLigas()
     .subscribe (nomeLigas =>{
       this.nomeLigas = nomeLigas ['MyLeagues']
     })
+
   }
+
+  
 }

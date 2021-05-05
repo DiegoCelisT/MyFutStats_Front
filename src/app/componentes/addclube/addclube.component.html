@@ -1,17 +1,22 @@
-<!-- MODAL ADICIONAR CLUBE -->
-<ng-template #content let-modal>
-    <div class="modal-header">
-      <h4 class="modal-title">Novo clube</h4>
+<!-- MODAL ADICIONAR CLUB -->
+<div id="mostrarModal" class="modal" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Clube adicionado</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <p>Continuar adicionando?</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">CONTINUAR ADICIONANDO</button>
+          <button type="button" class="btn btn-primary" (click)='voltarLiga()'>FECHAR</button>
+        </div>
+      </div>
     </div>
-    <div class="modal-body">
-      <p>O clube do {{ this.name | uppercase }} foi adicionado</p> <!-- DICEN O CLUBE DO O SOLO CLUBE???-->
-    </div>
-    <div class="modal-footer">
-      <button type="button" class="btn btn-light" (click)="fechaModalAdd()">Fechar</button>
-    </div>
-  </ng-template>
+</div>
 
- 
 
 <h1>ADICIONAR CLUB</h1>
 
@@ -35,7 +40,7 @@
 
 <br>
 
-<button class="btn btn-outline-primary mb-2 mr-2" (click)="novoClub(content)">ADICIONAR CLUBE</button>
+<button class="btn btn-success mb-2 mr-2" data-bs-toggle="modal" data-bs-target="#mostrarModal" (click)="novoClub()">ADICIONAR CLUBE</button>
 
 <br>
 
