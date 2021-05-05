@@ -18,6 +18,7 @@ export class AddclubeComponent implements OnInit {
   //ARRAY PARA ALMACENAR OS DADOS
   dadosClube = [];
 
+
   constructor(private FutebolServ: FutebolService, private modalAdd: NgbModal) { }
 
   ngOnInit(): void {
@@ -27,6 +28,9 @@ export class AddclubeComponent implements OnInit {
   novoClub(){
     this.FutebolServ.createClube(this.name, this.urlShield, this.country, 0, 0, 0, 0, 0)
     .subscribe();
+  }
+
+  voltarLiga() {
     location.href ="http://localhost:"+this.FutebolServ.portFront+"/liga?sucessoadd=ok"
   }
 }
