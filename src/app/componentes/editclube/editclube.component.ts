@@ -57,8 +57,7 @@ export class EditclubeComponent implements OnInit {
   editClub(){
     this.FutebolServ.editClube(this.ID, this.name, this.urlShield, this.country, this.vitorias, this.empates, this.derrotas, this.golsPro, this.golsContra)
     .subscribe() 
-    // console.log('editclub component'+ this.ID, this.name, this.urlShield, this.country, this.vitorias, this.empates, this.derrotas, this.golsPro, this.golsContra)
-    alert('CLUBE ATUALIZADO') //ES SOLO PARA DAR AVISO
+    location.href='http://localhost:'+this.FutebolServ.portFront+'/clube/'+this.ID+'?sucessoedit=ok'
   }
 
   // dadosRandom() {

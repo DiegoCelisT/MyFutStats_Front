@@ -1,15 +1,7 @@
-<!-- MODAL ELIMINAR CLUBE -->
-<ng-template #contenido let-modal>
-    <div class="modal-header">
-      <h4 class="modal-title">Clube eliminado</h4>
-    </div>
-    <div class="modal-body">
-      <p>O clube do {{ this.resultado.name }} foi eliminado</p>
-    </div>
-    <div class="modal-footer">
-      <button type="button" class="btn btn-light" (click)="fechaModalEliminar()">Fechar</button>
-    </div>
-</ng-template>
+<!-- ALERT CLUBE EDITADO -->
+<div *ngIf='alertEdit' class="alert alert-success fade show" role="alert">
+  {{ mensajeAlertEdit }}
+</div>
   
 
 <h1>Clube {{ this.resultado.name }}</h1>
@@ -28,7 +20,7 @@
 
 <button class="btn btn-outline-primary mb-2 mr-2" (click)="irEditClube()">EDITAR CLUBE</button>
 
-<button class="btn btn-outline-primary mb-2 mr-2" (click)="eliminarClube(contenido)">ELIMINAR CLUBE</button>
+<!-- <button class="btn btn-outline-primary mb-2 mr-2" (click)="eliminarClube(contenido)">ELIMINAR CLUBE</button> -->
 
 <br><br>
 <a href="http://localhost:4200/liga">Voltar a {{ nomeLigas[0].name }}</a><br>
