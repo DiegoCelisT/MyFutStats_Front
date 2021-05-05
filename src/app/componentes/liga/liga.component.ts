@@ -10,8 +10,9 @@ export class LigaComponent implements OnInit {
 
   resultados = [];
   nomeLigas = [];
-  // nomeTime:string; //Para o formulario de pesquisa
-  
+  pesquisa:string; //Para o formulario de pesquisa
+  index:number
+
   constructor(private FutebolServ: FutebolService) { }
 
   ngOnInit(): void {
@@ -23,8 +24,8 @@ export class LigaComponent implements OnInit {
 
     this.FutebolServ.getClubes ()
     .subscribe (resultados => {
-      this.resultados = resultados ['clubes'] //'É importante declarar o nome do JSON que foi dado no back-end, para dessa maneira evitar o erro de cannot read property '0' of undefined
-      console.log (resultados)
+      this.resultados = resultados ['clubes'] //'É importante declarar o nome do JSON que foi dado no back-end, para dessa maneira evitar o erro de cannot read property '0' of undefined      
+      // console.log (resultados)
     })
 
   }

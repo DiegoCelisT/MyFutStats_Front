@@ -13,7 +13,7 @@
         </div>
     </div>    
     <div class="form-group">
-        <label for="country">Pais:</label>
+        <label for="country">País:</label>
         <input type="text" class="form-control" name="country" value="{{ this.resultado.country }}" id="country" [(ngModel)]="country" required>
     </div>
     <div class="form-group">
@@ -21,48 +21,24 @@
         <input type="text" class="form-control" name="urlShield" value="{{ this.resultado.urlShield }}" id="urlShield" [(ngModel)]="urlShield">
     </div>
     <div class="form-group">
-        <label for="position">Posição:</label>
-        <input type="text" class="form-control" name="position" value="{{ this.resultado.position }}" id="position" [(ngModel)]="position" required>
+        <label for="vitorias">Vitórias:</label>
+        <input type="number" class="form-control" name="vitorias" value="{{ this.resultado.vitorias }}" id="vitorias" [(ngModel)]="vitorias" required>
     </div>
     <div class="form-group">
-        <label for="pts">Pontos:</label>
-        <input type="text" class="form-control" name="pts" value="{{ this.resultado.pts }}" id="pts" [(ngModel)]="pts" required>
+        <label for="empates">Empates:</label>
+        <input type="number" class="form-control" name="empates" value="{{ this.resultado.empates }}" id="empates" [(ngModel)]="empates" required>
     </div>
     <div class="form-group">
-        <label for="J">Jogados:</label>
-        <input type="number" class="form-control" name="J" value="{{ this.resultado.J }}" id="J" [(ngModel)]="J" required>
+        <label for="derrotas">Derrotas:</label>
+        <input type="number" class="form-control" name="derrotas" value="{{ this.resultado.derrotas }}" id="derrotas" [(ngModel)]="derrotas" required>
     </div>
     <div class="form-group">
-        <label for="V">Vencidos:</label>
-        <input type="text" class="form-control" name="V" value="{{ this.resultado.V }}" id="V" [(ngModel)]="V" required>
+        <label for="golsPro">Gols Pró:</label>
+        <input type="number" class="form-control" name="golsPro" value="{{ this.resultado.golsPro }}" id="golsPro" [(ngModel)]="golsPro" required>
     </div>
     <div class="form-group">
-        <label for="E">Empates:</label>
-        <input type="text" class="form-control" name="E" value="{{ this.resultado.E }}" id="E" [(ngModel)]="E" required>
-    </div>
-    <div class="form-group">
-        <label for="D">Derrotas:</label>
-        <input type="text" class="form-control" name="D" value="{{ this.resultado.D }}" id="D" [(ngModel)]="D" required>
-    </div>
-    <div class="form-group">
-        <label for="GP">Goles a favor:</label>
-        <input type="text" class="form-control" name="GP" value="{{ this.resultado.GP }}" id="GP" [(ngModel)]="GP" required>
-    </div>
-    <div class="form-group">
-        <label for="GC">Goles contra:</label>
-        <input type="text" class="form-control" name="GC" value="{{ this.resultado.GC }}" id="GC" [(ngModel)]="GC" required>
-    </div>
-    <div class="form-group">
-        <label for="SG">SG:</label>
-        <input type="text" class="form-control" name="SG" value="{{ this.resultado.SG }}" id="SG" [(ngModel)]="SG" required>
-    </div>
-    <div class="form-group">
-        <label for="YC">YC:</label>
-        <input type="text" class="form-control" name="YC" value="{{ this.resultado.YC }}" id="YC" [(ngModel)]="YC" required>
-    </div>
-    <div class="form-group">
-        <label for="RC">RC:</label>
-        <input type="text" class="form-control" name="RC" value="{{ this.resultado.RC }}" id="RC" [(ngModel)]="RC" required>
+        <label for="golsContra">Gols Contra:</label>
+        <input type="number" class="form-control" name="golsContra" value="{{ this.resultado.golsContra }}" id="golsContra" [(ngModel)]="golsContra" required>
     </div>
 </form>
 
@@ -70,7 +46,7 @@
 
 <button type="submit" class="btn btn-outline-primary mb-2 mr-2" (click)='editClub()'>ATUALIZAR DADOS</button> <!--(click)='buscar(dadosEditClube)'-->
 
-<button class="btn btn-outline-primary mb-2 mr-2" (click)='dadosRandom()'>DADOS RANDOM</button>
+<!-- <button class="btn btn-outline-primary mb-2 mr-2" (click)='dadosRandom()'>DADOS RANDOM</button> -->
 
 <br><br>
 
