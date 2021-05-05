@@ -1,3 +1,8 @@
+<!-- ALERT CLUBE ELIMINADO -->
+<div *ngIf='alertEliminado' class="alert alert-success fade show" role="alert">
+    {{ mensajeAlertEliminado }}
+</div>
+
 <a href="">Voltar a Home</a>
 <h1>Menú de edição de {{ nomeLigas[0].name }}</h1>
 
@@ -23,13 +28,13 @@
     <tbody>
         <tr *ngFor="let resultado of resultados | filter:pesquisa | orderBy:'name':false">
             <td><a href="http://localhost:4200/clube/{{ resultado.id }}"><button class="btn btn-outline-primary mb-2 mr-2"><img [src]="resultado?.urlShield" width="40"> {{ resultado.name }}</button></a></td>
-            <td><a href="http://localhost:4200/editclube/{{ resultado.id }}"><button class="btn btn-outline-primary mb-2 mr-2">Editar</button></a></td>
-            <td><button class="btn btn-outline-primary mb-2 mr-2" (click)="eliminarClube(resultado.id)">Apagar</button></td>
+            <td><a href="http://localhost:4200/editclube/{{ resultado.id }}"><button class="btn btn-primary mb-2 mr-2">Editar</button></a></td>
+            <td><button class="btn btn-danger mb-2 mr-2" (click)="eliminarClube(resultado.id)">Apagar</button></td>
         </tr>
     </tbody>
 </table>
 <br>
-<button class="btn-default"><a href="http://localhost:4200/addclube">ADICIONAR CLUBE</a></button>
+<button class="btn btn-success mb-2 mr-2"><a href="http://localhost:4200/addclube">ADICIONAR CLUBE</a></button> <!--ADICIONAR FUNCION Y QUITAR ANCORA-->
 <br>
 <br>
 <a href="http://localhost:4200/liga">Voltar a {{ nomeLigas[0].name }}</a> <br>

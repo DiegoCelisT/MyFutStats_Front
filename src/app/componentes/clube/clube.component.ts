@@ -46,10 +46,10 @@ export class ClubeComponent implements OnInit {
 
   }
 
-  //ELIMINAR CLUBE + MODAL
-  eliminarClube(contenido){
+  //ELIMINAR CLUBE
+  eliminarClube(){
     this.FutebolServ.eliminarClube(this.ID).subscribe();
-    this.modalEliminar.open(contenido, {backdropClass: 'light-blue-backdrop'});
+    location.href='http://localhost:'+this.FutebolServ.portFront+'/liga/'+'?sucessoeliminado=ok'
   }
 
   //CERRAR MODAL E IR PARA LIGA
@@ -72,7 +72,7 @@ export class ClubeComponent implements OnInit {
 
         setTimeout(()=>{                           
           this.alertEdit = false;
-     }, 4000);
+        }, 4000);
       }
     })
   }
