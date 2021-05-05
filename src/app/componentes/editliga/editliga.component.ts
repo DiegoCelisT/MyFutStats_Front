@@ -12,7 +12,7 @@ export class EditligaComponent implements OnInit {
   constructor(private FutebolServ: FutebolService, private roteEditLiga: ActivatedRoute) { }
 
   resultados = [];
-  ID: number;
+  // ID: number;
   name:string;
   ID_clube: any;
   pesquisa:string; //Para o formulario de pesquisa
@@ -50,7 +50,6 @@ export class EditligaComponent implements OnInit {
   editLiga(){
     this.FutebolServ.editLiga(1, this.name)
     .subscribe() 
-    // alert('Nombre de Liga modificado')
     window.location.href="http://localhost:4200/editliga"
   }
 
@@ -68,7 +67,10 @@ export class EditligaComponent implements OnInit {
       }
     })
   }
-      
+
+  addClube() {
+    location.href="http://localhost:"+this.FutebolServ.portFront+"/addclube/"
+  }
     
 
 }

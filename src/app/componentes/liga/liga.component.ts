@@ -14,11 +14,15 @@ export class LigaComponent implements OnInit {
   pesquisa:string; //Para o formulario de pesquisa
   index:number
 
+  //ALERT ELIMINADO Y ADICIONADO
   urlEliminado;
   alertEliminado;
   mensajeAlertEliminado;
+  urlAdd;
+  alertAdd;
+  mensajeAlertAdd = '';
 
-  constructor(private FutebolServ: FutebolService, private roteLiga: ActivatedRoute) { }
+  constructor(private FutebolServ: FutebolService, private rotaLiga: ActivatedRoute) { }
 
   ngOnInit(): void {
 
@@ -37,8 +41,9 @@ export class LigaComponent implements OnInit {
   }
 
   mostrarAlert() {
-    this.roteLiga.queryParams.subscribe(params => {
+    this.rotaLiga.queryParams.subscribe(params => {
       this.urlEliminado = params ['sucessoeliminado']
+      this.urlAdd = params ['sucessoadd']
       
       if (this.urlEliminado == 'ok') {
         this.alertEliminado = true
@@ -47,8 +52,25 @@ export class LigaComponent implements OnInit {
         setTimeout(()=>{                           
           this.alertEliminado = false;
         }, 4000);
+      } else if (this.urlAdd == 'ok') {
+        this.alertAdd = true
+        this.mensajeAlertAdd = 'O clube foi adicionado'
+
+        setTimeout(()=>{                           
+          this.alertAdd = false;
+        }, 4000);
+      } else {
+        this.alertAdd = false;
+        this.alertEliminado = false;
       }
+        
+      
+      console.log(this.alertAdd + 'adicionado', this.alertEliminado + 'eliminado')
     })
+  }
+
+  editLiga() {
+    location.href="http://localhost:4200/editliga"
   }
 
   
