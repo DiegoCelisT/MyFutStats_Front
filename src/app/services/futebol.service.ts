@@ -32,43 +32,31 @@ export class FutebolService {
   }
 
    //Método POST, para criar novos registros: (para este verbo é necessario passar os parametros no corpo)
-  createClube (name: string, urlShield: string, country: string, position: number, pts: number, J: number, V: number, E: number, D: number, GP: number, GC: number, SG: number, YC: number, RC: number){
+  createClube (name: string, urlShield: string, country: string, vitorias: number, empates: number, derrotas: number, golsPro: number, golsContra: number){
     return this.httpFutebol.post ('http://localhost:'+this.portBack+'/novoclub', {
       name: name,
       urlShield: urlShield,
       country: country,
-      position: position,
-      pts: pts,
-      J: J,
-      V: V,
-      E: E,
-      D: D,
-      GP: GP,
-      GC: GC,
-      SG: SG,
-      YC: YC,
-      RC: RC
-    })
+      vitorias: vitorias,
+      empates: empates,
+      derrotas: derrotas,
+      golsPro: golsPro,
+      golsContra: golsContra,
+      })
   }
 
   //METODO PUT
-  editClube (ID: number, name: string, urlShield: string, country: string, position: number, pts: number, J: number, V: number, E: number, D: number, GP: number, GC: number, SG: number, YC: number, RC: number){
-    console.log('servicio'+ID,name, urlShield, country, position, pts, J, V, E, D, GP, GC, SG, YC, RC)
+  editClube (ID: number, name: string, urlShield: string, country: string, vitorias: number, empates: number, derrotas: number, golsPro: number, golsContra: number){
+    // console.log('servicio'+ID,name, urlShield, country, vitorias, empates, derrotas, golsPro, golsContra)
     return this.httpFutebol.put ('http://localhost:'+this.portBack+'/editclube/'+ID, {
       name: name,
       urlShield: urlShield,
       country: country,
-      position: position,
-      pts: pts,
-      J: J,
-      V: V,
-      E: E,
-      D: D,
-      GP: GP,
-      GC: GC,
-      SG: SG,
-      YC: YC,
-      RC: RC
+      vitorias: vitorias,
+      empates: empates,
+      derrotas: derrotas,
+      golsPro: golsPro,
+      golsContra: golsContra,
     })
   }
 
@@ -78,10 +66,10 @@ export class FutebolService {
   }
 
   // RANDOM JOGADOS
-  sumarJ(){
-    this.J = this.J + 1;
-    return this.J;
-  }
+  // sumarJ(){
+  //   this.J = this.J + 1;
+  //   return this.J;
+  // }
  
   //Trazendo todos os nomes das ligas
   getLigas (){

@@ -19,17 +19,15 @@ export class EditclubeComponent implements OnInit {
   name: string;
   urlShield: string;
   country: string;
-  position: number;
-  pts: number;
-  J: number;
-  V: number;
-  E: number;
-  D: number;
-  GP: number;
-  GC: number;
-  SG: number;
-  YC: number;
-  RC: number;
+  vitorias: number;
+  empates: number;
+  derrotas: number;
+  golsPro: number;
+  golsContra: number;
+  
+  // pontos:number;
+  // jogados:number;
+  // saldoGols:number
 
   nomeLigas = [];  
 
@@ -57,23 +55,23 @@ export class EditclubeComponent implements OnInit {
 
   //METODO PUT
   editClub(){
-    this.FutebolServ.editClube(this.ID, this.name, this.urlShield, this.country, this.position, this.pts, this.J, this.V, this.E, this.D, this.GP, this.GC, this.SG, this.YC, this.RC)
+    this.FutebolServ.editClube(this.ID, this.name, this.urlShield, this.country, this.vitorias, this.empates, this.derrotas, this.golsPro, this.golsContra)
     .subscribe() 
-    console.log('editclub component'+ this.ID, this.name, this.urlShield, this.country, this.position, this.pts, this.J, this.V, this.E, this.D, this.GP, this.GC, this.SG, this.YC, this.RC )
+    // console.log('editclub component'+ this.ID, this.name, this.urlShield, this.country, this.vitorias, this.empates, this.derrotas, this.golsPro, this.golsContra)
     alert('CLUBE ATUALIZADO') //ES SOLO PARA DAR AVISO
   }
 
-  dadosRandom() {
-    this.FutebolServ.sumarJ(); //SUMA UN PARTIDO CADA VEZ QUE EL BOTON ES APRETADO
-    this.J = this.FutebolServ.J;
+  // dadosRandom() {
+  //   this.FutebolServ.sumarJ(); //SUMA UN PARTIDO CADA VEZ QUE EL BOTON ES APRETADO
+  //   this.J = this.FutebolServ.J;
     
 
-    this.V = 10;
-    this.E = 10;
-    this.D = 10;
-    this.GP = 10;
-    this.GC = 10;
-  }
+  //   this.V = 10;
+  //   this.E = 10;
+  //   this.D = 10;
+  //   this.GP = 10;
+  //   this.GC = 10;
+  // }
 
   // validate(){
   //   var form = document.getElementsByClassName('needs-validation')[0] as HTMLFormElement

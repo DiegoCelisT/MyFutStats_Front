@@ -17,18 +17,14 @@
 
 <img id="ga" src="{{ this.resultado.urlShield }}" width="120px">
 <p>País: {{ this.resultado.country }}</p>
-<p>Posição: {{ this.resultado.position }}</p>
-<p>Pontos: {{ this.resultado.pts }}</p>
-<p>Jogados: {{ this.resultado.J }}</p>
-<p>Vitórias: {{ this.resultado.V }}</p>
-<p>Empates: {{ this.resultado.E }}</p>
-<p>Derrotas: {{ this.resultado.D }}</p>
-<p>GP: {{ this.resultado.GP }}</p>
-<p>GC: {{ this.resultado.GC }}</p>
-<p>SG: {{ this.resultado.SG }}</p>
-<p>Cartões amarelos: {{ this.resultado.YC }}</p>
-<p>Cartões vermelhos: {{ this.resultado.RC }}</p>
-
+<p>Pontos: {{ this.resultado.pontos }}</p>
+<p>Jogados: {{ this.resultado.jogados }}</p>
+<p>Vitórias: {{ this.resultado.vitorias }}</p>
+<p>Empates: {{ this.resultado.empates }}</p>
+<p>Derrotas: {{ this.resultado.derrotas }}</p>
+<p>Gols Pró: {{ this.resultado.golsPro }}</p>
+<p>Gols Contra: {{ this.resultado.golsContra }}</p>
+<p>Saldo de Gols: {{ this.resultado.saldoGols }}</p>
 
 <button class="btn btn-outline-primary mb-2 mr-2" (click)="irEditClube()">EDITAR CLUBE</button>
 
