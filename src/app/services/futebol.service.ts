@@ -60,6 +60,13 @@ export class FutebolService {
     })
   }
 
+  //METODO PUT2 (Para position)
+  editClubeIndex (ID: number, position:number){
+    return this.httpFutebol.put ('http://localhost:'+this.portBack+'/editclube/'+ID, {
+      position:position
+    })
+  }
+
   //METODO DELETE
   eliminarClube(ID: number) {
     return this.httpFutebol.delete ('http://localhost:'+this.portBack+'/clube/'+ID)
@@ -82,6 +89,3 @@ export class FutebolService {
   }
 
 }
-
-
-
