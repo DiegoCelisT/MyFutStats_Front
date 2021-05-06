@@ -33,14 +33,7 @@ export class EditclubeComponent implements OnInit {
     name:String
   }];
   
-  //PARA VALIDAÇÃO DO FORMULARIO
-  // editFormValidacion: FormGroup;
-
-  constructor(private FutebolServ: FutebolService, private roteClub: ActivatedRoute
-    // , private formValidacion: FormBuilder
-    ) {
-    
-  }
+  constructor(private FutebolServ: FutebolService, private roteClub: ActivatedRoute) { }
 
   ngOnInit(): void {
         //USA EL ID DE LA URL PARA MOSTRAR UN CLUB
@@ -92,19 +85,6 @@ export class EditclubeComponent implements OnInit {
   }
 
   
-  // validacionForm() {
-  //   this.editFormValidacion = this.formValidacion.group({
-  //      name: [this.name, Validators.required ],
-  //      urlShield: [''],
-  //      country: [],
-  //      vitorias: [],
-  //      empates: [],
-  //      derrotas: [],
-  //      golsPro: [], 
-  //      golsContra: []
-  //   });
-  // }
-
   
  
 }

@@ -22,7 +22,7 @@
 
 <br>
 
-<form class="form-group" #formulario='ngForm'>
+<form class="form-group needs-validation" #formulario='ngForm'>
     <div class="form-group">
         <label for="name">Nome do clube:</label>
         <input type="text" class="form-control" name="name" required id="name" [(ngModel)]="name">
@@ -30,11 +30,11 @@
     
     <div class="form-group">
         <label for="country">Pais:</label>
-        <input type="text" class="form-control" name="country" required id="country" [(ngModel)]="country">
+        <input type="text" class="form-control" name="country" id="country" [(ngModel)]="country">
     </div>
     <div class="form-group">
         <label for="escudo">URL Escudo:</label>
-        <input type="text" class="form-control" name="urlShield" required id="escudo" [(ngModel)]="urlShield">
+        <input type="text" class="form-control" name="urlShield" id="escudo" [(ngModel)]="urlShield">
     </div>   
 </form>
 

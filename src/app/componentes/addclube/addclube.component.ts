@@ -22,6 +22,7 @@ export class AddclubeComponent implements OnInit {
   constructor(private FutebolServ: FutebolService, private modalAdd: NgbModal) { }
 
   ngOnInit(): void {
+    this.validAdd();
   }
 
   //METODO POST PARA CRIAR NOVOS REGISTROS DESDE O FRONT (PRECISAMOS PEGAR DADOS DO FORMULARIO) DEJO LOS DATOS DE TU CLUB KKKK "Santa Fé", "https://upload.wikimedia.org/wikipedia/commons/5/58/Escudo_de_Independiente_Santa_Fe.png", "Colômbia", 
@@ -32,5 +33,10 @@ export class AddclubeComponent implements OnInit {
 
   voltarLiga() {
     location.href ="http://localhost:"+this.FutebolServ.portFront+"/liga?sucessoadd=ok"
+  }
+
+  validAdd(){
+    var form = document.getElementsByClassName('needs-validation')[0] as HTMLFormElement
+    form.classList.add('was-validated');
   }
 }
