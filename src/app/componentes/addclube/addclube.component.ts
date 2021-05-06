@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FutebolService } from '../../services/futebol.service';
-import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-addclube',

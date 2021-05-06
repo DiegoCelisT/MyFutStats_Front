@@ -4,10 +4,10 @@
 
 
 
-<form class="form-group needs-validation" #formedit='ngForm' novalidate> 
+<form class="form-group needs-validation" #formedit='ngForm' novalidate [formGroup]=formularioEdit> 
     <div class="form-group">
         <label for="name">Nome do clube:</label>
-        <input type="text" class="form-control" name="name" value="{{ resultado.name }}" id="name" [(ngModel)]="name" required>
+        <input type="text" class="form-control" name="name" formControlName='name' value="{{ resultado.name }}" id="name" [(ngModel)]="name" required>
         <div class="valid-feedback">
             PODEMOS AGREGAR ALGO ACÁ!
         </div>
@@ -44,7 +44,7 @@
 
 <br>
 
-<button type="submit" class="btn btn-success mb-2 mr-2" (click)='editClub()'>ATUALIZAR DADOS</button>
+<button [disabled]='!formularioEdit.valid' type="submit" class="btn btn-success mb-2 mr-2" (click)='editClub()'>ATUALIZAR DADOS</button>
 
    
   <br>
