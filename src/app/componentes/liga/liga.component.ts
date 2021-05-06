@@ -67,7 +67,7 @@ export class LigaComponent implements OnInit {
       }
         
       
-      console.log(this.alertAdd + 'adicionado', this.alertEliminado + 'eliminado')
+      // console.log(this.alertAdd + 'adicionado', this.alertEliminado + 'eliminado')
     })
   }
 

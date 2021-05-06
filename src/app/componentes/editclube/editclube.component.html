@@ -7,38 +7,38 @@
 <form class="form-group needs-validation" #formedit='ngForm' novalidate> 
     <div class="form-group">
         <label for="name">Nome do clube:</label>
-        <input type="text" class="form-control" name="name" value="{{ this.resultado.name }}" id="name" [(ngModel)]="name" required>
+        <input type="text" class="form-control" name="name" value="{{ resultado.name }}" id="name" [(ngModel)]="name" required>
         <div class="valid-feedback">
             PODEMOS AGREGAR ALGO ACÁ!
         </div>
     </div>    
     <div class="form-group">
         <label for="country">País:</label>
-        <input type="text" class="form-control" name="country" value="{{ this.resultado.country }}" id="country" [(ngModel)]="country">
+        <input type="text" class="form-control" name="country" value="{{ resultado.country }}" id="country" [(ngModel)]="country">
     </div>
     <div class="form-group">
         <label for="urlShield">URL Escudo:</label>
-        <input type="text" class="form-control" name="urlShield" value="{{ this.resultado.urlShield }}" id="urlShield" [(ngModel)]="urlShield">
+        <input type="text" class="form-control" name="urlShield" value="{{ resultado.urlShield }}" id="urlShield" [(ngModel)]="urlShield">
     </div>
     <div class="form-group">
         <label for="vitorias">Vitórias:</label>
-        <input type="number" class="form-control" name="vitorias" value="{{ this.resultado.vitorias }}" id="vitorias" [(ngModel)]="vitorias" required>
+        <input type="number" class="form-control" name="vitorias" value="{{ resultado.vitorias }}" id="vitorias" [(ngModel)]="vitorias" required>
     </div>
     <div class="form-group">
         <label for="empates">Empates:</label>
-        <input type="number" class="form-control" name="empates" value="{{ this.resultado.empates }}" id="empates" [(ngModel)]="empates" required>
+        <input type="number" class="form-control" name="empates" value="{{ resultado.empates }}" id="empates" [(ngModel)]="empates" required>
     </div>
     <div class="form-group">
         <label for="derrotas">Derrotas:</label>
-        <input type="number" class="form-control" name="derrotas" value="{{ this.resultado.derrotas }}" id="derrotas" [(ngModel)]="derrotas" required>
+        <input type="number" class="form-control" name="derrotas" value="{{ resultado.derrotas }}" id="derrotas" [(ngModel)]="derrotas" required>
     </div>
     <div class="form-group">
         <label for="golsPro">Gols Pró:</label>
-        <input type="number" class="form-control" name="golsPro" value="{{ this.resultado.golsPro }}" id="golsPro" [(ngModel)]="golsPro" required>
+        <input type="number" class="form-control" name="golsPro" value="{{ resultado.golsPro }}" id="golsPro" [(ngModel)]="golsPro" required>
     </div>
     <div class="form-group">
         <label for="golsContra">Gols Contra:</label>
-        <input type="number" class="form-control" name="golsContra" value="{{ this.resultado.golsContra }}" id="golsContra" [(ngModel)]="golsContra" required>
+        <input type="number" class="form-control" name="golsContra" value="{{ resultado.golsContra }}" id="golsContra" [(ngModel)]="golsContra" required>
     </div>
 </form>
 
