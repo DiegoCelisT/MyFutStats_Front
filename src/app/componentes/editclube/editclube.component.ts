@@ -58,9 +58,7 @@ export class EditclubeComponent implements OnInit {
     .subscribe (nomeLigas =>{
       this.nomeLigas = nomeLigas ['MyLeagues']
     })
-
     this.validEdit();
-
   }
 
   //METODO PUT

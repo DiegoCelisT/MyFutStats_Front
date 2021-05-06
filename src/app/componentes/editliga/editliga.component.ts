@@ -40,9 +40,14 @@ export class EditligaComponent implements OnInit {
   }
 
   eliminarClube(ID_clube){
-    this.FutebolServ.eliminarClube(ID_clube).subscribe();
+    this.FutebolServ.eliminarClube(ID_clube).subscribe(()=>{
+      this.FutebolServ.getClubes ()
+      .subscribe (resultados => {
+        this.resultados = resultados ['clubes']
+    })
+    })
     // this.ngOnInit()
-    location.href="http://localhost:4200/editliga?sucessoeliminado=ok"
+    // location.href="http://localhost:4200/editliga?sucessoeliminado=ok"
     
   }
 
