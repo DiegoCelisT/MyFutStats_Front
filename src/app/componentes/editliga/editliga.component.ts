@@ -16,7 +16,9 @@ export class EditligaComponent implements OnInit {
   name:string;
   ID_clube: any;
   pesquisa:string; //Para o formulario de pesquisa
-  nomeLigas = [];
+  nomeLigas = [{
+    name:String
+  }];
 
   //ALERT ELIMINADO
   urlEliminado;

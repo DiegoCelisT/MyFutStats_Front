@@ -29,7 +29,9 @@ export class EditclubeComponent implements OnInit {
   // jogados:number;
   // saldoGols:number
 
-  nomeLigas = [];
+  nomeLigas = [{
+    name:String
+  }];
   
   //PARA VALIDAÇÃO DO FORMULARIO
   // editFormValidacion: FormGroup;
