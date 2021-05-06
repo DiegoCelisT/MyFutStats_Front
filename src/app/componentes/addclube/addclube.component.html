@@ -22,7 +22,7 @@
 
 <br>
 
-<form class="form-group needs-validation" #formulario='ngForm'>
+<form class="form-group needs-validation dadosName" #formulario='ngForm'>
     <div class="form-group">
         <label for="name">Nome do clube:</label>
         <input type="text" class="form-control" name="name" required id="name" [(ngModel)]="name">
@@ -40,7 +40,53 @@
 
 <br>
 
-<button class="btn btn-success mb-2 mr-2" data-bs-toggle="modal" data-bs-target="#mostrarModal" (click)="novoClub()">ADICIONAR CLUBE</button>
+
+ 
+<!-- CARROUSEL PARA DADOS DOS JOGOS -->
+<p>
+  <!-- <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+    Link with href
+  </a> -->
+
+  
+  <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+    ADICIONAR DADOS DOS JOGOS
+  </button>
+</p>
+<div class="collapse" id="collapseExample">
+  <div class="card card-body">
+    <!-- FORMULARIO DADOS DOS JOGOS -->
+<form class="form-group needs-validation dadosJogos" #formDadosJogos='ngForm' novalidate> 
+  <div class="form-group">
+      <label for="vitorias">Vitórias:</label>
+      <input type="number" class="form-control" name="vitorias" value="{{ resultado.vitorias }}" id="vitorias" [(ngModel)]="vitorias" required>
+  </div>
+  <div class="form-group">
+      <label for="empates">Empates:</label>
+      <input type="number" class="form-control" name="empates" value="{{ resultado.empates }}" id="empates" [(ngModel)]="empates" required>
+  </div>
+  <div class="form-group">
+      <label for="derrotas">Derrotas:</label>
+      <input type="number" class="form-control" name="derrotas" value="{{ resultado.derrotas }}" id="derrotas" [(ngModel)]="derrotas" required>
+  </div>
+  <div class="form-group">
+      <label for="golsPro">Gols Pró:</label>
+      <input type="number" class="form-control" name="golsPro" value="{{ resultado.golsPro }}" id="golsPro" [(ngModel)]="golsPro" required>
+  </div>
+  <div class="form-group">
+      <label for="golsContra">Gols Contra:</label>
+      <input type="number" class="form-control" name="golsContra" value="{{ resultado.golsContra }}" id="golsContra" [(ngModel)]="golsContra" required>
+  </div>
+</form>
+  </div>
+</div>
+
+<button class="btn btn-success mb-2 mr-2" data-bs-toggle="modal" data-bs-target="#mostrarModal" (click)="novoClub()">ADICIONAR O CLUBE</button>
+
+
+<br>
+
+
 
 <br>
 
