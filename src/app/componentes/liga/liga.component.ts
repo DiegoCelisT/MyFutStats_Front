@@ -10,6 +10,7 @@ import { ActivatedRoute } from '@angular/router';
 export class LigaComponent implements OnInit {
 
   resultados = [];
+  resultadosSort = [];
   nomeLigas = [{
     name:String
   }];
@@ -26,6 +27,21 @@ export class LigaComponent implements OnInit {
 
   constructor(private FutebolServ: FutebolService, private rotaLiga: ActivatedRoute) { }
 
+
+
+// PARA EDITAR CLUB
+ID: any;
+name: string;
+urlShield: string;
+country: string;
+vitorias: number;
+empates: number;
+derrotas: number;
+golsPro: number;
+golsContra: number;
+
+position:number
+
   ngOnInit(): void {
 
     this.FutebolServ.getLigas()
@@ -33,10 +49,24 @@ export class LigaComponent implements OnInit {
       this.nomeLigas = nomeLigas ['MyLeagues']
     })
 
+    //GET CLUBES ADAPTADO PARA ORDENAR DOS DADOS (SORT) E CONSEGUIR ATRIBUIR VALORES DE POSIÇÃO DINÂMICOS COMPATIVÉIS COM O FORM DE PESQUISA
     this.FutebolServ.getClubes ()
     .subscribe (resultados => {
-      this.resultados = resultados ['clubes'] //'É importante declarar o nome do JSON que foi dado no back-end, para dessa maneira evitar o erro de cannot read property '0' of undefined      
+      this.resultados = resultados ['clubes'] //'É importante declarar o nome do JSON que foi dado no back-end, para dessa maneira evitar o erro de cannot read property '0' of undefined     
+
+      this.resultadosSort = this.resultados.sort(function (a, b) {
+        if ( a.pontos < b.pontos) {
+          return 1;
+        }
+        if (a.saldoGols > b. saldoGols || a.pontos > b.pontos ) {
+          return -1;
+        }
+        // a igual que b
+        return 0;
+      });
+      // console.log(this.resultadosSort)    
     })
+
 
     this.mostrarAlert();
 
@@ -65,8 +95,7 @@ export class LigaComponent implements OnInit {
         this.alertAdd = false;
         this.alertEliminado = false;
       }
-        
-      
+              
       // console.log(this.alertAdd + 'adicionado', this.alertEliminado + 'eliminado')
     })
   }
@@ -74,6 +103,5 @@ export class LigaComponent implements OnInit {
   editLiga() {
     location.href="http://localhost:4200/editliga"
   }
-
   
 }
