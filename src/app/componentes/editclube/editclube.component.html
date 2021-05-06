@@ -3,7 +3,6 @@
 <img src="{{ this.resultado.urlShield }}" width="120px">
 
 
-
 <form class="form-group needs-validation" #formedit='ngForm' novalidate [formGroup]=formularioEdit> 
     <div class="form-group">
         <label for="name">Nome do clube:</label>
@@ -22,30 +21,31 @@
     </div>
     <div class="form-group">
         <label for="vitorias">Vitórias:</label>
-        <input type="number" class="form-control" name="vitorias" value="{{ resultado.vitorias }}" id="vitorias" [(ngModel)]="vitorias" required>
+        <input type="number" class="form-control" name="vitorias" value="{{ resultado.vitorias }}" id="vitorias" [(ngModel)]="vitorias">
     </div>
     <div class="form-group">
         <label for="empates">Empates:</label>
-        <input type="number" class="form-control" name="empates" value="{{ resultado.empates }}" id="empates" [(ngModel)]="empates" required>
+        <input type="number" class="form-control" name="empates" value="{{ resultado.empates }}" id="empates" [(ngModel)]="empates">
     </div>
     <div class="form-group">
         <label for="derrotas">Derrotas:</label>
-        <input type="number" class="form-control" name="derrotas" value="{{ resultado.derrotas }}" id="derrotas" [(ngModel)]="derrotas" required>
+        <input type="number" class="form-control" name="derrotas" value="{{ resultado.derrotas }}" id="derrotas" [(ngModel)]="derrotas">
     </div>
     <div class="form-group">
         <label for="golsPro">Gols Pró:</label>
-        <input type="number" class="form-control" name="golsPro" value="{{ resultado.golsPro }}" id="golsPro" [(ngModel)]="golsPro" required>
+        <input type="number" class="form-control" name="golsPro" value="{{ resultado.golsPro }}" id="golsPro" [(ngModel)]="golsPro">
     </div>
     <div class="form-group">
         <label for="golsContra">Gols Contra:</label>
-        <input type="number" class="form-control" name="golsContra" value="{{ resultado.golsContra }}" id="golsContra" [(ngModel)]="golsContra" required>
+        <input type="number" class="form-control" name="golsContra" value="{{ resultado.golsContra }}" id="golsContra" [(ngModel)]="golsContra">
     </div>
 </form>
 
 <br>
 
-<button [disabled]='!formularioEdit.valid' type="submit" class="btn btn-success mb-2 mr-2" (click)='editClub()'>ATUALIZAR DADOS</button>
+<!-- <button [disabled]='!formularioEdit.valid' type="submit" class="btn btn-success mb-2 mr-2" (click)='editClub()'>ATUALIZAR DADOS</button> -->
 
+<button type="submit" class="btn btn-success mb-2 mr-2" (click)='editClub()'>ATUALIZAR DADOS</button>
    
   <br>
 

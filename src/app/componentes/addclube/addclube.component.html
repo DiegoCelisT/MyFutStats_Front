@@ -59,7 +59,7 @@
 <form class="form-group needs-validation dadosJogos" #formDadosJogos='ngForm' novalidate> 
   <div class="form-group">
       <label for="vitorias">Vitórias:</label>
-      <input type="number" class="form-control" name="vitorias" value="{{ resultado.vitorias }}" id="vitorias" [(ngModel)]="vitorias" required>
+      <input type="number" class="form-control" name="vitorias" value="{{defaultValue}}" id="vitorias" [(ngModel)]="vitorias" required>
   </div>
   <div class="form-group">
       <label for="empates">Empates:</label>
