@@ -10,7 +10,7 @@
             <p>Continuar adicionando?</p>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">SIM, CONTINUAR</button>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" (click)='borrarDados()'>SIM, CONTINUAR</button>
           <button type="button" class="btn btn-primary" (click)='voltarLiga()'>NÃO</button>
         </div>
       </div>
@@ -22,10 +22,10 @@
 
 <br>
 
-<form class="form-group needs-validation dadosName" #formulario='ngForm'>
+<form class="form-group needs-validation dadosName" #formulario='ngForm' [formGroup]=formularioAdd>
     <div class="form-group">
         <label for="name">Nome do clube:</label>
-        <input type="text" class="form-control" name="name" required id="name" [(ngModel)]="name">
+        <input type="text" class="form-control" name="name" formControlName='name' required id="name" [(ngModel)]="name">
     </div>
     
     <div class="form-group">
@@ -81,7 +81,7 @@
   </div>
 </div>
 
-<button class="btn btn-success mb-2 mr-2" data-bs-toggle="modal" data-bs-target="#mostrarModal" (click)="novoClub()">ADICIONAR O CLUBE</button>
+<button [disabled]='!formularioAdd.valid' class="btn btn-success mb-2 mr-2 botonAdd" data-bs-toggle="modal" data-bs-target="#mostrarModal" (click)="novoClub()">ADICIONAR O CLUBE</button>
 
 
 <br>
