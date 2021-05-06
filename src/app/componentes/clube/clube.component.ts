@@ -16,7 +16,9 @@ export class ClubeComponent implements OnInit {
   ID: any;
   idNum: Number;
   
-  nomeLigas = [];
+  nomeLigas = [{
+    name:String
+  }];
   
   alertEdit;
   mensajeAlertEdit = ''

@@ -13,7 +13,9 @@ export class AppComponent implements OnInit{
   title = 'futebol-Frontend';
   constructor(private FutebolServ: FutebolService) { }
   
-  nomeLigas = [];
+  nomeLigas = [{
+    name:String
+  }];
 
  
 

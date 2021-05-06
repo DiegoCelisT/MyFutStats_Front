@@ -10,7 +10,9 @@ import { ActivatedRoute } from '@angular/router';
 export class LigaComponent implements OnInit {
 
   resultados = [];
-  nomeLigas = [];
+  nomeLigas = [{
+    name:String
+  }];
   pesquisa:string; //Para o formulario de pesquisa
   index:number
 
@@ -65,7 +67,7 @@ export class LigaComponent implements OnInit {
       }
         
       
-      console.log(this.alertAdd + 'adicionado', this.alertEliminado + 'eliminado')
+      // console.log(this.alertAdd + 'adicionado', this.alertEliminado + 'eliminado')
     })
   }
 

@@ -29,7 +29,9 @@ export class EditclubeComponent implements OnInit {
   // jogados:number;
   // saldoGols:number
 
-  nomeLigas = [];
+  nomeLigas = [{
+    name:String
+  }];
   
   //PARA VALIDAÇÃO DO FORMULARIO
   // editFormValidacion: FormGroup;
@@ -40,8 +42,6 @@ export class EditclubeComponent implements OnInit {
     
   }
 
-  
-
   ngOnInit(): void {
         //USA EL ID DE LA URL PARA MOSTRAR UN CLUB
         this.roteClub.params.subscribe(params => {
@@ -50,7 +50,6 @@ export class EditclubeComponent implements OnInit {
           this.FutebolServ.getClube(this.ID)
             .subscribe (resultados => {
               this.resultado = resultados ['clube']
-              
             })
         });
         
@@ -58,16 +57,21 @@ export class EditclubeComponent implements OnInit {
     .subscribe (nomeLigas =>{
       this.nomeLigas = nomeLigas ['MyLeagues']
     })
-
     this.validEdit();
-
   }
 
   //METODO PUT
   editClub(){
+
+    if (this.vitorias==null){ this.vitorias=this.resultado.vitorias }
+    if (this.empates==null){ this.empates=this.resultado.empates }
+    if (this.derrotas==null){ this.derrotas=this.resultado.derrotas }
+    if (this.golsPro==null){ this.golsPro=this.resultado.golsPro }
+    if (this.golsContra==null){ this.golsContra=this.resultado.golsContra }
+
     this.FutebolServ.editClube(this.ID, this.name, this.urlShield, this.country, this.vitorias, this.empates, this.derrotas, this.golsPro, this.golsContra)
-    .subscribe() 
-    location.href='http://localhost:'+this.FutebolServ.portFront+'/clube/'+this.ID+'?sucessoedit=ok'
+      .subscribe()
+      location.href='http://localhost:'+this.FutebolServ.portFront+'/clube/'+this.ID+'?sucessoedit=ok'
   }
 
   // dadosRandom() {

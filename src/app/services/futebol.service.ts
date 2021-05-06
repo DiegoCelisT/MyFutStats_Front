@@ -81,8 +81,6 @@ export class FutebolService {
     return this.httpFutebol.put ('http://localhost:'+this.portBack+'/liga/'+ID, { name: name })
   }
 
-
-
 }
 
 

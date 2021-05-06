@@ -11,7 +11,9 @@ export class HomeComponent implements OnInit {
 
   constructor(private FutebolServ: FutebolService) { }
 
-  nomeLigas = [];
+  nomeLigas = [{
+    name:String
+  }];
 
   ngOnInit(): void {
     this.FutebolServ.getLigas()
