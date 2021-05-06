@@ -59,23 +59,23 @@
 <form class="form-group needs-validation dadosJogos" #formDadosJogos='ngForm' novalidate> 
   <div class="form-group">
       <label for="vitorias">Vitórias:</label>
-      <input type="number" class="form-control" name="vitorias" value="{{ resultado.vitorias }}" id="vitorias" [(ngModel)]="vitorias" required>
+      <input type="number" class="form-control" name="vitorias" placeholder="0" id="vitorias" [(ngModel)]="vitorias">
   </div>
   <div class="form-group">
       <label for="empates">Empates:</label>
-      <input type="number" class="form-control" name="empates" value="{{ resultado.empates }}" id="empates" [(ngModel)]="empates" required>
+      <input type="number" class="form-control" name="empates" placeholder="0" id="empates" [(ngModel)]="empates">
   </div>
   <div class="form-group">
       <label for="derrotas">Derrotas:</label>
-      <input type="number" class="form-control" name="derrotas" value="{{ resultado.derrotas }}" id="derrotas" [(ngModel)]="derrotas" required>
+      <input type="number" class="form-control" name="derrotas" placeholder="0" id="derrotas" [(ngModel)]="derrotas">
   </div>
   <div class="form-group">
       <label for="golsPro">Gols Pró:</label>
-      <input type="number" class="form-control" name="golsPro" value="{{ resultado.golsPro }}" id="golsPro" [(ngModel)]="golsPro" required>
+      <input type="number" class="form-control" name="golsPro" placeholder="0" id="golsPro" [(ngModel)]="golsPro">
   </div>
   <div class="form-group">
       <label for="golsContra">Gols Contra:</label>
-      <input type="number" class="form-control" name="golsContra" value="{{ resultado.golsContra }}" id="golsContra" [(ngModel)]="golsContra" required>
+      <input type="number" class="form-control" name="golsContra" placeholder="0" id="golsContra" [(ngModel)]="golsContra">
   </div>
 </form>
   </div>

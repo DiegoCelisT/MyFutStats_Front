@@ -2,12 +2,10 @@
 
 <img src="{{ this.resultado.urlShield }}" width="120px">
 
-
-
-<form class="form-group needs-validation" #formedit='ngForm' novalidate [formGroup]=formularioEdit> 
+<form class="form-group needs-validation" #formedit='ngForm'> 
     <div class="form-group">
         <label for="name">Nome do clube:</label>
-        <input type="text" class="form-control" name="name" formControlName='name' value="{{ resultado.name }}" id="name" [(ngModel)]="name" required>
+        <input type="text" class="form-control" name="name" value="{{ resultado.name }}" id="name" [(ngModel)]="name" required>
         <div class="valid-feedback">
             PODEMOS AGREGAR ALGO ACÁ!
         </div>
@@ -43,10 +41,10 @@
 </form>
 
 <br>
-
 <button [disabled]='!formularioEdit.valid' type="submit" class="btn btn-success mb-2 mr-2" (click)='editClub()'>ATUALIZAR DADOS</button>
 
-   
+<!-- <button type="submit" class="btn btn-success mb-2 mr-2" (click)='editClub()'>ATUALIZAR DADOS</button> -->
+  
   <br>
 
   <!-- <button class="btn btn-outline-primary mb-2 mr-2" (click)='dadosRandom()'>DADOS RANDOM</button> -->
