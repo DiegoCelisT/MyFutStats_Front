@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FutebolService } from '../../services/futebol.service';
 import { ActivatedRoute } from '@angular/router';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-editclube',
@@ -14,19 +14,9 @@ export class EditclubeComponent implements OnInit {
    
   ID: any;
   idNum: Number;
-
-  // PARA EDITAR CLUB
-  // name: string;
-  // urlShield: string;
-  // country: string;
-  // vitorias: number;
-  // empates: number;
-  // derrotas: number;
-  // golsPro: number;
-  // golsContra: number;
-  
+ 
   formularioEdit: FormGroup;
-
+  
   // pontos:number;
   // jogados:number;
   // saldoGols:number
@@ -47,18 +37,27 @@ export class EditclubeComponent implements OnInit {
           this.ID = this.idNum    
           this.FutebolServ.getClube(this.ID)
             .subscribe (resultados => {
-              this.resultado = resultados ['clube']
+              this.resultado = resultados ['clube'];
+              this.formularioEdit = this.formEdit.group({
+                name: [this.resultado.name,Validators.required],
+                country: [this.resultado.country],
+                urlShield: [this.resultado.urlShield],
+                vitorias: [this.resultado.vitorias],
+                empates: [this.resultado.empates],
+                derrotas: [this.resultado.derrotas],
+                golsPro: [this.resultado.golsPro],
+                golsContra: [this.resultado.golsContra]
+              })
             })
         });
         
     this.FutebolServ.getLigas()
     .subscribe (nomeLigas =>{
       this.nomeLigas = nomeLigas ['MyLeagues']
-    })
-    this.validEdit();
+    })    
 
     this.formularioEdit = this.formEdit.group({
-      name: [Validators.required],
+      name: [null,Validators.required],
       country: [null],
       urlShield: [null],
       vitorias: [null],
@@ -68,27 +67,31 @@ export class EditclubeComponent implements OnInit {
       golsContra: [null],
     })
 
+    this.validEdit();
   }
 
   //METODO PUT
   editClub(){
 
     // PARA FORMULARIO EDITCLUBE NÃO FICAR SEM DADOS
-    let name: string = this.formularioEdit.value.name;
-    let country: string = this.formularioEdit.value.country;
-    let urlShield: string = this.formularioEdit.value.urlShield;
-    let vitorias: number = this.formularioEdit.value.vitorias;
-    let empates: number = this.formularioEdit.value.empates;
-    let derrotas: number = this.formularioEdit.value.derrotas;
-    let golsPro: number = this.formularioEdit.value.golsPro;
-    let golsContra: number = this.formularioEdit.value.golsContra;
+    let name = this.formularioEdit.value.name;
+    let country = this.formularioEdit.value.country;
+    let urlShield = this.formularioEdit.value.urlShield;
+    let vitorias = this.formularioEdit.value.vitorias;
+    let empates = this.formularioEdit.value.empates;
+    let derrotas = this.formularioEdit.value.derrotas;
+    let golsPro = this.formularioEdit.value.golsPro;
+    let golsContra = this.formularioEdit.value.golsContra;
 
-    if (this.formularioEdit.value.vitorias==null){ vitorias=0 }
-    if (this.formularioEdit.value.empates==null){ empates=0 }
-    if (this.formularioEdit.value.derrotas==null){ derrotas=0 }
-    if (this.formularioEdit.value.golsPro==null){ golsPro=0 }
-    if (this.formularioEdit.value.golsContra==null){ golsContra=0 }
-    if (urlShield==null){ urlShield="https://www.clipartmax.com/png/full/19-194040_how-to-set-use-shield-grey-svg-vector-shield-template.png" }
+    if (name==null){ name=this.resultado.name }
+    if (country==null){ country=this.resultado.country }
+    if (vitorias==null){ vitorias=0 }
+    if (empates==null){ empates=0 }
+    if (derrotas==null){ derrotas=0 }
+    if (golsPro==null){ golsPro=0 }
+    if (golsContra==null){ golsContra=0 }  
+    if (urlShield=='' || null){ urlShield = "https://www.clipartmax.com/png/full/19-194040_how-to-set-use-shield-grey-svg-vector-shield-template.png"} 
+    else { urlShield=this.formularioEdit.value.urlShield }
 
     this.FutebolServ.editClube(this.ID, name, urlShield, country, vitorias, empates, derrotas, golsPro, golsContra)
       .subscribe()
@@ -112,4 +115,5 @@ export class EditclubeComponent implements OnInit {
     form.classList.add('was-validated');
   }
  
+  
 }

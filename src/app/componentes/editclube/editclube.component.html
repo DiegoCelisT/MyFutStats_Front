@@ -18,11 +18,11 @@
     </div>
     <div class="form-group">
         <label for="urlShield">URL Escudo:</label>
-        <input type="text" class="form-control" formControlName="urlShield" value="{{ resultado.urlShield }}">
+        <input type="url" class="form-control" formControlName="urlShield" value="{{ resultado.urlShield }}">
     </div>
     <div class="form-group">
         <label for="vitorias">Vitórias:</label>
-        <input type="number" class="form-control" formControlName="vitorias" value="{{ resultado.vitorias }}">
+        <input type="number" class="form-control" formControlName="vitorias" value="{{ resultado.vitorias |number}}">
     </div>
     <div class="form-group">
         <label for="empates">Empates:</label>
