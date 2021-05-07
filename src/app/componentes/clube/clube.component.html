@@ -2,20 +2,33 @@
 <div *ngIf='alertEdit' class="alert alert-success fade show" role="alert">
   {{ mensajeAlertEdit }}
 </div>
-  
 
-<h1>Clube {{ this.resultado.name }}</h1>
-<img id="ga" src="{{ this.resultado.urlShield }}" width="120px" alt="Escudo" >
-<p>País: {{ this.resultado.country }}</p>
-<p>Posição na liga: {{ position }}</p>
-<p>Pontos: {{ this.resultado.pontos }}</p>
-<p>Jogados: {{ this.resultado.jogados }}</p>
-<p>Vitórias: {{ this.resultado.vitorias }}</p>
-<p>Empates: {{ this.resultado.empates }}</p>
-<p>Derrotas: {{ this.resultado.derrotas }}</p>
-<p>Gols Pró: {{ this.resultado.golsPro }}</p>
-<p>Gols Contra: {{ this.resultado.golsContra }}</p>
-<p>Saldo de Gols: {{ this.resultado.saldoGols }}</p>
+<article>
+  <div>
+    <h1>{{ this.resultado.name }}</h1>
+    <h4>({{ this.resultado.country }})</h4>
+    <h2>Liga {{ nomeLigas[0].name }}</h2>
+    <h4>Posição: {{ position }}</h4>
+  </div>
+
+  <div>
+    <img id="ga" src="{{ this.resultado.urlShield }}" alt="Escudo" >
+  </div>
+  
+  <div>
+    <h2>Estátisticas da Temporada</h2>
+    <p>Pontos: {{ this.resultado.pontos }}</p>
+    <p>Jogados: {{ this.resultado.jogados }}</p>
+    <p>Vitórias: {{ this.resultado.vitorias }}</p>
+    <p>Empates: {{ this.resultado.empates }}</p>
+    <p>Derrotas: {{ this.resultado.derrotas }}</p>
+    <p>Gols Pró: {{ this.resultado.golsPro }}</p>
+    <p>Gols Contra: {{ this.resultado.golsContra }}</p>
+    <p>Saldo de Gols: {{ this.resultado.saldoGols }}</p>
+  </div>
+</article>
+
+
 
 <button class="btn btn-primary mb-2 mr-2" (click)="irEditClube()">EDITAR CLUBE</button>
 
