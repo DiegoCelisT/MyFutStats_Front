@@ -51,7 +51,6 @@ export class LigaComponent implements OnInit {
     this.FutebolServ.getClubes ()
     .subscribe (resultados => {
       this.resultados = resultados ['clubes'] //'É importante declarar o nome do JSON que foi dado no back-end, para dessa maneira evitar o erro de cannot read property '0' of undefined     
-
       this.resultadosSort = this.resultados.sort(function (a, b) {
         if ( a.pontos < b.pontos) {
           return 1;

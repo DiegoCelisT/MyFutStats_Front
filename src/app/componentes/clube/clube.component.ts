@@ -16,18 +16,20 @@ export class ClubeComponent implements OnInit {
   ID: any;
   idNum: Number;
   
+  resultados = [];
+  resultadosSort = [];
   nomeLigas = [{
     name:String
   }];
   
+  position:number
+
   alertEdit;
   mensajeAlertEdit = ''
   urlEdit;
   urlEliminado;
 
   constructor(private FutebolServ: FutebolService, private roteClub: ActivatedRoute, private modalEliminar: NgbModal) { }
-
-  
 
   ngOnInit(): void {
 
@@ -36,8 +38,35 @@ export class ClubeComponent implements OnInit {
       this.idNum = parseInt(params['id']);
       this.ID = this.idNum    
       this.FutebolServ.getClube(this.ID)
-      .subscribe (resultados => {this.resultado = resultados ['clube']})  
+      .subscribe (resultados => {this.resultado = resultados ['clube']})
     });
+
+    this.FutebolServ.getClubes ()
+    .subscribe (resultados => {
+      this.resultados = resultados ['clubes']   
+      this.resultadosSort = this.resultados.sort(function (a, b) {
+        if ( a.pontos < b.pontos) {
+          return 1;
+        }
+        if (a.saldoGols > b. saldoGols || a.pontos > b.pontos ) {
+          return -1;
+        }
+        return 0;
+      });
+      for (let P = 0; P < this.resultadosSort.length; P++){
+      if (this.ID == this.resultadosSort[P].id){
+        this.position=P+1
+      }
+      }
+    })
+
+
+
+
+
+
+
+
 
     this.FutebolServ.getLigas()
     .subscribe (nomeLigas =>{
