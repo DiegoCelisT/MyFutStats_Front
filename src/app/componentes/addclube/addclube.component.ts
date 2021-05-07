@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FutebolService } from '../../services/futebol.service';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-addclube',
@@ -22,7 +22,7 @@ export class AddclubeComponent implements OnInit {
   ngOnInit(): void {
 
     this.formularioAdd = this.formAdd.group({
-      name: [null],
+      name: [null, Validators.required],
       country: [null],
       urlShield: [null],
       vitorias: [null],
