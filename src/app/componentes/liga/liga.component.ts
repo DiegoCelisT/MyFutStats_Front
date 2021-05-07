@@ -29,18 +29,16 @@ export class LigaComponent implements OnInit {
 
 
 
-// PARA EDITAR CLUB
-ID: any;
-name: string;
-urlShield: string;
-country: string;
-vitorias: number;
-empates: number;
-derrotas: number;
-golsPro: number;
-golsContra: number;
-
-position:number
+  // PARA EDITAR CLUB
+  ID: any;
+  name: string;
+  urlShield: string;
+  country: string;
+  vitorias: number;
+  empates: number;
+  derrotas: number;
+  golsPro: number;
+  golsContra: number;
 
   ngOnInit(): void {
 

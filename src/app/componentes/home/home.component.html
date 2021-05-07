@@ -1,7 +1,28 @@
 <h1>HOME</h1>
 
-<a href="/liga"> {{ nomeLigas[0].name }} </a>
-<!-- <br><br> -->
+<div class="tabelaHome">
+    <a href="/liga">
+        <h2>{{ nomeLigas[0].name }}</h2>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>POS</th>
+                    <th>NOME</th>
+                    <th>PTS</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let resultado of resultados | orderBy:'saldoGols':false | orderBy:'pontos':true | slice:0:4; let i = index">
+                    <td>{{ i+1 }}</td>
+                    <td><img [src]="resultado?.urlShield" height="40"> {{ resultado.name }}</td>
+                    <td>{{ resultado.pontos }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </a>
+</div>
+
+
 
 <!-- <ul *ngFor= "let nomeLiga of nomeLigas">
     <li><a href="/liga"> {{nomeLiga.name}} </a></li>
