@@ -1,20 +1,20 @@
 <!-- MODAL ADICIONAR CLUB -->
 <div id="mostrarModal" class="modal" tabindex="-1">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title">Clube adicionado</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-            <p>Continuar adicionando?</p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" (click)='borrarDados()'>SIM, CONTINUAR</button>
-          <button type="button" class="btn btn-primary" (click)='voltarLiga()'>NÃO</button>
-        </div>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Clube adicionado</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+          <p>Continuar adicionando?</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" (click)='borrarDados()'>SIM, CONTINUAR</button>
+        <button type="button" class="btn btn-primary" (click)='voltarLiga()'>NÃO</button>
       </div>
     </div>
+  </div>
 </div>
 
 
@@ -22,71 +22,62 @@
 
 <br>
 
-<form class="form-group needs-validation dadosName" #formulario='ngForm' [formGroup]=formularioAdd>
-    <div class="form-group">
-        <label for="name">Nome do clube:</label>
-        <input type="text" class="form-control" name="name" formControlName='name' required id="name" [(ngModel)]="name">
+<form class="form-group needs-validation dadosName" [formGroup]=formularioAdd>
+  <div class="form-group">
+      <label for="name">Nome do clube:</label>
+      <input type="text" class="form-control" formControlName="name" required>
+  </div>    
+  <div class="form-group">
+      <label for="country">Pais:</label>
+      <input type="text" class="form-control" formControlName="country">
+  </div>
+  <div class="form-group">
+      <label for="escudo">URL Escudo:</label>
+      <input type="text" class="form-control" formControlName="urlShield">
+  </div>
+
+  <!-- CARROUSEL PARA DADOS DOS JOGOS -->   
+
+  <br>
+  <p>     
+    <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+      ADICIONAR DADOS DOS JOGOS
+    </button>    
+  </p>
+  <div class="collapse" id="collapseExample">
+    <div class="card card-body">
+      <div class="form-group needs-validation dadosJogos"> 
+
+        <!-- FORMULARIO DADOS DOS JOGOS -->
+
+        <div class="form-group">
+            <label for="vitorias">Vitórias:</label>
+            <input type="number" class="form-control" formControlName="vitorias" value="{{ resultado.vitorias }}">
+        </div>
+        <div class="form-group">
+            <label for="empates">Empates:</label>
+            <input type="number" class="form-control" formControlName="empates" value="{{ resultado.empates }}">
+        </div>
+        <div class="form-group">
+            <label for="derrotas">Derrotas:</label>
+            <input type="number" class="form-control" formControlName="derrotas" value="{{ resultado.derrotas }}">
+        </div>
+        <div class="form-group">
+            <label for="golsPro">Gols Pró:</label>
+            <input type="number" class="form-control" formControlName="golsPro" value="{{ resultado.golsPro }}">
+        </div>
+        <div class="form-group">
+            <label for="golsContra">Gols Contra:</label>
+            <input type="number" class="form-control" formControlName="golsContra" value="{{ resultado.golsContra }}">
+        </div>
+      </div>
     </div>
-    
-    <div class="form-group">
-        <label for="country">Pais:</label>
-        <input type="text" class="form-control" name="country" id="country" [(ngModel)]="country">
-    </div>
-    <div class="form-group">
-        <label for="escudo">URL Escudo:</label>
-        <input type="text" class="form-control" name="urlShield" id="escudo" [(ngModel)]="urlShield">
-    </div>   
-</form>
-
-<br>
-
-
- 
-<!-- CARROUSEL PARA DADOS DOS JOGOS -->
-<p>
-  <!-- <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-    Link with href
-  </a> -->
-
-  
-  <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-    ADICIONAR DADOS DOS JOGOS
-  </button>
-</p>
-<div class="collapse" id="collapseExample">
-  <div class="card card-body">
-    <!-- FORMULARIO DADOS DOS JOGOS -->
-<form class="form-group needs-validation dadosJogos" #formDadosJogos='ngForm' novalidate> 
-  <div class="form-group">
-      <label for="vitorias">Vitórias:</label>
-      <input type="number" class="form-control" name="vitorias" placeholder="0" id="vitorias" [(ngModel)]="vitorias">
-  </div>
-  <div class="form-group">
-      <label for="empates">Empates:</label>
-      <input type="number" class="form-control" name="empates" placeholder="0" id="empates" [(ngModel)]="empates">
-  </div>
-  <div class="form-group">
-      <label for="derrotas">Derrotas:</label>
-      <input type="number" class="form-control" name="derrotas" placeholder="0" id="derrotas" [(ngModel)]="derrotas">
-  </div>
-  <div class="form-group">
-      <label for="golsPro">Gols Pró:</label>
-      <input type="number" class="form-control" name="golsPro" placeholder="0" id="golsPro" [(ngModel)]="golsPro">
-  </div>
-  <div class="form-group">
-      <label for="golsContra">Gols Contra:</label>
-      <input type="number" class="form-control" name="golsContra" placeholder="0" id="golsContra" [(ngModel)]="golsContra">
   </div>
 </form>
-  </div>
-</div>
 
 <button [disabled]='!formularioAdd.valid' class="btn btn-success mb-2 mr-2 botonAdd" data-bs-toggle="modal" data-bs-target="#mostrarModal" (click)="novoClub()">ADICIONAR O CLUBE</button>
 
-
 <br>
-
-
 
 <br>
 

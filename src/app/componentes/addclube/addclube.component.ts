@@ -10,16 +10,6 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 
 export class AddclubeComponent implements OnInit {
 
-  // DADOS DO FORMULARIO ADDCLUBE
-  name: string;
-  country: string;
-  urlShield: string;
-  vitorias: number;
-  empates: number;
-  derrotas: number;
-  golsPro: number;
-  golsContra: number;
-
   resultado: any = [];
   defaultValue = 0;
   formularioAdd: FormGroup;
@@ -48,15 +38,26 @@ export class AddclubeComponent implements OnInit {
 
   //METODO POST PARA CRIAR NOVOS REGISTROS DESDE O FRONT 
   novoClub(){
-    
-    if (this.vitorias==null){ this.vitorias=0 }
-    if (this.empates==null){ this.empates=0 }
-    if (this.derrotas==null){ this.derrotas=0 }
-    if (this.golsPro==null){ this.golsPro=0 }
-    if (this.golsContra==null){ this.golsContra=0 }
 
-    this.FutebolServ.createClube(this.name, this.urlShield, this.country, this.vitorias, this.empates, this.derrotas, this.golsPro, this.golsContra)
-    .subscribe();
+    // PARA FORMULARIO ADDCLUBE NÃO FICAR SEM DADOS
+    let name: string = this.formularioAdd.value.name;
+    let country: string = this.formularioAdd.value.country;
+    let urlShield: string = this.formularioAdd.value.urlShield;
+    let vitorias: number = this.formularioAdd.value.vitorias;
+    let empates: number = this.formularioAdd.value.empates;
+    let derrotas: number = this.formularioAdd.value.derrotas;
+    let golsPro: number = this.formularioAdd.value.golsPro;
+    let golsContra: number = this.formularioAdd.value.golsContra;
+    
+    if (this.formularioAdd.value.vitorias==null){ vitorias=0 }
+    if (this.formularioAdd.value.empates==null){ empates=0 }
+    if (this.formularioAdd.value.derrotas==null){ derrotas=0 }
+    if (this.formularioAdd.value.golsPro==null){ golsPro=0 }
+    if (this.formularioAdd.value.golsContra==null){ golsContra=0 }
+    if (urlShield==null){ urlShield="https://www.clipartmax.com/png/full/19-194040_how-to-set-use-shield-grey-svg-vector-shield-template.png" }
+
+    this.FutebolServ.createClube(name, urlShield, country, vitorias, empates, derrotas, golsPro, golsContra)
+    .subscribe()
   }
 
   voltarLiga() {
