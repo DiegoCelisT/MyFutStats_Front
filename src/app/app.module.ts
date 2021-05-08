@@ -6,12 +6,7 @@ import { AppComponent } from './app.component';
 
 import { ComponentesModule } from './componentes/componentes.module';
 import { HttpClientModule } from '@angular/common/http';
-
-
-
-
-
-
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -21,8 +16,8 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserModule,
     AppRoutingModule,
     ComponentesModule,
-    HttpClientModule
-    
+    HttpClientModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]
