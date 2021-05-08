@@ -17,10 +17,6 @@ export class FutebolService {
   
   ID: number;
 
-  //PARA RANDOM DE LOS PARTIDOS JUGADOS
-  J = 0;
-
-
   //Conexões com o Back:
   getClubes (){
     return this.httpFutebol.get ('http://localhost:'+this.portBack+'/clubes')
@@ -71,12 +67,6 @@ export class FutebolService {
   eliminarClube(ID: number) {
     return this.httpFutebol.delete ('http://localhost:'+this.portBack+'/clube/'+ID)
   }
-
-  // RANDOM JOGADOS
-  // sumarJ(){
-  //   this.J = this.J + 1;
-  //   return this.J;
-  // }
  
   //Trazendo todos os nomes das ligas
   getLigas (){

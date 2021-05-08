@@ -14,41 +14,12 @@ export class AddclubeComponent implements OnInit {
   defaultValue = 0;
   formularioAdd: FormGroup;
 
-  //VALORES RANDOM
-  vitoriasRandom:Number
-  empatesRandom:Number
-  derrotasRandom:Number
-  golsProRandom:Number
-  golsContraRandom:Number
-  dadosRandom(){
-    function randomNumber(min, max) {
-      return Math.floor(Math.random() * (max - min) + min) //Math.floor é a parte entera do número
-    }
-    this.resultado.vitorias = randomNumber (1,5)
-    this.resultado.empates = randomNumber (3,8)
-    this.resultado.derrotas  = randomNumber (2,8)
-    this.resultado.golsPro = randomNumber (5,20)
-    this.resultado.golsContra = randomNumber (7,25)
-    }
-
   // BOTÃO ADICIONAR DESHABILITADO
   botonAdd = false;
 
   constructor(private FutebolServ: FutebolService, private formAdd: FormBuilder) { }
 
   ngOnInit(): void {
-  
-    // function randomNumber(min, max) {
-    //   return Math.floor(Math.random() * (max - min) + min) //Math.floor é a parte entera do número
-      
-    // }
-    // function dadosRandom(){
-    // this.vitoriasRandom = randomNumber (2,8)
-    // this.empatesRandom = randomNumber (2,8)
-    // this.derrotasRandom  = randomNumber (2,8)
-    // this.golsProRandom = randomNumber (5,20)
-    // this.golsContraRandom = randomNumber (5,20)
-    // }
 
     this.formularioAdd = this.formAdd.group({
       name: [null, Validators.required],
@@ -104,4 +75,16 @@ export class AddclubeComponent implements OnInit {
     this.formularioAdd.reset();
   }
   
+  //VALORES RANDOM
+  dadosRandom(){
+    function randomNumber(min, max) {
+      return Math.floor(Math.random() * (max - min) + min) //Math.floor é a parte entera do número
+    }
+    this.resultado.vitorias = randomNumber (2,5)
+    this.resultado.empates = randomNumber (0,6)
+    this.resultado.derrotas  = randomNumber (2,5)
+    this.resultado.golsPro = randomNumber (5,16)
+    this.resultado.golsContra = randomNumber (5,16)
+    }
+
 }
