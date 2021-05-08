@@ -2,3 +2,8 @@
 nav, .navbar-brand, .container-fluid{
     padding: 0px;
 }
+
+footer{
+    background-color: black;
+    color:white;
+}

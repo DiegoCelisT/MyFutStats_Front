@@ -52,23 +52,23 @@
 
         <div class="form-group">
             <label for="vitorias">Vitórias:</label>
-            <input type="number" class="form-control" formControlName="vitorias" value="{{ resultado.vitorias }}">
+            <input type="number" class="form-control" formControlName="vitorias" value="{{ resultado.vitorias }}" placeholder="0" [(ngModel)]="resultado.vitorias">
         </div>
         <div class="form-group">
             <label for="empates">Empates:</label>
-            <input type="number" class="form-control" formControlName="empates" value="{{ resultado.empates }}">
+            <input type="number" class="form-control" formControlName="empates" value="{{ resultado.empates }}" placeholder="0" [(ngModel)]="resultado.empates">
         </div>
         <div class="form-group">
             <label for="derrotas">Derrotas:</label>
-            <input type="number" class="form-control" formControlName="derrotas" value="{{ resultado.derrotas }}">
+            <input type="number" class="form-control" formControlName="derrotas" value="{{ resultado.derrotas }}" placeholder="0" [(ngModel)]="resultado.derrotas">
         </div>
         <div class="form-group">
             <label for="golsPro">Gols Pró:</label>
-            <input type="number" class="form-control" formControlName="golsPro" value="{{ resultado.golsPro }}">
+            <input type="number" class="form-control" formControlName="golsPro" value="{{ resultado.golsPro }}" placeholder="0" [(ngModel)]="resultado.golsPro">
         </div>
         <div class="form-group">
             <label for="golsContra">Gols Contra:</label>
-            <input type="number" class="form-control" formControlName="golsContra" value="{{ resultado.golsContra }}">
+            <input type="number" class="form-control" formControlName="golsContra" value="{{ resultado.golsContra }}" placeholder="0" [(ngModel)]="resultado.golsContra">
         </div>
       </div>
     </div>
@@ -78,7 +78,7 @@
 <button [disabled]='!formularioAdd.valid' class="btn btn-success mb-2 mr-2 botonAdd" data-bs-toggle="modal" data-bs-target="#mostrarModal" (click)="novoClub()">ADICIONAR O CLUBE</button>
 
 <br>
-
+<button (click)='dadosRandom()'>DADOS RANDOM</button>
 <br>
 
 <button class="btn-default"><a href="">Voltar a Home</a></button>
