@@ -4,7 +4,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title">Clube adicionado</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
       </div>
       <div class="modal-body">
           <p>Continuar adicionando?</p>
@@ -70,7 +70,12 @@
             <label for="golsContra">Gols Contra:</label>
             <input type="number" class="form-control" formControlName="golsContra" value="{{ resultado.golsContra }}" placeholder="0" [(ngModel)]="resultado.golsContra">
         </div>
+        
       </div>
+      
+    </div>
+    <div>
+      <button  class="btn btn-primary mb-2 mr-2" (click)='dadosRandom()'>DADOS RANDOM</button>
     </div>
   </div>
 </form>
@@ -78,7 +83,7 @@
 <button [disabled]='!formularioAdd.valid' class="btn btn-success mb-2 mr-2 botonAdd" data-bs-toggle="modal" data-bs-target="#mostrarModal" (click)="novoClub()">ADICIONAR O CLUBE</button>
 
 <br>
-<button (click)='dadosRandom()'>DADOS RANDOM</button>
+
 <br>
 
 <button class="btn-default"><a href="">Voltar a Home</a></button>

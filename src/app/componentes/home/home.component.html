@@ -1,26 +1,127 @@
 <h1>HOME</h1>
 
-<div class="tabelaHome">
-    <a href="/liga">
-        <h2>{{ nomeLigas[0].name }}</h2>
-        <table class="table table-bordered">
-            <thead>
-                <tr>
-                    <th>POS</th>
-                    <th>TIME</th>
-                    <th>PTS</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr *ngFor="let resultado of resultados | orderBy:'saldoGols':false | orderBy:'pontos':true | slice:0:4; let i = index">
-                    <td>{{ i+1 }}</td>
-                    <td><img [src]="resultado?.urlShield" height="40"> {{ resultado.name }}</td>
-                    <td>{{ resultado.pontos }}</td>
-                </tr>
-            </tbody>
-        </table>
-    </a>
+<!-- <div class="container-fluid">
+    <div class="tabelaHome">
+        <a href="/liga">
+            <h2>{{ nomeLigas[0].name }}</h2>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>POS</th>
+                        <th>TIME</th>
+                        <th>PTS</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let resultado of resultados | orderBy:'saldoGols':false | orderBy:'pontos':true | slice:0:4; let i = index">
+                        <td>{{ i+1 }}</td>
+                        <td><img [src]="resultado?.urlShield" height="40"> {{ resultado.name }}</td>
+                        <td>{{ resultado.pontos }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </a>
+    </div>
+</div> -->
+
+<div class="container-fluid">
+    <div class="row">    
+        <div class="col-sm-6 p-2" (click)='abrirLink()'>
+            <div class="card bg-dark text-white text-center">
+                <div class="card-body">
+                    <h2 class="card-title">{{ nomeLigas[0].name }}</h2>
+                    <table class="table table-dark">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Time</th>
+                                <th scope="col">PTS</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let resultado of resultados | orderBy:'saldoGols':false | orderBy:'pontos':true | slice:0:4; let i = index">
+                                <td>{{ i+1 }}</td>
+                                <td class="text-center"><img [src]="resultado?.urlShield" height="40"> {{ resultado.name }}</td> <!-- SOLO AGREGAR ESA CLASE PARA CENTRAR EL TEXTO-->
+                                <td>{{ resultado.pontos }}</td>
+                            </tr>      
+                        </tbody>
+                    </table>          
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 p-2" (click)='abrirLink()'>
+            <div class="card bg-dark text-white text-center">
+                <div class="card-body">
+                    <h2 class="card-title">{{ nomeLigas[0].name }}</h2>
+                    <table class="table table-dark table-hover">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Time</th>
+                                <th scope="col">PTS</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let resultado of resultados | orderBy:'saldoGols':false | orderBy:'pontos':true | slice:0:4; let i = index">
+                                <td>{{ i+1 }}</td>
+                                <td><img [src]="resultado?.urlShield" height="40"> {{ resultado.name }}</td>
+                                <td>{{ resultado.pontos }}</td>
+                            </tr>      
+                        </tbody>
+                    </table>          
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 p-2" (click)='abrirLink()'>
+            <div class="card bg-dark text-white text-center">
+                <div class="card-body">
+                    <h2 class="card-title">{{ nomeLigas[0].name }}</h2>
+                    <table class="table table-dark table-hover">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Time</th>
+                                <th scope="col">PTS</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let resultado of resultados | orderBy:'saldoGols':false | orderBy:'pontos':true | slice:0:4; let i = index">
+                                <td>{{ i+1 }}</td>
+                                <td><img [src]="resultado?.urlShield" height="40"> {{ resultado.name }}</td>
+                                <td>{{ resultado.pontos }}</td>
+                            </tr>      
+                        </tbody>
+                    </table>          
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 p-2" (click)='abrirLink()'>
+            <div class="card bg-dark text-white text-center">
+                <div class="card-body">
+                    <h2 class="card-title">{{ nomeLigas[0].name }}</h2>
+                    <table class="table table-dark table-hover">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Time</th>
+                                <th scope="col">PTS</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let resultado of resultados | orderBy:'saldoGols':false | orderBy:'pontos':true | slice:0:4; let i = index">
+                                <td>{{ i+1 }}</td>
+                                <td><img [src]="resultado?.urlShield" height="40"> {{ resultado.name }}</td>
+                                <td>{{ resultado.pontos }}</td>
+                            </tr>      
+                        </tbody>
+                    </table>          
+                </div>
+            </div>
+        </div>    
+    </div>
 </div>
+
+
 
 
 

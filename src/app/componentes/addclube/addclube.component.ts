@@ -80,6 +80,7 @@ export class AddclubeComponent implements OnInit {
     function randomNumber(min, max) {
       return Math.floor(Math.random() * (max - min) + min) //Math.floor é a parte entera do número
     }
+    
     this.resultado.vitorias = randomNumber (2,5)
     this.resultado.empates = randomNumber (0,6)
     this.resultado.derrotas  = randomNumber (2,5)

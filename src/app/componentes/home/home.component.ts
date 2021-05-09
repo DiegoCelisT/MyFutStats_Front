@@ -35,8 +35,12 @@ export class HomeComponent implements OnInit {
     })
   
   this.FutebolServ.getClubes ()
-  .subscribe (resultados => {
-    this.resultados = resultados ['clubes']
-  })
+    .subscribe (resultados => {
+      this.resultados = resultados ['clubes']
+    })
+  }
+
+  abrirLink() {
+    location.href='/liga'
   }
 }
