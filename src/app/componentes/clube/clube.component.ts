@@ -61,13 +61,6 @@ export class ClubeComponent implements OnInit {
     })
 
 
-
-
-
-
-
-
-
     this.FutebolServ.getLigas()
     .subscribe (nomeLigas =>{
       this.nomeLigas = nomeLigas ['MyLeagues']
@@ -80,17 +73,17 @@ export class ClubeComponent implements OnInit {
   //ELIMINAR CLUBE
   eliminarClube(){
     this.FutebolServ.eliminarClube(this.ID).subscribe();
-    location.href='http://localhost:'+this.FutebolServ.portFront+'/liga/'+'?sucessoeliminado=ok'
+    location.href='http://localhost:'+this.FutebolServ.portFront+'/liga1/'+'?sucessoeliminado=ok'
   }
 
   //CERRAR MODAL E IR PARA LIGA
   fechaModalEliminar() {
-    location.href ="http://localhost:"+this.FutebolServ.portFront+"/liga"
+    location.href ="http://localhost:"+this.FutebolServ.portFront+"/liga1"
   }
 
   //ROTA EDITAR CLUBE
   irEditClube() {
-    location.href ="http://localhost:"+this.FutebolServ.portFront+"/editclube/"+this.ID
+    location.href ="http://localhost:"+this.FutebolServ.portFront+"/liga1/editclube/"+this.ID
   }
 
   mostrarAlert() {

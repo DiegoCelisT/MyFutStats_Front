@@ -60,7 +60,7 @@ export class AddclubeComponent implements OnInit {
   }
 
   voltarLiga() {
-    location.href ="http://localhost:"+this.FutebolServ.portFront+"/liga?sucessoadd=ok"
+    location.href ="http://localhost:"+this.FutebolServ.portFront+"/liga1?sucessoadd=ok"
   }
 
   validAdd(){
