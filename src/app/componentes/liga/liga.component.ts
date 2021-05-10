@@ -27,8 +27,6 @@ export class LigaComponent implements OnInit {
 
   constructor(private FutebolServ: FutebolService, private rotaLiga: ActivatedRoute) { }
 
-
-
   // PARA EDITAR CLUB
   ID: any;
   name: string;
@@ -98,7 +96,7 @@ export class LigaComponent implements OnInit {
   }
 
   editLiga() {
-    location.href="http://localhost:4200/editliga"
+    location.href="http://localhost:4200/liga1/editliga"
   }
   
 }

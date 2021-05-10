@@ -41,6 +41,6 @@ export class HomeComponent implements OnInit {
   }
 
   abrirLink() {
-    location.href='/liga'
+    location.href='/liga1'
   }
 }

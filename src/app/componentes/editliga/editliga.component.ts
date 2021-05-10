@@ -76,7 +76,7 @@ export class EditligaComponent implements OnInit {
   }
 
   addClube() {
-    location.href="http://localhost:"+this.FutebolServ.portFront+"/addclube/"
+    location.href="http://localhost:"+this.FutebolServ.portFront+"/liga1/addclube/"
   }
     
 

@@ -55,13 +55,12 @@ export class AddclubeComponent implements OnInit {
     if (this.formularioAdd.value.golsPro==null){ golsPro=0 }
     if (this.formularioAdd.value.golsContra==null){ golsContra=0 }
     if (urlShield==null){ urlShield="https://www.clipartmax.com/png/full/19-194040_how-to-set-use-shield-grey-svg-vector-shield-template.png" }
-
     this.FutebolServ.createClube(name, urlShield, country, vitorias, empates, derrotas, golsPro, golsContra)
     .subscribe()
   }
 
   voltarLiga() {
-    location.href ="http://localhost:"+this.FutebolServ.portFront+"/liga?sucessoadd=ok"
+    location.href ="http://localhost:"+this.FutebolServ.portFront+"/liga1?sucessoadd=ok"
   }
 
   validAdd(){

@@ -10,11 +10,11 @@ import { EditligaComponent } from './componentes/editliga/editliga.component';
 
 const routes: Routes = [
   { path: '', component:HomeComponent },
-  { path: 'clube/:id', component:ClubeComponent },
-  { path: 'liga', component:LigaComponent },
-  { path: 'addclube', component:AddclubeComponent },
-  { path: 'editclube/:id', component:EditclubeComponent },
-  { path: 'editliga', component:EditligaComponent }
+  { path: 'liga1/clube/:id', component:ClubeComponent },
+  { path: 'liga1', component:LigaComponent },
+  { path: 'liga1/addclube', component:AddclubeComponent },
+  { path: 'liga1/editclube/:id', component:EditclubeComponent },
+  { path: 'liga1/editliga', component:EditligaComponent }
 ];
 
 @NgModule({
