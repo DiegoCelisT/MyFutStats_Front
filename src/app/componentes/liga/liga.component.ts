@@ -27,8 +27,6 @@ export class LigaComponent implements OnInit {
 
   constructor(private FutebolServ: FutebolService, private rotaLiga: ActivatedRoute) { }
 
-
-
   // PARA EDITAR CLUB
   ID: any;
   name: string;

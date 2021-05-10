@@ -17,19 +17,22 @@ export class FutebolService {
   
   ID: number;
 
+  //Número de Tabela:
+  tableNumber:Number = 1
+
   //Conexões com o Back:
   getClubes (){
-    return this.httpFutebol.get ('http://localhost:'+this.portBack+'/clubes')
+    return this.httpFutebol.get ('http://localhost:'+this.portBack+'/clubes'+this.tableNumber)
   }
 
   // UM SÓ CLUBE
   getClube (ID: number){
-    return this.httpFutebol.get ('http://localhost:'+this.portBack+'/clube/'+ID)
+    return this.httpFutebol.get ('http://localhost:'+this.portBack+'/clube'+this.tableNumber+'/'+ID)
   }
 
    //Método POST, para criar novos registros: (para este verbo é necessario passar os parametros no corpo)
   createClube (name: string, urlShield: string, country: string, vitorias: number, empates: number, derrotas: number, golsPro: number, golsContra: number){
-    return this.httpFutebol.post ('http://localhost:'+this.portBack+'/novoclub', {
+    return this.httpFutebol.post ('http://localhost:'+this.portBack+'/novoclub'+this.tableNumber, {
       name: name,
       urlShield: urlShield,
       country: country,
@@ -44,7 +47,7 @@ export class FutebolService {
   //METODO PUT
   editClube (ID: number, name: string, urlShield: string, country: string, vitorias: number, empates: number, derrotas: number, golsPro: number, golsContra: number){
     // console.log('servicio'+ID,name, urlShield, country, vitorias, empates, derrotas, golsPro, golsContra)
-    return this.httpFutebol.put ('http://localhost:'+this.portBack+'/editclube/'+ID, {
+    return this.httpFutebol.put ('http://localhost:'+this.portBack+'/editclube'+this.tableNumber+'/'+ID, {
       name: name,
       urlShield: urlShield,
       country: country,
@@ -58,14 +61,14 @@ export class FutebolService {
 
   //METODO PUT2 (Para position)
   editClubeIndex (ID: number, position:number){
-    return this.httpFutebol.put ('http://localhost:'+this.portBack+'/editclube/'+ID, {
+    return this.httpFutebol.put ('http://localhost:'+this.portBack+'/editclube'+this.tableNumber+'/'+ID, {
       position:position
     })
   }
 
   //METODO DELETE
   eliminarClube(ID: number) {
-    return this.httpFutebol.delete ('http://localhost:'+this.portBack+'/clube/'+ID)
+    return this.httpFutebol.delete ('http://localhost:'+this.portBack+'/deleteClube'+this.tableNumber+'/'+ID)
   }
  
   //Trazendo todos os nomes das ligas
