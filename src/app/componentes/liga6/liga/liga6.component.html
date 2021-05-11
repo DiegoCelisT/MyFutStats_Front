@@ -9,7 +9,7 @@
         {{ mensajeAlertAdd }}
     </div>
 
-    <h1>{{ nomeLigas[2]?.name }}</h1>
+    <h1>{{ nomeLigas[5]?.name }}</h1>
     <a href="">Voltar a Home</a> 
     <nav class="navbar">
         <input class="form-control" type="text" name="name" [(ngModel)]="pesquisa"  placeholder="Insira sua pesquisa aqui...">
@@ -36,7 +36,7 @@
     
                     <td>{{ resultadosSort.indexOf(resultado)+1 }}</td>
                     <!-- <td>{{ i+1 }}</td> -->
-                    <td><a href="http://localhost:4200/liga3/clube3/{{ resultado.id }}"><img [src]="resultado?.urlShield" height="35">{{ resultado.name }}</a></td>
+                    <td><a href="http://localhost:4200/liga6/clube6/{{ resultado.id }}"><img [src]="resultado?.urlShield" height="35">{{ resultado.name }}</a></td>
                     <td>{{ resultado.country | uppercase | slice:0:3}} </td>
                     <td>{{ resultado.jogados}} </td>
                     <td>{{ resultado.vitorias }} </td>

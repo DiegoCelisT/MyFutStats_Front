@@ -35,7 +35,6 @@ export class Editliga2Component implements OnInit {
     this.FutebolServ.getClubes ()
     .subscribe (resultados => {
       this.resultados = resultados ['clubes']
-      console.log (resultados)
       this.mostrarAlert(); //SI MODIFICAMOS QUE NO CAMBIE DE COMPONENTE AL ELIMINAR UN CLUB, TENEMOS QUE VOLVER A UBICAR ESTA LLAMADA DE LA FUNCION
       //POR QUE NO SE VA A EJECUTAR SI NO RECARGAMOS LA PAGINA. HAY QUE CAMBIAR LA FUNCION.
     })
@@ -55,13 +54,12 @@ export class Editliga2Component implements OnInit {
 
   //METODO PUT (Para cambiarle el nombre a la liga)
   editLiga(){
-    this.FutebolServ.editLiga(1, this.name)
+    this.FutebolServ.editLiga(2, this.name)
     .subscribe() 
     window.location.href="http://localhost:4200/editliga2"
   }
 
   mostrarAlert() {
-    console.log('ok')
     this.roteEditLiga.queryParams.subscribe(params => {
       this.urlEliminado = params ['sucessoeliminado']
       if (this.urlEliminado == 'ok') {

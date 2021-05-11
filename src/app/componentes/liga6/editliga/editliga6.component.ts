@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { FutebolService } from '../../../services/futebol.service3';
+import { FutebolService } from '../../../services/futebol.service6';
 import { ActivatedRoute, CanActivate } from '@angular/router';
 
 @Component({
-  selector: 'app-editliga3',
-  templateUrl: './editliga3.component.html',
-  styleUrls: ['./editliga3.component.css']
+  selector: 'app-editliga6',
+  templateUrl: './editliga6.component.html',
+  styleUrls: ['./editliga6.component.css']
 })
-export class Editliga3Component implements OnInit {
+export class Editliga6Component implements OnInit {
 
   constructor(private FutebolServ: FutebolService, private roteEditLiga: ActivatedRoute) { }
 
@@ -54,9 +54,9 @@ export class Editliga3Component implements OnInit {
 
   //METODO PUT (Para cambiarle el nombre a la liga)
   editLiga(){
-    this.FutebolServ.editLiga(3, this.name)
+    this.FutebolServ.editLiga(6, this.name)
     .subscribe() 
-    window.location.href="http://localhost:4200/liga3/editliga3"
+    window.location.href="http://localhost:4200/liga6/editliga6"
   }
 
   mostrarAlert() {
@@ -74,7 +74,7 @@ export class Editliga3Component implements OnInit {
   }
 
   addClube() {
-    location.href="http://localhost:"+this.FutebolServ.portFront+"/liga3/addclube3/"
+    location.href="http://localhost:"+this.FutebolServ.portFront+"/liga6/addclube6/"
   }
     
 

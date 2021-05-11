@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { FutebolService } from '../../../services/futebol.service2';
+import { FutebolService } from '../../../services/futebol.service4';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
-  selector: 'app-liga2',
-  templateUrl: './liga2.component.html',
-  styleUrls: ['./liga2.component.css']
+  selector: 'app-liga4',
+  templateUrl: './liga4.component.html',
+  styleUrls: ['./liga4.component.css']
 })
-export class Liga2Component implements OnInit {
+export class Liga4Component implements OnInit {
 
   resultados = [];
   resultadosSort = [];
@@ -94,8 +94,9 @@ export class Liga2Component implements OnInit {
       // console.log(this.alertAdd + 'adicionado', this.alertEliminado + 'eliminado')
     })
   }
+
   editLiga() {
-    location.href="http://localhost:4200/liga2/editliga2"
+    location.href="http://localhost:4200/liga4/editliga4"
   }
   
 }
