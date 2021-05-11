@@ -10,6 +10,6 @@ a, tr {
     text-align: center;
 }
 
-td:nth-of-type(2){
+td{
     text-align: left;
 }
