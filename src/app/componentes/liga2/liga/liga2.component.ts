@@ -46,7 +46,7 @@ export class Liga2Component implements OnInit {
     })
 
     //GET CLUBES ADAPTADO PARA ORDENAR DOS DADOS (SORT) E CONSEGUIR ATRIBUIR VALORES DE POSIÇÃO DINÂMICOS COMPATIVÉIS COM O FORM DE PESQUISA
-    this.FutebolServ.getClubesAll (2)
+    this.FutebolServ.getClubes ()
     .subscribe (resultados => {
       this.resultados = resultados ['clubes'] //'É importante declarar o nome do JSON que foi dado no back-end, para dessa maneira evitar o erro de cannot read property '0' of undefined     
       this.resultadosSort = this.resultados.sort(function (a, b) {

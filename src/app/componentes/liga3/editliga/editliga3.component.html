@@ -4,12 +4,12 @@
 </div>
 
 <a href="">Voltar a Home</a>
-<h1>Menú de edição de {{ nomeLigas[0].name }}</h1>
+<h1>Menú de edição de {{ nomeLigas[2]?.name }}</h1>
 
 <form class="form-group needs-validation" #formedit='ngForm' novalidate>
     <div class="form-group">
         <label for="name">Editar o nome da Liga:</label>
-        <input type="text" class="form-control" name="name" value="{{ this.nomeLigas[0].name }}" id="name" [(ngModel)]="name" placeholder= "{{ nomeLigas[0].name }}" required>
+        <input type="text" class="form-control" name="name" value="{{ this.nomeLigas[2]?.name }}" id="name" [(ngModel)]="name" placeholder= "{{ nomeLigas[2]?.name }}" required>
     </div> 
 </form>
 <button type="submit" class="btn btn-outline-primary mb-2 mr-2" (click)='editLiga()'>Trocar o nome da Liga</button>
@@ -35,4 +35,4 @@
 
 <br>
 <br>
-<a href="http://localhost:4200/liga1">Voltar a {{ nomeLigas[0].name }}</a> <br>
+<a href="http://localhost:4200/liga3">Voltar a {{ nomeLigas[2]?.name }}</a> <br>
