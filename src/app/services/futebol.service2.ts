@@ -18,7 +18,7 @@ export class FutebolService {
   ID: number;
 
   //Número de Tabela:
-  tableNumber:Number = 1
+  tableNumber:Number = 2
 
   //Conexões com o Back:
   getClubes (){
@@ -28,8 +28,6 @@ export class FutebolService {
   getClubesAll (numeroLiga){
     return this.httpFutebol.get ('http://localhost:'+this.portBack+'/clubes'+numeroLiga)
   }
-
-
 
   // UM SÓ CLUBE
   getClube (ID: number){

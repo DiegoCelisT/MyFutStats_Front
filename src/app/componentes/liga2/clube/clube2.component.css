@@ -1,0 +1,11 @@
+article{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 40px;
+}
+
+article div img{
+    height: 50vh;
+}

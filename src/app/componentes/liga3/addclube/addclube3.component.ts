@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { FutebolService } from '../../services/futebol.service';
+import { FutebolService } from '../../../services/futebol.service3';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
-  selector: 'app-addclube',
-  templateUrl: './addclube.component.html',
-  styleUrls: ['./addclube.component.css']
+  selector: 'app-addclube3',
+  templateUrl: './addclube3.component.html',
+  styleUrls: ['./addclube3.component.css']
 })
 
-export class AddclubeComponent implements OnInit {
+export class Addclube3Component implements OnInit {
 
   resultado: any = [];
   defaultValue = 0;
@@ -60,7 +60,7 @@ export class AddclubeComponent implements OnInit {
   }
 
   voltarLiga() {
-    location.href ="http://localhost:"+this.FutebolServ.portFront+"/liga1?sucessoadd=ok"
+    location.href ="http://localhost:"+this.FutebolServ.portFront+"/liga3?sucessoadd=ok"
   }
 
   validAdd(){
