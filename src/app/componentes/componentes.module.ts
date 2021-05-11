@@ -22,6 +22,24 @@ import { Clube3Component } from './liga3/clube/clube3.component';
 import { Addclube3Component } from './liga3/addclube/addclube3.component';
 import { Editliga3Component } from './liga3/editliga/editliga3.component';
 
+import { Liga4Component } from './liga4/liga/liga4.component';
+import { Editclube4Component } from './liga4/editclube/editclube4.component'
+import { Clube4Component } from './liga4/clube/clube4.component';
+import { Addclube4Component } from './liga4/addclube/addclube4.component';
+import { Editliga4Component } from './liga4/editliga/editliga4.component';
+
+import { Liga5Component } from './liga5/liga/liga5.component';
+import { Editclube5Component } from './liga5/editclube/editclube5.component'
+import { Clube5Component } from './liga5/clube/clube5.component';
+import { Addclube5Component } from './liga5/addclube/addclube5.component';
+import { Editliga5Component } from './liga5/editliga/editliga5.component';
+
+import { Liga6Component } from './liga6/liga/liga6.component';
+import { Editclube6Component } from './liga6/editclube/editclube6.component'
+import { Clube6Component } from './liga6/clube/clube6.component';
+import { Addclube6Component } from './liga6/addclube/addclube6.component';
+import { Editliga6Component } from './liga6/editliga/editliga6.component';
+
 //Módulos para pesquisar e para ordenar:
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { OrderModule } from 'ngx-order-pipe';
@@ -46,6 +64,24 @@ import { OrderModule } from 'ngx-order-pipe';
     Clube3Component,
     Addclube3Component,
     Editliga3Component,
+
+    Liga4Component,
+    Editclube4Component,
+    Clube4Component,
+    Addclube4Component,
+    Editliga4Component,
+
+    Liga5Component,
+    Editclube5Component,
+    Clube5Component,
+    Addclube5Component,
+    Editliga5Component,
+
+    Liga6Component,
+    Editclube6Component,
+    Clube6Component,
+    Addclube6Component,
+    Editliga6Component,
   ],
   imports: [
     CommonModule,
@@ -74,6 +110,24 @@ import { OrderModule } from 'ngx-order-pipe';
     Clube3Component,
     Addclube3Component,
     Editliga3Component,
+
+    Liga4Component,
+    Editclube4Component,
+    Clube4Component,
+    Addclube4Component,
+    Editliga4Component,
+
+    Liga5Component,
+    Editclube5Component,
+    Clube5Component,
+    Addclube5Component,
+    Editliga5Component,
+
+    Liga6Component,
+    Editclube6Component,
+    Clube6Component,
+    Addclube6Component,
+    Editliga6Component,
   ]
 })
 export class ComponentesModule { }
