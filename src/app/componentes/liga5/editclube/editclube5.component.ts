@@ -95,7 +95,7 @@ export class Editclube5Component implements OnInit {
 
     this.FutebolServ.editClube(this.ID, name, urlShield, country, vitorias, empates, derrotas, golsPro, golsContra)
       .subscribe()
-      location.href='http://localhost:'+this.FutebolServ.portFront+'/liga5/clube5/'+this.ID+'?sucessoedit=ok'
+      location.href='http://localhost:'+this.FutebolServ.portFront+'/liga5/clube/'+this.ID+'?sucessoedit=ok'
   }
 
   // dadosRandom() {
