@@ -24,6 +24,12 @@ export class FutebolService {
   getClubes (){
     return this.httpFutebol.get ('http://localhost:'+this.portBack+'/clubes'+this.tableNumber)
   }
+  
+  getClubesAll (numeroLiga){
+    return this.httpFutebol.get ('http://localhost:'+this.portBack+'/clubes'+numeroLiga)
+  }
+
+
 
   // UM SÓ CLUBE
   getClube (ID: number){

@@ -15,10 +15,12 @@
               Ver ligas
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="/liga1"> {{ nomeLigas[0].name }} </a>
-                <a class="dropdown-item" href="#">Liga 2</a>
-                <a class="dropdown-item" href="#">Liga 3</a>
-                <a class="dropdown-item" href="#">Liga 4</a>
+                <a class="dropdown-item" href="/liga1"> {{ nomeLigas[0]?.name }} </a>
+                <a class="dropdown-item" href="#">{{ nomeLigas[1]?.name }}</a>
+                <a class="dropdown-item" href="#">{{ nomeLigas[2]?.name }}</a>
+                <a class="dropdown-item" href="#">{{ nomeLigas[3]?.name }}</a>
+                <a class="dropdown-item" href="#">{{ nomeLigas[4]?.name }}</a>
+                <a class="dropdown-item" href="#">{{ nomeLigas[5]?.name }}</a>
             </ul>
           </li>
           <li class="nav-item dropdown">
@@ -27,9 +29,11 @@
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <a class="dropdown-item" href="liga1/editliga">{{ nomeLigas[0].name }}</a>
-                <a class="dropdown-item" href="#">Liga 2</a>
-                <a class="dropdown-item" href="#">Liga 3</a>
-                <a class="dropdown-item" href="#">Liga 4</a>
+                <a class="dropdown-item" href="#">{{ nomeLigas[1]?.name }}</a>
+                <a class="dropdown-item" href="#">{{ nomeLigas[2]?.name }}</a>
+                <a class="dropdown-item" href="#">{{ nomeLigas[3]?.name }}</a>
+                <a class="dropdown-item" href="#">{{ nomeLigas[4]?.name }}</a>
+                <a class="dropdown-item" href="#">{{ nomeLigas[5]?.name }}</a>
             </ul>
           </li>
         </ul>        

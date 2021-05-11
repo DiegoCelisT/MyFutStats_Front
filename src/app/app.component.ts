@@ -17,6 +17,8 @@ export class AppComponent implements OnInit{
     name:String
   }];
 
+  name:string
+
   toggleAbajo = true;
 
   ngOnInit(): void {
