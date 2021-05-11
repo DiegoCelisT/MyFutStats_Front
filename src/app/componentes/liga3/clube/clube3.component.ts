@@ -1,16 +1,16 @@
 import { Component, OnInit } from '@angular/core';
-import { FutebolService } from '../../services/futebol.service';
+import { FutebolService } from '../../../services/futebol.service3';
 import { ActivatedRoute } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap'
 
 
 @Component({
-  selector: 'app-clube',
-  templateUrl: './clube.component.html',
-  styleUrls: ['./clube.component.css']
+  selector: 'app-clube3',
+  templateUrl: './clube3.component.html',
+  styleUrls: ['./clube3.component.css']
 })
 
-export class ClubeComponent implements OnInit {
+export class Clube3Component implements OnInit {
 
   resultado: any = [];
   ID: any;
@@ -73,17 +73,17 @@ export class ClubeComponent implements OnInit {
   //ELIMINAR CLUBE
   eliminarClube(){
     this.FutebolServ.eliminarClube(this.ID).subscribe();
-    location.href='http://localhost:'+this.FutebolServ.portFront+'/liga1/'+'?sucessoeliminado=ok'
+    location.href='http://localhost:'+this.FutebolServ.portFront+'/liga3/'+'?sucessoeliminado=ok'
   }
 
   //CERRAR MODAL E IR PARA LIGA
   fechaModalEliminar() {
-    location.href ="http://localhost:"+this.FutebolServ.portFront+"/liga1"
+    location.href ="http://localhost:"+this.FutebolServ.portFront+"/liga3"
   }
 
   //ROTA EDITAR CLUBE
   irEditClube() {
-    location.href ="http://localhost:"+this.FutebolServ.portFront+"/liga1/editclube/"+this.ID
+    location.href ="http://localhost:"+this.FutebolServ.portFront+"/liga3/editclube3/"+this.ID
   }
 
   mostrarAlert() {

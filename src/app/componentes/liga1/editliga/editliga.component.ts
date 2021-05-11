@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FutebolService } from '../../services/futebol.service';
+import { FutebolService } from '../../../services/futebol.service';
 import { ActivatedRoute, CanActivate } from '@angular/router';
 
 @Component({

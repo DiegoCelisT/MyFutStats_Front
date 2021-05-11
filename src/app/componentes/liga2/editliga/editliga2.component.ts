@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { FutebolService } from '../../services/futebol.service';
+import { FutebolService } from '../../../services/futebol.service2';
 import { ActivatedRoute, CanActivate } from '@angular/router';
 
 @Component({
-  selector: 'app-editliga',
-  templateUrl: './editliga.component.html',
-  styleUrls: ['./editliga.component.css']
+  selector: 'app-editliga2',
+  templateUrl: './editliga2.component.html',
+  styleUrls: ['./editliga2.component.css']
 })
-export class EditligaComponent implements OnInit {
+export class Editliga2Component implements OnInit {
 
   constructor(private FutebolServ: FutebolService, private roteEditLiga: ActivatedRoute) { }
 
@@ -49,7 +49,7 @@ export class EditligaComponent implements OnInit {
     })
     })
     // this.ngOnInit()
-    // location.href="http://localhost:4200/editliga?sucessoeliminado=ok"
+    // location.href="http://localhost:4200/editliga2?sucessoeliminado=ok"
     
   }
 
@@ -57,7 +57,7 @@ export class EditligaComponent implements OnInit {
   editLiga(){
     this.FutebolServ.editLiga(1, this.name)
     .subscribe() 
-    window.location.href="http://localhost:4200/editliga"
+    window.location.href="http://localhost:4200/editliga2"
   }
 
   mostrarAlert() {
@@ -76,7 +76,7 @@ export class EditligaComponent implements OnInit {
   }
 
   addClube() {
-    location.href="http://localhost:"+this.FutebolServ.portFront+"/liga1/addclube/"
+    location.href="http://localhost:"+this.FutebolServ.portFront+"/liga2/addclube2/"
   }
     
 

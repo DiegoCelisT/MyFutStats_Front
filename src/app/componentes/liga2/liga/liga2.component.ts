@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { FutebolService } from '../../services/futebol.service';
+import { FutebolService } from '../../../services/futebol.service2';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
-  selector: 'app-liga',
-  templateUrl: './liga.component.html',
-  styleUrls: ['./liga.component.css']
+  selector: 'app-liga2',
+  templateUrl: './liga2.component.html',
+  styleUrls: ['./liga2.component.css']
 })
-export class LigaComponent implements OnInit {
+export class Liga2Component implements OnInit {
 
   resultados = [];
   resultadosSort = [];
@@ -46,7 +46,7 @@ export class LigaComponent implements OnInit {
     })
 
     //GET CLUBES ADAPTADO PARA ORDENAR DOS DADOS (SORT) E CONSEGUIR ATRIBUIR VALORES DE POSIÇÃO DINÂMICOS COMPATIVÉIS COM O FORM DE PESQUISA
-    this.FutebolServ.getClubes ()
+    this.FutebolServ.getClubesAll (2)
     .subscribe (resultados => {
       this.resultados = resultados ['clubes'] //'É importante declarar o nome do JSON que foi dado no back-end, para dessa maneira evitar o erro de cannot read property '0' of undefined     
       this.resultadosSort = this.resultados.sort(function (a, b) {
@@ -94,9 +94,8 @@ export class LigaComponent implements OnInit {
       // console.log(this.alertAdd + 'adicionado', this.alertEliminado + 'eliminado')
     })
   }
-
   editLiga() {
-    location.href="http://localhost:4200/liga1/editliga"
+    location.href="http://localhost:4200/liga2/editliga2"
   }
   
 }

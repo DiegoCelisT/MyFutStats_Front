@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { FutebolService } from '../../services/futebol.service';
+import { FutebolService } from '../../../services/futebol.service3';
 import { ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
-  selector: 'app-editclube',
-  templateUrl: './editclube.component.html',
-  styleUrls: ['./editclube.component.css']
+  selector: 'app-editclube3',
+  templateUrl: './editclube3.component.html',
+  styleUrls: ['./editclube3.component.css']
 })
-export class EditclubeComponent implements OnInit {
+export class Editclube3Component implements OnInit {
 
   resultado: any = [];
    
@@ -95,7 +95,7 @@ export class EditclubeComponent implements OnInit {
 
     this.FutebolServ.editClube(this.ID, name, urlShield, country, vitorias, empates, derrotas, golsPro, golsContra)
       .subscribe()
-      location.href='http://localhost:'+this.FutebolServ.portFront+'/liga1/clube/'+this.ID+'?sucessoedit=ok'
+      location.href='http://localhost:'+this.FutebolServ.portFront+'/liga3/clube3/'+this.ID+'?sucessoedit=ok'
   }
 
   // dadosRandom() {
