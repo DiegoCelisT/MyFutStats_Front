@@ -96,7 +96,7 @@ export class Liga6Component implements OnInit {
   }
 
   editLiga() {
-    location.href="http://localhost:4200/liga6/editliga6"
+    location.href="http://localhost:4200/liga6/editliga"
   }
   
 }

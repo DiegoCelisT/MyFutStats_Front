@@ -48,7 +48,7 @@ export class Editliga2Component implements OnInit {
     })
     })
     // this.ngOnInit()
-    // location.href="http://localhost:4200/editliga2?sucessoeliminado=ok"
+    // location.href="http://localhost:4200/editliga?sucessoeliminado=ok"
     
   }
 
@@ -56,7 +56,7 @@ export class Editliga2Component implements OnInit {
   editLiga(){
     this.FutebolServ.editLiga(2, this.name)
     .subscribe() 
-    window.location.href="http://localhost:4200/editliga2"
+    window.location.href="http://localhost:4200/editliga"
   }
 
   mostrarAlert() {
@@ -74,7 +74,7 @@ export class Editliga2Component implements OnInit {
   }
 
   addClube() {
-    location.href="http://localhost:"+this.FutebolServ.portFront+"/liga2/addclube2/"
+    location.href="http://localhost:"+this.FutebolServ.portFront+"/liga2/addclube/"
   }
     
 

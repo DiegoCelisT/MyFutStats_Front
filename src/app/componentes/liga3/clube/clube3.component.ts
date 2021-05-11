@@ -83,7 +83,7 @@ export class Clube3Component implements OnInit {
 
   //ROTA EDITAR CLUBE
   irEditClube() {
-    location.href ="http://localhost:"+this.FutebolServ.portFront+"/liga3/editclube3/"+this.ID
+    location.href ="http://localhost:"+this.FutebolServ.portFront+"/liga3/editclube/"+this.ID
   }
 
   mostrarAlert() {

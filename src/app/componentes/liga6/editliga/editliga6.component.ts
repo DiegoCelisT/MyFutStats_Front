@@ -56,7 +56,7 @@ export class Editliga6Component implements OnInit {
   editLiga(){
     this.FutebolServ.editLiga(6, this.name)
     .subscribe() 
-    window.location.href="http://localhost:4200/liga6/editliga6"
+    window.location.href="http://localhost:4200/liga6/editliga"
   }
 
   mostrarAlert() {
@@ -74,7 +74,7 @@ export class Editliga6Component implements OnInit {
   }
 
   addClube() {
-    location.href="http://localhost:"+this.FutebolServ.portFront+"/liga6/addclube6/"
+    location.href="http://localhost:"+this.FutebolServ.portFront+"/liga6/addclube/"
   }
     
 

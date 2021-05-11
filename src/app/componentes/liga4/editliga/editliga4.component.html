@@ -21,9 +21,9 @@
     <table class="table table-bordered">
         <tbody>
             <tr *ngFor="let resultado of resultados | filter:pesquisa | orderBy:'name':false">
-                <td><a href="http://localhost:4200/liga4/clube4/{{ resultado.id }}"><button class="btn btn-outline-primary mb-2 mr-2"><img [src]="resultado?.urlShield" height="40"> {{ resultado.name }}</button></a></td>
+                <td><a href="http://localhost:4200/liga4/clube/{{ resultado.id }}"><button class="btn btn-outline-primary mb-2 mr-2"><img [src]="resultado?.urlShield" height="40"> {{ resultado.name }}</button></a></td>
                 <td id="editClubeBottons">
-                    <a href="http://localhost:4200/liga4/editclube4/{{ resultado.id }}"><button class="btn btn-primary mb-2 mr-2">Editar</button></a>
+                    <a href="http://localhost:4200/liga4/editclube/{{ resultado.id }}"><button class="btn btn-primary mb-2 mr-2">Editar</button></a>
                     <button class="btn btn-danger mb-2 mr-2" (click)="eliminarClube(resultado.id)" >Apagar</button>
                 </td>
             </tr>
