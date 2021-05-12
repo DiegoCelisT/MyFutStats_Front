@@ -79,5 +79,8 @@ export class EditligaComponent implements OnInit {
     location.href="http://localhost:"+this.FutebolServ.portFront+"/liga1/addclube/"
   }
     
+  volverLiga() {
+    location.href="http://localhost:"+this.FutebolServ.portFront+"/liga1/"
+  }
 
 }

@@ -12,13 +12,15 @@
             <label for="name">Editar o nome da Liga:</label>
             <div class="input-group">
                 <input type="text" class="form-control" name="name" value="{{ this.nomeLigas[0].name }}" id="name" [(ngModel)]="name" placeholder= "{{ nomeLigas[0].name }}" required>
-                <button class="btn btn-success" type="submit" (click)='editLiga()'></button>
+                <button class="btn btn-primary" type="submit" (click)='editLiga()'><img src="../../../../assets/Iconos/MyFutStats Update.png" width="30px" alt=""></button>
             </div>
         </div> 
     </form>
 
-    <a href="http://localhost:4200/liga1">Voltar a {{ nomeLigas[0].name }}</a>
-    <button class="btn btn-success mb-2 mr-2" (click)='addClube()'>ADICIONAR CLUBE</button> 
+    <!-- <a href="http://localhost:4200/liga1">Voltar a {{ nomeLigas[0].name }}</a>(click)='volverLiga()' -->
+    <button class="btn btn-success mb-2 mr-2" (click)='volverLiga()'><img src="../../../../assets/Iconos/MyFutStats Back.png" width="30px" alt="">  VOLTAR PARA À LIGA</button> 
+
+    <button class="btn btn-primary mb-2 mr-2" (click)='addClube()'><img src="../../../../assets/Iconos/MyFutStats Add.png" width="30px" alt="">  ADICIONAR CLUBE</button> 
 
     <nav class="navbar">
         <input class="form-control" type="text" name="name" [(ngModel)]="pesquisa"  placeholder="Insira sua pesquisa aqui...">
