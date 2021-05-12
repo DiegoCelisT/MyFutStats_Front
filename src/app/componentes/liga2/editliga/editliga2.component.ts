@@ -56,7 +56,7 @@ export class Editliga2Component implements OnInit {
   editLiga(){
     this.FutebolServ.editLiga(2, this.name)
     .subscribe() 
-    window.location.href="http://localhost:4200/editliga"
+    window.location.href="http://localhost:4200/liga2/editliga"
   }
 
   mostrarAlert() {
