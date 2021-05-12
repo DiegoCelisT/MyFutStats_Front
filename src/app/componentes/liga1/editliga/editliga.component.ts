@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FutebolService } from '../../../services/futebol.service';
-import { ActivatedRoute, CanActivate } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
+
 
 @Component({
   selector: 'app-editliga',
@@ -25,6 +26,11 @@ export class EditligaComponent implements OnInit {
   alertEliminado;
   mensajeAlertEliminado = '';
 
+  // MODAL ELIMINADO
+  idModal;
+  nameModal;
+  urlModal;
+
   ngOnInit(): void {
 
     this.FutebolServ.getLigas()
@@ -35,9 +41,7 @@ export class EditligaComponent implements OnInit {
     this.FutebolServ.getClubes ()
     .subscribe (resultados => {
       this.resultados = resultados ['clubes']
-      console.log (resultados)
-      this.mostrarAlert(); //SI MODIFICAMOS QUE NO CAMBIE DE COMPONENTE AL ELIMINAR UN CLUB, TENEMOS QUE VOLVER A UBICAR ESTA LLAMADA DE LA FUNCION
-      //POR QUE NO SE VA A EJECUTAR SI NO RECARGAMOS LA PAGINA. HAY QUE CAMBIAR LA FUNCION.
+      this.mostrarAlert();
     })
   }
 
@@ -47,21 +51,18 @@ export class EditligaComponent implements OnInit {
       .subscribe (resultados => {
         this.resultados = resultados ['clubes']
     })
-    })
-    // this.ngOnInit()
-    // location.href="http://localhost:4200/editliga?sucessoeliminado=ok"
-    
+    })    
+    location.href="http://localhost:4200/liga1/editliga?sucessoeliminado=ok"
   }
 
   //METODO PUT (Para cambiarle el nombre a la liga)
   editLiga(){
     this.FutebolServ.editLiga(1, this.name)
     .subscribe() 
-    window.location.href="http://localhost:4200/editliga"
+    window.location.href="http://localhost:4200/liga1/editliga"
   }
 
   mostrarAlert() {
-    console.log('ok')
     this.roteEditLiga.queryParams.subscribe(params => {
       this.urlEliminado = params ['sucessoeliminado']
       if (this.urlEliminado == 'ok') {
@@ -79,5 +80,17 @@ export class EditligaComponent implements OnInit {
     location.href="http://localhost:"+this.FutebolServ.portFront+"/liga1/addclube/"
   }
     
+  volverLiga() {
+    location.href="http://localhost:"+this.FutebolServ.portFront+"/liga1/"
+  }
 
+  editClube(id) {    
+    location.href="http://localhost:4200/liga1/editclube/"+id
+  }
+
+  pegaID(id, name, urlShield) {
+    this.idModal = id
+    this.nameModal = name
+    this.urlModal = urlShield
+  }
 }
