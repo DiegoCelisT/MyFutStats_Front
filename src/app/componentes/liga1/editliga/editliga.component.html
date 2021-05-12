@@ -1,38 +1,40 @@
-<!-- ALERT CLUBE ELIMINADO -->
-<div *ngIf='alertEliminado' class="alert alert-success fade show" role="alert">
-    {{ mensajeAlertEliminado }}
+<div class="container-fluid">
+        <!-- ALERT CLUBE ELIMINADO -->
+    <div *ngIf='alertEliminado' class="alert alert-success fade show" role="alert">
+        {{ mensajeAlertEliminado }}
+    </div>
+
+
+    <h1>Menú de edição de {{ nomeLigas[0].name }}</h1>
+
+    <form class="form-group needs-validation" #formedit='ngForm' novalidate>
+        <div class="form-group mb-3">
+            <label for="name">Editar o nome da Liga:</label>
+            <div class="input-group">
+                <input type="text" class="form-control" name="name" value="{{ this.nomeLigas[0].name }}" id="name" [(ngModel)]="name" placeholder= "{{ nomeLigas[0].name }}" required>
+                <button class="btn btn-success" type="submit" (click)='editLiga()'></button>
+            </div>
+        </div> 
+    </form>
+
+    <a href="http://localhost:4200/liga1">Voltar a {{ nomeLigas[0].name }}</a>
+    <button class="btn btn-success mb-2 mr-2" (click)='addClube()'>ADICIONAR CLUBE</button> 
+
+    <nav class="navbar">
+        <input class="form-control" type="text" name="name" [(ngModel)]="pesquisa"  placeholder="Insira sua pesquisa aqui...">
+    </nav>
+
+    <div id="editLigaTable">
+        <table class="table table-bordered">
+            <tbody>
+                <tr *ngFor="let resultado of resultados | filter:pesquisa | orderBy:'name':false">
+                    <td><a href="http://localhost:4200/liga1/clube/{{ resultado.id }}"><button class="btn btn-outline-primary mb-2 mr-2"><img [src]="resultado?.urlShield" height="40"> {{ resultado.name }}</button></a></td>
+                    <td id="editClubeBottons">
+                        <a href="http://localhost:4200/liga1/editclube/{{ resultado.id }}"><button class="btn btn-primary mb-2 mr-2">Editar</button></a>
+                        <button class="btn btn-danger mb-2 mr-2" (click)="eliminarClube(resultado.id)" >Apagar</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>    
 </div>
-
-<a href="">Voltar a Home</a>
-<h1>Menú de edição de {{ nomeLigas[0].name }}</h1>
-
-<form class="form-group needs-validation" #formedit='ngForm' novalidate>
-    <div class="form-group">
-        <label for="name">Editar o nome da Liga:</label>
-        <input type="text" class="form-control" name="name" value="{{ this.nomeLigas[0].name }}" id="name" [(ngModel)]="name" placeholder= "{{ nomeLigas[0].name }}" required>
-    </div> 
-</form>
-<button type="submit" class="btn btn-outline-primary mb-2 mr-2" (click)='editLiga()'>Trocar o nome da Liga</button>
-
-<nav class="navbar">
-    <input class="form-control" type="text" name="name" [(ngModel)]="pesquisa"  placeholder="Insira sua pesquisa aqui...">
-</nav>
-<div id="editLigaTable">
-    <table class="table table-bordered">
-        <tbody>
-            <tr *ngFor="let resultado of resultados | filter:pesquisa | orderBy:'name':false">
-                <td><a href="http://localhost:4200/liga1/clube/{{ resultado.id }}"><button class="btn btn-outline-primary mb-2 mr-2"><img [src]="resultado?.urlShield" height="40"> {{ resultado.name }}</button></a></td>
-                <td id="editClubeBottons">
-                    <a href="http://localhost:4200/liga1/editclube/{{ resultado.id }}"><button class="btn btn-primary mb-2 mr-2">Editar</button></a>
-                    <button class="btn btn-danger mb-2 mr-2" (click)="eliminarClube(resultado.id)" >Apagar</button>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</div>
-<br>
-<button class="btn btn-success mb-2 mr-2" (click)='addClube()'>ADICIONAR CLUBE</button> 
-
-<br>
-<br>
-<a href="http://localhost:4200/liga1">Voltar a {{ nomeLigas[0].name }}</a> <br>
