@@ -1,4 +1,26 @@
 <div class="container-fluid">
+
+    <!-- MODAL ELIMINAR CLUB -->
+    <div id="mostrarModal" class="modal" tabindex="-1">
+        <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title">Eliminar clube {{ this.nameModal }}</h5>
+            <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
+            </div>
+            <div class="modal-body">
+                <img src="{{ this.urlModal }}" width="50px" alt="">
+                <p>Você tem certeza?</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal" (click)="eliminarClube(this.idModal)">SIM, ELIMINAR</button>
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal" aria-label="Close">NÃO</button>
+            </div>
+        </div>
+        </div>
+    </div>
+
+
         <!-- ALERT CLUBE ELIMINADO -->
     <div *ngIf='alertEliminado' class="alert alert-success fade show" role="alert">
         {{ mensajeAlertEliminado }}
@@ -12,15 +34,15 @@
             <label for="name">Editar o nome da Liga:</label>
             <div class="input-group">
                 <input type="text" class="form-control" name="name" value="{{ this.nomeLigas[0].name }}" id="name" [(ngModel)]="name" placeholder= "{{ nomeLigas[0].name }}" required>
-                <button class="btn btn-primary" type="submit" (click)='editLiga()'><img src="../../../../assets/Iconos/MyFutStats Update.png" width="30px" alt=""></button>
+                <button class="btn btn-primary btn-sm" type="submit" (click)='editLiga()'><img src="../../../../assets/Iconos/MyFutStats Update.png" width="30px" alt=""></button>
             </div>
         </div> 
     </form>
 
-    <!-- <a href="http://localhost:4200/liga1">Voltar a {{ nomeLigas[0].name }}</a>(click)='volverLiga()' -->
-    <button class="btn btn-success mb-2 mr-2" (click)='volverLiga()'><img src="../../../../assets/Iconos/MyFutStats Back.png" width="30px" alt="">  VOLTAR PARA À LIGA</button> 
-
-    <button class="btn btn-primary mb-2 mr-2" (click)='addClube()'><img src="../../../../assets/Iconos/MyFutStats Add.png" width="30px" alt="">  ADICIONAR CLUBE</button> 
+    <div class="d-grid gap-2 d-md-block col-6 mx-auto">
+        <button class="btn btn-success mb-2 mr-2 btn-sm m-1" (click)='volverLiga()'><img src="../../../../assets/Iconos/MyFutStats Back.png" width="30px" alt="">VOLTAR PARA À LIGA</button>
+        <button class="btn btn-primary mb-2 mr-2 btn-sm m-1" (click)='addClube()'><img src="../../../../assets/Iconos/MyFutStats Add.png" width="30px" alt="">ADICIONAR CLUBE</button> 
+    </div>
 
     <nav class="navbar">
         <input class="form-control" type="text" name="name" [(ngModel)]="pesquisa"  placeholder="Insira sua pesquisa aqui...">
@@ -29,11 +51,11 @@
     <div id="editLigaTable">
         <table class="table table-bordered">
             <tbody>
-                <tr *ngFor="let resultado of resultados | filter:pesquisa | orderBy:'name':false">
-                    <td><a href="http://localhost:4200/liga1/clube/{{ resultado.id }}"><button class="btn btn-outline-primary mb-2 mr-2"><img [src]="resultado?.urlShield" height="40"> {{ resultado.name }}</button></a></td>
-                    <td id="editClubeBottons">
-                        <a href="http://localhost:4200/liga1/editclube/{{ resultado.id }}"><button class="btn btn-primary mb-2 mr-2">Editar</button></a>
-                        <button class="btn btn-danger mb-2 mr-2" (click)="eliminarClube(resultado.id)" >Apagar</button>
+                <tr class="row" *ngFor="let resultado of resultados | filter:pesquisa | orderBy:'name':false">
+                    <td class="col 10"><a href="http://localhost:4200/liga1/clube/{{ resultado.id }}"><button class="btn btn-outline-primary mb-2 mr-2"><img [src]="resultado?.urlShield" height="40px"> {{ resultado.name }}</button></a></td>
+                    <td class="col 2" id="editClubeBottons">
+                        <button class="btn btn-primary mb-2 mr-2 btn-sm m-1" (click)="editClube(resultado.id)"><img src="../../../../assets/Iconos/MyFutStats Edit.png" width="30px" alt="">EDITAR</button>
+                        <button class="btn btn-danger mb-2 mr-2 btn-sm m-1" data-bs-toggle="modal" data-bs-target="#mostrarModal" (click)="pegaID(resultado.id, resultado.name, resultado.urlShield)"><img src="../../../../assets/Iconos/MyFutStats Delete.png" width="30px" alt="">APAGAR</button>
                     </td>
                 </tr>
             </tbody>
