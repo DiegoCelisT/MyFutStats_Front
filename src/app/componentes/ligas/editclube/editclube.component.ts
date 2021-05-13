@@ -135,8 +135,11 @@ export class EditclubeComponent implements OnInit {
     form.classList.add('was-validated');
   }
  
-  volverClube(id) {
-    location.href='http://localhost:4200/liga1/clube/'+id
+  volverClube() {
+    location.href="http://localhost:"+this.FutebolServ.portFront+"/liga/"+this.ID_Liga+"/editclube"
   }
   
+  voltarLiga() {
+    location.href ="http://localhost:"+this.FutebolServ.portFront+"/liga/"+this.ID_Liga+"/editliga"
+  }
 }

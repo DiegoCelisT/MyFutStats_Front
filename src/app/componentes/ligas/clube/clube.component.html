@@ -1,4 +1,24 @@
 <div class="container-fluid">
+
+   <!-- MODAL ELIMINAR CLUB -->
+   <div id="mostrarModal" class="modal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Eliminar clube {{ resultado.name }}</h5>
+            </div>
+            <div class="modal-body">
+                <img src="{{ resultado.urlShield }}" width="50px" alt="">
+                <p>Você tem certeza?</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal" (click)="eliminarClube(nomeLiga.id, resultado.id)">SIM, ELIMINAR</button>
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal" aria-label="Close">NÃO</button>
+            </div>
+        </div>
+    </div>
+  </div>
+
     <!-- ALERT CLUBE EDITADO -->
   <div *ngIf='alertEdit' class="alert alert-success fade show" role="alert">
     {{ mensajeAlertEdit }}
@@ -36,7 +56,7 @@
         <button class="btn btn-primary mb-2 mr-2 btn-sm m-1" (click)="irEditClube()"><img src="../../../../assets/Iconos/MyFutStats Edit.png" width="30px" alt=""> EDITAR CLUBE</button>
       </div>
       <div class="col-sm mx-auto">
-        <button class="btn btn-danger mb-2 mr-2 btn-sm m-1" (click)="eliminarClube(nomeLiga.id,resultado.id)"><img src="../../../../assets/Iconos/MyFutStats Delete.png" width="30px" alt=""> ELIMINAR CLUBE</button>
+        <button class="btn btn-danger mb-2 mr-2 btn-sm m-1" data-bs-toggle="modal" data-bs-target="#mostrarModal"><img src="../../../../assets/Iconos/MyFutStats Delete.png" width="30px" alt=""> ELIMINAR CLUBE</button>
         
       </div>
       <div class="col-sm mx-auto">

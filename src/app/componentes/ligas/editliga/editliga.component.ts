@@ -13,7 +13,6 @@ export class EditligaComponent implements OnInit {
   constructor(private FutebolServ: FutebolService, private roteEditLiga: ActivatedRoute) { }
 
   resultados = [];
-  // ID: number;
   name:string;
   ID_clube: any;
   pesquisa:string; //Para o formulario de pesquisa

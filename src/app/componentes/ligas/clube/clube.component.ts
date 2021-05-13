@@ -25,10 +25,16 @@ export class ClubeComponent implements OnInit {
   
   position:number
 
+  //ALERT EDITADO
   alertEdit;
   mensajeAlertEdit = ''
   urlEdit;
   urlEliminado;
+
+   // MODAL ELIMINADO
+   idModal;
+   nameModal;
+   urlModal;
 
   constructor(private FutebolServ: FutebolService, private rotaLiga:ActivatedRoute, private roteClub: ActivatedRoute, private modalEliminar: NgbModal) { }
 
@@ -86,13 +92,6 @@ export class ClubeComponent implements OnInit {
 
 
   //ELIMINAR CLUBE
-  // eliminarClube(ID_Liga, ID_Clube){
-  //   this.FutebolServ.eliminarClube(ID_Liga, ID_Clube).subscribe();
-  //   location.href='http://localhost:'+this.FutebolServ.portFront+'/liga/'+ID_Liga+'?sucessoeliminado=ok'
-  // }
-
-  // console.log(ID_Liga, ID)
-
   eliminarClube(ID_Liga, ID){
     this.FutebolServ.eliminarClube(ID_Liga, ID).subscribe();
     location.href='http://localhost:'+this.FutebolServ.portFront+'/liga/'+this.ID_Liga+'?sucessoeliminado=ok'
