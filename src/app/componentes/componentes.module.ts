@@ -4,11 +4,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser'; 
 
 import { HomeComponent } from './home/home.component';
-import { LigaComponent } from './liga1/liga/liga.component';
-import { EditclubeComponent } from './liga1/editclube/editclube.component'
-import { ClubeComponent } from './liga1/clube/clube.component';
-import { AddclubeComponent } from './liga1/addclube/addclube.component';
-import { EditligaComponent } from './liga1/editliga/editliga.component';
+import { LigaComponent } from './ligas/liga/liga.component';
+import { EditclubeComponent } from './ligas/editclube/editclube.component'
+import { ClubeComponent } from './ligas/clube/clube.component';
+import { AddclubeComponent } from './ligas/addclube/addclube.component';
+import { EditligaComponent } from './ligas/editliga/editliga.component';
 
 //Módulos para pesquisar e para ordenar:
 import { Ng2SearchPipeModule } from 'ng2-search-filter';

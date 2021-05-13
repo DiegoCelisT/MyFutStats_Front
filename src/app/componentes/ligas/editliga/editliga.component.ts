@@ -110,10 +110,10 @@ export class EditligaComponent implements OnInit {
       .subscribe (resultados => {
         this.resultados = resultados ['clubes']
     })
-    })    
-    location.href="http://localhost:4200/liga/"+this.ID_Liga+"/editliga?sucessoeliminado=ok"
+    }) 
+    // NÃO COLOCAR! Para que a página não recarregue no topo   
+    // location.href="http://localhost:4200/liga/"+this.ID_Liga+"/editliga?sucessoeliminado=ok"
   }
-
 
 
 }

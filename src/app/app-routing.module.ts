@@ -3,11 +3,11 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { HomeComponent } from './componentes/home/home.component';
 
-import { LigaComponent } from './componentes/liga1/liga/liga.component';
-import { EditclubeComponent } from './componentes/liga1/editclube/editclube.component';
-import { ClubeComponent } from './componentes/liga1/clube/clube.component';
-import { AddclubeComponent } from './componentes/liga1/addclube/addclube.component';
-import { EditligaComponent } from './componentes/liga1/editliga/editliga.component';
+import { LigaComponent } from './componentes/ligas/liga/liga.component';
+import { EditclubeComponent } from './componentes/ligas/editclube/editclube.component';
+import { ClubeComponent } from './componentes/ligas/clube/clube.component';
+import { AddclubeComponent } from './componentes/ligas/addclube/addclube.component';
+import { EditligaComponent } from './componentes/ligas/editliga/editliga.component';
 
 const routes: Routes = [
   { path: '', component:HomeComponent },

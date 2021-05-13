@@ -20,11 +20,6 @@ export class FutebolService {
 
   //Número de Tabela:
   tableNumber:Number = 1
-
-  //Conexões com o Back:
-  getClubes (){
-    return this.httpFutebol.get ('http://localhost:'+this.portBack+'/clubes'+this.tableNumber)
-  }
   
   getClubesAll (numeroLiga: number){
     return this.httpFutebol.get ('http://localhost:'+this.portBack+'/clubes'+numeroLiga)
