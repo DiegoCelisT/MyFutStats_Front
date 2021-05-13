@@ -1,0 +1,38 @@
+<!-- ALERT CLUBE EDITADO -->
+<div *ngIf='alertEdit' class="alert alert-success fade show" role="alert">
+  {{ mensajeAlertEdit }}
+</div>
+
+<article>
+  <div>
+    <h1>{{ resultado.name }}</h1>
+    <h4>{{ resultado.country }}</h4>
+    <h2>Liga {{ nomeLiga.name }}</h2>
+    <h4>Posição: {{ position }}</h4>
+  </div>
+
+  <div>
+    <img id="ga" src="{{ this.resultado.urlShield }}" alt="Escudo" >
+  </div>
+  
+  <div>
+    <h2>Estatísticas da Temporada</h2>
+    <p>Pontos: {{ resultado.pontos }}</p>
+    <p>Jogados: {{ resultado.jogados }}</p>
+    <p>Vitórias: {{ resultado.vitorias }}</p>
+    <p>Empates: {{ resultado.empates }}</p>
+    <p>Derrotas: {{ resultado.derrotas }}</p>
+    <p>Gols Pró: {{ resultado.golsPro }}</p>
+    <p>Gols Contra: {{ resultado.golsContra }}</p>
+    <p>Saldo de Gols: {{ resultado.saldoGols }}</p>
+  </div>
+</article>
+
+
+
+<button class="btn btn-primary mb-2 mr-2" (click)="irEditClube()">EDITAR CLUBE</button>
+
+<button class="btn btn-danger mb-2 mr-2" (click)="eliminarClube(nomeLiga.id,resultado.id)">ELIMINAR CLUBE</button>
+
+<br><br>
+<a href="http://localhost:4200/liga/{{nomeLiga.id}}">Voltar a {{ nomeLiga.name }}</a><br>

@@ -1,0 +1,58 @@
+<div class="container-fluid">
+        <!-- ALERT CLUBE ELIMINADO -->
+    <div *ngIf='alertEliminado' class="alert alert-success fade show" role="alert">
+        {{ mensajeAlertEliminado }}
+    </div>
+
+    <!-- ALERT CLUBE ADICIONADO -->
+    <div *ngIf='alertAdd' class="alert alert-success fade show" role="alert">
+        {{ mensajeAlertAdd }}
+    </div>
+
+    <div>
+        <h1 class="text-center fw-bold">{{ nomeLiga.name }}</h1>
+    </div>
+
+    <div class="d-grid justify-content-sm-center">
+        <button class="btn btn-primary mb-2 mr-2 btn-sm" (click)='editLiga(nomeLiga.id)'><img src="../../../../assets/Iconos/MyFutStats Update.png" width="30px"> Atualizar dados da liga</button>
+    </div>
+    
+    <nav class="navbar">
+        <input class="form-control" type="text" name="name" [(ngModel)]="pesquisa"  placeholder="Insira sua pesquisa aqui...">
+    </nav>
+    <div class="table-responsive">
+        <table class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th>POS</th>
+                    <th>TIME</th>
+                    <th>PAÍS</th>
+                    <th>J</th>
+                    <th>V</th>
+                    <th>E</th>
+                    <th>D</th>
+                    <th>GOLS</th>
+                    <th>+/-</th>
+                    <th>PTS</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- <tr *ngFor="let resultado of resultados | filter:pesquisa | orderBy:'saldoGols':false | orderBy:'pontos':true; let i = index"> -->
+                <tr *ngFor="let resultado of resultadosSort | filter:pesquisa">
+    
+                    <td>{{ resultadosSort.indexOf(resultado)+1 }}</td>
+                    <!-- <td>{{ i+1 }}</td> -->
+                    <td><a href="http://localhost:4200/liga/{{ nomeLiga.id }}/clube/{{ resultado.id }}"><img [src]="resultado?.urlShield" height="35">{{ resultado.name }}</a></td>
+                    <td>{{ resultado.country | uppercase | slice:0:3}} </td>
+                    <td>{{ resultado.jogados}} </td>
+                    <td>{{ resultado.vitorias }} </td>
+                    <td>{{ resultado.empates }} </td>
+                    <td>{{ resultado.derrotas }} </td>
+                    <td>{{ resultado.golsPro }}:{{ resultado.golsContra }} </td>
+                    <td>{{ resultado.saldoGols }} </td>
+                    <td>{{ resultado.pontos }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

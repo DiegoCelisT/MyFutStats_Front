@@ -16,30 +16,23 @@ export class FutebolService {
   portFront:Number = 4200;
   
   ID: number;
+  ID_Liga:number;
 
   //Número de Tabela:
   tableNumber:Number = 1
-
-  //Conexões com o Back:
-  getClubes (){
-    return this.httpFutebol.get ('http://localhost:'+this.portBack+'/clubes'+this.tableNumber)
-  }
   
-  getClubesAll (numeroLiga){
+  getClubesAll (numeroLiga: number){
     return this.httpFutebol.get ('http://localhost:'+this.portBack+'/clubes'+numeroLiga)
   }
 
-
-
   // UM SÓ CLUBE
-  getClube (ID: number){
-    return this.httpFutebol.get ('http://localhost:'+this.portBack+'/clube'+this.tableNumber+'/'+ID)
+  getClube (numeroLiga:number, ID: number){
+    return this.httpFutebol.get ('http://localhost:'+this.portBack+'/clube'+numeroLiga+'/'+ID)
   }
 
    //Método POST, para criar novos registros: (para este verbo é necessario passar os parametros no corpo)
-  createClube (name, urlShield, country, vitorias, empates, derrotas, golsPro, golsContra){
-    console.log(name, urlShield, country, vitorias, empates, derrotas, golsPro, golsContra)
-    return this.httpFutebol.post ('http://localhost:'+this.portBack+'/novoclub'+this.tableNumber, {
+  createClube (numeroLiga:number, name: string, urlShield: string, country: string, vitorias: number, empates: number, derrotas: number, golsPro: number, golsContra: number){
+    return this.httpFutebol.post ('http://localhost:'+this.portBack+'/novoclub'+numeroLiga, {
       name: name,
       urlShield: urlShield,
       country: country,
@@ -53,9 +46,9 @@ export class FutebolService {
   }
 
   //METODO PUT
-  editClube (ID: number, name: string, urlShield: string, country: string, vitorias: number, empates: number, derrotas: number, golsPro: number, golsContra: number){
+  editClube (numeroLiga:number, ID: number, name: string, urlShield: string, country: string, vitorias: number, empates: number, derrotas: number, golsPro: number, golsContra: number){
     // console.log('servicio'+ID,name, urlShield, country, vitorias, empates, derrotas, golsPro, golsContra)
-    return this.httpFutebol.put ('http://localhost:'+this.portBack+'/editclube'+this.tableNumber+'/'+ID, {
+    return this.httpFutebol.put ('http://localhost:'+this.portBack+'/editclube'+numeroLiga+'/'+ID, {
       name: name,
       urlShield: urlShield,
       country: country,
@@ -75,18 +68,23 @@ export class FutebolService {
   }
 
   //METODO DELETE
-  eliminarClube(ID: number) {
-    return this.httpFutebol.delete ('http://localhost:'+this.portBack+'/deleteClube'+this.tableNumber+'/'+ID)
+  eliminarClube(numeroLiga:number, ID: number) {
+    return this.httpFutebol.delete ('http://localhost:'+this.portBack+'/deleteClube'+numeroLiga+'/'+ID)
   }
- 
+
   //Trazendo todos os nomes das ligas
   getLigas (){
     return this.httpFutebol.get ('http://localhost:'+this.portBack+'/ligas')
   }
 
+  //Trazendo uma liga só
+  getLiga (ID_Liga: number){
+    return this.httpFutebol.get ('http://localhost:'+this.portBack+'/liga/'+ID_Liga)
+  }
+
   //METODO PUT (LIGAS)
-  editLiga (ID: number, name: string){
-    return this.httpFutebol.put ('http://localhost:'+this.portBack+'/liga/'+ID, { name: name })
+  editLiga (ID_Liga: number, name: string){
+    return this.httpFutebol.put ('http://localhost:'+this.portBack+'/liga/'+ID_Liga, { name: name })
   }
 
 }

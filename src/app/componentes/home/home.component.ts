@@ -75,6 +75,6 @@ export class HomeComponent implements OnInit {
 
 
   abrirLink(numeroLiga) {
-    location.href='/liga'+numeroLiga
+    location.href='/liga/'+numeroLiga
   }
 }
