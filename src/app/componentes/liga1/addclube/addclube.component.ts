@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FutebolService } from '../../../services/futebol.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-addclube',
@@ -14,12 +15,35 @@ export class AddclubeComponent implements OnInit {
   defaultValue = 0;
   formularioAdd: FormGroup;
 
+  nomeLiga = {
+    id:Number,
+    name:String
+  };
+  ID_Liga:number;
+
+
   // BOTÃO ADICIONAR DESHABILITADO
   botonAdd = false;
 
-  constructor(private FutebolServ: FutebolService, private formAdd: FormBuilder) { }
+  constructor(private FutebolServ: FutebolService, private rotaAddClube:ActivatedRoute, private formAdd: FormBuilder) { }
 
   ngOnInit(): void {
+
+
+
+    //Enrotamento de Liga
+    this.rotaAddClube.params.subscribe(params => {
+      this.ID_Liga = parseInt(params['idLiga']); 
+      
+    this.FutebolServ.getLiga(this.ID_Liga)
+    .subscribe (nomeLiga =>{
+      this.nomeLiga = nomeLiga ['Liga']
+      // console.log(this.nomeLiga)
+    })
+
+    });
+
+
 
     this.formularioAdd = this.formAdd.group({
       name: [null, Validators.required],
@@ -55,12 +79,12 @@ export class AddclubeComponent implements OnInit {
     if (this.formularioAdd.value.golsPro==null){ golsPro=0 }
     if (this.formularioAdd.value.golsContra==null){ golsContra=0 }
     if (urlShield==null){ urlShield="https://www.clipartmax.com/png/full/19-194040_how-to-set-use-shield-grey-svg-vector-shield-template.png" }
-    this.FutebolServ.createClube(name, urlShield, country, vitorias, empates, derrotas, golsPro, golsContra)
+    this.FutebolServ.createClube(this.ID_Liga, name, urlShield, country, vitorias, empates, derrotas, golsPro, golsContra)
     .subscribe()
   }
 
-  voltarLiga() {
-    location.href ="http://localhost:"+this.FutebolServ.portFront+"/liga1?sucessoadd=ok"
+  voltarLiga(numeroLiga) {
+    location.href ="http://localhost:"+this.FutebolServ.portFront+"/liga/"+numeroLiga+"/editliga"
   }
 
   validAdd(){

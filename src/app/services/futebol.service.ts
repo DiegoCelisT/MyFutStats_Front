@@ -36,8 +36,8 @@ export class FutebolService {
   }
 
    //Método POST, para criar novos registros: (para este verbo é necessario passar os parametros no corpo)
-  createClube (name: string, urlShield: string, country: string, vitorias: number, empates: number, derrotas: number, golsPro: number, golsContra: number){
-    return this.httpFutebol.post ('http://localhost:'+this.portBack+'/novoclub'+this.tableNumber, {
+  createClube (numeroLiga:number, name: string, urlShield: string, country: string, vitorias: number, empates: number, derrotas: number, golsPro: number, golsContra: number){
+    return this.httpFutebol.post ('http://localhost:'+this.portBack+'/novoclub'+numeroLiga, {
       name: name,
       urlShield: urlShield,
       country: country,
@@ -85,8 +85,6 @@ export class FutebolService {
   getLiga (ID_Liga: number){
     return this.httpFutebol.get ('http://localhost:'+this.portBack+'/liga/'+ID_Liga)
   }
-
-
 
   //METODO PUT (LIGAS)
   editLiga (ID_Liga: number, name: string){
