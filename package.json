@@ -21,6 +21,7 @@
     "@angular/platform-browser-dynamic": "~11.2.4",
     "@angular/router": "~11.2.4",
     "@ng-bootstrap/ng-bootstrap": "^9.1.0",
+    "@types/jquery": "^3.5.5",
     "bootstrap": "^5.0.0-beta3",
     "jquery": "^3.6.0",
     "ng2-search-filter": "^0.5.1",

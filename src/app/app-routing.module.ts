@@ -10,7 +10,7 @@ import { AddclubeComponent } from './componentes/ligas/addclube/addclube.compone
 import { EditligaComponent } from './componentes/ligas/editliga/editliga.component';
 
 import { NotFoundComponent } from './componentes/not-found/not-found.component';
-
+import { AboutUsComponent } from './componentes/about-us/about-us.component';
 
 const routes: Routes = [
   { path: '', component:HomeComponent },
@@ -19,6 +19,7 @@ const routes: Routes = [
   { path: 'liga/:idLiga/addclube', component:AddclubeComponent },
   { path: 'liga/:idLiga/editclube/:id', component:EditclubeComponent },
   { path: 'liga/:idLiga/editliga', component:EditligaComponent },
+  { path: 'about-us', component:AboutUsComponent},
   { path: '**', component: NotFoundComponent }
 
 ];
