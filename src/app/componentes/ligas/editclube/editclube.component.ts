@@ -136,7 +136,7 @@ export class EditclubeComponent implements OnInit {
   }
  
   volverClube() {
-    location.href="http://localhost:"+this.FutebolServ.portFront+"/liga/"+this.ID_Liga+"/editclube"
+    location.href="http://localhost:"+this.FutebolServ.portFront+"/liga/"+this.ID_Liga+"/clube/"+this.ID
   }
   
   voltarLiga() {

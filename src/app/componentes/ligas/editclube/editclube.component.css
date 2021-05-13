@@ -1,21 +1,13 @@
-/* form{
+form{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
     padding: 40px;
-} */
-
-#containerEsc {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-content: center;
 }
-
 
 #escudo {
     max-width: 300px;
-    width: auto;
+    max-height: 300px;
     height: max-content;
 }
