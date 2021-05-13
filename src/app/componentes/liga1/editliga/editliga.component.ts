@@ -17,9 +17,10 @@ export class EditligaComponent implements OnInit {
   name:string;
   ID_clube: any;
   pesquisa:string; //Para o formulario de pesquisa
-  nomeLigas = [{
+  nomeLiga = {
+    id:Number,
     name:String
-  }];
+  };
 
   //ALERT ELIMINADO
   urlEliminado;
@@ -36,16 +37,17 @@ export class EditligaComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.FutebolServ.getLigas()
-    .subscribe (nomeLigas =>{
-      this.nomeLigas = nomeLigas ['MyLeagues']
-    })
+    
 
     //Enrotamento de Liga
     this.roteEditLiga.params.subscribe(params => {
       this.ID_Liga = parseInt(params['idLiga']);      
       
-
+      this.FutebolServ.getLiga(this.ID_Liga)
+      .subscribe (nomeLiga =>{
+        this.nomeLiga = nomeLiga ['Liga']
+        // console.log(this.nomeLiga)
+      })
       
     this.FutebolServ.getClubesAll (this.ID_Liga)
     .subscribe (resultados => {
@@ -59,27 +61,15 @@ export class EditligaComponent implements OnInit {
 
 
 
-
-
-
-
   }
   
-  // eliminarClube(ID_Liga, ID_clube){
-  //   this.FutebolServ.eliminarClube(ID_Liga, ID_clube).subscribe(()=>{
-  //     this.FutebolServ.getClubes ()
-  //     .subscribe (resultados => {
-  //       this.resultados = resultados ['clubes']
-  //   })
-  //   })    
-  //   location.href="http://localhost:4200/liga/1/editliga?sucessoeliminado=ok"
-  // }
+  
 
   //METODO PUT (Para cambiarle el nombre a la liga)
-  editLiga(){
-    this.FutebolServ.editLiga(1, this.name)
+  editLiga(numeroLiga){
+    this.FutebolServ.editLiga(numeroLiga, this.name)
     .subscribe() 
-    window.location.href="http://localhost:4200/liga1/editliga"
+    window.location.href="http://localhost:4200/liga/"+numeroLiga+"/editliga"
   }
 
   mostrarAlert() {
@@ -96,16 +86,16 @@ export class EditligaComponent implements OnInit {
     })
   }
 
-  addClube() {
-    location.href="http://localhost:"+this.FutebolServ.portFront+"/liga1/addclube/"
+  addClube(numeroLiga) {
+    location.href="http://localhost:"+this.FutebolServ.portFront+"/liga/"+numeroLiga+"/addclube/"
   }
     
-  volverLiga() {
-    location.href="http://localhost:"+this.FutebolServ.portFront+"/liga1/"
+  volverLiga(numeroLiga) {
+    location.href="http://localhost:"+this.FutebolServ.portFront+"/liga/"+numeroLiga
   }
 
-  editClube(id) {    
-    location.href="http://localhost:4200/liga1/editclube/"+id
+  editClube(numeroLiga, id) {    
+    location.href="http://localhost:4200/liga/"+numeroLiga+"/editclube/"+id
   }
 
   pegaID(id, name, urlShield) {
@@ -113,4 +103,17 @@ export class EditligaComponent implements OnInit {
     this.nameModal = name
     this.urlModal = urlShield
   }
+
+  eliminarClube(ID_Liga, ID){
+    this.FutebolServ.eliminarClube(ID_Liga, ID).subscribe(()=>{
+      this.FutebolServ.getClubesAll (ID_Liga)
+      .subscribe (resultados => {
+        this.resultados = resultados ['clubes']
+    })
+    })    
+    location.href="http://localhost:4200/liga/"+this.ID_Liga+"/editliga?sucessoeliminado=ok"
+  }
+
+
+
 }

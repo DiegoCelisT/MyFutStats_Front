@@ -89,8 +89,8 @@ export class FutebolService {
 
 
   //METODO PUT (LIGAS)
-  editLiga (ID: number, name: string){
-    return this.httpFutebol.put ('http://localhost:'+this.portBack+'/liga/'+ID, { name: name })
+  editLiga (ID_Liga: number, name: string){
+    return this.httpFutebol.put ('http://localhost:'+this.portBack+'/liga/'+ID_Liga, { name: name })
   }
 
 }

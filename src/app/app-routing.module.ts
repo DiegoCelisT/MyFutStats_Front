@@ -10,29 +10,19 @@ import { AddclubeComponent } from './componentes/liga1/addclube/addclube.compone
 import { EditligaComponent } from './componentes/liga1/editliga/editliga.component';
 
 import { Editclube2Component } from './componentes/liga2/editclube/editclube2.component';
-import { Clube2Component } from './componentes/liga2/clube/clube2.component';
 import { Addclube2Component } from './componentes/liga2/addclube/addclube2.component';
-import { Editliga2Component } from './componentes/liga2/editliga/editliga2.component';
 
 import { Editclube3Component } from './componentes/liga3/editclube/editclube3.component';
-import { Clube3Component } from './componentes/liga3/clube/clube3.component';
 import { Addclube3Component } from './componentes/liga3/addclube/addclube3.component';
-import { Editliga3Component } from './componentes/liga3/editliga/editliga3.component';
 
 import { Editclube4Component } from './componentes/liga4/editclube/editclube4.component'
-import { Clube4Component } from './componentes/liga4/clube/clube4.component';
 import { Addclube4Component } from './componentes/liga4/addclube/addclube4.component';
-import { Editliga4Component } from './componentes/liga4/editliga/editliga4.component';
 
 import { Editclube5Component } from './componentes/liga5/editclube/editclube5.component'
-import { Clube5Component } from './componentes/liga5/clube/clube5.component';
 import { Addclube5Component } from './componentes/liga5/addclube/addclube5.component';
-import { Editliga5Component } from './componentes/liga5/editliga/editliga5.component';
 
 import { Editclube6Component } from './componentes/liga6/editclube/editclube6.component'
-import { Clube6Component } from './componentes/liga6/clube/clube6.component';
 import { Addclube6Component } from './componentes/liga6/addclube/addclube6.component';
-import { Editliga6Component } from './componentes/liga6/editliga/editliga6.component';
 
 const routes: Routes = [
   { path: '', component:HomeComponent },
@@ -42,30 +32,20 @@ const routes: Routes = [
   { path: 'liga/:idLiga/editclube/:id', component:EditclubeComponent },
   { path: 'liga/:idLiga/editliga', component:EditligaComponent },
 
-  { path: 'liga2/clube/:id', component:Clube2Component },
   { path: 'liga2/addclube', component:Addclube2Component },
   { path: 'liga2/editclube/:id', component:Editclube2Component },
-  { path: 'liga2/editliga', component:Editliga2Component },
 
-  { path: 'liga3/clube/:id', component:Clube3Component },
   { path: 'liga3/addclube', component:Addclube3Component },
   { path: 'liga3/editclube/:id', component:Editclube3Component },
-  { path: 'liga3/editliga', component:Editliga3Component },
 
-  { path: 'liga4/clube/:id', component:Clube4Component },
   { path: 'liga4/addclube', component:Addclube4Component },
   { path: 'liga4/editclube/:id', component:Editclube4Component },
-  { path: 'liga4/editliga', component:Editliga4Component },
 
-  { path: 'liga5/clube/:id', component:Clube5Component },
   { path: 'liga5/addclube', component:Addclube5Component },
   { path: 'liga5/editclube/:id', component:Editclube5Component },
-  { path: 'liga5/editliga', component:Editliga5Component },
 
-  { path: 'liga6/clube/:id', component:Clube6Component },
   { path: 'liga6/addclube', component:Addclube6Component },
   { path: 'liga6/editclube/:id', component:Editclube6Component },
-  { path: 'liga6/editliga', component:Editliga6Component },
 ];
 
 @NgModule({
