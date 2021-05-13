@@ -50,9 +50,9 @@ export class FutebolService {
   }
 
   //METODO PUT
-  editClube (ID: number, name: string, urlShield: string, country: string, vitorias: number, empates: number, derrotas: number, golsPro: number, golsContra: number){
+  editClube (numeroLiga:number, ID: number, name: string, urlShield: string, country: string, vitorias: number, empates: number, derrotas: number, golsPro: number, golsContra: number){
     // console.log('servicio'+ID,name, urlShield, country, vitorias, empates, derrotas, golsPro, golsContra)
-    return this.httpFutebol.put ('http://localhost:'+this.portBack+'/editclube'+this.tableNumber+'/'+ID, {
+    return this.httpFutebol.put ('http://localhost:'+this.portBack+'/editclube'+numeroLiga+'/'+ID, {
       name: name,
       urlShield: urlShield,
       country: country,

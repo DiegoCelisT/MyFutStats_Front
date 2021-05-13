@@ -14,58 +14,78 @@ export class EditclubeComponent implements OnInit {
    
   ID: any;
   idNum: Number;
- 
+  ID_Liga: any;
   formularioEdit: FormGroup;
   
   // pontos:number;
   // jogados:number;
   // saldoGols:number
 
-  nomeLigas = [{
+  nomeLiga = {
+    id:Number,
     name:String
-  }];
+  };
   
   // BOTÃO EDITAR DESHABILITADO
   botonEdit = false;
 
-  constructor(private FutebolServ: FutebolService, private roteClub: ActivatedRoute, private formEdit: FormBuilder) { }
+  constructor(private FutebolServ: FutebolService, private rotaLiga:ActivatedRoute, private roteClub: ActivatedRoute, private formEdit: FormBuilder) { }
+
+
+
+
 
   ngOnInit(): void {
-        //USA EL ID DE LA URL PARA MOSTRAR UN CLUB
-        this.roteClub.params.subscribe(params => {
-          this.idNum = parseInt(params['id']);
-          this.ID = this.idNum    
-          this.FutebolServ.getClube(1, this.ID)
-            .subscribe (resultados => {
-              this.resultado = resultados ['clube'];
-              this.formularioEdit = this.formEdit.group({
-                name: [this.resultado.name,Validators.required],
-                country: [this.resultado.country],
-                urlShield: [this.resultado.urlShield],
-                vitorias: [this.resultado.vitorias],
-                empates: [this.resultado.empates],
-                derrotas: [this.resultado.derrotas],
-                golsPro: [this.resultado.golsPro],
-                golsContra: [this.resultado.golsContra]
-              })
-            })
-        });
-        
-    this.FutebolServ.getLigas()
-    .subscribe (nomeLigas =>{
-      this.nomeLigas = nomeLigas ['MyLeagues']
-    })    
 
-    this.formularioEdit = this.formEdit.group({
-      name: [null,Validators.required],
-      country: [null],
-      urlShield: [null],
-      vitorias: [null],
-      empates: [null],
-      derrotas: [null],
-      golsPro: [null],
-      golsContra: [null],
+
+
+  //Rote params de Liga
+  this.rotaLiga.params.subscribe(params => {
+    this.ID_Liga = parseInt(params['idLiga'])
+
+    this.FutebolServ.getLiga(this.ID_Liga)
+    .subscribe (nomeLiga =>{
+      this.nomeLiga = nomeLiga ['Liga']
+      // console.log(this.nomeLiga)
     })
+
+
+
+    //USA EL ID DE LA URL PARA MOSTRAR UN CLUB
+    this.roteClub.params.subscribe(params => {
+      this.idNum = parseInt(params['id']);
+      this.ID = this.idNum    
+      this.FutebolServ.getClube(this.ID_Liga, this.ID)
+        .subscribe (resultados => {
+          this.resultado = resultados ['clube'];
+          this.formularioEdit = this.formEdit.group({
+            name: [this.resultado.name,Validators.required],
+            country: [this.resultado.country],
+            urlShield: [this.resultado.urlShield],
+            vitorias: [this.resultado.vitorias],
+            empates: [this.resultado.empates],
+            derrotas: [this.resultado.derrotas],
+            golsPro: [this.resultado.golsPro],
+            golsContra: [this.resultado.golsContra]
+          })
+        })
+    });
+      
+
+
+  })
+   
+
+  this.formularioEdit = this.formEdit.group({
+    name: [null,Validators.required],
+    country: [null],
+    urlShield: [null],
+    vitorias: [null],
+    empates: [null],
+    derrotas: [null],
+    golsPro: [null],
+    golsContra: [null],
+  })
 
     this.validEdit();
   }
@@ -93,9 +113,9 @@ export class EditclubeComponent implements OnInit {
     if (urlShield=='' || null){ urlShield = "https://www.clipartmax.com/png/full/19-194040_how-to-set-use-shield-grey-svg-vector-shield-template.png"} 
     else { urlShield=this.formularioEdit.value.urlShield }
 
-    this.FutebolServ.editClube(this.ID, name, urlShield, country, vitorias, empates, derrotas, golsPro, golsContra)
+    this.FutebolServ.editClube(this.ID_Liga, this.ID, name, urlShield, country, vitorias, empates, derrotas, golsPro, golsContra)
       .subscribe()
-      location.href='http://localhost:'+this.FutebolServ.portFront+'/liga1/clube/'+this.ID+'?sucessoedit=ok'
+      location.href='http://localhost:'+this.FutebolServ.portFront+'/liga/'+this.ID_Liga+'/clube/'+this.ID+'?sucessoedit=ok'
   }
 
   // dadosRandom() {
