@@ -10,70 +10,29 @@ import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms'
 
 export class AddclubeComponent implements OnInit {
 
-  vitorias = new FormControl('');
-  random;
-
-  formularioAdd = new FormGroup({
-      
-  
+  formularioAdd = new FormGroup({  
     name: new FormControl(null,[Validators.required]),
     urlShield: new FormControl(null),
-      country: new FormControl(null),
-      vitorias: new FormControl(null),
-      empates: new FormControl(null),
-      derrotas: new FormControl(null),
-      golsPro: new FormControl(null),
-      golsContra: new FormControl(null)
+    country: new FormControl(null),
+    vitorias: new FormControl(null),
+    empates: new FormControl(null),
+    derrotas: new FormControl(null),
+    golsPro: new FormControl(null),
+    golsContra: new FormControl(null)
   })
-
-  resultado: any = [];
-  defaultValue = 0;
-  
-  // formularioAdd: FormGroup;
-
-
-  // name;
-  // country;
-  // urlShield;
-  // vitorias;
-  // empates;
-  // derrotas;
-  // golsPro;
-  // golsContra;
-
-  
 
   // BOTÃO ADICIONAR DESHABILITADO
   botonAdd = false;
 
-  constructor(private FutebolServ: FutebolService, private formAdd: FormBuilder) { }
+  constructor(private FutebolServ: FutebolService) { }
 
-  ngOnInit(): void {
+  ngOnInit(): void {    
 
-    
-
-    this.validAdd();
-    
+    this.validAdd();    
   }
-
-  inicializar() {
-    
-  }
-
-  // this.formuAdd = new FormGroup({
-  //     name: new FormControl(''),
-  //     urlShield: new FormControl(''),
-  //     country: new FormControl(''),
-  //     vitorias: new FormControl(''),
-  //     empates: new FormControl(''),
-  //     derrotas: new FormControl(''),
-  //     golsPro: new FormControl(''),
-  //     golsContra: new FormControl('')
-  // })
 
   //METODO POST PARA CRIAR NOVOS REGISTROS DESDE O FRONT 
-  novoClub(){
-    
+  novoClub(){    
     // PARA FORMULARIO ADDCLUBE NÃO FICAR SEM DADOS
     let name: string = this.formularioAdd.value.name;
     let country: string = this.formularioAdd.value.country;
@@ -130,14 +89,6 @@ export class AddclubeComponent implements OnInit {
       golsPro: golsPro,
       golsContra: golsContra
     })
-    // this.resultado.empates = this.empates
-    // this.resultado.derrotas = this.derrotas
-    // this.resultado.golsPro = this.golsPro
-    // this.resultado.golsContra = this.golsContra
-    // console.log(this.vitorias.value)
-
-    // this.vitorias = vitorias
-
     }
 
     volverLiga() {
@@ -146,7 +97,6 @@ export class AddclubeComponent implements OnInit {
 
    onSubmit() {
      console.log(this.formularioAdd.value)
-   }
-      
+   }     
 
 }

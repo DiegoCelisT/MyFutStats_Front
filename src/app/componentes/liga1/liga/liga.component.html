@@ -9,10 +9,12 @@
         {{ mensajeAlertAdd }}
     </div>
 
-    <h1>{{ nomeLigas[0].name }}</h1>
+    <div>
+        <h1 class="text-center fw-bold">{{ nomeLigas[0].name }}</h1>
+    </div>
 
-    <div class="mx-auto">
-        <button class="btn btn-primary mb-2 mr-2" (click)='editLiga()'><img src="../../../../assets/Iconos/MyFutStats Update.png" width="30px"> Atualizar dados da liga</button>
+    <div class="d-grid justify-content-sm-center">
+        <button class="btn btn-primary mb-2 mr-2 btn-sm" (click)='editLiga()'><img src="../../../../assets/Iconos/MyFutStats Update.png" width="30px"> Atualizar dados da liga</button>
     </div>
     
     <nav class="navbar">
@@ -53,9 +55,4 @@
             </tbody>
         </table>
     </div>
-
-
-    
-
-    
 </div>
