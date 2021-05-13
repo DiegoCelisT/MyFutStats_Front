@@ -25,6 +25,11 @@
         {{ mensajeAlertEliminado }}
     </div>
 
+    <!-- ALERT CLUBE ADICIONADO -->
+    <div *ngIf='alertAdd' class="alert alert-success fade show" role="alert">
+        {{ mensajeAlertAdd }}
+    </div>
+
 
     <h1>Menú de edição de {{ nomeLiga.name }}</h1>
 

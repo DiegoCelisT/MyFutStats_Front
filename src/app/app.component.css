@@ -7,3 +7,9 @@ footer{
     background-color: black;
     color:white;
 }
+
+#toggleIcon {
+    margin-right: 10px;
+    background-image: url('../assets/Iconos/menu.png');
+}
+

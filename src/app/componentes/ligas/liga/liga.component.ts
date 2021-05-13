@@ -86,7 +86,7 @@ export class LigaComponent implements OnInit {
   mostrarAlert() {
     this.rotaLiga.queryParams.subscribe(params => {
       this.urlEliminado = params ['sucessoeliminado']
-      this.urlAdd = params ['sucessoadd']
+      this.urlAdd = params ['sucessoadicionado']
       
       if (this.urlEliminado == 'ok') {
         this.alertEliminado = true
@@ -106,8 +106,6 @@ export class LigaComponent implements OnInit {
         this.alertAdd = false;
         this.alertEliminado = false;
       }
-              
-      // console.log(this.alertAdd + 'adicionado', this.alertEliminado + 'eliminado')
     })
   }
 
