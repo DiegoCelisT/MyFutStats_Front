@@ -1,12 +1,17 @@
 <div class="container-fluid">
   <nav class="navbar navbar-expand-lg navbar-dark bg-success bg-gradient">
     <div class="container-fluid">
-        <a class="navbar-brand" href=""><img class="img-fluid" src="../../../assets/3 vazado letra branca.png" width="230px" alt=""></a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" (click)='toggleAbajo = !toggleAbajo'>
+        <a class="navbar-brand"><img src="../../../assets/3 vazado letra branca.png" width="230px"></a>
+        <button class="btn navbar-toggler" id="toggleIcon" type="button" data-bs-toggle="offcanvas" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" (click)='toggleAbajo = !toggleAbajo'>
+                                                 <!--   data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions"    -->
           <span class="navbar-toggler-icon"></span>
+          
         </button>
-      <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown" [ngbCollapse]='toggleAbajo'><!-- PARA POSICIONAR EL MENU-->
-        <ul class="navbar-nav ml-auto mb-2 mb-lg-0"> <!-- PARA POSICIONAR EL MENU-->
+
+
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown" [ngbCollapse]='toggleAbajo'>
+                                                                     <!--  -->
+        <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="#">Home</a>
           </li>
@@ -40,7 +45,67 @@
       </div>
     </div>
   </nav>
-</div>
+
+
+  
+<!-- <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions"><span class="navbar-toggler-icon"></span>BOTON</button>
+
+
+<div class="offcanvas offcanvas-end" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
+  <div class="offcanvas-header">
+    <img src="../assets/3 vazado2.png" width="230px"> -->
+
+    <!-- <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Backdroped with scrolling</h5> -->
+    <!-- <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
+      <li class="nav-item">
+        <a class="nav-link active" aria-current="page" href="#">Home</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Ver ligas
+        </a>
+        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="/liga1"> {{ nomeLigas[0]?.name }} </a>
+            <a class="dropdown-item" href="/liga2">{{ nomeLigas[1]?.name }}</a>
+            <a class="dropdown-item" href="/liga3">{{ nomeLigas[2]?.name }}</a>
+            <a class="dropdown-item" href="/liga4">{{ nomeLigas[3]?.name }}</a>
+            <a class="dropdown-item" href="/liga5">{{ nomeLigas[4]?.name }}</a>
+            <a class="dropdown-item" href="/liga6">{{ nomeLigas[5]?.name }}</a>
+        </ul>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Atualizar ligas
+        </a>
+        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="liga1/editliga">{{ nomeLigas[0].name }}</a>
+            <a class="dropdown-item" href="liga2/editliga2">{{ nomeLigas[1]?.name }}</a>
+            <a class="dropdown-item" href="liga3/editliga3">{{ nomeLigas[2]?.name }}</a>
+            <a class="dropdown-item" href="liga4/editliga4">{{ nomeLigas[3]?.name }}</a>
+            <a class="dropdown-item" href="liga5/editliga5">{{ nomeLigas[4]?.name }}</a>
+            <a class="dropdown-item" href="liga6/editliga6">{{ nomeLigas[5]?.name }}</a>
+        </ul>
+      </li>
+    </ul>
+    <div class="dropdown">
+      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
+        Dropdown button
+      </button>
+      <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
+        <li><a class="dropdown-item active" href="#">Action</a></li>
+        <li><a class="dropdown-item" href="#">Another action</a></li>
+        <li><a class="dropdown-item" href="#">Something else here</a></li>
+        <li><hr class="dropdown-divider"></li>
+        <li><a class="dropdown-item" href="#">Separated link</a></li>
+      </ul>
+    </div>
+  </div>
+</div> -->
+
+
 
 <router-outlet></router-outlet>
 

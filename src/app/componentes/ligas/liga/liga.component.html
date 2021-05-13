@@ -16,8 +16,14 @@
         {{ mensajeAlertAdd }}
     </div>
 
-    <h1>{{ nomeLiga.name }}</h1>
-    <a href="">Voltar a Home</a> 
+    <div>
+        <h1 class="text-center fw-bold">{{ nomeLiga.name }}</h1>
+    </div>
+
+    <div class="d-grid justify-content-sm-center">
+        <button class="btn btn-primary mb-2 mr-2 btn-sm" (click)='editLiga(nomeLiga.id)'><img src="../../../../assets/Iconos/MyFutStats Update.png" width="30px"> Atualizar dados da liga</button>
+    </div>
+    
     <nav class="navbar">
         <input class="form-control" type="text" name="name" [(ngModel)]="pesquisa"  placeholder="Insira sua pesquisa aqui...">
     </nav>
@@ -56,32 +62,4 @@
             </tbody>
         </table>
     </div>
-
-
-    <!-- <h1>Mostrando todo o JSON de nossa BD:</h1>
-    <p>{{ resultados | json }}</p> -->
-
-    <!-- <h1>Mostrando os registros (formatados):</h1> -->
-    <!-- <ul class="list-group">
-        <li class="list-group-item" *ngFor="let resultado of resultados">
-            <a href="http://localhost:4200/clube/{{ resultado.id }}"><h2>{{ resultado.name }}</h2></a>
-            <img src="{{ resultado.urlShield }}" width="120px">
-            <p>País: {{ resultado.country }}</p>
-            <p>Posição: {{ resultado.position }}</p>
-            <p>Pontos: {{ resultado.pts }}</p>
-            <p>Jogados: {{ resultado.J }}</p>
-            <p>Vitórias: {{ resultado.V }}</p>
-            <p>Empates: {{ resultado.E }}</p>
-            <p>Derrotas: {{ resultado.D }}</p>
-            <p>GP: {{ resultado.GP }}</p>
-            <p>GC: {{ resultado.GC }}</p>
-            <p>SG: {{ resultado.SG }}</p>
-            <p>Cartões amarelos: {{ resultado.YC }}</p>
-            <p>Cartões vermelhos: {{ resultado.RC }}</p>
-        </li>
-    </ul> -->
-
-    <button class="btn btn-primary mb-2 mr-2" (click)='editLiga(nomeLiga.id)'>Atualizar dados da liga</button>
 </div>
-
-

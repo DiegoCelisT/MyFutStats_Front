@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FutebolService } from '../../../services/futebol.service';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormGroup, Validators, FormControl } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -11,9 +11,16 @@ import { ActivatedRoute } from '@angular/router';
 
 export class AddclubeComponent implements OnInit {
 
-  resultado: any = [];
-  defaultValue = 0;
-  formularioAdd: FormGroup;
+  formularioAdd = new FormGroup({  
+    name: new FormControl(null,[Validators.required]),
+    urlShield: new FormControl(null),
+    country: new FormControl(null),
+    vitorias: new FormControl(null),
+    empates: new FormControl(null),
+    derrotas: new FormControl(null),
+    golsPro: new FormControl(null),
+    golsContra: new FormControl(null)
+  })
 
   nomeLiga = {
     id:Number,
@@ -25,9 +32,9 @@ export class AddclubeComponent implements OnInit {
   // BOTÃO ADICIONAR DESHABILITADO
   botonAdd = false;
 
-  constructor(private FutebolServ: FutebolService, private rotaAddClube:ActivatedRoute, private formAdd: FormBuilder) { }
+  constructor(private FutebolServ: FutebolService, private rotaAddClube:ActivatedRoute) { }
 
-  ngOnInit(): void {
+  ngOnInit(): void {    
 
 
 
@@ -45,47 +52,46 @@ export class AddclubeComponent implements OnInit {
 
 
 
-    this.formularioAdd = this.formAdd.group({
-      name: [null, Validators.required],
-      country: [null],
-      urlShield: [null],
-      vitorias: [null],
-      empates: [null],
-      derrotas: [null],
-      golsPro: [null],
-      golsContra: [null],
-    })
+    // this.formularioAdd = this.formAdd.group({
+    //   name: [null, Validators.required],
+    //   country: [null],
+    //   urlShield: [null],
+    //   vitorias: [null],
+    //   empates: [null],
+    //   derrotas: [null],
+    //   golsPro: [null],
+    //   golsContra: [null],
+    // })
 
     this.validAdd();
     
   }
 
   //METODO POST PARA CRIAR NOVOS REGISTROS DESDE O FRONT 
-  novoClub(){
-
+  novoClub(){    
     // PARA FORMULARIO ADDCLUBE NÃO FICAR SEM DADOS
     let name: string = this.formularioAdd.value.name;
     let country: string = this.formularioAdd.value.country;
     let urlShield: string = this.formularioAdd.value.urlShield;
-    let vitorias: number = this.formularioAdd.value.vitorias;
-    let empates: number = this.formularioAdd.value.empates;
-    let derrotas: number = this.formularioAdd.value.derrotas;
-    let golsPro: number = this.formularioAdd.value.golsPro;
-    let golsContra: number = this.formularioAdd.value.golsContra;
     
-    if (this.formularioAdd.value.vitorias==null){ vitorias=0 }
-    if (this.formularioAdd.value.empates==null){ empates=0 }
-    if (this.formularioAdd.value.derrotas==null){ derrotas=0 }
-    if (this.formularioAdd.value.golsPro==null){ golsPro=0 }
-    if (this.formularioAdd.value.golsContra==null){ golsContra=0 }
+    let vitorias = this.formularioAdd.value.vitorias;
+    let empates = this.formularioAdd.value.empates;
+    let derrotas  = this.formularioAdd.value.derrotas;
+    let golsPro = this.formularioAdd.value.golsPro;
+    let golsContra = this.formularioAdd.value.golsContra;
+    
+    if (vitorias==null){ vitorias=0 }
+    if (empates==null){ empates=0 }
+    if (derrotas==null){ derrotas=0 }
+    if (golsPro==null){ golsPro=0 }
+    if (golsContra==null){ golsContra=0 }
     if (urlShield==null){ urlShield="https://www.clipartmax.com/png/full/19-194040_how-to-set-use-shield-grey-svg-vector-shield-template.png" }
+    console.log(this.ID_Liga, name, urlShield, country, vitorias, empates, derrotas, golsPro, golsContra)
     this.FutebolServ.createClube(this.ID_Liga, name, urlShield, country, vitorias, empates, derrotas, golsPro, golsContra)
     .subscribe()
   }
 
-  voltarLiga(numeroLiga) {
-    location.href ="http://localhost:"+this.FutebolServ.portFront+"/liga/"+numeroLiga+"/editliga"
-  }
+  
 
   validAdd(){
     let formDadosClube = document.getElementsByClassName('dadosName')[0] as HTMLFormElement
@@ -103,12 +109,32 @@ export class AddclubeComponent implements OnInit {
     function randomNumber(min, max) {
       return Math.floor(Math.random() * (max - min) + min) //Math.floor é a parte entera do número
     }
+
+    let vitorias = randomNumber (2,5)
+    let empates = randomNumber (0,6)
+    let derrotas  = randomNumber (2,5)
+    let golsPro = randomNumber (5,16)
+    let golsContra = randomNumber (5,16)
     
-    this.resultado.vitorias = randomNumber (2,5)
-    this.resultado.empates = randomNumber (0,6)
-    this.resultado.derrotas  = randomNumber (2,5)
-    this.resultado.golsPro = randomNumber (5,16)
-    this.resultado.golsContra = randomNumber (5,16)
+    // MOSTRAR NO FORMULARIO
+    this.formularioAdd.patchValue({
+      vitorias: vitorias,
+      empates: empates,
+      derrotas: derrotas,
+      golsPro: golsPro,
+      golsContra: golsContra
+    })
+    }
+
+    voltarLigaEdit(numeroLiga) {
+      location.href ="http://localhost:"+this.FutebolServ.portFront+"/liga/"+numeroLiga+"/editliga"
+    }
+    volverLiga(numeroLiga) {
+      location.href ="http://localhost:"+this.FutebolServ.portFront+"/liga/"+numeroLiga
+    }
+
+    voltarAdd(numeroLiga) {
+      location.href ="http://localhost:"+this.FutebolServ.portFront+"/liga/"+numeroLiga+"/editliga"+'?sucessoadicionado=ok'
     }
 
 }

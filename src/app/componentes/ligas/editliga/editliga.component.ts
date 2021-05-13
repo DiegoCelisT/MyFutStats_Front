@@ -22,10 +22,13 @@ export class EditligaComponent implements OnInit {
     name:String
   };
 
-  //ALERT ELIMINADO
+  //ALERT ELIMINADO Y ADICIONADO
   urlEliminado;
   alertEliminado;
-  mensajeAlertEliminado = '';
+  mensajeAlertEliminado;
+  urlAdd;
+  alertAdd;
+  mensajeAlertAdd = '';
 
   // MODAL ELIMINADO
   idModal;
@@ -52,13 +55,9 @@ export class EditligaComponent implements OnInit {
     .subscribe (resultados => {
       this.resultados = resultados ['clubes'] //'É importante declarar o nome do JSON que foi dado no back-end, para dessa maneira evitar o erro de cannot read property '0' of undefined  
     })
-
-
-
-
     });
 
-
+    this.mostrarAlert();
 
   }
   
@@ -71,9 +70,25 @@ export class EditligaComponent implements OnInit {
     window.location.href="http://localhost:4200/liga/"+numeroLiga+"/editliga"
   }
 
+  // mostrarAlert() {
+  //   this.roteEditLiga.queryParams.subscribe(params => {
+  //     this.urlEliminado = params ['sucessoeliminado']
+  //     if (this.urlEliminado == 'ok') {
+  //       this.alertEliminado = true
+  //       this.mensajeAlertEliminado = 'O clube foi eliminado!'
+
+  //       setTimeout(()=>{                           
+  //         this.alertEliminado = false;
+  //       }, 4000);
+  //     }
+  //   })
+  // }
+
   mostrarAlert() {
     this.roteEditLiga.queryParams.subscribe(params => {
       this.urlEliminado = params ['sucessoeliminado']
+      this.urlAdd = params ['sucessoadicionado']
+      
       if (this.urlEliminado == 'ok') {
         this.alertEliminado = true
         this.mensajeAlertEliminado = 'O clube foi eliminado!'
@@ -81,7 +96,20 @@ export class EditligaComponent implements OnInit {
         setTimeout(()=>{                           
           this.alertEliminado = false;
         }, 4000);
+
+      } else if (this.urlAdd == 'ok') {
+        this.alertAdd = true
+        this.mensajeAlertAdd = 'O clube foi adicionado'
+        setTimeout(()=>{                           
+          this.alertAdd = false;
+        }, 4000);
+
+      } else {
+        this.alertAdd = false;
+        this.alertEliminado = false;
       }
+              
+      // console.log(this.alertAdd + 'adicionado', this.alertEliminado + 'eliminado')
     })
   }
 

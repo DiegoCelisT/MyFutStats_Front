@@ -42,6 +42,7 @@ export class FutebolService {
       golsPro: golsPro,
       golsContra: golsContra,
       })
+      
   }
 
   //METODO PUT
