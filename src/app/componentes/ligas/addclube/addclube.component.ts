@@ -87,8 +87,8 @@ export class AddclubeComponent implements OnInit {
     if (golsContra==null){ golsContra=0 }
     if (urlShield==null){ urlShield="https://www.clipartmax.com/png/full/19-194040_how-to-set-use-shield-grey-svg-vector-shield-template.png" }
     console.log(this.ID_Liga, name, urlShield, country, vitorias, empates, derrotas, golsPro, golsContra)
-    // this.FutebolServ.createClube(this.ID_Liga, name, urlShield, country, vitorias, empates, derrotas, golsPro, golsContra)
-    // .subscribe()
+    this.FutebolServ.createClube(this.ID_Liga, name, urlShield, country, vitorias, empates, derrotas, golsPro, golsContra)
+    .subscribe()
   }
 
   
