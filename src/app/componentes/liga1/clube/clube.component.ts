@@ -14,13 +14,14 @@ export class ClubeComponent implements OnInit {
 
   resultado: any = [];
   ID: any;
-  idNum: Number;
-  
+  ID_Liga:any;
+
   resultados = [];
   resultadosSort = [];
-  nomeLigas = [{
+  nomeLiga = {
+    id:Number,
     name:String
-  }];
+  };
   
   position:number
 
@@ -29,52 +30,74 @@ export class ClubeComponent implements OnInit {
   urlEdit;
   urlEliminado;
 
-  constructor(private FutebolServ: FutebolService, private roteClub: ActivatedRoute, private modalEliminar: NgbModal) { }
+  constructor(private FutebolServ: FutebolService, private rotaLiga:ActivatedRoute, private roteClub: ActivatedRoute, private modalEliminar: NgbModal) { }
 
   ngOnInit(): void {
+  //Rote params de Liga
+    this.rotaLiga.params.subscribe(params => {
+      this.ID_Liga = parseInt(params['idLiga'])
 
-    //USA EL ID DE LA URL PARA MOSTRAR UN CLUB
-    this.roteClub.params.subscribe(params => {
-      this.idNum = parseInt(params['id']);
-      this.ID = this.idNum    
-      this.FutebolServ.getClube(this.ID)
-      .subscribe (resultados => {this.resultado = resultados ['clube']})
-    });
+      this.FutebolServ.getLiga(this.ID_Liga)
+      .subscribe (nomeLiga =>{
+        this.nomeLiga = nomeLiga ['Liga']
+        // console.log(this.nomeLiga)
+      })
 
-    this.FutebolServ.getClubes ()
-    .subscribe (resultados => {
-      this.resultados = resultados ['clubes']   
-      this.resultadosSort = this.resultados.sort(function (a, b) {
-        if ( a.pontos < b.pontos) {
-          return 1;
-        }
-        if (a.saldoGols > b. saldoGols || a.pontos > b.pontos ) {
-          return -1;
-        }
-        return 0;
+      //Rote params Clube
+      this.roteClub.params.subscribe(params => {
+        this.ID = parseInt(params['id'])
+        
+        
+        this.FutebolServ.getClube(this.ID_Liga,this.ID)
+        .subscribe (resultados => {this.resultado = resultados ['clube']})
       });
-      for (let P = 0; P < this.resultadosSort.length; P++){
-      if (this.ID == this.resultadosSort[P].id){
-        this.position=P+1
-      }
-      }
+
+
+      //Trazendo a listagem para ordenar
+      this.FutebolServ.getClubesAll (this.ID_Liga)
+      .subscribe (resultados => {
+        this.resultados = resultados ['clubes']   
+        this.resultadosSort = this.resultados.sort(function (a, b) {
+          if ( a.pontos < b.pontos) {
+            return 1;
+          }
+          if (a.saldoGols > b. saldoGols || a.pontos > b.pontos ) {
+            return -1;
+          }
+          return 0;
+        });
+        for (let P = 0; P < this.resultadosSort.length; P++){
+        if (this.ID == this.resultadosSort[P].id){
+          this.position=P+1
+        }
+        }
+      })
+
+
+
+
     })
 
 
-    this.FutebolServ.getLigas()
-    .subscribe (nomeLigas =>{
-      this.nomeLigas = nomeLigas ['MyLeagues']
-    })
 
     this.mostrarAlert()
 
   }
 
+
   //ELIMINAR CLUBE
-  eliminarClube(){
-    this.FutebolServ.eliminarClube(this.ID).subscribe();
-    location.href='http://localhost:'+this.FutebolServ.portFront+'/liga1/'+'?sucessoeliminado=ok'
+  // eliminarClube(ID_Liga, ID_Clube){
+  //   this.FutebolServ.eliminarClube(ID_Liga, ID_Clube).subscribe();
+  //   location.href='http://localhost:'+this.FutebolServ.portFront+'/liga/'+ID_Liga+'?sucessoeliminado=ok'
+  // }
+
+  // console.log(ID_Liga, ID)
+
+  eliminarClube(ID_Liga, ID){
+    this.FutebolServ.eliminarClube(ID_Liga, ID).subscribe();
+    location.href='http://localhost:'+this.FutebolServ.portFront+'/liga/'+this.ID_Liga+'?sucessoeliminado=ok'
   }
+
 
   //CERRAR MODAL E IR PARA LIGA
   fechaModalEliminar() {
@@ -83,7 +106,7 @@ export class ClubeComponent implements OnInit {
 
   //ROTA EDITAR CLUBE
   irEditClube() {
-    location.href ="http://localhost:"+this.FutebolServ.portFront+"/liga1/editclube/"+this.ID
+    location.href ="http://localhost:"+this.FutebolServ.portFront+"/liga/"+this.ID_Liga+"/editclube/"+this.ID
   }
 
   mostrarAlert() {

@@ -35,8 +35,8 @@ export class Clube2Component implements OnInit {
 
     //USA EL ID DE LA URL PARA MOSTRAR UN CLUB
     this.roteClub.params.subscribe(params => {
-      this.idNum = parseInt(params['id']);
-      this.ID = this.idNum    
+      this.ID = parseInt(params['id']);
+      // this.ID = this.idNum    
       this.FutebolServ.getClube(this.ID)
       .subscribe (resultados => {this.resultado = resultados ['clube']})
     });

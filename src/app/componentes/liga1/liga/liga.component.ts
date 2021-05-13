@@ -11,9 +11,10 @@ export class LigaComponent implements OnInit {
 
   resultados = [];
   resultadosSort = [];
-  nomeLigas = [{
+  nomeLiga = {
+    id:Number,
     name:String
-  }];
+  };
   pesquisa:string; //Para o formulario de pesquisa
   index:number
 
@@ -38,15 +39,18 @@ export class LigaComponent implements OnInit {
   golsPro: number;
   golsContra: number;
 
+
+  ID_Liga:number;
+
   ngOnInit(): void {
 
-    this.FutebolServ.getLigas()
-    .subscribe (nomeLigas =>{
-      this.nomeLigas = nomeLigas ['MyLeagues']
-    })
-
-    //GET CLUBES ADAPTADO PARA ORDENAR DOS DADOS (SORT) E CONSEGUIR ATRIBUIR VALORES DE POSIÇÃO DINÂMICOS COMPATIVÉIS COM O FORM DE PESQUISA
-    this.FutebolServ.getClubes ()
+    //Enrotamento de Liga
+    this.rotaLiga.params.subscribe(params => {
+      this.ID_Liga = parseInt(params['idLiga']); 
+      
+      
+      //GET CLUBES ADAPTADO PARA ORDENAR DOS DADOS (SORT) E CONSEGUIR ATRIBUIR VALORES DE POSIÇÃO DINÂMICOS COMPATIVÉIS COM O FORM DE PESQUISA
+    this.FutebolServ.getClubesAll (this.ID_Liga)
     .subscribe (resultados => {
       this.resultados = resultados ['clubes'] //'É importante declarar o nome do JSON que foi dado no back-end, para dessa maneira evitar o erro de cannot read property '0' of undefined     
       this.resultadosSort = this.resultados.sort(function (a, b) {
@@ -58,9 +62,21 @@ export class LigaComponent implements OnInit {
         }
         // a igual que b
         return 0;
-      });
-      // console.log(this.resultadosSort)    
+      });    
     })
+
+
+    this.FutebolServ.getLiga(this.ID_Liga)
+    .subscribe (nomeLiga =>{
+      this.nomeLiga = nomeLiga ['Liga']
+      // console.log(this.nomeLiga)
+    })
+
+    });
+
+    
+
+    
 
 
     this.mostrarAlert();
@@ -95,8 +111,8 @@ export class LigaComponent implements OnInit {
     })
   }
 
-  editLiga() {
-    location.href="http://localhost:4200/liga1/editliga"
+  editLiga(ID_Liga) {
+    location.href='http://localhost:4200/liga/'+ID_Liga+'/editliga'
   }
   
 }

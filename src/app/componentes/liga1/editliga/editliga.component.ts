@@ -31,6 +31,9 @@ export class EditligaComponent implements OnInit {
   nameModal;
   urlModal;
 
+
+  ID_Liga:number;
+
   ngOnInit(): void {
 
     this.FutebolServ.getLigas()
@@ -38,22 +41,39 @@ export class EditligaComponent implements OnInit {
       this.nomeLigas = nomeLigas ['MyLeagues']
     })
 
-    this.FutebolServ.getClubes ()
-    .subscribe (resultados => {
-      this.resultados = resultados ['clubes']
-      this.mostrarAlert();
-    })
-  }
+    //Enrotamento de Liga
+    this.roteEditLiga.params.subscribe(params => {
+      this.ID_Liga = parseInt(params['idLiga']);      
+      
 
-  eliminarClube(ID_clube){
-    this.FutebolServ.eliminarClube(ID_clube).subscribe(()=>{
-      this.FutebolServ.getClubes ()
-      .subscribe (resultados => {
-        this.resultados = resultados ['clubes']
+      
+    this.FutebolServ.getClubesAll (this.ID_Liga)
+    .subscribe (resultados => {
+      this.resultados = resultados ['clubes'] //'É importante declarar o nome do JSON que foi dado no back-end, para dessa maneira evitar o erro de cannot read property '0' of undefined  
     })
-    })    
-    location.href="http://localhost:4200/liga1/editliga?sucessoeliminado=ok"
+
+
+
+
+    });
+
+
+
+
+
+
+
   }
+  
+  // eliminarClube(ID_Liga, ID_clube){
+  //   this.FutebolServ.eliminarClube(ID_Liga, ID_clube).subscribe(()=>{
+  //     this.FutebolServ.getClubes ()
+  //     .subscribe (resultados => {
+  //       this.resultados = resultados ['clubes']
+  //   })
+  //   })    
+  //   location.href="http://localhost:4200/liga/1/editliga?sucessoeliminado=ok"
+  // }
 
   //METODO PUT (Para cambiarle el nombre a la liga)
   editLiga(){

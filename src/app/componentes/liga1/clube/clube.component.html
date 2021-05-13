@@ -5,9 +5,9 @@
 
 <article>
   <div>
-    <h1>{{ this.resultado.name }}</h1>
-    <h4>{{ this.resultado.country }}</h4>
-    <h2>Liga {{ nomeLigas[0].name }}</h2>
+    <h1>{{ resultado.name }}</h1>
+    <h4>{{ resultado.country }}</h4>
+    <h2>Liga {{ nomeLiga.name }}</h2>
     <h4>Posição: {{ position }}</h4>
   </div>
 
@@ -17,14 +17,14 @@
   
   <div>
     <h2>Estátisticas da Temporada</h2>
-    <p>Pontos: {{ this.resultado.pontos }}</p>
-    <p>Jogados: {{ this.resultado.jogados }}</p>
-    <p>Vitórias: {{ this.resultado.vitorias }}</p>
-    <p>Empates: {{ this.resultado.empates }}</p>
-    <p>Derrotas: {{ this.resultado.derrotas }}</p>
-    <p>Gols Pró: {{ this.resultado.golsPro }}</p>
-    <p>Gols Contra: {{ this.resultado.golsContra }}</p>
-    <p>Saldo de Gols: {{ this.resultado.saldoGols }}</p>
+    <p>Pontos: {{ resultado.pontos }}</p>
+    <p>Jogados: {{ resultado.jogados }}</p>
+    <p>Vitórias: {{ resultado.vitorias }}</p>
+    <p>Empates: {{ resultado.empates }}</p>
+    <p>Derrotas: {{ resultado.derrotas }}</p>
+    <p>Gols Pró: {{ resultado.golsPro }}</p>
+    <p>Gols Contra: {{ resultado.golsContra }}</p>
+    <p>Saldo de Gols: {{ resultado.saldoGols }}</p>
   </div>
 </article>
 
@@ -32,9 +32,7 @@
 
 <button class="btn btn-primary mb-2 mr-2" (click)="irEditClube()">EDITAR CLUBE</button>
 
-<button class="btn btn-danger mb-2 mr-2" (click)="eliminarClube()">ELIMINAR CLUBE</button>
+<button class="btn btn-danger mb-2 mr-2" (click)="eliminarClube(nomeLiga.id,resultado.id)">ELIMINAR CLUBE</button>
 
 <br><br>
-<a href="http://localhost:4200/liga1">Voltar a {{ nomeLigas[0].name }}</a><br>
-<a href="">Voltar a Home</a> 
-
+<a href="http://localhost:4200/liga/{{nomeLiga.id}}">Voltar a {{ nomeLiga.name }}</a><br>

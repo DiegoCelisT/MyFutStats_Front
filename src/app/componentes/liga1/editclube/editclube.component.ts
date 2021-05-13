@@ -35,7 +35,7 @@ export class EditclubeComponent implements OnInit {
         this.roteClub.params.subscribe(params => {
           this.idNum = parseInt(params['id']);
           this.ID = this.idNum    
-          this.FutebolServ.getClube(this.ID)
+          this.FutebolServ.getClube(1, this.ID)
             .subscribe (resultados => {
               this.resultado = resultados ['clube'];
               this.formularioEdit = this.formEdit.group({

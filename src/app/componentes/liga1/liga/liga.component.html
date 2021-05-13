@@ -9,7 +9,7 @@
         {{ mensajeAlertAdd }}
     </div>
 
-    <h1>{{ nomeLigas[0].name }}</h1>
+    <h1>{{ nomeLiga.name }}</h1>
     <a href="">Voltar a Home</a> 
     <nav class="navbar">
         <input class="form-control" type="text" name="name" [(ngModel)]="pesquisa"  placeholder="Insira sua pesquisa aqui...">
@@ -36,7 +36,7 @@
     
                     <td>{{ resultadosSort.indexOf(resultado)+1 }}</td>
                     <!-- <td>{{ i+1 }}</td> -->
-                    <td><a href="http://localhost:4200/liga1/clube/{{ resultado.id }}"><img [src]="resultado?.urlShield" height="35">{{ resultado.name }}</a></td>
+                    <td><a href="http://localhost:4200/liga/{{ nomeLiga.id }}/clube/{{ resultado.id }}"><img [src]="resultado?.urlShield" height="35">{{ resultado.name }}</a></td>
                     <td>{{ resultado.country | uppercase | slice:0:3}} </td>
                     <td>{{ resultado.jogados}} </td>
                     <td>{{ resultado.vitorias }} </td>
@@ -74,5 +74,5 @@
         </li>
     </ul> -->
 
-    <button class="btn btn-primary mb-2 mr-2" (click)='editLiga()'>Atualizar dados da liga</button>
+    <button class="btn btn-primary mb-2 mr-2" (click)='editLiga(nomeLiga.id)'>Atualizar dados da liga</button>
 </div>
