@@ -28,6 +28,7 @@ aside{
     flex-direction: column;
     flex-wrap: wrap;
     
+    
 }
 
 aside div{
@@ -42,3 +43,4 @@ aside div{
 aside div img {
     height: 100px;
 }
+
