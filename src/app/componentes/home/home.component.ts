@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FutebolService } from '../../services/futebol.service';
-import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -23,58 +22,49 @@ export class HomeComponent implements OnInit {
   nomeLiga1 = [{
     name:String
   }];
-  // ID: any;
-  // name: string;
-  // urlShield: string;
-  // country: string;
-  // vitorias: number;
-  // empates: number;
-  // derrotas: number;
-  // golsPro: number;
-  // golsContra: number;
-
-
+  
   ngOnInit(): void {
     
-  this.FutebolServ.getLigas()
-  .subscribe (nomeLigas =>{
-    this.nomeLigas = nomeLigas ['MyLeagues']
-  })
-  
-  // this.FutebolServ.getClubes ()
-  //   .subscribe (resultados => {
-  //     this.resultados = resultados ['clubes']
-  //   })
+    this.FutebolServ.getLigas()
+    .subscribe (nomeLigas =>{
+      this.nomeLigas = nomeLigas ['MyLeagues']
+    })
 
-  this.FutebolServ.getClubesAll (1)
-  .subscribe (resultados => {
-    this.resultados1 = resultados ['clubes']
-  })
-  this.FutebolServ.getClubesAll (2)
-  .subscribe (resultados => {
-    this.resultados2 = resultados ['clubes']
-  })
-  this.FutebolServ.getClubesAll (3)
-  .subscribe (resultados => {
-    this.resultados3 = resultados ['clubes']
-  })
-  this.FutebolServ.getClubesAll (4)
-  .subscribe (resultados => {
-    this.resultados4 = resultados ['clubes']
-  })
-  this.FutebolServ.getClubesAll (5)
-  .subscribe (resultados => {
-    this.resultados5 = resultados ['clubes']
-  })
-  this.FutebolServ.getClubesAll (6)
-  .subscribe (resultados => {
-    this.resultados6 = resultados ['clubes']
-  })
-}
-
-
+    this.FutebolServ.getClubesAll (1)
+    .subscribe (resultados => {
+      this.resultados1 = resultados ['clubes']
+    })
+    this.FutebolServ.getClubesAll (2)
+    .subscribe (resultados => {
+      this.resultados2 = resultados ['clubes']
+    })
+    this.FutebolServ.getClubesAll (3)
+    .subscribe (resultados => {
+      this.resultados3 = resultados ['clubes']
+    })
+    this.FutebolServ.getClubesAll (4)
+    .subscribe (resultados => {
+      this.resultados4 = resultados ['clubes']
+    })
+    this.FutebolServ.getClubesAll (5)
+    .subscribe (resultados => {
+      this.resultados5 = resultados ['clubes']
+    })
+    this.FutebolServ.getClubesAll (6)
+    .subscribe (resultados => {
+      this.resultados6 = resultados ['clubes']
+    })
+  }
 
   abrirLink(numeroLiga) {
     location.href='/liga/'+numeroLiga
   }
+
+  abrirClub(numeroLiga, numeroClub) {
+    location.href='http://localhost:'+this.FutebolServ.portFront+'/liga/'+numeroLiga+'/clube/'+numeroClub
+  }
+
+
+
+  
 }

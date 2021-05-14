@@ -13,3 +13,13 @@ a, tr {
 td:nth-child(2){
     text-align: left;
 }
+
+.pointer {
+    cursor: pointer;
+    opacity: 1;
+}
+
+.pointer:hover {
+    opacity: 0.8;
+    
+}
