@@ -34,7 +34,6 @@ export class EditligaComponent implements OnInit {
   nameModal;
   urlModal;
 
-
   ID_Liga:number;
 
   ngOnInit(): void {

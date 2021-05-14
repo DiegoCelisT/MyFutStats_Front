@@ -9,6 +9,9 @@ import { ClubeComponent } from './componentes/ligas/clube/clube.component';
 import { AddclubeComponent } from './componentes/ligas/addclube/addclube.component';
 import { EditligaComponent } from './componentes/ligas/editliga/editliga.component';
 
+import { NotFoundComponent } from './componentes/not-found/not-found.component';
+import { AboutUsComponent } from './componentes/about-us/about-us.component';
+
 const routes: Routes = [
   { path: '', component:HomeComponent },
   { path: 'liga/:idLiga/clube/:id', component:ClubeComponent },
@@ -16,6 +19,9 @@ const routes: Routes = [
   { path: 'liga/:idLiga/addclube', component:AddclubeComponent },
   { path: 'liga/:idLiga/editclube/:id', component:EditclubeComponent },
   { path: 'liga/:idLiga/editliga', component:EditligaComponent },
+  { path: 'about-us', component:AboutUsComponent},
+  { path: '**', component: NotFoundComponent }
+
 ];
 
 @NgModule({

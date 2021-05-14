@@ -1,0 +1,11 @@
+div{
+    display: flex;
+    justify-content: space-around;
+    /* align-content: center */
+    padding: 8vw;
+}
+
+img{
+    width: 50vh;
+    align-self: center;
+}
