@@ -78,14 +78,8 @@ export class ClubeComponent implements OnInit {
         }
         }
       })
-
-
-
-
     })
-
-
-
+    
     this.mostrarAlert()
 
   }
