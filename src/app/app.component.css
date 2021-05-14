@@ -1,5 +1,5 @@
 /* Sumida de bordes provisoria */
-nav, .navbar-brand, .container-fluid{
+nav, .navbar-brand, .container-fluid {
     padding: 0px;
 }
 
@@ -10,6 +10,29 @@ footer{
 
 #toggleIcon {
     margin-right: 10px;
-    background-image: url('../assets/Iconos/menu.png');
+}
+
+/* .offcanvas-header {
+    background-color: #198754;
+} */
+
+.offcanvas-body {
+    background-color: #198754; 
+      
+}
+
+#logoOffCanvas {
+    margin-left: -16px;
+    margin-top: -16px;
+}
+
+#offcanvasWithBothOptions {
+    width: 220px;
+}
+
+#btnCloseCanvas {
+    position: relative;
+    /* left: 10px; */
+    /* top: -30px; */
 }
 
