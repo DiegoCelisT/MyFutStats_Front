@@ -1,26 +1,36 @@
-<!-- <div class="container-fluid">
-    <div class="tabelaHome">
-        <a href="/liga">
-            <h2>{{ nomeLigas[0].name }}</h2>
-            <table class="table table-bordered">
-                <thead>
-                    <tr>
-                        <th>POS</th>
-                        <th>TIME</th>
-                        <th>PTS</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr *ngFor="let resultado of resultados | orderBy:'saldoGols':false | orderBy:'pontos':true | slice:0:4; let i = index">
-                        <td>{{ i+1 }}</td>
-                        <td><img [src]="resultado?.urlShield" height="40"> {{ resultado.name }}</td>
-                        <td>{{ resultado.pontos }}</td>
-                    </tr>
-                </tbody>
-            </table>
-        </a>
-    </div>
-</div> -->
+<div class="container-fluid">
+
+<!-- CAROUSEL CLUBES -->
+    <div id="carouselExampleControls" class="carousel slide" data-bs-interval="4000" data-bs-ride="carousel" data-bs-pause="hover">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img *ngFor="let resultado of resultados1" src="{{resultado.urlShield}}" (click)='abrirClub(1,resultado.id)' class="d-inline img-fluid m-2 pointer" width="100px">    
+          </div>
+          <div class="carousel-item">
+            <img *ngFor="let resultado of resultados2" src="{{resultado.urlShield}}" (click)='abrirClub(2,resultado.id)' class="d-inline img-fluid m-2 pointer" width="100px">    
+          </div>
+          <div class="carousel-item">
+            <img *ngFor="let resultado of resultados3" src="{{resultado.urlShield}}" (click)='abrirClub(3,resultado.id)' class="d-inline img-fluid m-2 pointer" width="100px">    
+          </div>
+          <div class="carousel-item">
+            <img *ngFor="let resultado of resultados4" src="{{resultado.urlShield}}" (click)='abrirClub(4,resultado.id)' class="d-inline img-fluid m-2 pointer" width="100px">    
+          </div>
+          <div class="carousel-item">
+            <img *ngFor="let resultado of resultados5" src="{{resultado.urlShield}}" (click)='abrirClub(5,resultado.id)' class="d-inline img-fluid m-2 pointer" width="100px">    
+          </div>
+          <div class="carousel-item">
+            <img *ngFor="let resultado of resultados6" src="{{resultado.urlShield}}" (click)='abrirClub(6,resultado.id)' class="d-inline img-fluid m-2 pointer" width="100px">    
+          </div>
+          
+        </div>
+        
+       
+      </div>
+
+      
+     
+
+
 <aside>
     <div>
         <h3>{{ resultados1[random1Club1]?.name }}</h3>
@@ -68,7 +78,9 @@
 
 
 
-<div class="container-fluid">
+
+
+
     <div class="row">    
         <div class="col-sm-4 p-2" (click)='abrirLink(1)'>
             <div class="card bg-dark text-white text-center">

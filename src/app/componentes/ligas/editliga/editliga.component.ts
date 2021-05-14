@@ -47,7 +47,7 @@ export class EditligaComponent implements OnInit {
       this.FutebolServ.getLiga(this.ID_Liga)
       .subscribe (nomeLiga =>{
         this.nomeLiga = nomeLiga ['Liga']
-        // console.log(this.nomeLiga)
+
       })
       
     this.FutebolServ.getClubesAll (this.ID_Liga)
@@ -68,20 +68,6 @@ export class EditligaComponent implements OnInit {
     .subscribe() 
     window.location.href="http://localhost:4200/liga/"+numeroLiga+"/editliga"
   }
-
-  // mostrarAlert() {
-  //   this.roteEditLiga.queryParams.subscribe(params => {
-  //     this.urlEliminado = params ['sucessoeliminado']
-  //     if (this.urlEliminado == 'ok') {
-  //       this.alertEliminado = true
-  //       this.mensajeAlertEliminado = 'O clube foi eliminado!'
-
-  //       setTimeout(()=>{                           
-  //         this.alertEliminado = false;
-  //       }, 4000);
-  //     }
-  //   })
-  // }
 
   mostrarAlert() {
     this.roteEditLiga.queryParams.subscribe(params => {
@@ -135,10 +121,18 @@ export class EditligaComponent implements OnInit {
       this.FutebolServ.getClubesAll (ID_Liga)
       .subscribe (resultados => {
         this.resultados = resultados ['clubes']
+        this.mostrarAlertEliminado()
     })
-    }) 
-    // NÃO COLOCAR! Para que a página não recarregue no topo   
-    // location.href="http://localhost:4200/liga/"+this.ID_Liga+"/editliga?sucessoeliminado=ok"
+    })
+  }
+
+  mostrarAlertEliminado() {
+    this.alertEliminado = true
+    this.mensajeAlertEliminado = 'O clube foi eliminado!'
+
+    setTimeout(()=>{                           
+      this.alertEliminado = false;
+    }, 4000);
   }
 
 

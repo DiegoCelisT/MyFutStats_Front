@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FutebolService } from '../../services/futebol.service';
-import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -24,6 +23,7 @@ export class HomeComponent implements OnInit {
     name:String
   }];
   
+
   //Para simular os próximos jogos (começam em 1 para que se alguém elimina todos os clubes não cause conflito e para dar um start de igualdade no while): (cada liga têm um número diferente de times, por isso o valor random não pode ser o mesmo para todos)
   random1Club1:any = 1
   random1Club2:any = 1
@@ -124,7 +124,17 @@ export class HomeComponent implements OnInit {
 
 
 
+   
+
   abrirLink(numeroLiga) {
     location.href='/liga/'+numeroLiga
   }
+
+  abrirClub(numeroLiga, numeroClub) {
+    location.href='http://localhost:'+this.FutebolServ.portFront+'/liga/'+numeroLiga+'/clube/'+numeroClub
+  }
+
+
+
+  
 }

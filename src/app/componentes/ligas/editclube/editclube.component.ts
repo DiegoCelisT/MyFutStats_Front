@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FutebolService } from '../../../services/futebol.service';
 import { ActivatedRoute } from '@angular/router';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-editclube',
@@ -17,9 +17,6 @@ export class EditclubeComponent implements OnInit {
   ID_Liga: any;
   formularioEdit: FormGroup;
   
-  // pontos:number;
-  // jogados:number;
-  // saldoGols:number
 
   nomeLiga = {
     id:Number,
@@ -30,10 +27,6 @@ export class EditclubeComponent implements OnInit {
   botonEdit = false;
 
   constructor(private FutebolServ: FutebolService, private rotaLiga:ActivatedRoute, private roteClub: ActivatedRoute, private formEdit: FormBuilder) { }
-
-
-
-
 
   ngOnInit(): void {
 
@@ -70,9 +63,6 @@ export class EditclubeComponent implements OnInit {
           })
         })
     });
-      
-
-
   })
    
 
@@ -117,18 +107,6 @@ export class EditclubeComponent implements OnInit {
       .subscribe()
       location.href='http://localhost:'+this.FutebolServ.portFront+'/liga/'+this.ID_Liga+'/clube/'+this.ID+'?sucessoedit=ok'
   }
-
-  // dadosRandom() {
-  //   this.FutebolServ.sumarJ(); //SUMA UN PARTIDO CADA VEZ QUE EL BOTON ES APRETADO
-  //   this.J = this.FutebolServ.J;
-    
-
-  //   this.V = 10;
-  //   this.E = 10;
-  //   this.D = 10;
-  //   this.GP = 10;
-  //   this.GC = 10;
-  // }
 
   validEdit(){
     var form = document.getElementsByClassName('needs-validation')[0] as HTMLFormElement
