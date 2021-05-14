@@ -25,19 +25,23 @@ td:nth-child(2){
 
 aside{
     display:flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    
-    
+    flex-direction: row;
+    flex-wrap: wrap;  
+    justify-content: space-around;  
 }
 
 aside div{
     display:flex;
     justify-content: center;
-    align-content: center;
+    /* align-content: center; */
     flex-direction: row;
     flex-wrap: wrap;
     align-items: center;
+}
+
+a{
+    padding: 10px;
+    color:black
 }
 
 aside div img {
