@@ -13,3 +13,23 @@ a, tr {
 td:nth-child(2){
     text-align: left;
 }
+
+aside{
+    display:flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    
+}
+
+aside div{
+    display:flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+aside div img {
+    height: 100px;
+}
