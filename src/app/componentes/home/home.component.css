@@ -21,7 +21,7 @@ td:nth-child(2){
 
 .pointer:hover {
     opacity: 0.8;
-    
+}    
 
 aside{
     display:flex;
