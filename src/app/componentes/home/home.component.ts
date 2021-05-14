@@ -23,38 +23,108 @@ export class HomeComponent implements OnInit {
     name:String
   }];
   
-  ngOnInit(): void {
-    
-    this.FutebolServ.getLigas()
-    .subscribe (nomeLigas =>{
-      this.nomeLigas = nomeLigas ['MyLeagues']
-    })
 
-    this.FutebolServ.getClubesAll (1)
-    .subscribe (resultados => {
-      this.resultados1 = resultados ['clubes']
-    })
-    this.FutebolServ.getClubesAll (2)
-    .subscribe (resultados => {
-      this.resultados2 = resultados ['clubes']
-    })
-    this.FutebolServ.getClubesAll (3)
-    .subscribe (resultados => {
-      this.resultados3 = resultados ['clubes']
-    })
-    this.FutebolServ.getClubesAll (4)
-    .subscribe (resultados => {
-      this.resultados4 = resultados ['clubes']
-    })
-    this.FutebolServ.getClubesAll (5)
-    .subscribe (resultados => {
-      this.resultados5 = resultados ['clubes']
-    })
-    this.FutebolServ.getClubesAll (6)
-    .subscribe (resultados => {
-      this.resultados6 = resultados ['clubes']
-    })
+  //Para simular os próximos jogos (começam em 1 para que se alguém elimina todos os clubes não cause conflito e para dar um start de igualdade no while): (cada liga têm um número diferente de times, por isso o valor random não pode ser o mesmo para todos)
+  random1Club1:any = 1
+  random1Club2:any = 1
+  random2Club1:any = 1
+  random2Club2:any = 1
+  random3Club1:any = 1
+  random3Club2:any = 1
+  random4Club1:any = 1
+  random4Club2:any = 1
+  random5Club1:any = 1
+  random5Club2:any = 1
+  random6Club1:any = 1
+  random6Club2:any = 1
+
+
+  ngOnInit(): void {
+  
+  function randomNumber(min, max) {
+    return Math.floor(Math.random() * (max - min) + min) //Math.floor é a parte entera do número
   }
+
+  this.FutebolServ.getLigas()
+  .subscribe (nomeLigas =>{
+    this.nomeLigas = nomeLigas ['MyLeagues']
+  })
+  
+  this.FutebolServ.getClubesAll (1)
+  .subscribe (resultados => {
+    this.resultados1 = resultados ['clubes']
+    //VS Random:
+    if(this.resultados1.length > 1){
+      while (this.random1Club1 == this.random1Club2){
+        this.random1Club1 = randomNumber (0,this.resultados1.length)
+        this.random1Club2 = randomNumber (0,this.resultados1.length)
+      }
+    }
+  })
+
+  this.FutebolServ.getClubesAll (2)
+  .subscribe (resultados => {
+    this.resultados2 = resultados ['clubes']
+    //VS Random:
+    if(this.resultados2.length > 1){
+      while (this.random2Club1 == this.random2Club2){
+        this.random2Club1 = randomNumber (0,this.resultados2.length)
+        this.random2Club2 = randomNumber (0,this.resultados2.length)
+      }
+    }
+  })
+
+  this.FutebolServ.getClubesAll (3)
+  .subscribe (resultados => {
+    this.resultados3 = resultados ['clubes']
+    //VS Random:
+    if(this.resultados3.length > 1){
+      while (this.random3Club1 == this.random3Club2){
+        this.random3Club1 = randomNumber (0,this.resultados3.length)
+        this.random3Club2 = randomNumber (0,this.resultados3.length)
+      }
+    }
+  })
+  this.FutebolServ.getClubesAll (4)
+  .subscribe (resultados => {
+    this.resultados4 = resultados ['clubes']
+    //VS Random:
+    if(this.resultados4.length > 1){
+      while (this.random4Club1 == this.random4Club2){
+        this.random4Club1 = randomNumber (0,this.resultados4.length)
+        this.random4Club2 = randomNumber (0,this.resultados4.length)
+      }
+    }
+  })
+  this.FutebolServ.getClubesAll (5)
+  .subscribe (resultados => {
+    this.resultados5 = resultados ['clubes']
+    //VS Random:
+    if(this.resultados5.length > 1){
+      while (this.random5Club1 == this.random5Club2){
+        this.random5Club1 = randomNumber (0,this.resultados5.length)
+        this.random5Club2 = randomNumber (0,this.resultados5.length)
+      }
+    }
+  })
+  this.FutebolServ.getClubesAll (6)
+  .subscribe (resultados => {
+    this.resultados6 = resultados ['clubes']
+    //VS Random:
+    if(this.resultados6.length > 1){
+      while (this.random6Club1 == this.random6Club2){
+        this.random6Club1 = randomNumber (0,this.resultados6.length)
+        this.random6Club2 = randomNumber (0,this.resultados6.length)
+      }
+    }
+  })
+
+
+}
+
+
+
+   
 
   abrirLink(numeroLiga) {
     location.href='/liga/'+numeroLiga
