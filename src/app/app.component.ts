@@ -28,20 +28,8 @@ export class AppComponent implements OnInit{
   }
 
   irHome() {
-   location.href=''
+   location.href=""
   }
-
-  // irLiga(i) {
-  //   location.href ="http://localhost:"+this.FutebolServ.portFront+"/liga/"+i
-  // }
-
-  // editLiga(i) {
-  //   location.href ="http://localhost:"+this.FutebolServ.portFront+"/liga/"+i+"/editliga"
-  // }
-
-  // sobreNos() {
-  //  location.href='http://localhost:'+this.FutebolServ.portFront+'/about-us'
-  // }
   
   gitDiego() {
     window.open('https://github.com/DiegoCelisT', '_blank')
