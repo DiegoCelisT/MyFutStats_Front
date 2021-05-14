@@ -31,42 +31,42 @@
 
 
 <aside>
-    <div>
+    <div *ngIf="resultados1.length>1">
         <h3>{{ resultados1[random1Club1]?.name }}</h3>
         <img [src]="resultados1[random1Club1]?.urlShield">
         <h2>VS</h2>
         <img [src]="resultados1[random1Club2]?.urlShield">
         <h3>{{ resultados1[random1Club2]?.name }}</h3>
     </div>
-    <div>
+    <div *ngIf="resultados2.length>1">
         <h3>{{ resultados2[random2Club1]?.name }}</h3>
         <img [src]="resultados2[random2Club1]?.urlShield">
         <h2>VS</h2>
         <img [src]="resultados2[random2Club2]?.urlShield">
         <h3>{{ resultados2[random2Club2]?.name }}</h3>
     </div>
-    <div>
+    <div *ngIf="resultados3.length>1">
         <h3>{{ resultados3[random3Club1]?.name }}</h3>
         <img [src]="resultados3[random3Club1]?.urlShield">
         <h2>VS</h2>
         <img [src]="resultados3[random3Club2]?.urlShield">
         <h3>{{ resultados3[random3Club2]?.name }}</h3>
     </div>
-    <div>
+    <div *ngIf="resultados4.length>1">
         <h3>{{ resultados4[random4Club1]?.name }}</h3>
         <img [src]="resultados4[random4Club1]?.urlShield">
         <h2>VS</h2>
         <img [src]="resultados4[random4Club2]?.urlShield">
         <h3>{{ resultados4[random4Club2]?.name }}</h3>
     </div>
-    <div>
+    <div *ngIf="resultados5.length>1">
         <h3>{{ resultados5[random5Club1]?.name }}</h3>
         <img [src]="resultados5[random5Club1]?.urlShield">
         <h2>VS</h2>
         <img [src]="resultados5[random5Club2]?.urlShield">
         <h3>{{ resultados5[random5Club2]?.name }}</h3>
     </div>
-    <div>
+    <div *ngIf="resultados6.length>1">
         <h3>{{ resultados6[random6Club1]?.name }}</h3>
         <img [src]="resultados6[random6Club1]?.urlShield">
         <h2>VS</h2>
