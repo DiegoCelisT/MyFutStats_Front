@@ -118,6 +118,6 @@ export class ClubeComponent implements OnInit {
   }
 
   voltarLiga() {
-    location.href ="http://localhost:"+this.FutebolServ.portFront+"/liga/"+this.ID_Liga
+    location.href ="javascript: history.go(-1)"
   }
 }

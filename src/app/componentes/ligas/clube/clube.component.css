@@ -1,11 +1,113 @@
+@font-face{ 
+    font-family: 'Neufreit';
+    src: url('../../../../assets/Neufreit-ExtraBold.otf');
+}
+* {
+    font-family: 'Neufreit'
+}
+
+
 article{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-around;
-    padding: 40px;
+    justify-content: space-evenly;
+    padding: 3vw;
 }
 
 article div img{
     height: 50vh;
 }
+
+#Presentation{
+    /* background-color: rgb(118, 118, 221); */
+    width: 30vw;
+    /* padding-left: 10px; */
+}
+
+#Presentation h2{
+    font-size: 2.2vw;
+}
+
+#Shield{
+    /* background-color: green; */
+    width: 27vw;
+    display: flex;
+    justify-content: center;
+    margin: 0 2vw 0 2vw;
+}
+
+#Shield img{
+    /* background-color: springgreen; */
+    height: 26vw;
+}
+
+#Stats{
+    /* background-color: red; */
+    width: 30vw;
+    /* padding-top: 40px; */
+}
+
+h1{
+    font-size: 3vw;
+}
+
+#Stats h2{
+    font-size: 3vw;
+    padding: 0px 0 20px 0;
+    text-align: center;
+}
+
+#Stats div{
+    /* background-color: yellow; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+#Stats div ul{
+    /* background-color: rgb(234, 0, 255); */
+    display: flex;
+    flex-direction: column;
+    /* font-size: 25px; */
+}
+
+li{
+    padding-bottom: 20px;
+    font-size: 1.95vw;
+}
+
+#Buttons{
+    /* background-color:thistle; */
+    /* padding-top: 0px; */
+    display: flex;
+    justify-content: center;
+}
+
+#Buttons div{
+    /* background-color: teal; */
+    display: flex;
+    justify-content: space-around;
+    /* width: 50vw; */
+
+}
+
+#Buttons div div{
+    flex-direction: row;
+    width: 32vw;
+    /* display: flex; */
+    /* justify-content: space-around; */
+    /* background-color: springgreen; */
+    /* margin:100px */
+    
+}
+
+button{
+    font-size: 2.4vw;
+    /* padding: 5px; */    
+}
+
+button img{
+    height: 4vw;
+}
+

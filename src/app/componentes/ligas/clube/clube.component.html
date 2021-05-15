@@ -25,42 +25,48 @@
   </div>
 
   <article>
-    <div>
-      <h1>{{ resultado.name }}</h1>
-      <h4>{{ resultado.country }}</h4>
-      <h2>Liga {{ nomeLiga.name }}</h2>
-      <h4>Posição: {{ position }}</h4>
+    <div id="Presentation">
+      <h1>{{ resultado.name | uppercase}} </h1>
+      <h2>{{ resultado.country }}</h2>
+      <br>
+      <h1>Liga {{ nomeLiga.name }}</h1>
+      <h2>Posição: {{ position }}</h2>
     </div>
 
-    <div>
+    <div id="Shield">
       <img id="ga" src="{{ this.resultado.urlShield }}" alt="Escudo" >
     </div>
     
-    <div>
-      <h2>Estatísticas da Temporada</h2>
-      <p>Pontos: {{ resultado.pontos }}</p>
-      <p>Jogados: {{ resultado.jogados }}</p>
-      <p>Vitórias: {{ resultado.vitorias }}</p>
-      <p>Empates: {{ resultado.empates }}</p>
-      <p>Derrotas: {{ resultado.derrotas }}</p>
-      <p>Gols Pró: {{ resultado.golsPro }}</p>
-      <p>Gols Contra: {{ resultado.golsContra }}</p>
-      <p>Saldo de Gols: {{ resultado.saldoGols }}</p>
+    <div id="Stats">
+      <h2>ESTATÍSTICAS</h2>
+      <div>
+        <ul>
+          <li>Jogados: {{ resultado.jogados }}</li>
+          <li>Vitórias: {{ resultado.vitorias }}</li>
+          <li>Empates: {{ resultado.empates }}</li>
+          <li>Derrotas: {{ resultado.derrotas }}</li>
+        </ul>
+        <ul>
+          <li>Pontos: {{ resultado.pontos }}</li>
+          <li>Gols Pró: {{ resultado.golsPro }}</li>
+          <li>Gols Contra: {{ resultado.golsContra }}</li>
+          <li>Saldo Gols: {{ resultado.saldoGols }}</li>
+          </ul>
+      </div>
     </div>
   </article>
 
 
-  <div class="container-fluid">
+  <div id="Buttons" class="container-fluid">
     <div class="row">
       <div class="col-sm mx-auto">
-        <button class="btn btn-primary mb-2 mr-2 btn-sm m-1" (click)="irEditClube()"><img src="../../../../assets/Iconos/MyFutStats Edit (Vazado).png" width="30px" alt=""> EDITAR CLUBE</button>
+        <button class="btn btn-success mb-2 mr-2 btn-sm m-1" (click)="voltarLiga()"><img src="../../../../assets/Iconos/MyFutStats Back (Vazado).png" alt="">&nbsp;&nbsp;&nbsp; VOLTAR &nbsp;&nbsp;&nbsp;</button>  
       </div>
       <div class="col-sm mx-auto">
-
-        <button class="btn btn-danger mb-2 mr-2 btn-sm m-1" data-bs-toggle="modal" data-bs-target="#mostrarModal"><img src="../../../../assets/Iconos/MyFutStats Delete (Vazado).png" width="30px" alt=""> ELIMINAR CLUBE</button>        
+        <button class="btn btn-primary mb-2 mr-2 btn-sm m-1" (click)="irEditClube()"><img src="../../../../assets/Iconos/MyFutStats Edit (Vazado).png" alt="">&nbsp;&nbsp;&nbsp; EDITAR &nbsp;&nbsp;&nbsp;</button>
       </div>
       <div class="col-sm mx-auto">
-        <button class="btn btn-success mb-2 mr-2 btn-sm m-1" (click)="voltarLiga()"><img src="../../../../assets/Iconos/MyFutStats Back (Vazado).png" width="30px" alt=""> VOLTAR À LIGA</button>  
+        <button class="btn btn-danger mb-2 mr-2 btn-sm m-1" data-bs-toggle="modal" data-bs-target="#mostrarModal"><img src="../../../../assets/Iconos/MyFutStats Delete (Vazado).png" alt="">&nbsp;&nbsp;&nbsp; APAGAR &nbsp;&nbsp;&nbsp;</button>        
       </div>
     </div>
   </div>
