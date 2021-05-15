@@ -10,9 +10,10 @@
 article{
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     justify-content: space-evenly;
     padding: 3vw;
+    align-items: center;
 }
 
 article div img{
@@ -22,11 +23,16 @@ article div img{
 #Presentation{
     /* background-color: rgb(118, 118, 221); */
     width: 30vw;
+    text-align: center;
     /* padding-left: 10px; */
 }
 
-#Presentation h2{
+#Presentation div h2{
     font-size: 2.2vw;
+}
+
+.TitleTablet, #Stats div:first-child{
+    display: none;
 }
 
 #Shield{
@@ -39,7 +45,7 @@ article div img{
 
 #Shield img{
     /* background-color: springgreen; */
-    height: 26vw;
+    height: 27vw;
 }
 
 #Stats{
@@ -94,20 +100,94 @@ li{
 
 #Buttons div div{
     flex-direction: row;
-    width: 32vw;
-    /* display: flex; */
-    /* justify-content: space-around; */
-    /* background-color: springgreen; */
-    /* margin:100px */
-    
+    width: 32vw;    
 }
 
 button{
     font-size: 2.4vw;
-    /* padding: 5px; */    
 }
 
 button img{
     height: 4vw;
 }
 
+
+/*TABLETS*/
+
+@media (min-width:576px) and (max-width: 992px){
+
+article{
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+#Presentation{
+    display: none;
+}
+
+#Shield{
+    flex-direction: column;
+    width: 35vw;
+}
+
+#Shield img{
+    margin-top: 10px;
+    height: 35vw;
+}
+
+#Stats{
+    width: 45vw;
+    color:rgb(51, 50, 50)
+}
+
+.TitleTablet{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.TitleTablet h2{
+    font-size: 3.5vw;
+}
+
+#Stats div:first-child{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+h1{
+    font-size: 4.5vw;
+}
+
+#Stats h2{
+    font-size: 3.7vw;
+}
+
+li{
+    font-size: 2.8vw;
+}
+
+#Buttons{
+    padding-top: 10px;
+}
+
+
+button{
+    font-size: 3.5vw;
+    display: flex;
+    /* align-content: center; */
+}
+
+button img{
+    height: 4.4vw;
+    align-self: center;
+}
+
+}
+
+
+/* @media (max-width: 576px){
+
+} */

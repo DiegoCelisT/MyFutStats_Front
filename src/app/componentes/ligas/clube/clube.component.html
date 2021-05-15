@@ -26,18 +26,30 @@
 
   <article>
     <div id="Presentation">
-      <h1>{{ resultado.name | uppercase}} </h1>
-      <h2>{{ resultado.country }}</h2>
+      <div>
+        <h1>{{ resultado.name | uppercase}} </h1>
+        <h2>{{ resultado.country }}</h2>
+      </div>
       <br>
-      <h1>Liga {{ nomeLiga.name }}</h1>
-      <h2>Posição: {{ position }}</h2>
+      <div>
+        <h1>Liga {{ nomeLiga.name }}</h1>
+        <h2>Posição: {{ position }}</h2>
+      </div>
     </div>
 
     <div id="Shield">
+      <div class="TitleTablet">
+        <h1>{{ resultado.name | uppercase}} </h1>
+        <h2>{{ resultado.country }}</h2>
+      </div>
       <img id="ga" src="{{ this.resultado.urlShield }}" alt="Escudo" >
     </div>
     
     <div id="Stats">
+      <div class="TitleTablet"> 
+        <h1>Liga {{ nomeLiga.name }}</h1>
+        <h2>Posição: {{ position }}</h2>
+      </div>
       <h2>ESTATÍSTICAS</h2>
       <div>
         <ul>
