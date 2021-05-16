@@ -31,6 +31,10 @@ article div img{
     font-size: 2.2vw;
 }
 
+#Presentation div:nth-of-type(2), #Stats{
+    color:rgb(63, 59, 59)
+}
+
 .TitleTablet, #Stats div:first-child{
     display: none;
 }
@@ -44,14 +48,11 @@ article div img{
 }
 
 #Shield img{
-    /* background-color: springgreen; */
     height: 27vw;
 }
 
 #Stats{
-    /* background-color: red; */
     width: 30vw;
-    /* padding-top: 40px; */
 }
 
 h1{
@@ -84,18 +85,14 @@ li{
 }
 
 #Buttons{
-    /* background-color:thistle; */
-    /* padding-top: 0px; */
     display: flex;
     justify-content: center;
+    padding-bottom: 20px;
 }
 
 #Buttons div{
-    /* background-color: teal; */
     display: flex;
     justify-content: space-around;
-    /* width: 50vw; */
-
 }
 
 #Buttons div div{
@@ -104,17 +101,66 @@ li{
 }
 
 button{
-    font-size: 2.4vw;
+    display: flex;
+    align-items: center;
 }
 
 button img{
     height: 4vw;
 }
+button h3{
+    font-size: 2.4vw;
+    margin: 0px;
+}
 
+
+
+
+.modal-dialog{
+      max-width: 40%;
+  }
+
+.modal-header{
+    justify-content: center;
+} 
+  
+.modal-title {
+    font-size: 2.6vw;
+    text-align: center;
+}
+
+.modal-body{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-body img{
+    width: 10vw;
+}
+
+.modal-body p{
+    text-align: center;
+    font-size: 2.25vw;
+}
+
+.modal-footer{
+    justify-content: space-around;
+}
+
+.modal-footer button{
+    font-size: 2vw;
+}
 
 /*TABLETS*/
 
 @media (min-width:576px) and (max-width: 992px){
+
+
+
+
+
 
 article{
     flex-direction: row;
@@ -138,7 +184,7 @@ article{
 
 #Stats{
     width: 45vw;
-    color:rgb(51, 50, 50)
+    color:rgb(63, 59, 59)
 }
 
 .TitleTablet{
@@ -173,21 +219,125 @@ li{
     padding-top: 10px;
 }
 
-
-button{
-    font-size: 3.5vw;
-    display: flex;
-    /* align-content: center; */
-}
-
 button img{
     height: 4.4vw;
     align-self: center;
 }
+button h3{
+    font-size: 3.5vw;
+    margin: 0px;
+}
 
+.modal-dialog{
+    max-width: 50%;
+}
+
+.modal-title {
+    font-size: 4vw;
+}
+
+.modal-body img{
+    width: 14vw;
+}
+
+.modal-body p{
+    font-size: 3.4vw;
+}
+
+.modal-footer button{
+    font-size: 3vw;
 }
 
 
-/* @media (max-width: 576px){
+}
 
-} */
+/* VERSÃO MOBILE */
+
+@media (max-width: 576px){
+
+    article{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #Presentation{
+        width: 85vw;
+    }
+
+    br{
+        display: none;
+    }
+
+    #Presentation div h1{
+        font-size: 10vw;
+    }
+
+    #Presentation div h2{
+        font-size: 7.5vw;
+    }
+
+    #Shield{
+        width: 85vw;
+        padding: 20px 0 20px 0;
+    }
+
+    #Shield img{
+        height: 85vw;
+    }
+
+    #Stats{
+        width: 90vw;
+    }
+
+    #Stats h2{
+        font-size: 10vw;
+    }
+
+    li{
+        font-size: 5.5vw;
+    }
+
+    ul{
+        margin: 0px;
+    }
+    #Buttons div{
+        display: flex;
+        flex-direction: row;
+        padding: 0px;
+        justify-content: center;
+    }
+
+    #Buttons div div{
+        width: 22vw;
+    }
+
+    button img{
+        height: 10vw;
+    }
+
+
+    button h3{
+        display: none;
+    }
+
+    .modal-dialog{
+        max-width: 100%;
+    }
+    
+    .modal-title {
+        font-size: 7.5vw;
+    }
+    
+    .modal-body img{
+        width: 25vw;
+    }
+    
+    .modal-body p{
+        font-size: 6.6vw;
+    }
+    
+    .modal-footer button{
+        font-size: 6vw;
+    }
+
+}

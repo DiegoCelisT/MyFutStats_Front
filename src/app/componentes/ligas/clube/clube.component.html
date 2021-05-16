@@ -5,14 +5,14 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">Eliminar clube {{ resultado.name }}</h5>
+                <h5 class="modal-title">Apagando clube {{ resultado.name }}</h5>
             </div>
             <div class="modal-body">
                 <img src="{{ resultado.urlShield }}" width="50px" alt="">
-                <p>Você tem certeza?</p>
+                <p>&nbsp;&nbsp;&nbsp;Você tem certeza?</p>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-bs-dismiss="modal" (click)="eliminarClube(nomeLiga.id, resultado.id)">SIM, ELIMINAR</button>
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal" (click)="eliminarClube(nomeLiga.id, resultado.id)">SIM, APAGAR</button>
                 <button type="button" class="btn btn-primary" data-bs-dismiss="modal" aria-label="Close">NÃO</button>
             </div>
         </div>
@@ -72,13 +72,13 @@
   <div id="Buttons" class="container-fluid">
     <div class="row">
       <div class="col-sm mx-auto">
-        <button class="btn btn-success mb-2 mr-2 btn-sm m-1" (click)="voltarLiga()"><img src="../../../../assets/Iconos/MyFutStats Back (Vazado).png" alt="">&nbsp;&nbsp;&nbsp; VOLTAR &nbsp;&nbsp;&nbsp;</button>  
+        <button class="btn btn-success mb-2 mr-2 btn-sm m-1" (click)="voltarLiga()"><img src="../../../../assets/Iconos/MyFutStats Back (Vazado).png" alt=""><h3>&nbsp;&nbsp;&nbsp; VOLTAR &nbsp;&nbsp;&nbsp;</h3></button>  
       </div>
       <div class="col-sm mx-auto">
-        <button class="btn btn-primary mb-2 mr-2 btn-sm m-1" (click)="irEditClube()"><img src="../../../../assets/Iconos/MyFutStats Edit (Vazado).png" alt="">&nbsp;&nbsp;&nbsp; EDITAR &nbsp;&nbsp;&nbsp;</button>
+        <button class="btn btn-primary mb-2 mr-2 btn-sm m-1" (click)="irEditClube()"><img src="../../../../assets/Iconos/MyFutStats Edit (Vazado).png" alt=""><h3>&nbsp;&nbsp;&nbsp; EDITAR &nbsp;&nbsp;&nbsp;</h3></button>
       </div>
       <div class="col-sm mx-auto">
-        <button class="btn btn-danger mb-2 mr-2 btn-sm m-1" data-bs-toggle="modal" data-bs-target="#mostrarModal"><img src="../../../../assets/Iconos/MyFutStats Delete (Vazado).png" alt="">&nbsp;&nbsp;&nbsp; APAGAR &nbsp;&nbsp;&nbsp;</button>        
+        <button class="btn btn-danger mb-2 mr-2 btn-sm m-1" data-bs-toggle="modal" data-bs-target="#mostrarModal"><img src="../../../../assets/Iconos/MyFutStats Delete (Vazado).png" alt=""><h3>&nbsp;&nbsp;&nbsp; APAGAR &nbsp;&nbsp;&nbsp;</h3></button>        
       </div>
     </div>
   </div>
