@@ -1,11 +1,343 @@
+@font-face{ 
+    font-family: 'Neufreit';
+    src: url('../../../../assets/Neufreit-ExtraBold.otf');
+}
+* {
+    font-family: 'Neufreit'
+}
+
+
 article{
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    padding: 40px;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    padding: 3vw;
+    align-items: center;
 }
 
 article div img{
     height: 50vh;
+}
+
+#Presentation{
+    /* background-color: rgb(118, 118, 221); */
+    width: 30vw;
+    text-align: center;
+    /* padding-left: 10px; */
+}
+
+#Presentation div h2{
+    font-size: 2.2vw;
+}
+
+#Presentation div:nth-of-type(2), #Stats{
+    color:rgb(63, 59, 59)
+}
+
+.TitleTablet, #Stats div:first-child{
+    display: none;
+}
+
+#Shield{
+    /* background-color: green; */
+    width: 27vw;
+    display: flex;
+    justify-content: center;
+    margin: 0 2vw 0 2vw;
+}
+
+#Shield img{
+    height: 27vw;
+}
+
+#Stats{
+    width: 30vw;
+}
+
+h1{
+    font-size: 3vw;
+}
+
+#Stats h2{
+    font-size: 3vw;
+    padding: 0px 0 20px 0;
+    text-align: center;
+}
+
+#Stats div{
+    /* background-color: yellow; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+#Stats div ul{
+    /* background-color: rgb(234, 0, 255); */
+    display: flex;
+    flex-direction: column;
+    /* font-size: 25px; */
+}
+
+li{
+    padding-bottom: 20px;
+    font-size: 1.95vw;
+}
+
+#Buttons{
+    display: flex;
+    justify-content: center;
+    padding-bottom: 20px;
+}
+
+#Buttons div{
+    display: flex;
+    justify-content: space-around;
+}
+
+#Buttons div div{
+    flex-direction: row;
+    width: 32vw;    
+}
+
+button{
+    display: flex;
+    align-items: center;
+}
+
+button img{
+    height: 4vw;
+}
+button h3{
+    font-size: 2.4vw;
+    margin: 0px;
+}
+
+
+
+
+.modal-dialog{
+      max-width: 40%;
+  }
+
+.modal-header{
+    justify-content: center;
+} 
+  
+.modal-title {
+    font-size: 2.6vw;
+    text-align: center;
+}
+
+.modal-body{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-body img{
+    width: 10vw;
+}
+
+.modal-body p{
+    text-align: center;
+    font-size: 2.25vw;
+}
+
+.modal-footer{
+    justify-content: space-around;
+}
+
+.modal-footer button{
+    font-size: 2vw;
+}
+
+/*TABLETS*/
+
+@media (min-width:576px) and (max-width: 992px){
+
+
+
+
+
+
+article{
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+#Presentation{
+    display: none;
+}
+
+#Shield{
+    flex-direction: column;
+    width: 35vw;
+}
+
+#Shield img{
+    margin-top: 10px;
+    height: 35vw;
+}
+
+#Stats{
+    width: 45vw;
+    color:rgb(63, 59, 59)
+}
+
+.TitleTablet{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.TitleTablet h2{
+    font-size: 3.5vw;
+}
+
+#Stats div:first-child{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+h1{
+    font-size: 4.5vw;
+}
+
+#Stats h2{
+    font-size: 3.7vw;
+}
+
+li{
+    font-size: 2.8vw;
+}
+
+#Buttons{
+    padding-top: 10px;
+}
+
+button img{
+    height: 4.4vw;
+    align-self: center;
+}
+button h3{
+    font-size: 3.5vw;
+    margin: 0px;
+}
+
+.modal-dialog{
+    max-width: 50%;
+}
+
+.modal-title {
+    font-size: 4vw;
+}
+
+.modal-body img{
+    width: 14vw;
+}
+
+.modal-body p{
+    font-size: 3.4vw;
+}
+
+.modal-footer button{
+    font-size: 3vw;
+}
+
+
+}
+
+/* VERSÃO MOBILE */
+
+@media (max-width: 576px){
+
+    article{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #Presentation{
+        width: 85vw;
+    }
+
+    br{
+        display: none;
+    }
+
+    #Presentation div h1{
+        font-size: 10vw;
+    }
+
+    #Presentation div h2{
+        font-size: 7.5vw;
+    }
+
+    #Shield{
+        width: 85vw;
+        padding: 20px 0 20px 0;
+    }
+
+    #Shield img{
+        height: 85vw;
+    }
+
+    #Stats{
+        width: 90vw;
+    }
+
+    #Stats h2{
+        font-size: 10vw;
+    }
+
+    li{
+        font-size: 5.5vw;
+    }
+
+    ul{
+        margin: 0px;
+    }
+    #Buttons div{
+        display: flex;
+        flex-direction: row;
+        padding: 0px;
+        justify-content: center;
+    }
+
+    #Buttons div div{
+        width: 22vw;
+    }
+
+    button img{
+        height: 10vw;
+    }
+
+
+    button h3{
+        display: none;
+    }
+
+    .modal-dialog{
+        max-width: 100%;
+    }
+    
+    .modal-title {
+        font-size: 7.5vw;
+    }
+    
+    .modal-body img{
+        width: 25vw;
+    }
+    
+    .modal-body p{
+        font-size: 6.6vw;
+    }
+    
+    .modal-footer button{
+        font-size: 6vw;
+    }
+
 }
