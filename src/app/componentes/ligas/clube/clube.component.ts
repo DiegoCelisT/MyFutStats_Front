@@ -117,7 +117,7 @@ export class ClubeComponent implements OnInit {
     })
   }
 
-  voltarLiga() {
+  voltar() {
     location.href ="javascript: history.go(-1)"
   }
 }

@@ -36,3 +36,26 @@ footer{
     /* top: -30px; */
 }
 
+
+@font-face{ 
+    font-family: 'Neufreit';
+    src: url('../assets/Neufreit-ExtraBold.otf');
+}
+* {
+    font-family: 'Neufreit';
+    font-size: 22px;
+}
+
+#LogoMyFutStats{
+    width: 250px;
+}
+
+@media (max-width: 992px){
+    #LogoMyFutStats{
+        width: 220px;
+    }
+
+    * {
+        font-size: 18px;
+    }
+}

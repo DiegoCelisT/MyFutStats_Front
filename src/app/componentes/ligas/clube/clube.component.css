@@ -21,10 +21,8 @@ article div img{
 }
 
 #Presentation{
-    /* background-color: rgb(118, 118, 221); */
     width: 30vw;
     text-align: center;
-    /* padding-left: 10px; */
 }
 
 #Presentation div h2{
@@ -40,7 +38,6 @@ article div img{
 }
 
 #Shield{
-    /* background-color: green; */
     width: 27vw;
     display: flex;
     justify-content: center;
@@ -66,22 +63,20 @@ h1{
 }
 
 #Stats div{
-    /* background-color: yellow; */
     display: flex;
     flex-direction: row;
     justify-content: space-around;
 }
 
 #Stats div ul{
-    /* background-color: rgb(234, 0, 255); */
     display: flex;
     flex-direction: column;
-    /* font-size: 25px; */
 }
 
 li{
     padding-bottom: 20px;
     font-size: 1.95vw;
+    text-indent: -0.7vw;
 }
 
 #Buttons{
@@ -156,9 +151,6 @@ button h3{
 /*TABLETS*/
 
 @media (min-width:576px) and (max-width: 992px){
-
-
-
 
 
 
@@ -286,20 +278,33 @@ button h3{
     }
 
     #Stats{
-        width: 90vw;
+        width: 78vw;
     }
 
     #Stats h2{
         font-size: 10vw;
     }
 
-    li{
-        font-size: 5.5vw;
+    
+
+    #Stats div{
+        display: flex;
+        justify-content: space-between;
+        padding-left: 4vw;
     }
 
     ul{
         margin: 0px;
+        padding: 0px;
+        justify-content: space-around;
     }
+
+    li{
+        
+        font-size: 5.4vw;
+        text-indent: -2.4vw;
+    }
+
     #Buttons div{
         display: flex;
         flex-direction: row;
@@ -308,11 +313,11 @@ button h3{
     }
 
     #Buttons div div{
-        width: 22vw;
+        width: 27vw;
     }
 
     button img{
-        height: 10vw;
+        height: 12vw;
     }
 
 

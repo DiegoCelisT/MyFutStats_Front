@@ -3,11 +3,238 @@ form{
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
-    padding: 40px;
+    align-items: center;
 }
 
-#escudo {
-    max-width: 300px;
-    max-height: 300px;
-    height: max-content;
+
+@font-face{ 
+    font-family: 'Neufreit';
+    src: url('../../../../assets/Neufreit-ExtraBold.otf');
+}
+* {
+    font-family: 'Neufreit'
+}
+
+h1{
+    text-align: center;
+    padding: 12px;
+}
+
+#Presentation{
+    width: 24vw;
+    text-align: center;
+    font-size: 2vw;
+    color:rgb(63, 59, 59)
+}
+
+.form-control{
+    font-size: 1.5vw;
+    color:rgb(63, 59, 59)
+}
+
+#Shield{
+    width: 27vw;
+    display: flex;
+    justify-content: center;
+    margin: 20px 0 30px 0;
+}
+
+#Shield img{
+    height: 27vw;
+}
+
+#Stats{
+    width: 24vw;
+    font-size: 2vw;
+    color:rgb(63, 59, 59)
+}
+
+#Stats div{
+    display: flex;
+    flex-direction: row;
+    align-items:center;
+    justify-content: space-between;
+    margin: 1vw;
+}
+
+#Stats div input{
+    width: 9vw;
+    font-size: 1.6vw;
+    text-align: center;
+    color:rgb(63, 59, 59)
+}
+
+#Buttons{
+    display: flex;
+    justify-content: center;
+}
+
+#Buttons div{
+    display: flex;
+    justify-content: space-around;
+}
+
+#Buttons div div{
+    flex-direction: row;
+    width: 32vw;    
+}
+
+button{
+    display: flex;
+    align-items: center;
+}
+
+button img{
+    height: 4vw;
+}
+button h3{
+    font-size: 2.4vw;
+    margin: 0px;
+}
+
+
+
+
+/*TABLETS*/
+
+@media (min-width:576px) and (max-width: 992px){
+
+
+    h1{
+        font-size: 5.2vw;
+    }
+
+    article{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #Presentation{
+        width: 70vw;
+    }
+
+    #Presentation div {
+        font-size: 4.5vw;
+    }
+
+    #Presentation div input{
+        font-size: 3.8vw;
+    }
+
+    #Shield{
+        width: 50vw;
+        padding: 20px 0 20px 0;
+    }
+
+    #Shield img{
+        height: 50vw;
+    }
+
+    #Stats{
+        width: 60vw;
+    }
+
+    #Stats div{
+        font-size: 4.5vw;
+        margin: 5vw;
+    }
+
+    #Stats div input{
+        font-size: 4vw;
+        width: 15vw;
+        padding: 0.5vw;
+        text-align: left;
+        text-indent: 2.2vw;
+    }
+
+    #Buttons{
+        margin-bottom: 6vw;
+    }
+
+    #Buttons div div{
+        width: 40vw;
+    }
+
+    button img{
+        height: 6vw;
+        align-self: center;
+    }
+    
+    button h3{
+        font-size: 4.5vw;
+        margin: 0px;
+        align-self: center;
+    }
+
+
+}
+
+/* VERSÃO MOBILE */
+
+@media (max-width: 576px){
+
+    h1{
+        font-size: 9vw;
+    }
+
+    article{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #Presentation{
+        width: 80vw;
+    }
+
+    #Presentation div {
+        font-size: 7vw;
+    }
+
+    #Presentation div input{
+        font-size: 6vw;
+    }
+
+    #Shield{
+        width: 85vw;
+        padding: 20px 0 20px 0;
+    }
+
+    #Shield img{
+        height: 85vw;
+    }
+
+    #Stats{
+        width: 80vw;
+    }
+
+    #Stats div{
+        font-size: 7vw;
+        margin: 10px;
+    }
+
+    #Stats div input{
+        font-size: 6vw;
+        width: 27vw;
+        padding: 0.5vw;
+        text-align: left;
+        text-indent: 6vw;
+    }
+
+    #Buttons{
+        padding: 10vw 0 10vw 0;
+    }
+
+    #Buttons div div{
+        width: 40vw;
+    }
+
+    button img{
+        height: 12vw;
+    }
+
+    button h3{
+        display: none;
+    }
+    
+
 }
