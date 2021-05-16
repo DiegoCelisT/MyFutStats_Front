@@ -43,5 +43,19 @@ footer{
 }
 * {
     font-family: 'Neufreit';
-    font-size: 18px;
+    font-size: 22px;
+}
+
+#LogoMyFutStats{
+    width: 250px;
+}
+
+@media (max-width: 992px){
+    #LogoMyFutStats{
+        width: 220px;
+    }
+
+    * {
+        font-size: 18px;
+    }
 }

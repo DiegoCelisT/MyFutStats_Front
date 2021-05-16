@@ -112,12 +112,8 @@ export class EditclubeComponent implements OnInit {
     var form = document.getElementsByClassName('needs-validation')[0] as HTMLFormElement
     form.classList.add('was-validated');
   }
- 
-  volverClube() {
-    location.href="http://localhost:"+this.FutebolServ.portFront+"/liga/"+this.ID_Liga+"/clube/"+this.ID
-  }
   
-  voltarLiga() {
-    location.href ="http://localhost:"+this.FutebolServ.portFront+"/liga/"+this.ID_Liga+"/editliga"
+  voltar() {
+    location.href ="javascript: history.go(-1)"
   }
 }
