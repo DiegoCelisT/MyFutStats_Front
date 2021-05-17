@@ -92,18 +92,18 @@ export class EditligaComponent implements OnInit {
           this.alertEliminado = false;
         }, 4000);
 
+      }  else if (this.urlEdit == 'ok') {
+        this.alertEdit = true
+        this.mensajeAlertEdit = 'O clube foi editado!'
+        setTimeout(()=>{                           
+          this.alertEdit = false;
+        }, 4000);
+
       } else if (this.urlAdd == 'ok') {
         this.alertAdd = true
         this.mensajeAlertAdd = 'O clube foi adicionado'
         setTimeout(()=>{                           
           this.alertAdd = false;
-        }, 4000);
-
-      } else if (this.urlEdit == 'ok') {
-        this.alertEdit = true
-        this.mensajeAlertEdit = 'O clube foi editado!'
-        setTimeout(()=>{                           
-          this.alertEdit = false;
         }, 4000);
 
       } else {

@@ -88,13 +88,14 @@ export class ClubeComponent implements OnInit {
   //ELIMINAR CLUBE
   eliminarClube(ID_Liga, ID){
     this.FutebolServ.eliminarClube(ID_Liga, ID).subscribe();
-    location.href='http://localhost:'+this.FutebolServ.portFront+'/liga/'+this.ID_Liga+'?sucessoeliminado=ok'
+    // location.href='http://localhost:'+this.FutebolServ.portFront+'/liga/'+this.ID_Liga+'?sucessoeliminado=ok'
+    location.href = document.referrer+'?sucessoeliminado=ok'
   }
 
 
   //CERRAR MODAL E IR PARA LIGA
   fechaModalEliminar() {
-    location.href ="http://localhost:"+this.FutebolServ.portFront+"/liga1"
+    location.href ="http://localhost:"+this.FutebolServ.portFront+"/liga/"+this.ID_Liga
   }
 
   //ROTA EDITAR CLUBE
@@ -122,6 +123,8 @@ export class ClubeComponent implements OnInit {
   voltar() {
       if(this.urlEdit == 'ok'){
         location.href = "javascript: history.go(-3)"
+      } else if(document.referrer == 'http://localhost:'+this.FutebolServ.portFront+'/liga/'+this.ID_Liga+'?sucessoeliminado=ok'){
+        location.href = 'http://localhost:'+this.FutebolServ.portFront+'/liga/'+this.ID_Liga
       } else {
         window.history.back()
       }
