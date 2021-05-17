@@ -25,9 +25,18 @@ export class EditligaComponent implements OnInit {
   urlEliminado;
   alertEliminado;
   mensajeAlertEliminado;
+  
   urlAdd;
   alertAdd;
   mensajeAlertAdd = '';
+
+  //ALERT EDITADO
+  urlEdit;
+  alertEdit;
+  mensajeAlertEdit = ''
+  
+
+ 
 
   // MODAL ELIMINADO
   idModal;
@@ -73,6 +82,7 @@ export class EditligaComponent implements OnInit {
     this.roteEditLiga.queryParams.subscribe(params => {
       this.urlEliminado = params ['sucessoeliminado']
       this.urlAdd = params ['sucessoadicionado']
+      this.urlEdit = params ['sucessoedit']
       
       if (this.urlEliminado == 'ok') {
         this.alertEliminado = true
@@ -89,9 +99,17 @@ export class EditligaComponent implements OnInit {
           this.alertAdd = false;
         }, 4000);
 
+      } else if (this.urlEdit == 'ok') {
+        this.alertEdit = true
+        this.mensajeAlertEdit = 'O clube foi editado!'
+        setTimeout(()=>{                           
+          this.alertEdit = false;
+        }, 4000);
+
       } else {
         this.alertAdd = false;
         this.alertEliminado = false;
+        this.alertEdit = false
       }
               
       // console.log(this.alertAdd + 'adicionado', this.alertEliminado + 'eliminado')
@@ -126,6 +144,10 @@ export class EditligaComponent implements OnInit {
     })
   }
 
+
+
+
+  
   mostrarAlertEliminado() {
     this.alertEliminado = true
     this.mensajeAlertEliminado = 'O clube foi eliminado!'

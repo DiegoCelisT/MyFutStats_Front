@@ -105,7 +105,15 @@ export class EditclubeComponent implements OnInit {
 
     this.FutebolServ.editClube(this.ID_Liga, this.ID, name, urlShield, country, vitorias, empates, derrotas, golsPro, golsContra)
       .subscribe()
-      location.href='http://localhost:'+this.FutebolServ.portFront+'/liga/'+this.ID_Liga+'/clube/'+this.ID+'?sucessoedit=ok'
+
+      let A = (document.referrer) //Página Anterior no histórico
+      let B ='http://localhost:'+this.FutebolServ.portFront+'/liga/'+this.ID_Liga+'/editclube/'+this.ID
+      if (A == B){
+        location.href='http://localhost:'+this.FutebolServ.portFront+'/liga/'+this.ID_Liga+'/clube/'+this.ID+'?sucessoedit=ok'
+      } else {
+        location.href= A +'?sucessoedit=ok'
+      }
+
   }
 
   validEdit(){
@@ -117,5 +125,5 @@ export class EditclubeComponent implements OnInit {
     location.href ="javascript: history.go(-1)"
   }
 
-  
+
 }
