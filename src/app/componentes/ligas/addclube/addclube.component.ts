@@ -126,11 +126,12 @@ export class AddclubeComponent implements OnInit {
     })
     }
 
+    // voltar() {
+    //   location.href = "javascript: history.go(-1)"
+    // }
+    
     voltarLigaEdit(numeroLiga) {
       location.href ="http://localhost:"+this.FutebolServ.portFront+"/liga/"+numeroLiga+"/editliga"
-    }
-    volverLiga(numeroLiga) {
-      location.href ="http://localhost:"+this.FutebolServ.portFront+"/liga/"+numeroLiga
     }
 
     voltarAdd(numeroLiga) {
