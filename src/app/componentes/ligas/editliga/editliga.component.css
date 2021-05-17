@@ -9,3 +9,11 @@
 /* td{
     width: 300px;
 } */
+
+@font-face{ 
+    font-family: 'Neufreit';
+    src: url('../../../../assets/Neufreit-ExtraBold.otf');
+}
+* {
+    font-family: 'Neufreit'
+}

@@ -116,4 +116,6 @@ export class EditclubeComponent implements OnInit {
   voltar() {
     location.href ="javascript: history.go(-1)"
   }
+
+  
 }

@@ -117,7 +117,14 @@ export class ClubeComponent implements OnInit {
     })
   }
 
+  //Lógica para voltar na janela correta quando um clube é editado (de outra maneira, volta a editclube quando se quer voltar ao lugar de origem)
+
   voltar() {
-    location.href ="javascript: history.go(-1)"
-  }
+      if(this.urlEdit == 'ok'){
+        location.href = "javascript: history.go(-3)"
+      } else {
+        window.history.back()
+      }
+   }
+
 }

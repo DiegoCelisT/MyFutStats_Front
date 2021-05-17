@@ -39,12 +39,15 @@
 
     <!-- CARROUSEL PARA DADOS DOS JOGOS -->   
 
-    <br>
-    <div class="d-grid justify-content-sm-center m-2">     
-      <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-        ADICIONAR DADOS DOS JOGOS
-      </button>       
+    <div id="Buttons" class="container-fluid">
+      <div class="row">
+        <div class="col-sm mx-auto">
+          <button class="btn btn-primary mb-2 mr-2 btn-sm m-1" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample"><h3> ADICIONAR ESTATÍSTICAS </h3></button>  
+        </div>
+      </div>
     </div>
+
+
 
     <div class="collapse" id="collapseExample">
       <div class="card card-body">
@@ -76,17 +79,37 @@
         </div>
         
       </div>
-      <div class="d-grid justify-content-sm-center m-2">
-        <button  class="btn btn-primary mb-2 mr-2" (click)='dadosRandom()'><img src="../../../../assets/Iconos/MyFutStats Random (Vazado).png" width="30px" alt=""> DADOS RANDOM</button>
+
+
+
+
+      <div id="Buttons" class="container-fluid">
+        <div class="row">
+          <div class="col-sm mx-auto">
+            <button class="btn btn-primary mb-2 mr-2 btn-sm m-1" (click)='dadosRandom()'><img src="../../../../assets/Iconos/MyFutStats Random (Vazado).png" alt=""><h3>&nbsp;&nbsp;&nbsp; DADOS RANDOM &nbsp;&nbsp;&nbsp;</h3></button>  
+          </div>
+        </div>
       </div>
+
     </div>
     
   </form>
   
 
-  <div class="row justify-content-center">
-    <button class="col-12 col-sm-4 btn btn-success mb-2 mr-2 btn-sm m-1" (click)='voltarLigaEdit(nomeLiga.id)'><img src="../../../../assets/Iconos/MyFutStats Back (Vazado).png" width="30px" alt=""> MENÚ DE EDIÇÃO </button>
-    <button [disabled]='!formularioAdd.valid' class="col-12 col-sm-4 btn btn-primary mb-2 mr-2 btn-sm m-1 botonAdd" data-bs-toggle="modal" data-bs-target="#mostrarModal" (click)="novoClub()"><img src="../../../../assets/Iconos/MyFutStats Add (Vazado).png" width="30px" alt=""> ADICIONAR CLUBE</button> 
-    <button class="col-12 col-sm-4 btn btn-success mb-2 mr-2 btn-sm m-1" (click)='volverLiga(nomeLiga.id)'><img src="../../../../assets/Iconos/MyFutStats Back (Vazado).png" width="30px" alt=""> VOLTAR PARA À LIGA</button>   
-  </div> 
+  <div id="Buttons" class="container-fluid">
+    <div class="row">
+      <div class="col-sm mx-auto">
+        <button class="btn btn-success mb-2 mr-2 btn-sm m-1" (click)="voltarLigaEdit(nomeLiga.id)"><img src="../../../../assets/Iconos/MyFutStats Back (Vazado).png" alt=""><h3>&nbsp;&nbsp;&nbsp; VOLTAR &nbsp;&nbsp;&nbsp;</h3></button>  
+      </div>
+      <div class="col-sm mx-auto">
+        <button [disabled]='!formularioAdd.valid' class="btn btn-primary mb-2 mr-2 btn-sm m-1" data-bs-toggle="modal" data-bs-target="#mostrarModal" (click)="novoClub()"><img src="../../../../assets/Iconos/MyFutStats Edit (Vazado).png" alt=""><h3>&nbsp;&nbsp;&nbsp; ADICIONAR &nbsp;&nbsp;&nbsp;</h3></button>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
 </div>

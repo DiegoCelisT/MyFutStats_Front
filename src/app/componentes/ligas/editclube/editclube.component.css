@@ -28,7 +28,7 @@ h1{
 }
 
 .form-control{
-    font-size: 1.5vw;
+    font-size: 1.8vw;
     color:rgb(63, 59, 59)
 }
 
@@ -59,7 +59,7 @@ h1{
 
 #Stats div input{
     width: 9vw;
-    font-size: 1.6vw;
+    font-size: 1.8vw;
     text-align: center;
     color:rgb(63, 59, 59)
 }
@@ -107,40 +107,42 @@ button h3{
     article{
         flex-direction: column;
         align-items: center;
+        justify-content: center;
     }
 
     #Presentation{
         width: 70vw;
+        margin-bottom: 2vw;
     }
 
     #Presentation div {
-        font-size: 4.5vw;
+        font-size: 3.5vw;
     }
 
     #Presentation div input{
-        font-size: 3.8vw;
+        font-size: 3.2vw;
     }
 
     #Shield{
-        width: 50vw;
-        padding: 20px 0 20px 0;
+        width: 40vw;
+        padding: 20px 0px 20px 40px;
     }
 
     #Shield img{
-        height: 50vw;
+        height: 30vw;
     }
 
     #Stats{
-        width: 60vw;
+        width: 50vw;
+        padding-right: 10vw;
     }
 
     #Stats div{
-        font-size: 4.5vw;
-        margin: 5vw;
+        font-size: 3.5vw;
     }
 
     #Stats div input{
-        font-size: 4vw;
+        font-size: 3.2vw;
         width: 15vw;
         padding: 0.5vw;
         text-align: left;
@@ -148,7 +150,7 @@ button h3{
     }
 
     #Buttons{
-        margin-bottom: 6vw;
+        margin: 3vw 0 6vw 0;
     }
 
     #Buttons div div{

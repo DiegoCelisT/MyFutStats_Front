@@ -1,0 +1,44 @@
+@font-face{ 
+    font-family: 'Neufreit';
+    src: url('../../../../assets/Neufreit-ExtraBold.otf');
+}
+* {
+    font-family: 'Neufreit'
+}
+
+h1{
+    text-align: center;
+    padding: 12px;
+}
+
+
+
+
+#Buttons{
+    display: flex;
+    justify-content: center;
+    padding-bottom: 20px;
+}
+
+#Buttons div{
+    display: flex;
+    justify-content: space-around;
+}
+
+#Buttons div div{
+    flex-direction: row;
+    width: 32vw;    
+}
+
+button{
+    display: flex;
+    align-items: center;
+}
+
+button img{
+    height: 4vw;
+}
+button h3{
+    font-size: 2.4vw;
+    margin: 0px;
+}

@@ -1,3 +1,11 @@
+@font-face{ 
+    font-family: 'Neufreit';
+    src: url('../../../assets/Neufreit-ExtraBold.otf');
+}
+* {
+    font-family: 'Neufreit'
+}
+
 /* Edição Provisoria */
 .tabelaHome{
     background-color: rgb(0, 0, 0);
