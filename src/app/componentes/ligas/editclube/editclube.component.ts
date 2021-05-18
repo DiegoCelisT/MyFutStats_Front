@@ -100,7 +100,7 @@ export class EditclubeComponent implements OnInit {
     if (derrotas==null){ derrotas=0 }
     if (golsPro==null){ golsPro=0 }
     if (golsContra==null){ golsContra=0 }  
-    if (urlShield=='' || null){ urlShield = "https://www.clipartmax.com/png/full/19-194040_how-to-set-use-shield-grey-svg-vector-shield-template.png"} 
+    if (urlShield=='' || null){ urlShield = "https://i.postimg.cc/GtnwF08R/Default-Shield.png"} 
     else { urlShield=this.formularioEdit.value.urlShield }
 
     this.FutebolServ.editClube(this.ID_Liga, this.ID, name, urlShield, country, vitorias, empates, derrotas, golsPro, golsContra)
