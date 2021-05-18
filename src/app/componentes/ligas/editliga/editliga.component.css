@@ -1,19 +1,708 @@
-/* #editClubeBottons{
-   display: flex;
-   justify-content: space-evenly
-} */
-/* #editLigaTable{
-    padding: 0 300px 0 300px;
-    align-self: center;
-} */
-/* td{
-    width: 300px;
-} */
-
 @font-face{ 
     font-family: 'Neufreit';
     src: url('../../../../assets/Neufreit-ExtraBold.otf');
 }
 * {
     font-family: 'Neufreit'
+
+}
+
+.container-fluid {
+    max-width: 980px;
+}
+
+h1{
+    text-align: center;
+    padding: 12px;
+    font-size: 48px;
+}
+
+.buttonEditLiga {
+    padding: 0.1vw;
+}
+
+.buttonEditLiga img{
+    height: 30px;
+}
+
+
+#labelEdit {
+    font-size: 24px;
+    margin-right: 10px;        
+}
+
+.inputEdit {
+    font-size: 30px;
+    padding: 5px;
+    height: 45px;
+}
+
+#formEdit {
+    margin-bottom: 30px;       
+}
+
+#Buttons{
+    display: flex;
+    justify-content: center;
+}
+
+#Buttons div{
+    display: flex;
+    justify-content: space-around;
+}
+
+#Buttons div div{
+    flex-direction: row;
+    width: 490px;    
+}
+
+
+.button h3{
+    font-size: 35px;
+    margin: 0px;
+}
+
+.button {
+    margin-bottom: 30px;
+}
+
+.button {
+    display: flex;
+    align-items: center;
+}
+
+.button img{
+    height: 40px;
+} 
+
+#pesquisa{
+    font-size: 20px;
+}
+
+#clubeBottons {
+    display: flex;
+    justify-content: center;
+    
+}
+
+#clubeBottons > a {
+    text-decoration: none;
+    
+} 
+
+.buttonClubes {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 700px;
+    margin: 0;
+}
+
+.buttonClubes > img {
+    width: 150px;
+    margin-right: 30px;
+}
+
+.buttonClubes > h4 {
+    margin: 0;
+    text-align: center;
+    font-size: 45px;
+}
+
+#editBottons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: max-content;
+}
+
+.buttonEdit {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    width: 180px;
+    margin: 0.5vw;       
+}
+
+.buttonEdit img{
+    height: 3vw;
+}
+
+.buttonEdit h3{
+    font-size: 1.5vw;
+    margin-top: 0.3vw;        
+}
+
+/* MODAL */
+
+.modal-dialog{
+    max-width: 600px;
+}
+
+.modal-header{
+  justify-content: center;
+} 
+
+.modal-title {
+  font-size: 35px;
+  text-align: center;
+}
+
+.modal-body{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-body img{
+  width: 150px;
+}
+
+.modal-body p{
+  text-align: center;
+  font-size: 35px;
+}
+
+.modal-footer{
+  justify-content: space-around;
+}
+
+.modal-footer button{
+  font-size: 30px;
+}
+
+@media (min-width:992px) and (max-width: 1580px){
+
+    .container-fluid {
+        max-width: 980px;
+    }
+
+    h1{
+        font-size: 3vw;
+    }
+
+    .buttonEditLiga {
+        padding: 0.1vw;
+    }
+
+    .buttonEditLiga img{
+        height: 2vw;
+    }
+    
+    
+    #labelEdit {
+        font-size: 1.5vw;
+        margin-right: 0.5vw;        
+    }
+    
+    .inputEdit {
+        font-size: 2vw;
+        padding: 0.1vw;
+        height: 3.5vw;
+    }
+    
+    #formEdit {
+        margin-bottom: 1vw;       
+    }
+
+    #Buttons{
+        padding: 1vw 0 1vw 0;
+    }
+
+    #Buttons div div{
+        width: 42vw;
+    }
+
+    .button {
+        margin-bottom: 1vw;
+    }
+
+    .button {
+        display: flex;
+        align-items: center;
+    }
+    
+    .button img{
+        height: 3vw;
+    } 
+    
+    .button > h3 {
+        font-size: 2vw;
+    }
+    
+    #pesquisa{
+        font-size: 2vw;
+    }
+
+     #clubeBottons {
+        display: flex;
+        align-items: center;
+    }
+    
+    .buttonClubes {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        width: 40vw;
+        margin: 0;
+    }
+    
+    .buttonClubes > img {
+        width: 10vw;
+    }
+
+    .buttonClubes > h4 {
+        margin: 0;
+        text-align: center;
+        font-size: 3vw;
+    }
+
+    #editBottons {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: max-content;
+    }
+    
+    .buttonEdit {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        height: 4vw;
+        width: 12vw;
+        margin: 0.5vw;        
+    }
+
+    .buttonEdit img{
+        height: 3vw;
+    }
+
+    .buttonEdit h3{
+        font-size: 1.5vw;
+        margin-top: 0.3vw;        
+    }
+
+
+   
+    
+
+
+    /* MODAL */
+
+    .modal-dialog{
+        max-width: 35%;
+    }
+    
+    .modal-title {
+        font-size: 1.5vw;
+    }
+    
+    .modal-body img{
+        width: 10vw;
+    }
+    
+    .modal-body p{
+        font-size: 2vw;
+    }
+    
+    .modal-footer button{
+        font-size: 1.5vw;
+    }
+
+}
+
+
+
+/*TABLETS*/
+
+@media (min-width:576px) and (max-width: 992px){
+
+    .container-fluid {
+        max-width: 800px;
+    }
+
+    h1{
+        font-size: 6vw;
+    }
+
+    .buttonEditLiga {
+        padding: 0.5vw;
+    }
+
+    .buttonEditLiga img{
+        height: 4vw;
+    }
+    
+    
+    #labelEdit {
+        font-size: 3vw;
+        margin-right: 2vw;        
+    }
+    
+    .inputEdit {
+        font-size: 3vw;
+        padding: 0.5vw;
+        height: 6vw;
+    }
+    
+    #formEdit {
+        margin-bottom: 3vw;       
+    }
+
+    #Buttons{
+        padding: 1vw 0 1vw 0;
+    }
+
+    #Buttons div div{
+        width: 40vw;
+    }
+
+    .button {
+        margin-bottom: 3vw;
+    }
+
+    .button {
+        display: flex;
+        align-items: center;
+    }
+    
+    .button img{
+        height: 5.5vw;
+    }    
+    
+    #pesquisa{
+        font-size: 3vw;
+    }
+
+     #clubeBottons {
+        display: flex;
+        align-items: center;
+    }
+    
+    .buttonClubes {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        width: 60vw;
+        margin: 0;
+    }
+    
+    .buttonClubes > img {
+        width: 15vw;
+    }
+
+    .buttonClubes > h4 {
+        margin: 0;
+        text-align: center;
+        font-size: 5vw;
+    }
+
+    #editBottons {
+        display: flex;
+        align-items: center;
+        width: max-content;
+    }
+    
+    .buttonEdit {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        height: 8vw;
+        width: 18vw;
+        padding: 0;
+        margin: 0.5vw;
+    }
+
+    .buttonEdit img{
+        height: 5vw;
+    }
+
+    .buttonEdit h3{
+        font-size: 2.5vw;
+    }
+
+
+   
+    
+
+
+    /* MODAL */
+
+    .modal-dialog{
+        max-width: 75%;
+    }
+    
+    .modal-title {
+        font-size: 3vw;
+    }
+    
+    .modal-body img{
+        width: 15vw;
+    }
+    
+    .modal-body p{
+        font-size: 3.5vw;
+    }
+    
+    .modal-footer button{
+        font-size: 3vw;
+    }
+
+
+}
+
+@media (min-width:480px) and (max-width: 576px){
+    
+    .container-fluid {
+        max-width: 480px;
+    }
+
+    h1{
+        font-size: 8vw;
+    }
+
+    #formEdit {
+        margin-bottom: 10vw;
+       
+    }
+    
+    #labelEdit {
+        font-size: 6vw;
+        
+    }
+    
+    .inputEdit {
+        font-size: 7vw;
+    }
+
+    #pesquisa{
+        font-size: 6vw;
+    }
+
+
+    #Buttons{
+        padding: 1vw 0 1vw 0;
+    }
+
+    #Buttons div div{
+        width: 40vw;
+    }
+
+    .buttonEditLiga {
+        padding: 1vw;
+    }
+
+    .buttonEditLiga img{
+        height: 8vw;
+    }
+    
+    .button img{
+        height: 13vw;
+    }
+    
+    .button h3{
+        display: none;    
+    }
+    
+    .buttonEdit {
+        margin: 0.5vw;
+        height: 15vw;
+        width: 12vw;
+    }
+
+    .buttonEdit img{
+        height: 8vw;
+    }
+
+    .buttonEdit h3{
+        display: none;
+    } 
+
+    #clubeBottons {
+        font-size: 7vw;
+    }
+    
+    #clubeBottons > a {
+        
+        display: flex;
+        align-content: center;
+    }
+
+    #editBottons {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .buttonClubes {
+        width: 60vw;
+        
+    }
+    
+    .buttonClubes > img {
+        width: 30vw;
+    }
+
+    .buttonClubes > h4 {
+        font-size: 6vw;
+    }
+
+    /* MODAL */
+
+    .modal-dialog{
+        max-width: 100%;
+    }
+    
+    .modal-title {
+        font-size: 7.5vw;
+    }
+    
+    .modal-body img{
+        width: 25vw;
+    }
+    
+    .modal-body p{
+        font-size: 6.6vw;
+    }
+    
+    .modal-footer button{
+        font-size: 6vw;
+    }
+
+
+}
+
+
+
+/* VERSÃO MOBILE */
+
+@media (max-width: 480px){
+
+    h1{
+        font-size: 8vw;
+    }
+
+    #formEdit {
+        margin-bottom: 10vw;
+       
+    }
+    
+    #labelEdit {
+        font-size: 6vw;
+        
+    }
+    
+    .inputEdit {
+        font-size: 7vw;
+    }
+
+    #pesquisa{
+        font-size: 6vw;
+    }
+
+
+    #Buttons{
+        padding: 1vw 0 1vw 0;
+    }
+
+    #Buttons div div{
+        width: 40vw;
+    }
+
+    .buttonEditLiga {
+        padding: 1vw;
+    }
+
+    .buttonEditLiga img{
+        height: 8vw;
+    }
+    
+    .button img{
+        height: 13vw;
+    }
+    
+    .button h3{
+        display: none;    
+    }
+    
+    .buttonEdit {
+        height: 16vw;
+        margin: 0.5vw;
+        width: max-content;
+    }
+
+    .buttonEdit img{
+        height: 25px;
+    }
+
+    .buttonEdit h3{
+        display: none;
+    } 
+
+    #editBottons {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 0.2vw;
+    }
+
+    #clubeBottons {
+        display: flex;
+        align-content: center;
+        justify-content: center;
+    }
+    
+    #clubeBottons > a {
+        display: flex;
+        align-content: center;
+        justify-content: center;
+    }
+
+    .buttonClubes {
+        width: 70vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0.5vw;
+    }
+    
+    .buttonClubes > img {
+        width: 20vw;
+    }
+
+    .buttonClubes > h4 {
+        margin-top: 1vw;
+        font-size: 6vw;
+    }
+
+    /* MODAL */
+
+    .modal-dialog{
+        max-width: 100%;
+    }
+    
+    .modal-title {
+        font-size: 7.5vw;
+    }
+    
+    .modal-body img{
+        width: 25vw;
+    }
+    
+    .modal-body p{
+        font-size: 6.6vw;
+    }
+    
+    .modal-footer button{
+        font-size: 6vw;
+    }
 }
