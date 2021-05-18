@@ -5,7 +5,7 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title">Clube adicionado</h5>          
+          <h5 class="modal-title">Clube adicionado!</h5>          
         </div>
         <div class="modal-body">
             <p>Continuar adicionando?</p>
@@ -21,9 +21,9 @@
 
   <h1>ADICIONAR CLUBE</h1>
 
-  <br>
-<!-- (ngSubmit)='onSubmit()' -->
+  
   <form class="form-group needs-validation dadosName" [formGroup]=formularioAdd >
+    <aside>
     <div class="form-group">
         <label for="name">Nome do clube:</label>
         <input type="text" class="form-control" formControlName="name" required>
@@ -36,7 +36,7 @@
         <label for="escudo">URL Escudo:</label>
         <input type="text" class="form-control" formControlName="urlShield">
     </div>
-
+  </aside>
     <!-- CARROUSEL PARA DADOS DOS JOGOS -->   
 
     <div id="Buttons" class="container-fluid">
@@ -80,13 +80,10 @@
         
       </div>
 
-
-
-
       <div id="Buttons" class="container-fluid">
         <div class="row">
           <div class="col-sm mx-auto">
-            <button class="btn btn-primary mb-2 mr-2 btn-sm m-1" (click)='dadosRandom()'><img src="../../../../assets/Iconos/MyFutStats Random (Vazado).png" alt=""><h3>&nbsp;&nbsp;&nbsp; DADOS RANDOM &nbsp;&nbsp;&nbsp;</h3></button>  
+            <button class="btn btn-primary mb-2 mr-2 btn-sm m-1" (click)='dadosRandom()'><img src="../../../../assets/Iconos/MyFutStats Random (Vazado).png" alt=""><h3> RANDOM </h3></button>  
           </div>
         </div>
       </div>
@@ -94,22 +91,17 @@
     </div>
     
   </form>
-  
 
-  <div id="Buttons" class="container-fluid">
+  <div id="Buttons" class="we" class="container-fluid">
     <div class="row">
       <div class="col-sm mx-auto">
-        <button class="btn btn-success mb-2 mr-2 btn-sm m-1" (click)="voltarLigaEdit(nomeLiga.id)"><img src="../../../../assets/Iconos/MyFutStats Back (Vazado).png" alt=""><h3>&nbsp;&nbsp;&nbsp; VOLTAR &nbsp;&nbsp;&nbsp;</h3></button>  
+        <button class="btn btn-success mb-2 mr-2 btn-sm m-1" (click)="voltarLigaEdit(nomeLiga.id)"><img src="../../../../assets/Iconos/MyFutStats Back (Vazado).png" alt=""><h3> VOLTAR </h3></button>  
       </div>
       <div class="col-sm mx-auto">
-        <button [disabled]='!formularioAdd.valid' class="btn btn-primary mb-2 mr-2 btn-sm m-1" data-bs-toggle="modal" data-bs-target="#mostrarModal" (click)="novoClub()"><img src="../../../../assets/Iconos/MyFutStats Edit (Vazado).png" alt=""><h3>&nbsp;&nbsp;&nbsp; ADICIONAR &nbsp;&nbsp;&nbsp;</h3></button>
+        <button [disabled]='!formularioAdd.valid' class="btn btn-primary mb-2 mr-2 btn-sm m-1" data-bs-toggle="modal" data-bs-target="#mostrarModal" (click)="novoClub()"><img src="../../../../assets/Iconos/MyFutStats Edit (Vazado).png" alt=""><h3> ADICIONAR </h3></button>
       </div>
     </div>
   </div>
-
-
-
-
 
 
 </div>

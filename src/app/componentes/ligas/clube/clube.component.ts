@@ -89,7 +89,11 @@ export class ClubeComponent implements OnInit {
   eliminarClube(ID_Liga, ID){
     this.FutebolServ.eliminarClube(ID_Liga, ID).subscribe();
     // location.href='http://localhost:'+this.FutebolServ.portFront+'/liga/'+this.ID_Liga+'?sucessoeliminado=ok'
+    if (document.referrer == 'http://localhost:'+this.FutebolServ.portFront+'/liga/'+this.ID_Liga+'/clube/'+this.ID){
+      location.href = 'http://localhost:'+this.FutebolServ.portFront+'/liga/'+this.ID_Liga+'/editliga'+'?sucessoeliminado=ok'
+    } else {
     location.href = document.referrer+'?sucessoeliminado=ok'
+    }
   }
 
 
