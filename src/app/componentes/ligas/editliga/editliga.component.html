@@ -2,7 +2,7 @@
 
     <!-- MODAL ELIMINAR CLUB -->
     <div id="mostrarModal" class="modal" tabindex="-1">
-        <div class="modal-dialog">
+        <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title">Eliminar clube {{ this.nameModal }}</h5>
@@ -31,18 +31,25 @@
     </div>
 
 
-    <h1>Menú de edição de {{ nomeLiga.name }} <span><button class="btn btn-primary mb-2 mr-2 btn-sm buttonEditLiga" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample"><img src="../../../../assets/Iconos/MyFutStats Edit (Vazado).png"></button>
-    </span> </h1>
+    <h1>Menú de edição de {{ nomeLiga.name }} 
+        <span>
+            <button class="btn btn-primary mb-2 mr-2 btn-sm buttonEditLiga" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                <img src="../../../../assets/Iconos/MyFutStats Edit (Vazado).png">
+            </button>
+        </span> 
+    </h1>
     
 
     <div class="collapse" id="collapseExample">        
         <form id="formEdit" class="form-group needs-validation" #formedit='ngForm' novalidate>
             <div class="form-group">
-                <div class="d-flex flex-column flex-md-row">
+                <div class="d-flex flex-row justify-content-center">
                     <h4 class="d-flex align-items-center" id="labelEdit">Editar o nome:</h4>
                     <div class="d-flex flex-row">
                         <input type="text" class="form-control inputEdit" name="name" value="{{ nomeLiga.name }}" id="name" [(ngModel)]="name" placeholder= "{{ nomeLiga.name }}" required>
-                        <button class="btn btn-primary buttonEditLiga" type="submit" (click)='editLiga(nomeLiga.id)'><img src="../../../../assets/Iconos/MyFutStats Update (Vazado).png"></button>
+                        <button class="btn btn-primary buttonEditLiga" type="submit" (click)='editLiga(nomeLiga.id)'>
+                            <img src="../../../../assets/Iconos/MyFutStats Update (Vazado).png">
+                        </button>
                     </div>
                 </div>
             </div> 
@@ -52,11 +59,11 @@
     
     <div id="Buttons" class="container-fluid">
         <div class="row">
-            <div class="col-sm mx-auto">
-                <button class="btn btn-success mb-2 mr-2 btn-sm m-1 button" (click)='volverLiga(nomeLiga.id)'><img src="../../../../assets/Iconos/MyFutStats Back (Vazado).png"><h3>&nbsp;&nbsp;&nbsp;VOLTAR&nbsp;&nbsp;&nbsp;</h3></button>
+            <div class="col mx-auto">
+                <button class="btn btn-success button" (click)='volverLiga(nomeLiga.id)'><img src="../../../../assets/Iconos/MyFutStats Back (Vazado).png"><h3>&nbsp;&nbsp;&nbsp;VOLTAR&nbsp;&nbsp;&nbsp;</h3></button>
             </div>
-            <div class="col-sm mx-auto">
-                <button class="btn btn-primary mb-2 mr-2 btn-sm m-1 button" (click)='addClube(nomeLiga.id)'><img src="../../../../assets/Iconos/MyFutStats Add (Vazado).png"><h3>&nbsp;&nbsp;&nbsp;CLUBE&nbsp;&nbsp;&nbsp;</h3></button> 
+            <div class="col mx-auto">
+                <button class="btn btn-primary button" (click)='addClube(nomeLiga.id)'><img src="../../../../assets/Iconos/MyFutStats Add (Vazado).png"><h3>&nbsp;&nbsp;&nbsp;CLUBE&nbsp;&nbsp;&nbsp;</h3></button> 
             </div>
         </div>
     </div>
@@ -68,7 +75,7 @@
     <div id="editLigaTable">
         <table class="table table-bordered table-striped table-hover table-dark">
             <tbody>
-                <tr class="d-flex flex-md-row" *ngFor="let resultado of resultados | filter:pesquisa | orderBy:'name':false">
+                <tr class="d-flex flex-row" *ngFor="let resultado of resultados | filter:pesquisa | orderBy:'name':false">
                     <td class="col align-middle" id="clubeBottons">
                         <a href="http://localhost:4200/liga/{{ nomeLiga.id }}/clube/{{ resultado.id }}">
                             <button class="btn btn-outline-light buttonClubes">
@@ -78,8 +85,18 @@
                         </a>
                     </td>
                     <td class="d-flex flex-column" id="editBottons">
-                        <button class="btn btn-primary mb-2 mr-2 btn-sm m-1 buttonEdit" (click)="editClube(nomeLiga.id, resultado.id)"><img src="../../../../assets/Iconos/MyFutStats Edit (Vazado).png"><h3>&nbsp;&nbsp;&nbsp;EDITAR&nbsp;&nbsp;&nbsp;</h3></button>
-                        <button class="btn btn-danger mb-2 mr-2 btn-sm m-1 buttonEdit" data-bs-toggle="modal" data-bs-target="#mostrarModal" (click)="pegaID(resultado.id, resultado.name, resultado.urlShield)"><img src="../../../../assets/Iconos/MyFutStats Delete (Vazado).png"><h3>&nbsp;&nbsp;&nbsp;APAGAR&nbsp;&nbsp;&nbsp;</h3></button>
+                        <button class="btn btn-primary buttonEdit" (click)="editClube(nomeLiga.id, resultado.id)">
+                            <img src="../../../../assets/Iconos/MyFutStats Edit (Vazado).png">
+                            <h3>
+                                &nbsp;&nbsp;&nbsp;EDITAR&nbsp;&nbsp;&nbsp;
+                            </h3>
+                        </button>
+                        <button class="btn btn-danger buttonEdit" data-bs-toggle="modal" data-bs-target="#mostrarModal" (click)="pegaID(resultado.id, resultado.name, resultado.urlShield)">
+                            <img src="../../../../assets/Iconos/MyFutStats Delete (Vazado).png">
+                            <h3>
+                                &nbsp;&nbsp;&nbsp;APAGAR&nbsp;&nbsp;&nbsp;
+                            </h3>
+                        </button>
                     </td>
                 </tr>
             </tbody>
