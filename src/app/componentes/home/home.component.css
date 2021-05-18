@@ -31,6 +31,14 @@ td:nth-child(2){
     opacity: 0.8;
 }    
 
+
+/* Próximos Jogos*/
+
+h1{
+    text-align: center;
+    margin: 20px;
+}
+
 aside{
     display:flex;
     flex-direction: row;
@@ -41,18 +49,97 @@ aside{
 aside div{
     display:flex;
     justify-content: center;
-    /* align-content: center; */
     flex-direction: row;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
+    align-items: center;
+    width: 90vw;
+    text-align: center;
+    margin: 20px 0 10px 0;
+}
+
+aside div a{
+    color:rgb(39, 41, 39);
+    width: 40vw;
+    height: 40vw;
+    font-size: 3vw;
+    
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: flex-end;
     align-items: center;
 }
 
-a{
-    padding: 10px;
-    color:black
+aside div h3, aside div h2{
+    margin: 0px;
 }
 
-aside div img {
-    height: 100px;
+aside div h2{
+    padding-bottom: 10vw;
+    font-size: 9vw;
+    color:rgb(39, 41, 39);
 }
 
+aside div a img {
+    height: 24vw;
+    width: 24vw;    
+    display: flex;
+    justify-self: flex-end;
+}
+
+/* Próximos Jogos Tablets*/
+
+@media (min-width:750px) and (max-width: 992px){
+    
+    aside div{
+        width:45vw;
+    }
+
+    aside div a{
+        height: 28vw;
+        width: 28vw;
+    }
+
+    aside div a img {
+        height: 14vw;
+        width: 14vw;    
+    }
+
+    aside div a h3{
+        font-size: 3.2vw;
+    }
+
+    aside div h2{
+        padding-bottom: 12vw;
+        font-size: 5vw;
+    }
+
+}
+
+/*Próximos Jogos Desktop*/
+
+@media (min-width: 992px){
+    
+    aside div{
+        width:30vw;
+    }
+
+    aside div a{
+        height: 15vw;
+        width: 15vw;
+    }
+
+    aside div a img {
+        height: 8vw;
+        width: 8vw;    
+    }
+
+    aside div a h3{
+        font-size: 2vw;
+    }
+
+    aside div h2{
+        padding-bottom: 5vw;
+        font-size: 3vw;
+    }
+
+}
