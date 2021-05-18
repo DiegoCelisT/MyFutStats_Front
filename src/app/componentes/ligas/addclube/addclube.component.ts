@@ -85,8 +85,8 @@ export class AddclubeComponent implements OnInit {
     if (derrotas==null){ derrotas=0 }
     if (golsPro==null){ golsPro=0 }
     if (golsContra==null){ golsContra=0 }
-    if (urlShield==null){ urlShield="https://www.clipartmax.com/png/full/19-194040_how-to-set-use-shield-grey-svg-vector-shield-template.png" }
-    console.log(this.ID_Liga, name, urlShield, country, vitorias, empates, derrotas, golsPro, golsContra)
+    if (urlShield==null){ urlShield="https://i.postimg.cc/GtnwF08R/Default-Shield.png" }
+    // console.log(this.ID_Liga, name, urlShield, country, vitorias, empates, derrotas, golsPro, golsContra)
     this.FutebolServ.createClube(this.ID_Liga, name, urlShield, country, vitorias, empates, derrotas, golsPro, golsContra)
     .subscribe()
   }
@@ -126,11 +126,12 @@ export class AddclubeComponent implements OnInit {
     })
     }
 
+    // voltar() {
+    //   location.href = "javascript: history.go(-1)"
+    // }
+    
     voltarLigaEdit(numeroLiga) {
       location.href ="http://localhost:"+this.FutebolServ.portFront+"/liga/"+numeroLiga+"/editliga"
-    }
-    volverLiga(numeroLiga) {
-      location.href ="http://localhost:"+this.FutebolServ.portFront+"/liga/"+numeroLiga
     }
 
     voltarAdd(numeroLiga) {

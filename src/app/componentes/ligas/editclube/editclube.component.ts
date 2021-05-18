@@ -100,12 +100,26 @@ export class EditclubeComponent implements OnInit {
     if (derrotas==null){ derrotas=0 }
     if (golsPro==null){ golsPro=0 }
     if (golsContra==null){ golsContra=0 }  
-    if (urlShield=='' || null){ urlShield = "https://www.clipartmax.com/png/full/19-194040_how-to-set-use-shield-grey-svg-vector-shield-template.png"} 
+    if (urlShield=='' || null){ urlShield = "https://i.postimg.cc/GtnwF08R/Default-Shield.png"} 
     else { urlShield=this.formularioEdit.value.urlShield }
 
     this.FutebolServ.editClube(this.ID_Liga, this.ID, name, urlShield, country, vitorias, empates, derrotas, golsPro, golsContra)
       .subscribe()
-      location.href='http://localhost:'+this.FutebolServ.portFront+'/liga/'+this.ID_Liga+'/clube/'+this.ID+'?sucessoedit=ok'
+
+      let A = (document.referrer) //Página Anterior no histórico
+      let B ='http://localhost:'+this.FutebolServ.portFront+'/liga/'+this.ID_Liga+'/editclube/'+this.ID
+      console.log (A, B+"?sucessoadicionado=ok")
+      let C ='http://localhost:'+this.FutebolServ.portFront+'/liga/'+this.ID_Liga+'/editliga'
+      // console.log (A, C+"?sucessoadicionado=ok")
+
+      if (A == B){
+        location.href='http://localhost:'+this.FutebolServ.portFront+'/liga/'+this.ID_Liga+'/clube/'+this.ID+'?sucessoedit=ok'
+      } else if (A == C+"?sucessoadicionado=ok"){
+        location.href= C+'?sucessoedit=ok'
+      } else {
+        location.href= A +'?sucessoedit=ok'
+      }
+
   }
 
   validEdit(){
@@ -114,6 +128,18 @@ export class EditclubeComponent implements OnInit {
   }
   
   voltar() {
-    location.href ="javascript: history.go(-1)"
+
+    if (document.referrer == 'http://localhost:'+this.FutebolServ.portFront+'/liga/'+this.ID_Liga+'/editliga'+'?sucessoedit=ok' || document.referrer == 'http://localhost:'+this.FutebolServ.portFront+'/liga/'+this.ID_Liga+'/editliga'+'?sucessoadicionado=ok'){
+      location.href = 'http://localhost:'+this.FutebolServ.portFront+'/liga/'+this.ID_Liga+'/editliga'
+    } else if (document.referrer == 'http://localhost:'+this.FutebolServ.portFront+'/liga/'+this.ID_Liga+'/clube/'+this.ID+'?sucessoedit=ok'){
+      location.href ="javascript: history.go(-3)"
+    } else if (document.referrer == 'http://localhost:'+this.FutebolServ.portFront+'/liga/'+this.ID_Liga+'/editclube') {
+    location.href ="javascript: history.go(-3)"
+    } else {
+      location.href ="javascript: history.go(-1)"
+    }
+
   }
+
+
 }

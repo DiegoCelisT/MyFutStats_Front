@@ -4,6 +4,7 @@
 }
 * {
     font-family: 'Neufreit'
+
 }
 
 .container-fluid {
@@ -704,5 +705,4 @@ h1{
     .modal-footer button{
         font-size: 6vw;
     }
-
 }
