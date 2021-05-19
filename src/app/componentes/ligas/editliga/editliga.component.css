@@ -8,7 +8,7 @@
 }
 
 .container-fluid {
-    max-width: 980px;
+    width: 70vw;
 }
 
 h1{
@@ -24,6 +24,13 @@ h1{
 .buttonEditLiga img{
     height: 30px;
 }
+
+
+
+
+
+
+
 
 
 #labelEdit {
@@ -106,8 +113,9 @@ h1{
 
 .buttonClubes > h4 {
     margin: 0;
-    text-align: center;
+    text-align: left; /*NEW*/
     font-size: 45px;
+    
 }
 
 #editBottons {
@@ -132,14 +140,14 @@ h1{
 }
 
 .buttonEdit h3{
-    font-size: 1.5vw;
-    margin-top: 0.3vw;        
+    font-size: 2vw;
+    margin-top: 0.3vw;     
 }
 
 /* MODAL */
 
 .modal-dialog{
-    max-width: 600px;
+    width: 60vw;
 }
 
 .modal-header{
@@ -175,39 +183,59 @@ h1{
   font-size: 30px;
 }
 
-@media (min-width:992px) and (max-width: 1580px){
 
-    .container-fluid {
-        max-width: 980px;
-    }
+
+
+/*Novas modificações*/
+
+td a button{
+    /* background-color: blueviolet; */
+    display: flex;
+    justify-content: flex-start;
+    padding: 1vw 3vw 1vw 2vw;
+}
+
+
+
+
+
+
 
     h1{
         font-size: 3vw;
+        display: flex;
+        justify-content: center;
+        flex-wrap: nowrap;
     }
 
     .buttonEditLiga {
-        padding: 0.1vw;
+        padding: 0.3vw;
+        margin-left: 1.5vw;
     }
 
     .buttonEditLiga img{
-        height: 2vw;
+        height: 2.7vw;
     }
     
     
     #labelEdit {
-        font-size: 1.5vw;
-        margin-right: 0.5vw;        
+        font-size: 2vw;
+        margin-top: 0.5vw;
+        /* margin-right: 0.5vw;  */
+               
     }
     
     .inputEdit {
         font-size: 2vw;
-        padding: 0.1vw;
+        padding-left: 1vw;
         height: 3.5vw;
     }
     
     #formEdit {
-        margin-bottom: 1vw;       
+        margin-bottom: 1vw;     
     }
+
+    
 
     #Buttons{
         padding: 1vw 0 1vw 0;
@@ -232,10 +260,12 @@ h1{
     
     .button > h3 {
         font-size: 2vw;
+        
     }
     
     #pesquisa{
         font-size: 2vw;
+        margin-bottom: 0.5vw; 
     }
 
      #clubeBottons {
@@ -253,12 +283,11 @@ h1{
     }
     
     .buttonClubes > img {
-        width: 10vw;
+        width: 7vw;
     }
 
     .buttonClubes > h4 {
         margin: 0;
-        text-align: center;
         font-size: 3vw;
     }
 
@@ -275,7 +304,7 @@ h1{
         justify-content: center;
         align-items: center;
         height: 4vw;
-        width: 12vw;
+        width: 14vw;
         margin: 0.5vw;        
     }
 
@@ -284,7 +313,7 @@ h1{
     }
 
     .buttonEdit h3{
-        font-size: 1.5vw;
+        font-size: 2vw;
         margin-top: 0.3vw;        
     }
 
@@ -296,26 +325,27 @@ h1{
     /* MODAL */
 
     .modal-dialog{
-        max-width: 35%;
+        max-width: 45%;
     }
     
     .modal-title {
-        font-size: 1.5vw;
+        font-size: 3vw;
     }
     
     .modal-body img{
         width: 10vw;
+        margin-right: 3vw;
     }
     
     .modal-body p{
-        font-size: 2vw;
+        font-size: 2.5vw;
     }
     
     .modal-footer button{
-        font-size: 1.5vw;
+        font-size: 2.5vw;
     }
 
-}
+
 
 
 
@@ -323,371 +353,227 @@ h1{
 
 @media (min-width:576px) and (max-width: 992px){
 
+
     .container-fluid {
-        max-width: 800px;
+        width: 80vw;
     }
 
     h1{
-        font-size: 6vw;
+        font-size: 4vw;
+        margin: 0px;
     }
 
     .buttonEditLiga {
-        padding: 0.5vw;
+        padding: 0.3vw;
+        margin-left: 1.4vw;
     }
 
     .buttonEditLiga img{
         height: 4vw;
     }
     
-    
     #labelEdit {
         font-size: 3vw;
-        margin-right: 2vw;        
+        /* margin-top: 0.5vw; */
+               
     }
     
     .inputEdit {
         font-size: 3vw;
+        padding: 2.5vw 0vw 2.5vw 1.5vw;
+        height: 3.5vw;
+    }
+    
+    #formEdit {
+        margin-bottom: 1vw;     
+    }
+
+    #formEdit div div div button{
         padding: 0.5vw;
+    }
+
+    
+    .button img{
+        height: 4.5vw;
+    } 
+    
+    .button > h3 {
+        font-size: 2.8vw;
+        
+    }
+
+    #pesquisa{
+        font-size: 3vw;
+        margin-bottom: 0.5vw; 
+    }
+
+      
+    .buttonClubes {
+        width: 45vw;
+    }
+    
+    .buttonClubes > img {
+        width: 10vw;
+    }
+
+    .buttonClubes > h4 {
+        font-size: 3.7vw;
+    }
+
+    
+    
+
+
+    .buttonEdit {
         height: 6vw;
-    }
-    
-    #formEdit {
-        margin-bottom: 3vw;       
-    }
-
-    #Buttons{
-        padding: 1vw 0 1vw 0;
-    }
-
-    #Buttons div div{
-        width: 40vw;
-    }
-
-    .button {
-        margin-bottom: 3vw;
-    }
-
-    .button {
-        display: flex;
-        align-items: center;
-    }
-    
-    .button img{
-        height: 5.5vw;
-    }    
-    
-    #pesquisa{
-        font-size: 3vw;
-    }
-
-     #clubeBottons {
-        display: flex;
-        align-items: center;
-    }
-    
-    .buttonClubes {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        width: 60vw;
-        margin: 0;
-    }
-    
-    .buttonClubes > img {
-        width: 15vw;
-    }
-
-    .buttonClubes > h4 {
-        margin: 0;
-        text-align: center;
-        font-size: 5vw;
-    }
-
-    #editBottons {
-        display: flex;
-        align-items: center;
-        width: max-content;
-    }
-    
-    .buttonEdit {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        height: 8vw;
-        width: 18vw;
-        padding: 0;
-        margin: 0.5vw;
-    }
-
-    .buttonEdit img{
-        height: 5vw;
-    }
-
-    .buttonEdit h3{
-        font-size: 2.5vw;
-    }
-
-
-   
-    
-
-
-    /* MODAL */
-
-    .modal-dialog{
-        max-width: 75%;
-    }
-    
-    .modal-title {
-        font-size: 3vw;
-    }
-    
-    .modal-body img{
-        width: 15vw;
-    }
-    
-    .modal-body p{
-        font-size: 3.5vw;
-    }
-    
-    .modal-footer button{
-        font-size: 3vw;
-    }
-
-
-}
-
-@media (min-width:480px) and (max-width: 576px){
-    
-    .container-fluid {
-        max-width: 480px;
-    }
-
-    h1{
-        font-size: 8vw;
-    }
-
-    #formEdit {
-        margin-bottom: 10vw;
-       
-    }
-    
-    #labelEdit {
-        font-size: 6vw;
-        
-    }
-    
-    .inputEdit {
-        font-size: 7vw;
-    }
-
-    #pesquisa{
-        font-size: 6vw;
-    }
-
-
-    #Buttons{
-        padding: 1vw 0 1vw 0;
-    }
-
-    #Buttons div div{
-        width: 40vw;
-    }
-
-    .buttonEditLiga {
-        padding: 1vw;
-    }
-
-    .buttonEditLiga img{
-        height: 8vw;
-    }
-    
-    .button img{
-        height: 13vw;
-    }
-    
-    .button h3{
-        display: none;    
-    }
-    
-    .buttonEdit {
-        margin: 0.5vw;
-        height: 15vw;
-        width: 12vw;
-    }
-
-    .buttonEdit img{
-        height: 8vw;
-    }
-
-    .buttonEdit h3{
-        display: none;
-    } 
-
-    #clubeBottons {
-        font-size: 7vw;
-    }
-    
-    #clubeBottons > a {
-        
-        display: flex;
-        align-content: center;
-    }
-
-    #editBottons {
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .buttonClubes {
-        width: 60vw;
-        
-    }
-    
-    .buttonClubes > img {
-        width: 30vw;
-    }
-
-    .buttonClubes > h4 {
-        font-size: 6vw;
-    }
-
-    /* MODAL */
-
-    .modal-dialog{
-        max-width: 100%;
-    }
-    
-    .modal-title {
-        font-size: 7.5vw;
-    }
-    
-    .modal-body img{
-        width: 25vw;
-    }
-    
-    .modal-body p{
-        font-size: 6.6vw;
-    }
-    
-    .modal-footer button{
-        font-size: 6vw;
-    }
-
-
-}
-
-
-
-/* VERSÃO MOBILE */
-
-@media (max-width: 480px){
-
-    h1{
-        font-size: 8vw;
-    }
-
-    #formEdit {
-        margin-bottom: 10vw;
-       
-    }
-    
-    #labelEdit {
-        font-size: 6vw;
-        
-    }
-    
-    .inputEdit {
-        font-size: 7vw;
-    }
-
-    #pesquisa{
-        font-size: 6vw;
-    }
-
-
-    #Buttons{
-        padding: 1vw 0 1vw 0;
-    }
-
-    #Buttons div div{
-        width: 40vw;
-    }
-
-    .buttonEditLiga {
-        padding: 1vw;
-    }
-
-    .buttonEditLiga img{
-        height: 8vw;
-    }
-    
-    .button img{
-        height: 13vw;
-    }
-    
-    .button h3{
-        display: none;    
-    }
-    
-    .buttonEdit {
-        height: 16vw;
-        margin: 0.5vw;
-        width: max-content;
-    }
-
-    .buttonEdit img{
-        height: 25px;
-    }
-
-    .buttonEdit h3{
-        display: none;
-    } 
-
-    #editBottons {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        padding: 0.2vw;
-    }
-
-    #clubeBottons {
-        display: flex;
-        align-content: center;
-        justify-content: center;
-    }
-    
-    #clubeBottons > a {
-        display: flex;
-        align-content: center;
-        justify-content: center;
-    }
-
-    .buttonClubes {
-        width: 70vw;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 0.5vw;
-    }
-    
-    .buttonClubes > img {
         width: 20vw;
     }
 
-    .buttonClubes > h4 {
-        margin-top: 1vw;
-        font-size: 6vw;
+    .buttonEdit img{
+        height: 4vw;
     }
+
+    .buttonEdit h3{
+        font-size: 3vw;
+        margin-top: 1.3vw;        
+    }
+
 
     /* MODAL */
 
     .modal-dialog{
-        max-width: 100%;
+        max-width: 70%;
+    }
+
+    .modal-title {
+        font-size: 4vw;
+    }
+
+    .modal-body img{
+        width: 18vw;
+        margin-right: 3vw;
+    }
+
+    .modal-body p{
+        font-size: 3.8vw;
+    }
+
+    .modal-footer button{
+        font-size: 3.5vw;
+    }
+
+}
+
+/*Mobile*/
+
+@media (max-width: 576px){
+    
+    .container-fluid {
+        width: 90vw;
+        margin: 0vw;
+        margin-left: 4vw;
+    }
+
+    h1{
+        font-size: 7vw;
+        margin: 0px;
+        display: flex;
+        align-items: center;
+        align-content: center;
+    }
+
+    .buttonEditLiga {
+        padding: 0.3vw;
+        margin-left: 1.4vw;
+    }
+
+    .buttonEditLiga img{
+        height: 8vw;
+    }
+    
+    #labelEdit {
+        font-size: 4vw;
+        margin-top: 0.5vw;
+    }
+    
+    #labelEdit span{
+        display: none;
+    }
+
+
+    .inputEdit {
+        font-size: 5vw;
+        padding: 4vw;
+        height: 10vw;
+    }
+    
+    #formEdit {
+        margin-bottom: 3vw;     
+    }
+
+    #formEdit div div div button{
+        padding: 0.5vw;
+    }
+
+
+
+    #Buttons{
+        margin-left: -2vw;   
+    }
+    
+    .button img{
+        height: 8vw;
+    } 
+    
+    .button > h3 {
+        font-size: 4.5vw;
+        
+    }
+
+    #pesquisa{
+        font-size: 5vw;
+        margin-bottom: 0.5vw; 
+    }
+
+      
+
+    .buttonClubes {
+        width: 55vw;
+    }
+    
+    .buttonClubes > img {
+        width: 15vw;
+        margin-right: 3vw;
+    }
+
+    .buttonClubes > h4 {
+        font-size: 5vw;
+    }
+
+    
+    
+
+
+    .buttonEdit {
+        height: 10vw;
+        width: 15vw;
+    }
+
+    .buttonEdit img{
+        height: 8vw;
+    }
+
+    .buttonEdit h3{
+        display: none;      
+    }
+
+
+    /* MODAL */
+    
+    .modal-dialog{
+        max-width: 100%; /*tem que ter os dois para que fique bem encaixado em mobile*/
+        width: 95%;
+        justify-self: center;    
     }
     
     .modal-title {
@@ -705,4 +591,6 @@ h1{
     .modal-footer button{
         font-size: 6vw;
     }
+
+
 }
