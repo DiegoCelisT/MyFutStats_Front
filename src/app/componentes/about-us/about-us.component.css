@@ -3,5 +3,30 @@
     src: url('../../../assets/Neufreit-ExtraBold.otf');
 }
 * {
-    font-family: 'Neufreit'
+    font-family: 'Neufreit';
+    display: flex;
+    flex-direction: row;
+    justify-items: center;
+}
+
+aside{
+    display: flex;
+    flex-direction: row;
+    /* width: 60%; */
+    justify-content: center;
+    /* align-items: center; */
+}
+
+article{
+    flex-direction: column;
+    width: 700px;
+    text-align: justify;
+}
+
+div{
+    width: 30%;
+}
+
+img {
+    height: 30%;
 }

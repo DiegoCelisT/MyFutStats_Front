@@ -48,7 +48,7 @@
         <form id="formEdit" class="form-group needs-validation" #formedit='ngForm' novalidate>
             <div class="form-group">
                 <div class="d-flex flex-row justify-content-center">
-                    <h4 class="d-flex align-items-center" id="labelEdit">Editar o nome:</h4>
+                    <h4 class="d-flex align-items-center" id="labelEdit"><span>Editar o nome:</span></h4>
                     <div class="d-flex flex-row">
                         <input type="text" class="form-control inputEdit" name="name" value="{{ nomeLiga.name }}" id="name" [(ngModel)]="name" placeholder= "{{ nomeLiga.name }}" required>
                         <button class="btn btn-primary buttonEditLiga" type="submit" (click)='editLiga(nomeLiga.id)'>
