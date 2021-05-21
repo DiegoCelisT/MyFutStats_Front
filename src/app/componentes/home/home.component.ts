@@ -11,6 +11,7 @@ export class HomeComponent implements OnInit {
 
   constructor(private FutebolServ: FutebolService) { }
 
+
   resultados1 = [];
   resultados2 = [];
   resultados3 = [];
@@ -45,6 +46,7 @@ export class HomeComponent implements OnInit {
 
   
   
+
   function randomNumber(min, max) {
     return Math.floor(Math.random() * (max - min) + min) //Math.floor é a parte entera do número
   }
@@ -53,8 +55,6 @@ export class HomeComponent implements OnInit {
   .subscribe (nomeLigas =>{
     this.nomeLigas = nomeLigas ['MyLeagues']
   })
-
-  
   
   this.FutebolServ.getClubesAll (1)
   .subscribe (resultados => {
@@ -161,7 +161,9 @@ export class HomeComponent implements OnInit {
     }
   })
 
+
 }
+
 
   abrirLink(numeroLiga) {
     location.href='/liga/'+numeroLiga
@@ -170,8 +172,5 @@ export class HomeComponent implements OnInit {
   abrirClub(numeroLiga, numeroClub) {
     location.href='http://localhost:'+this.FutebolServ.portFront+'/liga/'+numeroLiga+'/clube/'+numeroClub
   }
-
-
-  
   
 }
