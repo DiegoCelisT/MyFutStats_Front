@@ -14,6 +14,7 @@ import { AboutUsComponent } from './componentes/about-us/about-us.component';
 
 const routes: Routes = [
   { path: '', component:HomeComponent },
+  { path: 'home', component:HomeComponent },
   { path: 'liga/:idLiga/clube/:id', component:ClubeComponent },
   { path: 'liga/:idLiga', component:LigaComponent },
   { path: 'liga/:idLiga/addclube', component:AddclubeComponent },
