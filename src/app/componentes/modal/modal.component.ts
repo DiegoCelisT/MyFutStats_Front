@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-
+import { Router, ActivatedRoute } from '@angular/router';
+import { FutebolService } from '../../services/futebol.service';
 
 @Component({
   selector: 'app-modal',
@@ -10,44 +10,55 @@ import { ActivatedRoute } from '@angular/router';
 export class ModalComponent implements OnInit {
 
   claseModal: string = '';
-  mostrar = true;
+  
+  // PARA MOSTRAR MODAL
+  mostrar;
+
+  // CERRAR MODAL
   cerrarModal = true;
 
+  // MODIFICAR URL
   urlHome;
 
+  // MODIFICAR BOTÃO ENTRAR
+  cargando = true;
+  buttonCerrar = false;
 
-  constructor(private rotaHome: ActivatedRoute) { }
+  constructor(private rotaHome: ActivatedRoute, private router: Router, private FutebolServ: FutebolService) { }
 
+  
   ngOnInit(): void {
+    // MOSTRA MODAL AO INICIO
     this.claseModal = 'modal d-block';
-
-    // this.rotaHome.queryParams.subscribe(params => {
-     
-    //   this.urlHome = params ['benvindos']
-      
-    //   if (this.urlHome == 'ok') {
-      
-    //     console.log('ok rota')
-
-    //     // setTimeout(()=>{                           
-    //     //   this.alertEliminado = false;
-    //     // }, 4000);
-    //   } 
-    // })
-
-  }
-  
-  cerrar() {
-    // this.claseModal = '';
-    this.mostrar = false;
-  }
-  
-  ngAfterViewInit() {
-    // console.log(funciona)
-    // this.mostrar = false;
-    this.cerrarModal = false  }
-
     
+    // CONDICIONAL PARA MOSTRAR MODAL
+    this.rotaHome.queryParams.subscribe(params => {
+      this.urlHome = params ['benvindos']
+      
+      if (this.urlHome == 'ok') {
+        this.mostrar = false
+      } else {
+        this.mostrar = true;  
+      }
+    })
+      
+    //PARA HABILITAR INGRESO
+    window.onload = (event) => {
+      this.changeButton()
+    }
 
+  }
+  
+  // FECHAR MODAL BENVINDOS/AS
+  cerrar() {    
+    this.router.navigate(['/home'], {queryParams: { benvindos: 'ok'}})
+    return this.mostrar = false
+  }   
+
+  changeButton() {
+    this.cerrarModal = false;              
+    this.cargando = false;
+    this.buttonCerrar = true;
+  }
   
 }
