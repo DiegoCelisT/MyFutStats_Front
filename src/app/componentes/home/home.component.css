@@ -31,6 +31,53 @@ td:nth-child(2){
     opacity: 0.8;
 }    
 
+/*Carrousel - Modificação responsiva*/
+
+.carrousel-item{
+    width: 18vw;
+    height: 18vw;
+    margin:1.2vw!important
+}
+
+/* Escolher os 4 primeiros (-n+5) e todos os que vêm depois dos 4 primeiros (n+5): */
+.carrousel-item:nth-child(n+5){
+    display: none !important; /*Obriga a dar prioridade, mesmo acima do bootstrap e inline-blocks*/
+}
+
+@media (min-width:576px) and (max-width:991px){
+    
+    .carrousel-item, .carrousel-item:nth-child(n+7){
+        display: inline-block!important;
+        width: 12.5vw;
+        height: 12.5vw;
+        margin: 0.6vw!important;
+        }
+
+}
+
+@media (min-width: 992px){
+
+    .carrousel-item, .carrousel-item:nth-child(n+5){
+    display: inline-block!important;
+    width: 7.5vw;
+    height: 7.5vw;
+    margin: 0.6vw!important;
+    }
+
+}
+
+
+/* Escolher os 10 primeiros (-n+11) e todos os que vêm depois dos 10 primeiros (n+11): */
+/* .carrousel-item:nth-child(n+11){
+    display: none !important; /*Obriga a dar prioridade, mesmo acima do bootstrap e inline-blocks
+} */
+
+
+
+
+
+
+
 
 /* Próximos Jogos*/
 
@@ -143,3 +190,4 @@ aside div a img {
     }
 
 }
+
