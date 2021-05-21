@@ -41,9 +41,6 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
   
-
-  
-
   function randomNumber(min, max) {
     return Math.floor(Math.random() * (max - min) + min) //Math.floor é a parte entera do número
   }
@@ -56,11 +53,11 @@ export class HomeComponent implements OnInit {
   this.FutebolServ.getClubesAll (1)
   .subscribe (resultados => {
     this.resultados1 = resultados ['clubes']
-    //Para tirar o primeiro nome caso o clube tenha um nome composto de mais de 12 letras (para não quebrar as tabelas)
+    //Para comprimir nomes compostos de mais de 12 letras (para não quebrar as tabelas)
     for ( let i = 0; i < this.resultados1.length; i++){
-      // this.resultados1[i].name = this.resultados1[i].name.slice(0,12)
-      if (this.resultados1[i].name.length > 14){
-      this.resultados1[i].name = this.resultados1[i].name.substring(this.resultados1[i].name.indexOf(' ')+1);
+      if (this.resultados1[i].name.length > 12){
+      //Pega a primeira letra de um nome, aplica um ponto e mostra o resto:
+      this.resultados1[i].name = this.resultados1[i].name.split(' ')[0].slice(0,1)+". "+this.resultados1[i].name.substring(this.resultados1[i].name.indexOf(' '))
       }
     }
     //VS Random:
@@ -76,8 +73,8 @@ export class HomeComponent implements OnInit {
   .subscribe (resultados => {
     this.resultados2 = resultados ['clubes']
     for ( let i = 0; i < this.resultados2.length; i++){
-      if (this.resultados2[i].name.length > 15){
-      this.resultados2[i].name = this.resultados2[i].name.substring(this.resultados2[i].name.indexOf(' ')+1);
+      if (this.resultados2[i].name.length > 12){
+      this.resultados2[i].name = this.resultados2[i].name.split(' ')[0].slice(0,1)+". "+this.resultados2[i].name.substring(this.resultados2[i].name.indexOf(' '))
       }
     }
     //VS Random:
@@ -93,8 +90,8 @@ export class HomeComponent implements OnInit {
   .subscribe (resultados => {
     this.resultados3 = resultados ['clubes']
     for ( let i = 0; i < this.resultados3.length; i++){
-      if (this.resultados3[i].name.length > 14){
-      this.resultados3[i].name = this.resultados3[i].name.substring(this.resultados3[i].name.indexOf(' ')+1);
+      if (this.resultados3[i].name.length > 12){
+      this.resultados3[i].name = this.resultados3[i].name.split(' ')[0].slice(0,1)+". "+this.resultados3[i].name.substring(this.resultados3[i].name.indexOf(' '))
       }
     }
     //VS Random:
@@ -105,12 +102,13 @@ export class HomeComponent implements OnInit {
       }
     }
   })
+
   this.FutebolServ.getClubesAll (4)
   .subscribe (resultados => {
     this.resultados4 = resultados ['clubes']
     for ( let i = 0; i < this.resultados4.length; i++){
-      if (this.resultados4[i].name.length > 14){
-      this.resultados4[i].name = this.resultados4[i].name.substring(this.resultados4[i].name.indexOf(' ')+1);
+      if (this.resultados4[i].name.length > 12){
+      this.resultados4[i].name = this.resultados4[i].name.split(' ')[0].slice(0,1)+". "+this.resultados4[i].name.substring(this.resultados4[i].name.indexOf(' '))
       }
     }
     //VS Random:
@@ -121,12 +119,13 @@ export class HomeComponent implements OnInit {
       }
     }
   })
+
   this.FutebolServ.getClubesAll (5)
   .subscribe (resultados => {
     this.resultados5 = resultados ['clubes']
     for ( let i = 0; i < this.resultados5.length; i++){
-      if (this.resultados5[i].name.length > 15){
-      this.resultados5[i].name = this.resultados5[i].name.substring(this.resultados5[i].name.indexOf(' ')+1);
+      if (this.resultados5[i].name.length > 12){
+      this.resultados5[i].name = this.resultados5[i].name.split(' ')[0].slice(0,1)+". "+this.resultados5[i].name.substring(this.resultados5[i].name.indexOf(' '))
       }
     }
     //VS Random:
@@ -141,8 +140,8 @@ export class HomeComponent implements OnInit {
   .subscribe (resultados => {
     this.resultados6 = resultados ['clubes']
     for ( let i = 0; i < this.resultados6.length; i++){
-      if (this.resultados6[i].name.length > 15){
-      this.resultados6[i].name = this.resultados6[i].name.substring(this.resultados6[i].name.indexOf(' ')+1);
+      if (this.resultados6[i].name.length > 12){
+      this.resultados6[i].name = this.resultados6[i].name.split(' ')[0].slice(0,1)+". "+this.resultados6[i].name.substring(this.resultados6[i].name.indexOf(' '))
       }
     }
     //VS Random:
@@ -154,9 +153,7 @@ export class HomeComponent implements OnInit {
     }
   })
 
-
 }
-
 
   abrirLink(numeroLiga) {
     location.href='/liga/'+numeroLiga
