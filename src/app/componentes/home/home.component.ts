@@ -112,6 +112,7 @@ export class HomeComponent implements OnInit {
       }
     }
   })
+
   this.FutebolServ.getClubesAll (4)
   .subscribe (resultados => {
     this.resultados4 = resultados ['clubes']
@@ -128,6 +129,7 @@ export class HomeComponent implements OnInit {
       }
     }
   })
+
   this.FutebolServ.getClubesAll (5)
   .subscribe (resultados => {
     this.resultados5 = resultados ['clubes']
@@ -144,6 +146,7 @@ export class HomeComponent implements OnInit {
       }
     }
   })
+
   this.FutebolServ.getClubesAll (6)
   .subscribe (resultados => {
     this.resultados6 = resultados ['clubes']
@@ -162,6 +165,7 @@ export class HomeComponent implements OnInit {
   })
 
 
+}
 
 
   abrirLink(numeroLiga) {
