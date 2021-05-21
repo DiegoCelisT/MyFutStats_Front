@@ -48,7 +48,7 @@
         <form id="formEdit" class="form-group needs-validation" #formedit='ngForm' novalidate>
             <div class="form-group">
                 <div class="d-flex flex-row justify-content-center">
-                    <h4 class="d-flex align-items-center" id="labelEdit">Editar o nome:</h4>
+                    <h4 class="d-flex align-items-center" id="labelEdit"><span>Editar o nome:</span></h4>
                     <div class="d-flex flex-row">
                         <input type="text" class="form-control inputEdit" name="name" value="{{ nomeLiga.name }}" id="name" [(ngModel)]="name" placeholder= "{{ nomeLiga.name }}" required>
                         <button class="btn btn-primary buttonEditLiga" type="submit" (click)='editLiga(nomeLiga.id)'>
@@ -64,7 +64,7 @@
     <div id="Buttons" class="container-fluid">
         <div class="row">
             <div class="col mx-auto">
-                <button class="btn btn-success button" (click)='volverLiga(nomeLiga.id)'><img src="../../../../assets/Iconos/MyFutStats Back (Vazado).png"><h3>&nbsp;&nbsp;&nbsp;VOLTAR&nbsp;&nbsp;&nbsp;</h3></button>
+                <button class="btn btn-success button" (click)='volverLiga(nomeLiga.id)'><img src="../../../../assets/Iconos/MyFutStats Back (Vazado).png"><h3>&nbsp;&nbsp;&nbsp;LIGA&nbsp;&nbsp;&nbsp;</h3></button>
             </div>
             <div class="col mx-auto">
                 <button class="btn btn-primary button" (click)='addClube(nomeLiga.id)'><img src="../../../../assets/Iconos/MyFutStats Add (Vazado).png"><h3>&nbsp;&nbsp;&nbsp;CLUBE&nbsp;&nbsp;&nbsp;</h3></button> 

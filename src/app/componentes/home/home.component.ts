@@ -45,6 +45,9 @@ export class HomeComponent implements OnInit {
 
   
   
+
+  
+
   function randomNumber(min, max) {
     return Math.floor(Math.random() * (max - min) + min) //Math.floor é a parte entera do número
   }
@@ -59,6 +62,13 @@ export class HomeComponent implements OnInit {
   this.FutebolServ.getClubesAll (1)
   .subscribe (resultados => {
     this.resultados1 = resultados ['clubes']
+    //Para tirar o primeiro nome caso o clube tenha um nome composto de mais de 12 letras (para não quebrar as tabelas)
+    for ( let i = 0; i < this.resultados1.length; i++){
+      // this.resultados1[i].name = this.resultados1[i].name.slice(0,12)
+      if (this.resultados1[i].name.length > 14){
+      this.resultados1[i].name = this.resultados1[i].name.substring(this.resultados1[i].name.indexOf(' ')+1);
+      }
+    }
     //VS Random:
     if(this.resultados1.length > 1){
       while (this.random1Club1 == this.random1Club2){
@@ -72,6 +82,11 @@ export class HomeComponent implements OnInit {
   this.FutebolServ.getClubesAll (2)
   .subscribe (resultados => {
     this.resultados2 = resultados ['clubes']
+    for ( let i = 0; i < this.resultados2.length; i++){
+      if (this.resultados2[i].name.length > 15){
+      this.resultados2[i].name = this.resultados2[i].name.substring(this.resultados2[i].name.indexOf(' ')+1);
+      }
+    }
     //VS Random:
     if(this.resultados2.length > 1){
       while (this.random2Club1 == this.random2Club2){
@@ -84,6 +99,11 @@ export class HomeComponent implements OnInit {
   this.FutebolServ.getClubesAll (3)
   .subscribe (resultados => {
     this.resultados3 = resultados ['clubes']
+    for ( let i = 0; i < this.resultados3.length; i++){
+      if (this.resultados3[i].name.length > 14){
+      this.resultados3[i].name = this.resultados3[i].name.substring(this.resultados3[i].name.indexOf(' ')+1);
+      }
+    }
     //VS Random:
     if(this.resultados3.length > 1){
       while (this.random3Club1 == this.random3Club2){
@@ -95,6 +115,11 @@ export class HomeComponent implements OnInit {
   this.FutebolServ.getClubesAll (4)
   .subscribe (resultados => {
     this.resultados4 = resultados ['clubes']
+    for ( let i = 0; i < this.resultados4.length; i++){
+      if (this.resultados4[i].name.length > 14){
+      this.resultados4[i].name = this.resultados4[i].name.substring(this.resultados4[i].name.indexOf(' ')+1);
+      }
+    }
     //VS Random:
     if(this.resultados4.length > 1){
       while (this.random4Club1 == this.random4Club2){
@@ -106,6 +131,11 @@ export class HomeComponent implements OnInit {
   this.FutebolServ.getClubesAll (5)
   .subscribe (resultados => {
     this.resultados5 = resultados ['clubes']
+    for ( let i = 0; i < this.resultados5.length; i++){
+      if (this.resultados5[i].name.length > 15){
+      this.resultados5[i].name = this.resultados5[i].name.substring(this.resultados5[i].name.indexOf(' ')+1);
+      }
+    }
     //VS Random:
     if(this.resultados5.length > 1){
       while (this.random5Club1 == this.random5Club2){
@@ -117,6 +147,11 @@ export class HomeComponent implements OnInit {
   this.FutebolServ.getClubesAll (6)
   .subscribe (resultados => {
     this.resultados6 = resultados ['clubes']
+    for ( let i = 0; i < this.resultados6.length; i++){
+      if (this.resultados6[i].name.length > 15){
+      this.resultados6[i].name = this.resultados6[i].name.substring(this.resultados6[i].name.indexOf(' ')+1);
+      }
+    }
     //VS Random:
     if(this.resultados6.length > 1){
       while (this.random6Club1 == this.random6Club2){
@@ -128,9 +163,6 @@ export class HomeComponent implements OnInit {
 
 
 
-}
-
-   
 
   abrirLink(numeroLiga) {
     location.href='/liga/'+numeroLiga

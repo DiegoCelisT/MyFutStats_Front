@@ -8,8 +8,8 @@
 
 /* Edição Provisoria */
 .tabelaHome{
-    background-color: rgb(0, 0, 0);
-    width: 350px;
+    background-color: rgb(214, 13, 13);
+    width: 3500px;
 }
 
 a, tr {
@@ -30,6 +30,166 @@ td:nth-child(2){
 .pointer:hover {
     opacity: 0.8;
 }    
+
+td img{
+    margin-right: 1vw;
+}
+
+.card-body h2{
+    /* background-color: chartreuse; */
+    font-size: 7.5vw;
+}
+
+td span {
+    font-size: 5.2vw;
+}
+
+td, tr {
+    vertical-align: middle;
+    font-size: 7vw;
+}
+
+@media (min-width:575px) and (max-width:650px){
+
+    .row {
+        /* background-color: chartreuse; */
+        width: 95vw;
+        display: flex!important;
+        justify-content: center;
+        margin: 0vw!important;
+    }
+
+    .row div{
+        width: 95vw;
+        /* padding: 0px; */
+        display: flex!important;
+        flex-wrap: wrap;
+    }
+
+    .card-body{
+        padding-right: 20px!important;
+        display: flex;
+        justify-content: center;
+    }
+
+    .card-body h2{
+        /* background-color: chartreuse; */
+        font-size: 7.5vw;
+    }
+
+
+    td span {
+        font-size: 5.2vw;
+    }
+    
+    td, tr {
+        vertical-align: middle;
+        font-size: 6vw;
+    }
+
+
+}
+
+@media (min-width:650px) and (max-width:991px){
+
+    .row {
+        /* background-color: chartreuse; */
+        width: 95vw;
+        display: flex!important;
+        justify-content: center;
+        margin: 0vw!important;
+    }
+
+    .row div{
+        width: 45vw;
+        /* padding: 0px; */
+        display: flex!important;
+        flex-wrap: wrap;
+    }
+
+    .card-body{
+        padding-right: 20px!important;
+        display: flex;
+        justify-content: center;
+    }
+
+    .card-body h2{
+        font-size: 4.5vw;
+    }
+
+
+    td span {
+        font-size: 2.5vw;
+    }
+    
+    td, tr {
+        vertical-align: middle;
+        font-size: 3.5vw;
+    }
+
+}
+
+
+
+@media (min-width: 992px){
+
+    .card-body h2{
+        font-size: 3vw;
+    }
+
+    td span {
+        font-size: 1.8vw;
+    }
+    
+    td, tr {
+        vertical-align: middle;
+        font-size: 2.4vw;
+    }
+
+}
+
+
+
+
+/*Carrousel - Modificação responsiva*/
+
+.carrousel-item{
+    width: 18vw;
+    height: 18vw;
+    margin:1.2vw!important
+}
+
+/* Escolher os 4 primeiros (-n+5) e todos os que vêm depois dos 4 primeiros (n+5): */
+.carrousel-item:nth-child(n+5){
+    display: none !important; /*Obriga a dar prioridade, mesmo acima do bootstrap e inline-blocks*/
+}
+
+@media (min-width:576px) and (max-width:991px){
+    
+    .carrousel-item, .carrousel-item:nth-child(n+7){
+        display: inline-block!important;
+        width: 12.5vw;
+        height: 12.5vw;
+        margin: 0.6vw!important;
+        }
+
+}
+
+@media (min-width: 992px){
+
+    .carrousel-item, .carrousel-item:nth-child(n+5){
+    display: inline-block!important;
+    width: 7.5vw;
+    height: 7.5vw;
+    margin: 0.6vw!important;
+    }
+
+}
+
+
+
+
+
 
 
 /* Próximos Jogos*/
@@ -143,3 +303,4 @@ aside div a img {
     }
 
 }
+
