@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FutebolService } from '../../services/futebol.service';
 
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -22,6 +23,7 @@ export class HomeComponent implements OnInit {
   nomeLiga1 = [{
     name:String
   }];
+
   
 
   //Para simular os próximos jogos (começam em 1 para que se alguém elimina todos os clubes não cause conflito e para dar um start de igualdade no while): (cada liga têm um número diferente de times, por isso o valor random não pode ser o mesmo para todos)
@@ -37,9 +39,11 @@ export class HomeComponent implements OnInit {
   random5Club2:any = 1
   random6Club1:any = 1
   random6Club2:any = 1
-
+  
 
   ngOnInit(): void {
+
+  
   
   function randomNumber(min, max) {
     return Math.floor(Math.random() * (max - min) + min) //Math.floor é a parte entera do número
@@ -49,6 +53,8 @@ export class HomeComponent implements OnInit {
   .subscribe (nomeLigas =>{
     this.nomeLigas = nomeLigas ['MyLeagues']
   })
+
+  
   
   this.FutebolServ.getClubesAll (1)
   .subscribe (resultados => {
@@ -60,6 +66,7 @@ export class HomeComponent implements OnInit {
         this.random1Club2 = randomNumber (0,this.resultados1.length)
       }
     }
+    
   })
 
   this.FutebolServ.getClubesAll (2)
@@ -120,9 +127,8 @@ export class HomeComponent implements OnInit {
   })
 
 
+
 }
-
-
 
    
 
@@ -135,6 +141,6 @@ export class HomeComponent implements OnInit {
   }
 
 
-
+  
   
 }

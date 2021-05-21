@@ -5,3 +5,7 @@
 * {
     font-family: 'Neufreit'
 }
+
+th:hover {
+    cursor: default;
+} 

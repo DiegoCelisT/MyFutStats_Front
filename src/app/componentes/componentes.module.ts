@@ -11,6 +11,7 @@ import { AddclubeComponent } from './ligas/addclube/addclube.component';
 import { EditligaComponent } from './ligas/editliga/editliga.component';
 import { NotFoundComponent } from './not-found/not-found.component'
 import { AboutUsComponent } from './about-us/about-us.component';
+import { ModalComponent } from './modal/modal.component';
 
 //Módulos para pesquisar e para ordenar:
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
@@ -25,7 +26,8 @@ import { OrderModule } from 'ngx-order-pipe';
     AddclubeComponent,
     EditligaComponent,
     NotFoundComponent,
-    AboutUsComponent
+    AboutUsComponent,
+    ModalComponent
   ],
   imports: [
     CommonModule,
@@ -43,7 +45,8 @@ import { OrderModule } from 'ngx-order-pipe';
     AddclubeComponent,
     EditligaComponent,
     NotFoundComponent,
-    AboutUsComponent
+    AboutUsComponent,
+    ModalComponent
   ]
 })
 export class ComponentesModule { }
