@@ -2,25 +2,25 @@
 
 <!-- CAROUSEL CLUBES -->
     <div class="d-flex p-2 justify-content-center">
-        <div id="carouselExampleControls" class="carousel slide" data-bs-interval="4000" data-bs-ride="carousel" data-bs-pause="hover">
+        <div id="carouselExampleControls" class="carousel slide" data-bs-interval="3000" data-bs-ride="carousel" data-bs-pause="hover">
             <div class="carousel-inner">
               <div class="carousel-item active">
-                <img *ngFor="let resultado of resultados1" src="{{resultado.urlShield}}" (click)='abrirClub(1,resultado.id)' class="d-inline img-fluid m-2 pointer" width="100px">    
+                <img *ngFor="let resultado of resultados1 | orderBy:'saldoGols':false | orderBy:'pontos':true | slice:0:8" src="{{resultado.urlShield}}" (click)='abrirClub(1,resultado.id)' class="d-inline img-fluid m-2 pointer carrousel-item">    
               </div>
               <div class="carousel-item">
-                <img *ngFor="let resultado of resultados2" src="{{resultado.urlShield}}" (click)='abrirClub(2,resultado.id)' class="d-inline img-fluid m-2 pointer" width="100px">    
+                <img *ngFor="let resultado of resultados2 | orderBy:'saldoGols':false | orderBy:'pontos':true | slice:0:8" src="{{resultado.urlShield}}" (click)='abrirClub(2,resultado.id)' class="d-inline img-fluid m-2 pointer carrousel-item">    
               </div>
               <div class="carousel-item">
-                <img *ngFor="let resultado of resultados3" src="{{resultado.urlShield}}" (click)='abrirClub(3,resultado.id)' class="d-inline img-fluid m-2 pointer" width="100px">    
+                <img *ngFor="let resultado of resultados3 | orderBy:'saldoGols':false | orderBy:'pontos':true | slice:0:8" src="{{resultado.urlShield}}" (click)='abrirClub(3,resultado.id)' class="d-inline img-fluid m-2 pointer carrousel-item">    
               </div>
               <div class="carousel-item">
-                <img *ngFor="let resultado of resultados4" src="{{resultado.urlShield}}" (click)='abrirClub(4,resultado.id)' class="d-inline img-fluid m-2 pointer" width="100px">    
+                <img *ngFor="let resultado of resultados4 | orderBy:'saldoGols':false | orderBy:'pontos':true | slice:0:8" src="{{resultado.urlShield}}" (click)='abrirClub(4,resultado.id)' class="d-inline img-fluid m-2 pointer carrousel-item">    
               </div>
               <div class="carousel-item">
-                <img *ngFor="let resultado of resultados5" src="{{resultado.urlShield}}" (click)='abrirClub(5,resultado.id)' class="d-inline img-fluid m-2 pointer" width="100px">    
+                <img *ngFor="let resultado of resultados5 | orderBy:'saldoGols':false | orderBy:'pontos':true | slice:0:8" src="{{resultado.urlShield}}" (click)='abrirClub(5,resultado.id)' class="d-inline img-fluid m-2 pointer carrousel-item">    
               </div>
               <div class="carousel-item">
-                <img *ngFor="let resultado of resultados6" src="{{resultado.urlShield}}" (click)='abrirClub(6,resultado.id)' class="d-inline img-fluid m-2 pointer" width="100px">    
+                <img *ngFor="let resultado of resultados6 | orderBy:'saldoGols':false | orderBy:'pontos':true | slice:0:8" src="{{resultado.urlShield}}" (click)='abrirClub(6,resultado.id)' class="d-inline img-fluid m-2 pointer carrousel-item">    
               </div>
             </div>
         </div>
@@ -44,7 +44,7 @@
                         <tbody>
                             <tr *ngFor="let resultado of resultados1 | orderBy:'saldoGols':false | orderBy:'pontos':true | slice:0:4; let i = index">
                                 <td>{{ i+1 }}</td>
-                                <td><img [src]="resultado?.urlShield" height="40"> {{ resultado.name }}</td>
+                                <td><img [src]="resultado?.urlShield" height="40"> <span> {{ resultado.name }} </span></td>
                                 <td>{{ resultado.pontos }}</td>
                             </tr>      
                         </tbody>
@@ -67,7 +67,7 @@
                         <tbody>
                             <tr *ngFor="let resultado of resultados2 | orderBy:'saldoGols':false | orderBy:'pontos':true | slice:0:4; let i = index">
                                 <td>{{ i+1 }}</td>
-                                <td><img [src]="resultado?.urlShield" height="40"> {{ resultado.name }}</td>
+                                <td><img [src]="resultado?.urlShield" height="40"><span> {{ resultado.name }} </span></td>
                                 <td>{{ resultado.pontos }}</td>
                             </tr>      
                         </tbody>
@@ -90,7 +90,7 @@
                         <tbody>
                             <tr *ngFor="let resultado of resultados3 | orderBy:'saldoGols':false | orderBy:'pontos':true | slice:0:4; let i = index">
                                 <td>{{ i+1 }}</td>
-                                <td><img [src]="resultado?.urlShield" height="40"> {{ resultado.name }}</td>
+                                <td><img [src]="resultado?.urlShield" height="40"><span> {{ resultado.name }} </span></td>
                                 <td>{{ resultado.pontos }}</td>
                             </tr>      
                         </tbody>
@@ -113,7 +113,7 @@
                         <tbody>
                             <tr *ngFor="let resultado of resultados4 | orderBy:'saldoGols':false | orderBy:'pontos':true | slice:0:4; let i = index">
                                 <td>{{ i+1 }}</td>
-                                <td><img [src]="resultado?.urlShield" height="40"> {{ resultado.name }}</td>
+                                <td><img [src]="resultado?.urlShield" height="40"><span> {{ resultado.name }} </span></td>
                                 <td>{{ resultado.pontos }}</td>
                             </tr>      
                         </tbody>
@@ -136,7 +136,7 @@
                         <tbody>
                             <tr *ngFor="let resultado of resultados5 | orderBy:'saldoGols':false | orderBy:'pontos':true | slice:0:4; let i = index">
                                 <td>{{ i+1 }}</td>
-                                <td><img [src]="resultado?.urlShield" height="40"> {{ resultado.name }}</td>
+                                <td><img [src]="resultado?.urlShield" height="40"><span> {{ resultado.name }} </span></td>
                                 <td>{{ resultado.pontos }}</td>
                             </tr>      
                         </tbody>
@@ -159,7 +159,7 @@
                         <tbody>
                             <tr *ngFor="let resultado of resultados6 | orderBy:'saldoGols':false | orderBy:'pontos':true | slice:0:4; let i = index">
                                 <td>{{ i+1 }}</td>
-                                <td><img [src]="resultado?.urlShield" height="40"> {{ resultado.name }}</td>
+                                <td><img [src]="resultado?.urlShield" height="40"><span> {{ resultado.name }} </span></td>
                                 <td>{{ resultado.pontos }}</td>
                             </tr>      
                         </tbody>
