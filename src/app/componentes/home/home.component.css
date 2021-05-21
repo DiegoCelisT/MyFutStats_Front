@@ -36,8 +36,12 @@ td img{
 }
 
 .card-body h2{
-    /* background-color: chartreuse; */
     font-size: 7.5vw;
+}
+
+.card-body:hover{
+    opacity: 0.7;
+    cursor: pointer;
 }
 
 td span {
