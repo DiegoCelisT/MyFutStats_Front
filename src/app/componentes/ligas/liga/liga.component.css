@@ -8,4 +8,189 @@
 
 th:hover {
     cursor: default;
+}
+
+
+.container-fluid {
+    width: 80vw;
+}
+
+#cabeçalho{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    /* height: 40px; */
+}
+
+h1{
+    font-size: 3vw;
+    display: flex;
+    justify-content: left!important;
+    flex-wrap: nowrap;
+    margin: 10px;
+    width: 50vw;
+}
+
+#pesquisa{
+    font-size: 2vw;
+    margin-bottom: 0.5vw; 
+}
+
+
+
+#Buttons{
+    display: flex;
+    justify-content: center;
+    
+}
+
+#Buttons div{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 5px;
+    
+}
+
+
+.button h3{
+    font-size: 2.5vw;
+    margin: 0px;
+}
+
+.button {
+    margin-bottom: 30px;
+}
+
+.button {
+    display: flex;
+    align-items: center;
+}
+
+.button img{
+    height: 2.5vw;
 } 
+
+
+
+th{
+    font-size: 2vw;
+    text-align: center;
+}
+
+td{
+    font-size: 1.5vw;
+    text-align: center;
+    vertical-align: middle;
+}
+
+
+#clubeBottons {
+    display: flex;
+    justify-content: left;
+    
+}
+
+#clubeBottons > a {
+    text-decoration: none;
+    
+} 
+
+.buttonClubes {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+    width: 30vw;
+    margin: 0;
+}
+
+.buttonClubes > img {
+    width: 3vw;
+    height: 3vw;
+    margin-right: 1vw;
+}
+
+.buttonClubes > h4 {
+    margin: 0;
+    text-align: left; /*NEW*/
+    font-size: 2vw;
+    
+}
+
+
+
+
+
+
+/*TABLETS*/
+
+@media (min-width:576px) and (max-width: 992px){
+
+
+    .container-fluid {
+        width: 80vw;
+    }
+
+    h1{
+        font-size: 4vw;
+    }
+    
+    .button img{
+        height: 4.5vw;
+    } 
+    
+    .button > h3 {
+        font-size: 2.8vw;
+        
+    }
+
+    #pesquisa{
+        font-size: 3vw;
+        margin-bottom: 0.5vw; 
+    }
+
+     
+
+}
+
+/*Mobile*/
+
+@media (max-width: 576px){
+    
+    .container-fluid {
+        width: 90vw;
+        margin: 0vw;
+        margin-left: 4vw;
+    }
+
+    h1{
+        font-size: 7vw;
+        display: flex;
+        align-items: center;
+        align-content: center;
+    }
+
+    
+    #Buttons{
+        margin-left: -2vw;   
+    }
+    
+    .button img{
+        height: 8vw;
+    } 
+    
+    .button > h3 {
+        font-size: 4.5vw;
+        
+    }
+
+    #pesquisa{
+        font-size: 5vw;
+        margin-bottom: 0.5vw; 
+    }
+
+      
+
+
+
+}

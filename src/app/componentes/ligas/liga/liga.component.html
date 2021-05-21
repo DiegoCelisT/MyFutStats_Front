@@ -16,19 +16,27 @@
         {{ mensajeAlertAdd }}
     </div>
 
-    <div>
-        <h1 class="text-center fw-bold">Liga {{ nomeLiga.name }}</h1>
-    </div>
-
-    <div class="d-grid justify-content-sm-center">
-        <button class="btn btn-primary mb-2 mr-2 btn-sm" (click)='editLiga(nomeLiga.id)'><img src="../../../../assets/Iconos/MyFutStats Update (Vazado).png" width="30px"> ATUALIZAR </button>
-    </div>
+    <article id="cabeçalho">
+        <div>
+            <h1 class="text-center fw-bold">Liga {{ nomeLiga.name }}</h1>
+        </div>
+    
+    
+        <div id="Buttons" class="container-fluid">
+            <div class="row">
+              <div class="col-sm mx-auto">
+                <button class="btn btn-primary mb-2 mr-2 btn-sm m-1 button" (click)='editLiga(nomeLiga.id)'><img src="../../../../assets/Iconos/MyFutStats Edit (Vazado).png" alt=""><h3>&nbsp;&nbsp;&nbsp; EDITAR &nbsp;&nbsp;&nbsp;</h3></button>  
+              </div>
+            </div>
+        </div>
+    </article>
+    
     
     <nav class="navbar">
-        <input class="form-control" type="text" name="name" [(ngModel)]="pesquisa"  placeholder="Insira sua pesquisa aqui...">
+        <input id="pesquisa" class="form-control" type="text" name="name" [(ngModel)]="pesquisa"  placeholder="Insira sua pesquisa aqui...">
     </nav>
     <div class="table-responsive">
-        <table class="table table-bordered table-hover">
+        <table class="table table-bordered table-striped table-hover table-dark">
             <thead>
                 <tr>
                     <th title="Posição">#</th>
@@ -48,8 +56,14 @@
                 <tr *ngFor="let resultado of resultadosSort | filter:pesquisa">
     
                     <td>{{ resultadosSort.indexOf(resultado)+1 }}</td>
-                    <!-- <td>{{ i+1 }}</td> -->
-                    <td><a href="http://localhost:4200/liga/{{ nomeLiga.id }}/clube/{{ resultado.id }}"><img [src]="resultado?.urlShield" height="35">{{ resultado.name }}</a></td>
+                    <td id="clubeBottons">
+                        <a href="http://localhost:4200/liga/{{ nomeLiga.id }}/clube/{{ resultado.id }}">
+                        <button class="btn btn-outline-light buttonClubes">
+                            <img [src]="resultado?.urlShield">
+                            <h4>{{ resultado.name }}</h4>
+                        </button>
+                        </a>
+                    </td>
                     <td>{{ resultado.country | uppercase | slice:0:3}} </td>
                     <td>{{ resultado.jogados}} </td>
                     <td>{{ resultado.vitorias }} </td>
