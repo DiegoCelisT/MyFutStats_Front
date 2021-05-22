@@ -41,13 +41,13 @@
                 <tr>
                     <th title="Posição">#</th>
                     <th>TIME</th>
-                    <th>PAÍS</th>
+                    <th class= "NoMobile">PAÍS</th>
                     <th title="Jogos">J</th>
                     <th title="Vitórias">V</th>
                     <th title="Empates">E</th>
                     <th title="Derrotas">D</th>
-                    <th title="Gols marcados/Gols sofridos">GOLS</th>
-                    <th title="Diferença de gols">+/-</th>
+                    <th class= "NoMobile" title="Gols Pró/Gols Contra">GOLS</th>
+                    <th title="Diferença de Gols">+/-</th>
                     <th title="Pontos">PTS</th>
                 </tr>
             </thead>
@@ -64,12 +64,12 @@
                         </button>
                         </a>
                     </td>
-                    <td>{{ resultado.country | uppercase | slice:0:3}} </td>
+                    <td class= "NoMobile">{{ resultado.country | uppercase | slice:0:3}} </td>
                     <td>{{ resultado.jogados}} </td>
                     <td>{{ resultado.vitorias }} </td>
                     <td>{{ resultado.empates }} </td>
                     <td>{{ resultado.derrotas }} </td>
-                    <td>{{ resultado.golsPro }}:{{ resultado.golsContra }} </td>
+                    <td class= "NoMobile">{{ resultado.golsPro }}:{{ resultado.golsContra }} </td>
                     <td>{{ resultado.saldoGols }} </td>
                     <td>{{ resultado.pontos }}</td>
                 </tr>
