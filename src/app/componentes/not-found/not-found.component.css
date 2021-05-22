@@ -1,11 +1,25 @@
 div{
     display: flex;
     justify-content: space-around;
-    /* align-content: center */
+    align-items: center;
     padding: 8vw;
 }
 
 img{
-    width: 50vh;
+    width: 60vh;
     align-self: center;
+}
+
+@media (max-width: 800px) {
+
+    div{
+        margin-top: 10vh;
+        padding: 8vw;
+    }
+    
+    img{
+        width: 44vh;
+        align-self: center;
+    }
+    
 }
