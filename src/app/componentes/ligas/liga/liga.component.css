@@ -8,4 +8,288 @@
 
 th:hover {
     cursor: default;
+}
+
+
+.container-fluid {
+    width: 80vw;
+    margin-bottom: 2vw;
+}
+
+#cabeçalho{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+h1{
+    font-size: 3vw;
+    display: flex;
+    justify-content: left!important;
+    flex-wrap: nowrap;
+    margin: 10px;
+    width: 50vw;
+}
+
+#pesquisa{
+    font-size: 2vw;
+    margin-bottom: 0.5vw; 
+}
+
+
+
+#Buttons{
+    display: flex;
+    justify-content: center;    
+}
+
+#Buttons div{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 1vw;
+}
+
+
+.button h3{
+    font-size: 2.5vw;
+    margin: 0px;
+}
+
+.button {
+    margin-bottom: 30px;
+}
+
+.button {
+    display: flex;
+    align-items: center;
+}
+
+.button img{
+    height: 2.5vw;
 } 
+
+
+
+th{
+    font-size: 2vw;
+    text-align: center;
+}
+
+td{
+    font-size: 1.5vw;
+    text-align: center;
+    vertical-align: middle;
+}
+
+
+#clubeBottons {
+    display: flex;
+    justify-content: left;
+    
+}
+
+#clubeBottons > a {
+    text-decoration: none;
+    
+} 
+
+.buttonClubes {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+    width: 30vw;
+    margin: 0;
+}
+
+.buttonClubes > img {
+    width: 3vw;
+    height: 3vw;
+    margin-right: 1vw;
+}
+
+.buttonClubes > h4 {
+    margin: 0;
+    text-align: left; /*NEW*/
+    font-size: 2vw;
+    
+}
+
+
+
+
+
+
+/*TABLETS*/
+
+@media (min-width:576px) and (max-width: 992px){
+
+
+    .container-fluid {
+        width: 95vw;
+        
+    }
+
+    
+
+    h1{
+        font-size: 5vw;
+    }
+
+    #pesquisa{
+        font-size: 3vw;
+        margin-bottom: 0.5vw; 
+    }
+
+    th{
+        font-size: 2.6vw;
+    }
+
+    td{
+        font-size: 2.6vw;
+    }
+
+
+    .button h3{
+        font-size: 4vw;
+        margin: 0px;
+    }
+        
+    
+    .button img{
+        height: 5vw;
+    } 
+
+
+    #clubeBottons {
+        display: flex;
+        justify-content: left;
+        
+    }
+
+    #clubeBottons > a {
+        text-decoration: none;
+        
+    } 
+
+    .buttonClubes {
+        width: 32vw;
+        margin: 0;
+    }
+
+    .buttonClubes > img {
+        width: 6vw;
+        height: 6vw;
+        margin-right: 2vw;
+    }
+
+    .buttonClubes > h4 {
+        margin: 0;
+        text-align: left;
+        font-size: 3vw;
+        
+    }
+
+    
+    
+
+
+
+}
+
+/*Mobile*/
+
+@media (max-width: 576px){
+    
+    .container-fluid {
+        width: 95vw;
+        padding: 0px;
+    }
+
+    #cabeçalho{
+        justify-items: space-between;
+        width: 75vw;
+        margin-top: 2vw;
+    }
+
+
+    h1{
+        font-size: 6.5vw;
+        text-align: left;
+        width: 75vw;
+    }
+
+    #Buttons div div{
+        margin: 0px;
+    }
+
+    .button{
+        padding: 0.3vw;
+    }
+
+    .button h3{
+        display: none;
+    }
+
+    .button img{
+        height: 8vw;
+    } 
+
+
+    #pesquisa{
+        font-size: 5vw;
+        margin-bottom: 0.5vw; 
+    }
+
+    th{
+        font-size: 3.6vw;
+        padding:1.5vw
+    }
+
+    td{
+        font-size: 3.6vw;
+        padding:1.5vw
+    }
+
+        
+    .NoMobile{
+        display: none;
+    }
+    
+    
+
+    #clubeBottons {
+        display: flex;
+        justify-content: center;
+        
+    }
+
+    #clubeBottons > a {
+        text-decoration: none;
+        
+    } 
+
+
+    .buttonClubes {
+        width: 34vw;
+        margin: -0.5vw;
+        padding: 1vw;
+    }
+
+
+
+    .buttonClubes > img {
+        width: 9vw;
+        height: 9vw;
+        margin-right: 2vw;
+        margin-left: 0vw;
+    }
+
+    .buttonClubes > h4 {
+        margin: 0;
+        text-align: left;
+        font-size: 3.6vw;
+        
+    }
+
+}

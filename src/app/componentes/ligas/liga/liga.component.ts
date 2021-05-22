@@ -113,4 +113,9 @@ export class LigaComponent implements OnInit {
     location.href='http://localhost:4200/liga/'+ID_Liga+'/editliga'
   }
   
+  // voltar() {   
+  //     window.history.back()
+  //   }
+ 
+
 }

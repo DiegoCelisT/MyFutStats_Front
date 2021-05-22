@@ -2,9 +2,10 @@
   <!-- NAVBAR -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-success bg-gradient">
     <div class="container-fluid">
+
         <a class="navbar-brand" [routerLink]="['home']" [queryParams]="{ benvindos: 'ok'}" routerLinkActive="active"><img (click)='irHome' id="LogoMyFutStats" src="../../../assets/MyFutStats Logo Final.png"></a>
 
-        <button id="toggleIcon" class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions"><span class="navbar-toggler-icon" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions"></span></button>
+      <button id="toggleIcon" class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions"><span class="navbar-toggler-icon" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions"></span></button>
       <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown" [ngbCollapse]='toggleAbajo'>
                                                                      
         <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
@@ -33,7 +34,7 @@
           </li>
           <!-- SOBRE NÓS -->
           <li class="nav-item">
-            <a class="nav-link" [routerLink]="['about-us']" routerLinkActive="active" aria-current="page">Sobre nós</a>
+            <a class="nav-link" href="about-us" aria-current="page">Sobre nós</a>
           </li>
           
           <li class="nav-item dropstart">
