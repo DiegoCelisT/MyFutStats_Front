@@ -4,7 +4,7 @@
 <div class="container-fluid">
 <!-- CAROUSEL CLUBES -->
     <div class="d-flex p-2 justify-content-center">
-        <div id="carouselExampleControls" class="carousel slide" data-bs-interval="3000" data-bs-ride="carousel" data-bs-pause="hover">
+        <div id="carouselExampleControls" class="carousel slide" data-bs-interval="2400" data-bs-ride="carousel" data-bs-pause="hover">
             <div class="carousel-inner">
               <div class="carousel-item active">
                 <img *ngFor="let resultado of resultados1 | orderBy:'saldoGols':false | orderBy:'pontos':true | slice:0:8" src="{{resultado.urlShield}}" (click)='abrirClub(1,resultado.id)' class="d-inline img-fluid m-2 pointer carrousel-item">    
