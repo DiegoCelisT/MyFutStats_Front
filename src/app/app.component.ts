@@ -18,6 +18,7 @@ export class AppComponent implements OnInit{
 
   toggleAbajo = true;
 
+
   ngOnInit(): void {
 
     this.FutebolServ.getLigas()
@@ -28,7 +29,7 @@ export class AppComponent implements OnInit{
   }
 
   irHome() {
-   location.href=""
+    location.href ="http://localhost:"+this.FutebolServ.portFront+"/home?benvindos=ok"
   }
   
   irLiga(i) {
@@ -50,4 +51,5 @@ export class AppComponent implements OnInit{
   gitJulian() {
     window.open('https://github.com/JulianBoetto', '_blank')
   }
+  
 }
