@@ -3,7 +3,7 @@
   <nav class="navbar navbar-expand-lg navbar-dark bg-success bg-gradient">
     <div class="container-fluid">
 
-        <a class="navbar-brand" [routerLink]="['home']" [queryParams]="{ benvindos: 'ok'}" routerLinkActive="active"><img (click)='irHome' id="LogoMyFutStats" src="../../../assets/MyFutStats Logo Final.png"></a>
+        <a class="navbar-brand" href="http://localhost:4200/home?bem_vindos=ok"><img (click)='irHome' id="LogoMyFutStats" src="../../../assets/MyFutStats Logo Final.png"></a>
 
       <button id="toggleIcon" class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions"><span class="navbar-toggler-icon" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions"></span></button>
       <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown" [ngbCollapse]='toggleAbajo'>
@@ -11,7 +11,7 @@
         <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
           <li class="nav-item">
 
-            <a class="nav-link" aria-current="page" [routerLink]="['home']" [queryParams]="{ benvindos: 'ok'}" routerLinkActive="active">Home</a>
+            <a class="nav-link" aria-current="page" href="http://localhost:4200/home?bem_vindos=ok">Home</a>
 
           </li>
           <!-- VER LIGAS -->

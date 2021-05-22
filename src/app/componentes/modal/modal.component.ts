@@ -33,7 +33,7 @@ export class ModalComponent implements OnInit {
     
     // CONDICIONAL PARA MOSTRAR MODAL
     this.rotaHome.queryParams.subscribe(params => {
-      this.urlHome = params ['benvindos']
+      this.urlHome = params ['bem_vindos']
       
       if (this.urlHome == 'ok') {
         this.mostrar = false
@@ -49,9 +49,9 @@ export class ModalComponent implements OnInit {
 
   }
   
-  // FECHAR MODAL BENVINDOS/AS
+  // FECHAR MODAL BEM-VINDOS/AS
   cerrar() {    
-    this.router.navigate(['/home'], {queryParams: { benvindos: 'ok'}})
+    this.router.navigate(['/home'], {queryParams: { bem_vindos: 'ok'}})
     return this.mostrar = false
   }   
 

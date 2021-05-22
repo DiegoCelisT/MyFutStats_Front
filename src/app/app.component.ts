@@ -29,7 +29,7 @@ export class AppComponent implements OnInit{
   }
 
   irHome() {
-    location.href ="http://localhost:"+this.FutebolServ.portFront+"/home?benvindos=ok"
+    location.href ="http://localhost:"+this.FutebolServ.portFront+"/home?bem_vindos=ok"
   }
   
   irLiga(i) {
