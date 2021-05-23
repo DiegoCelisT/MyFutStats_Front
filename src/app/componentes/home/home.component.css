@@ -6,14 +6,6 @@
     font-family: 'Neufreit'
 }
 
-
-
-/* Edição Provisoria */
-.tabelaHome{
-    background-color: rgb(214, 13, 13);
-    width: 3500px;
-}
-
 a, tr {
     text-decoration: none;
     color: white;
@@ -58,7 +50,6 @@ td, tr {
 @media (min-width:575px) and (max-width:650px){
 
     .row {
-        /* background-color: chartreuse; */
         width: 95vw;
         display: flex!important;
         justify-content: center;
@@ -67,7 +58,6 @@ td, tr {
 
     .row div{
         width: 95vw;
-        /* padding: 0px; */
         display: flex!important;
         flex-wrap: wrap;
     }
@@ -79,7 +69,6 @@ td, tr {
     }
 
     .card-body h2{
-        /* background-color: chartreuse; */
         font-size: 7.5vw;
     }
 
@@ -93,13 +82,11 @@ td, tr {
         font-size: 6vw;
     }
 
-
 }
 
 @media (min-width:650px) and (max-width:991px){
 
     .row {
-        /* background-color: chartreuse; */
         width: 95vw;
         display: flex!important;
         justify-content: center;
@@ -108,7 +95,6 @@ td, tr {
 
     .row div{
         width: 45vw;
-        /* padding: 0px; */
         display: flex!important;
         flex-wrap: wrap;
     }
@@ -191,11 +177,6 @@ td, tr {
     }
 
 }
-
-
-
-
-
 
 
 /* Próximos Jogos*/

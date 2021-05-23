@@ -46,7 +46,6 @@ export class ClubeComponent implements OnInit {
       this.FutebolServ.getLiga(this.ID_Liga)
       .subscribe (nomeLiga =>{
         this.nomeLiga = nomeLiga ['Liga']
-        // console.log(this.nomeLiga)
       })
 
       //Rote params Clube
@@ -57,7 +56,6 @@ export class ClubeComponent implements OnInit {
         this.FutebolServ.getClube(this.ID_Liga,this.ID)
         .subscribe (resultados => {this.resultado = resultados ['clube']})
       });
-
 
       //Trazendo a listagem para ordenar
       this.FutebolServ.getClubesAll (this.ID_Liga)
@@ -88,7 +86,6 @@ export class ClubeComponent implements OnInit {
   //ELIMINAR CLUBE
   eliminarClube(ID_Liga, ID){
     this.FutebolServ.eliminarClube(ID_Liga, ID).subscribe();
-    // location.href='http://localhost:'+this.FutebolServ.portFront+'/liga/'+this.ID_Liga+'?sucessoeliminado=ok'
     if (document.referrer == 'http://localhost:'+this.FutebolServ.portFront+'/liga/'+this.ID_Liga+'/clube/'+this.ID){
       location.href = 'http://localhost:'+this.FutebolServ.portFront+'/liga/'+this.ID_Liga+'/editliga'+'?sucessoeliminado=ok'
     } else {

@@ -17,7 +17,6 @@ export class EditclubeComponent implements OnInit {
   ID_Liga: any;
   formularioEdit: FormGroup;
   
-
   nomeLiga = {
     id:Number,
     name:String
@@ -30,54 +29,49 @@ export class EditclubeComponent implements OnInit {
 
   ngOnInit(): void {
 
+    //Rote params de Liga
+    this.rotaLiga.params.subscribe(params => {
+      this.ID_Liga = parseInt(params['idLiga'])
 
+      this.FutebolServ.getLiga(this.ID_Liga)
+      .subscribe (nomeLiga =>{
+        this.nomeLiga = nomeLiga ['Liga']
+      })
 
-  //Rote params de Liga
-  this.rotaLiga.params.subscribe(params => {
-    this.ID_Liga = parseInt(params['idLiga'])
-
-    this.FutebolServ.getLiga(this.ID_Liga)
-    .subscribe (nomeLiga =>{
-      this.nomeLiga = nomeLiga ['Liga']
-      // console.log(this.nomeLiga)
+      //USA EL ID DE LA URL PARA MOSTRAR UN CLUB
+      this.roteClub.params.subscribe(params => {
+        this.idNum = parseInt(params['id']);
+        this.ID = this.idNum    
+        this.FutebolServ.getClube(this.ID_Liga, this.ID)
+          .subscribe (resultados => {
+            this.resultado = resultados ['clube'];
+            this.formularioEdit = this.formEdit.group({
+              name: [this.resultado.name,Validators.required],
+              country: [this.resultado.country],
+              urlShield: [this.resultado.urlShield],
+              vitorias: [this.resultado.vitorias],
+              empates: [this.resultado.empates],
+              derrotas: [this.resultado.derrotas],
+              golsPro: [this.resultado.golsPro],
+              golsContra: [this.resultado.golsContra]
+            })
+          })
+      })
+    })
+   
+    this.formularioEdit = this.formEdit.group({
+      name: [null,Validators.required],
+      country: [null],
+      urlShield: [null],
+      vitorias: [null],
+      empates: [null],
+      derrotas: [null],
+      golsPro: [null],
+      golsContra: [null],
     })
 
-
-
-    //USA EL ID DE LA URL PARA MOSTRAR UN CLUB
-    this.roteClub.params.subscribe(params => {
-      this.idNum = parseInt(params['id']);
-      this.ID = this.idNum    
-      this.FutebolServ.getClube(this.ID_Liga, this.ID)
-        .subscribe (resultados => {
-          this.resultado = resultados ['clube'];
-          this.formularioEdit = this.formEdit.group({
-            name: [this.resultado.name,Validators.required],
-            country: [this.resultado.country],
-            urlShield: [this.resultado.urlShield],
-            vitorias: [this.resultado.vitorias],
-            empates: [this.resultado.empates],
-            derrotas: [this.resultado.derrotas],
-            golsPro: [this.resultado.golsPro],
-            golsContra: [this.resultado.golsContra]
-          })
-        })
-    });
-  })
-   
-
-  this.formularioEdit = this.formEdit.group({
-    name: [null,Validators.required],
-    country: [null],
-    urlShield: [null],
-    vitorias: [null],
-    empates: [null],
-    derrotas: [null],
-    golsPro: [null],
-    golsContra: [null],
-  })
-
     this.validEdit();
+
   }
 
   //METODO PUT
@@ -110,7 +104,6 @@ export class EditclubeComponent implements OnInit {
       let B ='http://localhost:'+this.FutebolServ.portFront+'/liga/'+this.ID_Liga+'/editclube/'+this.ID
       console.log (A, B+"?sucessoadicionado=ok")
       let C ='http://localhost:'+this.FutebolServ.portFront+'/liga/'+this.ID_Liga+'/editliga'
-      // console.log (A, C+"?sucessoadicionado=ok")
 
       if (A == B){
         location.href='http://localhost:'+this.FutebolServ.portFront+'/liga/'+this.ID_Liga+'/clube/'+this.ID+'?sucessoedit=ok'
@@ -119,7 +112,6 @@ export class EditclubeComponent implements OnInit {
       } else {
         location.href= A +'?sucessoedit=ok'
       }
-
   }
 
   validEdit(){

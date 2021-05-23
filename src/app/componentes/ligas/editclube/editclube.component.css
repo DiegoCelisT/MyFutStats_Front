@@ -93,12 +93,9 @@ button h3{
 }
 
 
-
-
 /*TABLETS*/
 
 @media (min-width:576px) and (max-width: 992px){
-
 
     h1{
         font-size: 5.2vw;
@@ -167,7 +164,6 @@ button h3{
         margin: 0px;
         align-self: center;
     }
-
 
 }
 
@@ -238,5 +234,4 @@ button h3{
         display: none;
     }
     
-
 }

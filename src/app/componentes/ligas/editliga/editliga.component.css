@@ -4,7 +4,6 @@
 }
 * {
     font-family: 'Neufreit'
-
 }
 
 .container-fluid {
@@ -24,14 +23,6 @@ h1{
 .buttonEditLiga img{
     height: 30px;
 }
-
-
-
-
-
-
-
-
 
 #labelEdit {
     font-size: 24px;
@@ -63,7 +54,6 @@ h1{
     width: 490px;    
 }
 
-
 .button h3{
     font-size: 35px;
     margin: 0px;
@@ -89,12 +79,10 @@ h1{
 #clubeBottons {
     display: flex;
     justify-content: center;
-    
 }
 
 #clubeBottons > a {
     text-decoration: none;
-    
 } 
 
 .buttonClubes {
@@ -113,9 +101,8 @@ h1{
 
 .buttonClubes > h4 {
     margin: 0;
-    text-align: left; /*NEW*/
+    text-align: left;
     font-size: 45px;
-    
 }
 
 #editBottons {
@@ -183,176 +170,153 @@ h1{
   font-size: 30px;
 }
 
-
-
-
-/*Novas modificações*/
-
 td a button{
-    /* background-color: blueviolet; */
     display: flex;
     justify-content: flex-start;
     padding: 1vw 3vw 1vw 2vw;
 }
 
+/*Edições v2*/
+
+h1{
+    font-size: 3vw;
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+}
+
+.buttonEditLiga {
+    padding: 0.3vw;
+    margin-left: 1.5vw;
+}
+
+.buttonEditLiga img{
+    height: 2.7vw;
+}
+
+#labelEdit {
+    font-size: 2vw;
+    margin-top: 0.5vw;
+}
+
+.inputEdit {
+    font-size: 2vw;
+    padding-left: 1vw;
+    height: 3.5vw;
+}
+
+#formEdit {
+    margin-bottom: 1vw;     
+}
 
 
+#Buttons{
+    padding: 1vw 0 1vw 0;
+}
+
+#Buttons div div{
+    width: 42vw;
+}
+
+.button {
+    margin-bottom: 1vw;
+}
+
+.button {
+    display: flex;
+    align-items: center;
+}
+
+.button img{
+    height: 3vw;
+} 
+
+.button > h3 {
+    font-size: 2vw;
+}
+
+#pesquisa{
+    font-size: 2vw;
+    margin-bottom: 0.5vw; 
+}
+
+#clubeBottons {
+    display: flex;
+    align-items: center;
+}
+
+.buttonClubes {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 40vw;
+    margin: 0;
+}
+
+.buttonClubes > img {
+    width: 7vw;
+}
+
+.buttonClubes > h4 {
+    margin: 0;
+    font-size: 3vw;
+}
+
+#editBottons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: max-content;
+}
+
+.buttonEdit {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 4vw;
+    width: 14vw;
+    margin: 0.5vw;        
+}
+
+.buttonEdit img{
+    height: 3vw;
+}
+
+.buttonEdit h3{
+    font-size: 2vw;
+    margin-top: 0.3vw;        
+}
 
 
+/* MODAL */
 
+.modal-dialog{
+    max-width: 45%;
+}
 
-    h1{
-        font-size: 3vw;
-        display: flex;
-        justify-content: center;
-        flex-wrap: nowrap;
-    }
+.modal-title {
+    font-size: 3vw;
+}
 
-    .buttonEditLiga {
-        padding: 0.3vw;
-        margin-left: 1.5vw;
-    }
+.modal-body img{
+    width: 10vw;
+    margin-right: 3vw;
+}
 
-    .buttonEditLiga img{
-        height: 2.7vw;
-    }
-    
-    
-    #labelEdit {
-        font-size: 2vw;
-        margin-top: 0.5vw;
-        /* margin-right: 0.5vw;  */
-               
-    }
-    
-    .inputEdit {
-        font-size: 2vw;
-        padding-left: 1vw;
-        height: 3.5vw;
-    }
-    
-    #formEdit {
-        margin-bottom: 1vw;     
-    }
+.modal-body p{
+    font-size: 2.5vw;
+}
 
-    
-
-    #Buttons{
-        padding: 1vw 0 1vw 0;
-    }
-
-    #Buttons div div{
-        width: 42vw;
-    }
-
-    .button {
-        margin-bottom: 1vw;
-    }
-
-    .button {
-        display: flex;
-        align-items: center;
-    }
-    
-    .button img{
-        height: 3vw;
-    } 
-    
-    .button > h3 {
-        font-size: 2vw;
-        
-    }
-    
-    #pesquisa{
-        font-size: 2vw;
-        margin-bottom: 0.5vw; 
-    }
-
-     #clubeBottons {
-        display: flex;
-        align-items: center;
-    }
-    
-    .buttonClubes {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        width: 40vw;
-        margin: 0;
-    }
-    
-    .buttonClubes > img {
-        width: 7vw;
-    }
-
-    .buttonClubes > h4 {
-        margin: 0;
-        font-size: 3vw;
-    }
-
-    #editBottons {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: max-content;
-    }
-    
-    .buttonEdit {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        height: 4vw;
-        width: 14vw;
-        margin: 0.5vw;        
-    }
-
-    .buttonEdit img{
-        height: 3vw;
-    }
-
-    .buttonEdit h3{
-        font-size: 2vw;
-        margin-top: 0.3vw;        
-    }
-
-
-   
-    
-
-
-    /* MODAL */
-
-    .modal-dialog{
-        max-width: 45%;
-    }
-    
-    .modal-title {
-        font-size: 3vw;
-    }
-    
-    .modal-body img{
-        width: 10vw;
-        margin-right: 3vw;
-    }
-    
-    .modal-body p{
-        font-size: 2.5vw;
-    }
-    
-    .modal-footer button{
-        font-size: 2.5vw;
-    }
-
-
-
+.modal-footer button{
+    font-size: 2.5vw;
+}
 
 
 /*TABLETS*/
 
 @media (min-width:576px) and (max-width: 992px){
-
 
     .container-fluid {
         width: 80vw;
@@ -373,9 +337,7 @@ td a button{
     }
     
     #labelEdit {
-        font-size: 3vw;
-        /* margin-top: 0.5vw; */
-               
+        font-size: 3vw;               
     }
     
     .inputEdit {
@@ -392,14 +354,12 @@ td a button{
         padding: 0.5vw;
     }
 
-    
     .button img{
         height: 4.5vw;
     } 
     
     .button > h3 {
         font-size: 2.8vw;
-        
     }
 
     #pesquisa{
@@ -407,7 +367,6 @@ td a button{
         margin-bottom: 0.5vw; 
     }
 
-      
     .buttonClubes {
         width: 45vw;
     }
@@ -419,10 +378,6 @@ td a button{
     .buttonClubes > h4 {
         font-size: 3.7vw;
     }
-
-    
-    
-
 
     .buttonEdit {
         height: 6vw;
@@ -500,7 +455,6 @@ td a button{
         display: none;
     }
 
-
     .inputEdit {
         font-size: 5vw;
         padding: 4vw;
@@ -514,8 +468,6 @@ td a button{
     #formEdit div div div button{
         padding: 0.5vw;
     }
-
-
 
     #Buttons{
         margin-left: -2vw;   
@@ -535,8 +487,6 @@ td a button{
         margin-bottom: 0.5vw; 
     }
 
-      
-
     .buttonClubes {
         width: 55vw;
     }
@@ -549,10 +499,6 @@ td a button{
     .buttonClubes > h4 {
         font-size: 5vw;
     }
-
-    
-    
-
 
     .buttonEdit {
         height: 10vw;
@@ -591,6 +537,5 @@ td a button{
     .modal-footer button{
         font-size: 6vw;
     }
-
 
 }

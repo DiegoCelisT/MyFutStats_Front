@@ -6,7 +6,6 @@
     font-family: 'Neufreit'
 }
 
-
 article{
     display: flex;
     flex-direction: row;
@@ -109,8 +108,6 @@ button h3{
 }
 
 
-
-
 .modal-dialog{
       max-width: 40%;
   }
@@ -152,94 +149,91 @@ button h3{
 
 @media (min-width:576px) and (max-width: 992px){
 
+    article{
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+    }
 
+    #Presentation{
+        display: none;
+    }
 
-article{
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
-}
+    #Shield{
+        flex-direction: column;
+        width: 35vw;
+    }
 
-#Presentation{
-    display: none;
-}
+    #Shield img{
+        margin-top: 10px;
+        height: 35vw;
+    }
 
-#Shield{
-    flex-direction: column;
-    width: 35vw;
-}
+    #Stats{
+        width: 45vw;
+        color:rgb(63, 59, 59)
+    }
 
-#Shield img{
-    margin-top: 10px;
-    height: 35vw;
-}
+    .TitleTablet{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
 
-#Stats{
-    width: 45vw;
-    color:rgb(63, 59, 59)
-}
+    .TitleTablet h2{
+        font-size: 3.5vw;
+    }
 
-.TitleTablet{
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-}
+    #Stats div:first-child{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
 
-.TitleTablet h2{
-    font-size: 3.5vw;
-}
+    h1{
+        font-size: 4.5vw;
+    }
 
-#Stats div:first-child{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-}
+    #Stats h2{
+        font-size: 3.7vw;
+    }
 
-h1{
-    font-size: 4.5vw;
-}
+    li{
+        font-size: 2.8vw;
+    }
 
-#Stats h2{
-    font-size: 3.7vw;
-}
+    #Buttons{
+        padding-top: 10px;
+    }
 
-li{
-    font-size: 2.8vw;
-}
+    button img{
+        height: 4.4vw;
+        align-self: center;
+    }
+    button h3{
+        font-size: 3.5vw;
+        margin: 0px;
+    }
 
-#Buttons{
-    padding-top: 10px;
-}
+    .modal-dialog{
+        max-width: 50%;
+    }
 
-button img{
-    height: 4.4vw;
-    align-self: center;
-}
-button h3{
-    font-size: 3.5vw;
-    margin: 0px;
-}
+    .modal-title {
+        font-size: 4vw;
+    }
 
-.modal-dialog{
-    max-width: 50%;
-}
+    .modal-body img{
+        width: 14vw;
+    }
 
-.modal-title {
-    font-size: 4vw;
-}
+    .modal-body p{
+        font-size: 3.4vw;
+    }
 
-.modal-body img{
-    width: 14vw;
-}
-
-.modal-body p{
-    font-size: 3.4vw;
-}
-
-.modal-footer button{
-    font-size: 3vw;
-}
-
+    .modal-footer button{
+        font-size: 3vw;
+    }
 
 }
 
@@ -285,8 +279,6 @@ button h3{
         font-size: 10vw;
     }
 
-    
-
     #Stats div{
         display: flex;
         justify-content: space-between;
@@ -300,7 +292,6 @@ button h3{
     }
 
     li{
-        
         font-size: 5.4vw;
         text-indent: -2.4vw;
     }
@@ -319,7 +310,6 @@ button h3{
     button img{
         height: 12vw;
     }
-
 
     button h3{
         display: none;

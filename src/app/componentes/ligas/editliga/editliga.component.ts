@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { FutebolService } from '../../../services/futebol.service';
 import { ActivatedRoute } from '@angular/router';
 
-
 @Component({
   selector: 'app-editliga',
   templateUrl: './editliga.component.html',
@@ -35,9 +34,6 @@ export class EditligaComponent implements OnInit {
   alertEdit;
   mensajeAlertEdit = ''
   
-
- 
-
   // MODAL ELIMINADO
   idModal;
   nameModal;
@@ -46,8 +42,6 @@ export class EditligaComponent implements OnInit {
   ID_Liga:number;
 
   ngOnInit(): void {
-
-    
 
     //Enrotamento de Liga
     this.roteEditLiga.params.subscribe(params => {
@@ -69,8 +63,6 @@ export class EditligaComponent implements OnInit {
 
   }
   
-  
-
   //METODO PUT (Para cambiarle el nombre a la liga)
   editLiga(numeroLiga){
     this.FutebolServ.editLiga(numeroLiga, this.name)
@@ -111,9 +103,9 @@ export class EditligaComponent implements OnInit {
         this.alertEliminado = false;
         this.alertEdit = false
       }
-              
-      // console.log(this.alertAdd + 'adicionado', this.alertEliminado + 'eliminado')
+          
     })
+
   }
 
   addClube(numeroLiga) {
@@ -144,10 +136,6 @@ export class EditligaComponent implements OnInit {
     })
   }
 
-
-
-
-  
   mostrarAlertEliminado() {
     this.alertEliminado = true
     this.mensajeAlertEliminado = 'O clube foi eliminado!'
@@ -156,6 +144,5 @@ export class EditligaComponent implements OnInit {
       this.alertEliminado = false;
     }, 4000);
   }
-
 
 }

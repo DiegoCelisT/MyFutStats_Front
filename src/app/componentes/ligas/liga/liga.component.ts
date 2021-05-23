@@ -50,35 +50,28 @@ export class LigaComponent implements OnInit {
       
       
       //GET CLUBES ADAPTADO PARA ORDENAR DOS DADOS (SORT) E CONSEGUIR ATRIBUIR VALORES DE POSIÇÃO DINÂMICOS COMPATIVÉIS COM O FORM DE PESQUISA
-    this.FutebolServ.getClubesAll (this.ID_Liga)
-    .subscribe (resultados => {
-      this.resultados = resultados ['clubes'] //'É importante declarar o nome do JSON que foi dado no back-end, para dessa maneira evitar o erro de cannot read property '0' of undefined     
-      this.resultadosSort = this.resultados.sort(function (a, b) {
-        if ( a.pontos < b.pontos) {
-          return 1;
-        }
-        if (a.saldoGols > b. saldoGols || a.pontos > b.pontos ) {
-          return -1;
-        }
-        // a igual que b
-        return 0;
-      });    
-      console.log(this.resultadosSort)
-    })
+      this.FutebolServ.getClubesAll (this.ID_Liga)
+      .subscribe (resultados => {
+        this.resultados = resultados ['clubes'] //'É importante declarar o nome do JSON que foi dado no back-end, para dessa maneira evitar o erro de cannot read property '0' of undefined     
+        this.resultadosSort = this.resultados.sort(function (a, b) {
+          if ( a.pontos < b.pontos) {
+            return 1;
+          }
+          if (a.saldoGols > b. saldoGols || a.pontos > b.pontos ) {
+            return -1;
+          }
+          // a igual que b
+          return 0;
+        });    
+      })
 
 
-    this.FutebolServ.getLiga(this.ID_Liga)
-    .subscribe (nomeLiga =>{
-      this.nomeLiga = nomeLiga ['Liga']
-      // console.log(this.nomeLiga)
-    })
+      this.FutebolServ.getLiga(this.ID_Liga)
+      .subscribe (nomeLiga =>{
+        this.nomeLiga = nomeLiga ['Liga']
+      })
 
     });
-
-    
-
-    
-
 
     this.mostrarAlert();
 
@@ -118,5 +111,4 @@ export class LigaComponent implements OnInit {
   //     window.history.back()
   //   }
  
-
 }

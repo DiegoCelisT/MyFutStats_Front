@@ -10,7 +10,6 @@ th:hover {
     cursor: default;
 }
 
-
 .container-fluid {
     width: 80vw;
     margin-bottom: 2vw;
@@ -36,8 +35,6 @@ h1{
     margin-bottom: 0.5vw; 
 }
 
-
-
 #Buttons{
     display: flex;
     justify-content: center; 
@@ -47,9 +44,7 @@ h1{
     display: flex;
     justify-content: space-around;
     margin-top: 1vw;
-    
 }
-
 
 .button h3{
     font-size: 2.5vw;
@@ -57,33 +52,27 @@ h1{
 }
 
 .button {
-    margin-bottom: 30px;
-    
+    margin-bottom: 30px; 
 }
 
 .button {
     display: flex;
-    align-items: center;
-    
+    align-items: center;  
 }
 
 .button img{
     height: 2.5vw;   
 } 
 
-
-
 th{
     font-size: 2vw;
-    text-align: center;
-    
+    text-align: center;    
 }
 
 td{
     font-size: 1.5vw;
     text-align: center;
     vertical-align: middle;
-    
 }
 
 tr{
@@ -99,7 +88,6 @@ tr{
 
 #clubeBottons > a {
     text-decoration: none;
-    
 } 
 
 .buttonClubes {
@@ -119,28 +107,19 @@ tr{
 
 .buttonClubes > h4 {
     margin: 0;
-    text-align: left; /*NEW*/
-    font-size: 2vw;
-    
+    text-align: left;
+    font-size: 2vw;    
 }
-
-
-
-
 
 
 /*TABLETS*/
 
 @media (min-width:576px) and (max-width: 992px){
 
-
     .container-fluid {
         width: 95vw;
-        
     }
-
-    
-
+  
     h1{
         font-size: 5vw;
     }
@@ -158,26 +137,21 @@ tr{
         font-size: 2.6vw;
     }
 
-
     .button h3{
         font-size: 4vw;
         margin: 0px;
     }
         
-    
     .button img{
         height: 5vw;
     } 
 
-
     #clubeBottons {
-        display: flex;
-        
+        display: flex; 
     }
 
     #clubeBottons > a {
-        text-decoration: none;
-        
+        text-decoration: none;  
     } 
 
     .buttonClubes {
@@ -195,17 +169,12 @@ tr{
         margin: 0;
         text-align: left;
         font-size: 3vw;
-        
     }
-
-    
-    
-
-
 
 }
 
-/*Mobile*/
+
+/*MOBILE*/
 
 @media (max-width: 576px){
     
@@ -219,7 +188,6 @@ tr{
         width: 75vw;
         margin-top: 2vw;
     }
-
 
     h1{
         font-size: 6.5vw;
@@ -243,7 +211,6 @@ tr{
         height: 8vw;
     } 
 
-
     #pesquisa{
         font-size: 5vw;
         margin-bottom: 0.5vw; 
@@ -259,36 +226,24 @@ tr{
         padding:1.5vw;
     }
 
-
-
-    
-        
     .NoMobile{
         display: none;
     }
     
-    
-
     #clubeBottons {
         display: flex;
         justify-content: center;
-        
-        
     }
 
     #clubeBottons > a {
         text-decoration: none;
-        
     } 
-
 
     .buttonClubes {
         width: 34vw;
         margin: -0.5vw;
         padding: 1vw;
     }
-
-
 
     .buttonClubes > img {
         width: 9vw;
@@ -301,7 +256,6 @@ tr{
         margin: 0;
         text-align: left;
         font-size: 3.6vw;
-        
     }
 
 }

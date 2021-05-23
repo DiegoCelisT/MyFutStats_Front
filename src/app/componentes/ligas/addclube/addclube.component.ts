@@ -36,32 +36,16 @@ export class AddclubeComponent implements OnInit {
 
   ngOnInit(): void {    
 
-
-
     //Enrotamento de Liga
     this.rotaAddClube.params.subscribe(params => {
       this.ID_Liga = parseInt(params['idLiga']); 
       
     this.FutebolServ.getLiga(this.ID_Liga)
-    .subscribe (nomeLiga =>{
+      .subscribe (nomeLiga =>{
       this.nomeLiga = nomeLiga ['Liga']
-      // console.log(this.nomeLiga)
-    })
+      })
 
     });
-
-
-
-    // this.formularioAdd = this.formAdd.group({
-    //   name: [null, Validators.required],
-    //   country: [null],
-    //   urlShield: [null],
-    //   vitorias: [null],
-    //   empates: [null],
-    //   derrotas: [null],
-    //   golsPro: [null],
-    //   golsContra: [null],
-    // })
 
     this.validAdd();
     
@@ -86,12 +70,10 @@ export class AddclubeComponent implements OnInit {
     if (golsPro==null){ golsPro=0 }
     if (golsContra==null){ golsContra=0 }
     if (urlShield==null){ urlShield="https://i.postimg.cc/GtnwF08R/Default-Shield.png" }
-    // console.log(this.ID_Liga, name, urlShield, country, vitorias, empates, derrotas, golsPro, golsContra)
     this.FutebolServ.createClube(this.ID_Liga, name, urlShield, country, vitorias, empates, derrotas, golsPro, golsContra)
     .subscribe()
   }
 
-  
 
   validAdd(){
     let formDadosClube = document.getElementsByClassName('dadosName')[0] as HTMLFormElement
