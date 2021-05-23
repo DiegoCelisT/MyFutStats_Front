@@ -63,6 +63,7 @@ export class LigaComponent implements OnInit {
         // a igual que b
         return 0;
       });    
+      console.log(this.resultadosSort)
     })
 
 
