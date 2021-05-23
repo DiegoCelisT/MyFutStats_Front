@@ -6,7 +6,6 @@ import { HttpClient } from '@angular/common/http'
 })
 export class FutebolService {
 
-  
   constructor(private httpFutebol: HttpClient) { }
 
   //Porto usado no Back:
