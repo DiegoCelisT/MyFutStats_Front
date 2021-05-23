@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
 import { FutebolService } from '../../services/futebol.service';
 
 
@@ -9,8 +10,12 @@ import { FutebolService } from '../../services/futebol.service';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private FutebolServ: FutebolService) { }
+  constructor(private rotaHome: ActivatedRoute, private router: Router, private FutebolServ: FutebolService) { }
+  
+  urlHome;
 
+  //MOSTRAR MODAL BENVINDOS/AS
+  mostrar;
 
   resultados1 = [];
   resultados2 = [];
@@ -43,8 +48,18 @@ export class HomeComponent implements OnInit {
   
 
   ngOnInit(): void {
-
-  
+    
+    this.urlHome = window.location.href
+       
+    //PARA ABRIR OU NÃO O MODAL
+    if (this.urlHome == 'http://localhost:4200/') {
+      this.mostrar = true
+      
+      console.log('mostrar Home')
+    } else {
+      console.log('no mostrar Home')
+      this.mostrar = false;
+    }
   
 
   function randomNumber(min, max) {

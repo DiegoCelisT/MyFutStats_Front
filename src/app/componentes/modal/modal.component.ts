@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
-import { FutebolService } from '../../services/futebol.service';
+import { Location } from '@angular/common'
 
 @Component({
   selector: 'app-modal',
@@ -9,56 +8,41 @@ import { FutebolService } from '../../services/futebol.service';
 })
 export class ModalComponent implements OnInit {
 
+
+  // ADICIONA CLASES
   claseModal: string = '';
+  semCircle: string = '';
   
   // PARA MOSTRAR MODAL
   mostrar;
 
-  // CERRAR MODAL
-  cerrarModal = true;
+  urlHome = window.location.href;
 
-  // MODIFICAR URL
-  urlHome;
-
-  // MODIFICAR BOTÃO ENTRAR
-  cargando = true;
-  buttonCerrar = false;
-
-  constructor(private rotaHome: ActivatedRoute, private router: Router, private FutebolServ: FutebolService) { }
+  constructor(private location: Location) { }
 
   
   ngOnInit(): void {
+
     // MOSTRA MODAL AO INICIO
-    this.claseModal = 'modal d-block';
+    this.mostrar = true;
     
-    // CONDICIONAL PARA MOSTRAR MODAL
-    this.rotaHome.queryParams.subscribe(params => {
-      this.urlHome = params ['bem_vindos']
-      
-      if (this.urlHome == 'ok') {
-        this.mostrar = false
-      } else {
-        this.mostrar = true;  
-      }
-    })
-      
-    //PARA HABILITAR INGRESO
-    window.onload = (event) => {
-      this.changeButton()
+    //PARA ABRIR OU NÃO O MODAL    
+    if (this.urlHome == 'http://localhost:4200/') {
+      this.claseModal = 'modal d-block';
+      this.mostrar = true
+      this.location.go('/home?bem_vindos=ok')  
+      // this.router.navigate(['/home'], {queryParams: { bem_vindos: 'ok'}})    
+      console.log('mostrar modal')
     }
 
-  }
-  
-  // FECHAR MODAL BEM-VINDOS/AS
-  cerrar() {    
-    this.router.navigate(['/home'], {queryParams: { bem_vindos: 'ok'}})
-    return this.mostrar = false
-  }   
+    setTimeout(()=>{     
+      this.mostrar = false; 
+    }, 4000);
 
-  changeButton() {
-    this.cerrarModal = false;              
-    this.cargando = false;
-    this.buttonCerrar = true;
-  }
+    setTimeout(()=>{     
+      this.semCircle = 'semCircle' 
+    }, 2000);
+
+  }  
   
 }
