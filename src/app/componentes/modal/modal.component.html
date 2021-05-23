@@ -1,22 +1,39 @@
-<!-- MODAL BEM-VINDOS -->
-<div *ngIf='mostrar' [class]='claseModal' id="exampleModal" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-  <div class="modal-dialog modal-fullscreen">
-    <div class="modal-content">     
-      <div class="modal-body">
-        
-        <!-- AQUI VA EL CONTENIDO PARA NUESTRO MODAL -->
-
-        <button (click)='cerrar()' [disabled]='cerrarModal' class="btn btn-success" type="button">
-          <span *ngIf='cargando' class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
-          <span *ngIf='cargando' >  Carregando...</span>
-          <span *ngIf='buttonCerrar'>ENTRAR</span>
-        </button>
-        
-        <!-- <button type="button" class="btn btgn-secondary" data-bs-dismiss="modal">Close</button> -->
-      </div>     
+<div class="container-fluid">
+    <!-- MODAL BEM-VINDOS/AS -->
+    <div *ngIf='mostrar' [class]='claseModal' class="container-fluid" id="exampleModal" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-fullscreen container-fluid">
+      <div class="modal-content bg-success container-fluid">     
+        <div class="modal-body">
+          
+          <!-- AQUI VA EL CONTENIDO PARA NUESTRO MODAL -->
+      
+          
+          <div class="bola">
+            <img id="imgBola" src="../../../assets/Logo MyFutStats Bola Enteira.png" alt="">
+          </div>
+         
+          
+          
+          <div [ngClass]='semCircle' class="container-circles">
+            <div class="loader loader-circles">           
+            </div>
+          </div>
+          
+          
+          <!-- <div class="buttonFechar">
+            <button (click)='cerrar()' [disabled]='cerrarModal' class="btn btn-success" type="button">
+              <span *ngIf='cargando' class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+              <span *ngIf='cargando' >  Carregando...</span>
+              <span *ngIf='buttonCerrar'>ENTRAR</span>
+            </button>
+          </div> -->
+          
+      
+        </div>     
+      </div>
     </div>
-  </div>
-<!-- </div> -->
+    </div>
+</div>
 
 
 
