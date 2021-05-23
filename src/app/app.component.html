@@ -1,9 +1,30 @@
 <div class="container-fluid">  
+  <!-- MODAL BENVINDOS/AS -->
+  <div [ngClass]='claseModal' *ngIf='mostrar' class="container-fluid bg-success">     
+    <div class="mBody">
+     
+  
+      <div [ngClass]='claseAnimacionModal' class="bola">
+        <img id="imgBola" src="../../../assets/Logo MyFutStats Bola Enteira.png" alt="">
+      </div>
+    
+      
+      
+      <!-- <div [ngClass]='claseAnimacionModal' class="container-circles">
+        <div class="loader loader-circles">           
+        </div>
+      </div> -->  
+    
+      
+      
+  
+    </div>     
+  </div>
   <!-- NAVBAR -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-success bg-gradient">
     <div class="container-fluid">
 
-        <a class="navbar-brand" href="/home?bem_vindos=ok"><img (click)='irHome' id="LogoMyFutStats" src="../../../assets/MyFutStats Logo Final.png"></a>
+      <a class="navbar-brand" href="home"><img (click)='irHome' id="LogoMyFutStats" src="../../../assets/MyFutStats Logo Final.png"></a>
 
       <button id="toggleIcon" class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions"><span class="navbar-toggler-icon" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions"></span></button>
       <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown" [ngbCollapse]='toggleAbajo'>
@@ -11,7 +32,7 @@
         <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
           <li class="nav-item">
 
-            <a class="nav-link" aria-current="page" href="/home?bem_vindos=ok">Home</a>
+          <a class="nav-link" aria-current="page" href="home">Home</a>
 
           </li>
           <!-- VER LIGAS -->
@@ -123,9 +144,3 @@
 </div>
 
 <router-outlet></router-outlet>
-
-<!-- <footer>
-  <div>
-    <p>Developers:</p>
-  </div>
-</footer> -->
