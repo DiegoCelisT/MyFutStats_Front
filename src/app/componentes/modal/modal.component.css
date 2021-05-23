@@ -1,132 +1,148 @@
 @font-face{ 
-  font-family: 'Neufreit';
-  src: url('../../../assets/Neufreit-ExtraBold.otf');
-}
-* {
-  font-family: 'Neufreit'
-}
-
-@keyframes Rodando{
-    to{
-      transform: rotate(1080deg);
-  }
-}
-
-.container-fluid {
-      margin: 0px;
-      padding: 0px;
-  }
-
-.modal-body {
-  margin: 0px;
-  padding: 0px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  align-content: center;
-  width: 100vw;
-  height: 100vh;
-}
-
-.bola{
-  position: absolute;
-  display: flex;
-  align-items: center;
-  height: 100vh;
-}
-
-#imgBola {
-  position: relative;
-  width: auto;
-  height: 15vw;
-  animation: Rodando 4s;
-  animation-fill-mode: forwards;  
-  
-}
-
-.container-circles {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  width: 100vw;
-  
-}
-
-.loader {
+	font-family: 'Neufreit';
+	src: url('../../../assets/Neufreit-ExtraBold.otf');
+	}
+	* {
+	font-family: 'Neufreit'
+	}
+	
+	@keyframes Rodando{
+	to{
+	transform: rotate(1080deg);
+	}
+	}
+	
+	.container-fluid {
+	margin: 0px;
+	padding: 0px;
+	}
+	
+	.modal-body {
+	margin: 0px;
+	padding: 0px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	align-content: center;
+	width: 100vw;
+	height: 100vh;
+	}
+	
+	.bola{
+	position: absolute;
+	display: flex;
+	align-items: center;
+	height: 100vh;
+	}
+	
+	#imgBola {
+	position: relative;
+	width: auto;
+	height: 15vw;
+	animation: Rodando 4s;
+	animation-fill-mode: forwards; 
+	}
+	
+	.container-circles {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	width: 100vw; 
+	}
+	
+	.loader {
 	position: relative;
 	display: flex;
 	width: 22vw;
 	height: 22vw;
-}
-
-
-.loader-circles {
+	}
+	
+	.loader-circles {
 	border-radius: 22vw;
-	border: 7px solid transparent;
+	border: 0.7vw solid transparent;
 	border-top-color: #20925d;
 	-webkit-animation: spin 1s linear infinite;
 	animation: spin 1s linear infinite;
-}
-
-.loader-circles:before,
-.loader-circles:after {
+	}
+	
+	.loader-circles:before,
+	.loader-circles:after {
 	content: '';
 	position: absolute;
-	top: 2px;
-	left: 5px;
-	bottom: 2px;
-	right: 5px;
+	top: 0.2vw; 
+	left: 0.2vw;
+	bottom: 0.2vw;
+	right: 0.2vw;
 	border-radius: 22vw;
-	border: 5px solid transparent;
+	border: 0.7vw solid transparent;
 	border-top-color: rgb(53, 53, 53);
 	filter: alpha(opacity=8);
-	     -khtml-opacity: .8;
-	       -moz-opacity: .8;
-	            opacity: .8;
+	-khtml-opacity: .8;
+	-moz-opacity: .8;
+	opacity: .8;
 	-webkit-animation: spinreverse 2s linear infinite;
 	animation: spinreverse 2s linear infinite;
-}
-
-.loader-circles:before {
-	top: 12px; 
-	left: 12px;
-	bottom: 12px;
-	right: 12px;
+	}
+	
+	.loader-circles:before {
+	top: 1vw; 
+	left: 1vw;
+	bottom: 1vw;
+	right: 1vw;
 	-webkit-animation: spinreverse 10s linear infinite;
 	animation: spinreverse 10s linear infinite;
 	border-top-color: #fff;
 	
-
-}
-
-.buttonFechar {
-  position: absolute;
-}
-
-@keyframes spin {
+	}
+	
+	.buttonFechar {
+	position: absolute;
+	}
+	
+	@keyframes spin {
 	0%{ -webkit-transform: rotate(0deg); transform: rotate(0deg);}
 	100%{ -webkit-transform: rotate(360deg); transform: rotate(360deg);}
-}
-
-@-webkit-keyframes spinreverse {
-  	0%{ -webkit-transform: rotate(0deg); tranform: rotate(0deg);}
+	}
+	
+	@-webkit-keyframes spinreverse {
+	0%{ -webkit-transform: rotate(0deg); tranform: rotate(0deg);}
 	100%{ -webkit-transform: rotate(-360deg); tranform: rotate(-360deg);}
-}
-
-@keyframes spinreverse {
+	}
+	
+	@keyframes spinreverse {
 	0%{ -webkit-transform: rotate(0deg); transform: rotate(0deg);}
 	100%{ -webkit-transform: rotate(-360deg); transform: rotate(-360deg);}
-}
-
-.semCircle {
-  animation: semCircle 1s;
-  animation-fill-mode: forwards;
-}
-
-@keyframes semCircle {
+	}
+	
+	.semCircle {
+	animation: semCircle 1s;
+	animation-fill-mode: forwards;
+	}
+	
+	@keyframes semCircle {
 	0%{ opacity: 1; }
 	100%{ opacity: 0; }
-}
+	}
+	
+	@media ( max-width: 576px ) {
+	#imgBola {
+	height: 20vw;
+	}
+	
+	.loader {
+	width: 27vw;
+	height: 27vw;
+	}
+	
+	.loader-circles {
+	border-radius: 30vw;
+	}
+	.loader-circles:before,
+	.loader-circles:after {
+	border-radius: 30vw;
+	}
+	}
+	

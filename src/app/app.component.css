@@ -56,13 +56,13 @@ footer{
 
 /* BENVINDOS/AS */
 
-@keyframes Rodando{
+/* @keyframes Rodando{
    
     to{
         transform: rotate(1080deg);
      
     }
-  }
+  } */
 
   .container-fluid {
       margin: 0px;
@@ -75,7 +75,6 @@ footer{
     display: flex;
     flex-direction: column;
     align-items: center;
-    align-content: center;
     width: 100vw;
     height: 100vh;
   }
@@ -102,12 +101,12 @@ footer{
 
   
   @keyframes modalBola {
-    0%{ height: 50vw; opacity: 1; transform: rotate(0deg) }
+    0%{ opacity: 1; transform: rotate(0deg) }
     100%{ height: 0; opacity: 0; transform: rotate(1080deg) }
 }
 
 @-webkit-keyframes modalBola {
-    0%{ height: 50vw; opacity: 1; transform: rotate(0deg) }
+    0%{  opacity: 1; transform: rotate(0deg) }
     100%{ height: 0; opacity: 0; transform: rotate(1080deg) }
 }
 
@@ -190,12 +189,12 @@ footer{
   
   /* FECHAR MODAL */
   
-  .fade-scale {
+  /* .fade-scale {
     opacity: 0;
     -webkit-transition: all 1s linear;
     -o-transition: all 1s linear;
     transition: all 1s linear;
-  }
+  } */
 
   .modalFixo {
     overflow:hidden;
@@ -208,11 +207,19 @@ footer{
     }
 
 @keyframes modal {
-    0%{ height: 100vw; }
+    0%{ height: 100vh; }
     100%{ height: 0; }
 }
 
 @-webkit-keyframes modal {
-    0%{ height: 100vw; }
+    0%{ height: 100vh; }
     100%{ height: 0; }
 }
+
+@media ( max-width: 576px ) {
+	#imgBola {
+	height: 20vw;
+	}
+	
+}
+	
