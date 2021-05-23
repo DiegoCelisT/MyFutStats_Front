@@ -93,10 +93,10 @@ export class AddclubeComponent implements OnInit {
     }
 
     let vitorias = randomNumber (2,5)
-    let empates = randomNumber (0,6)
+    let empates = randomNumber (0,8)
     let derrotas  = randomNumber (2,5)
-    let golsPro = randomNumber (5,16)
-    let golsContra = randomNumber (5,16)
+    let golsPro = randomNumber (5,20)
+    let golsContra = randomNumber (2,10)
     
     // MOSTRAR NO FORMULARIO
     this.formularioAdd.patchValue({
