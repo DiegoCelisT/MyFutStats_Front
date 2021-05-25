@@ -45,7 +45,6 @@ export class AppComponent implements OnInit{
 
       if (this.urlHome == 'http://localhost:4200/') {
         this.mostrar = true
-        console.log('mostrar APP')
         setTimeout(()=>{     
           
           this.claseModal = 'modalApp'
