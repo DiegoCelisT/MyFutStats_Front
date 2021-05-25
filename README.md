@@ -1,4 +1,14 @@
-# FutebolFrontend
+# MyFutStats_Front
+
+App para acompanhar e atualizar as estatísticas de clubes de futebol em ligas clássicas ou de e-sports. É possivel criar e apagar clubes, assim como manter atualizados os dados deles na medida que avançam os torneios.
+
+Funcionamento em conjunto com o repositório de back-end:
+
+https://github.com/DiegoCelisT/MyFutStats_Back
+
+Desenvolvida por @DiegoCelisT e @JulianBoetto
+
+## Developed in Angular
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.3.
 
@@ -25,3 +35,5 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+## Enjoy and give a star!

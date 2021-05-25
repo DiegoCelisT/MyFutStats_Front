@@ -30,9 +30,7 @@ export class ModalComponent implements OnInit {
     if (this.urlHome == 'http://localhost:4200/') {
       this.claseModal = 'modal d-block';
       this.mostrar = true
-      this.location.go('/home?bem_vindos=ok')  
-      // this.router.navigate(['/home'], {queryParams: { bem_vindos: 'ok'}})    
-      console.log('mostrar modal')
+      this.location.go('/home?bem_vindos=ok')
     }
 
     setTimeout(()=>{     

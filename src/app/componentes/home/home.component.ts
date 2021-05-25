@@ -52,10 +52,7 @@ export class HomeComponent implements OnInit {
     //PARA ABRIR OU NÃO O MODAL
     if (this.urlHome == 'http://localhost:4200/') {
       this.mostrar = true
-      
-      console.log('mostrar Home')
     } else {
-      console.log('no mostrar Home')
       this.mostrar = false;
     }
   
