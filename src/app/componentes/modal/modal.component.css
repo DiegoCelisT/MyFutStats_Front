@@ -7,25 +7,17 @@
 	}
 	
 	@keyframes Rodando{
-	to{
-	transform: rotate(1080deg);
-	}
-	}
-	
-	.container-fluid {
-	margin: 0px;
-	padding: 0px;
+		to{ transform: rotate(1080deg);	}
 	}
 	
 	.modal-body {
-	margin: 0px;
-	padding: 0px;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	align-content: center;
-	width: 100vw;
-	height: 100vh;
+		margin: 0px;
+		padding: 0px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		width: 100vw;
+		height: 100vh;
 	}
 	
 	.bola{
@@ -98,10 +90,6 @@
 	
 	}
 	
-	.buttonFechar {
-	position: absolute;
-	}
-	
 	@keyframes spin {
 	0%{ -webkit-transform: rotate(0deg); transform: rotate(0deg);}
 	100%{ -webkit-transform: rotate(360deg); transform: rotate(360deg);}
@@ -137,9 +125,7 @@
 	height: 27vw;
 	}
 	
-	.loader-circles {
-	border-radius: 30vw;
-	}
+	.loader-circles,
 	.loader-circles:before,
 	.loader-circles:after {
 	border-radius: 30vw;
