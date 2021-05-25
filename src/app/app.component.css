@@ -54,21 +54,7 @@ footer{
     }
 }
 
-/* BENVINDOS/AS */
-
-/* @keyframes Rodando{
-   
-    to{
-        transform: rotate(1080deg);
-     
-    }
-  } */
-
-  .container-fluid {
-      margin: 0px;
-      padding: 0px;
-  }
-    
+/* BENVINDOS/AS */    
   .mBody {
     margin-left: 0px;
     padding: 0px;
@@ -110,91 +96,7 @@ footer{
     100%{ height: 0; opacity: 0; transform: rotate(1080deg) }
 }
 
-  .container-circles {
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      width: 100vw;
-      
-    }
-    
-    .loader {
-        position: relative;
-        display: flex;
-        width: 22vw;
-        height: 22vw;
-    }
-    
   
-  .loader-circles {
-      border-radius: 22vw;
-      border: 7px solid transparent;
-      border-top-color: #198754;
-      -webkit-animation: spin 1s linear infinite;
-      animation: spin 1s linear infinite;
-  }
-  
-  .loader-circles:before,
-  .loader-circles:after {
-      content: '';
-      position: absolute;
-      top: 2px;
-      left: 5px;
-      bottom: 2px;
-      right: 5px;
-      border-radius: 22vw;
-      border: 5px solid transparent;
-      border-top-color: rgb(53, 53, 53);
-      filter: alpha(opacity=8);
-           -khtml-opacity: .8;
-             -moz-opacity: .8;
-                  opacity: .8;
-      -webkit-animation: spinreverse 2s linear infinite;
-      animation: spinreverse 2s linear infinite;
-  }
-  
-  .loader-circles:before {
-      top: 12px; 
-      left: 12px;
-      bottom: 12px;
-      right: 12px;
-      -webkit-animation: spinreverse 10s linear infinite;
-      animation: spinreverse 10s linear infinite;
-      border-top-color: #fff;
-      
-  
-  }
-  
-  .buttonFechar {
-    position: absolute;
-  }
-  
-  @keyframes spin {
-      0%{ -webkit-transform: rotate(0deg); transform: rotate(0deg);}
-      100%{ -webkit-transform: rotate(360deg); transform: rotate(360deg);}
-  }
-  
-  @-webkit-keyframes spinreverse {
-        0%{ -webkit-transform: rotate(0deg); tranform: rotate(0deg);}
-      100%{ -webkit-transform: rotate(-360deg); tranform: rotate(-360deg);}
-  }
-  
-  @keyframes spinreverse {
-      0%{ -webkit-transform: rotate(0deg); transform: rotate(0deg);}
-      100%{ -webkit-transform: rotate(-360deg); transform: rotate(-360deg);}
-  }
-  
-  /* FECHAR MODAL */
-  
-  /* .fade-scale {
-    opacity: 0;
-    -webkit-transition: all 1s linear;
-    -o-transition: all 1s linear;
-    transition: all 1s linear;
-  } */
 
   .modalFixo {
     overflow:hidden;

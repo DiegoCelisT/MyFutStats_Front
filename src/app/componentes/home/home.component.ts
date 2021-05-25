@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { FutebolService } from '../../services/futebol.service';
 
 
@@ -10,7 +10,7 @@ import { FutebolService } from '../../services/futebol.service';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private rotaHome: ActivatedRoute, private router: Router, private FutebolServ: FutebolService) { }
+  constructor(private rotaHome: ActivatedRoute, private FutebolServ: FutebolService) { }
   
   urlHome;
 
